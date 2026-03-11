@@ -1,8 +1,9 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
+import StickerCanvas from '@/components/StickerCanvas';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
@@ -74,6 +75,16 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+      
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 4: Touch & Drag Test</ThemedText>
+        <ThemedText>
+          Drag the cyan circle! Position is saved as percentages (0‑1) for device‑independent coordinates.
+        </ThemedText>
+        <View style={styles.canvasContainer}>
+          <StickerCanvas canvasWidth={300} canvasHeight={200} />
+        </View>
+      </ThemedView>
     </ParallaxScrollView>
   );
 }
@@ -94,5 +105,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     position: 'absolute',
+  },
+  canvasContainer: {
+    marginTop: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
