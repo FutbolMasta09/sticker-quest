@@ -1,4 +1,4 @@
-import { Tabs } from 'expo-router';
+3import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { HapticTab } from '@/components/haptic-tab';
