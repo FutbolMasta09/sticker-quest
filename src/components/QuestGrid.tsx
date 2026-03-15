@@ -30,12 +30,12 @@ export default function QuestGrid({ showDebug = true }: QuestGridProps) {
           onPress: async () => {
             await useUserStore.persist.clearStorage();
             Alert.alert('Storage Cleared', 'App will reload...');
-            // Try to reload via expo-updates if available
+            // Try to reload the app
             try {
-              const Updates = await import('expo-updates');
-              await Updates.reloadAsync();
-            } catch {
               // Fallback: reset navigation
+              router.replace('/');
+            } catch {
+              // If navigation fails, try to reload the app state
               router.replace('/');
             }
           }

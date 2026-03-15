@@ -67,6 +67,11 @@ export const useUserStore = create<UserState>()(
       name: 'user-storage', // unique name for the storage key
       storage: createJSONStorage(() => AsyncStorage),
       onRehydrateStorage: () => (state, error) => {
+        // Always mark hydration as complete, even if there's an error
+        if (state) {
+          state.setHasHydrated(true);
+        }
+        
         if (error) {
           console.error('Error during store hydration:', error);
           if (state) {
@@ -75,7 +80,6 @@ export const useUserStore = create<UserState>()(
         } else {
           console.log('Store Hydrated', state ? `with stars: ${state.stars}` : 'no state');
           if (state) {
-            state.setHasHydrated(true);
             state.setHydrationError(null);
           }
         }
