@@ -18,26 +18,25 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 });
 
 /**
- * Star-Mail Message Interface
+ * Tone types matching the `tone_type` enum in Supabase.
+ * Amber (Sister/Mom) → 'Supportive Auntie'
+ * Brandon (Dad)      → 'Warm/Fatherly'
+ * All others         → 'Supportive/Magical'
+ */
+export type ToneType =
+  | 'Supportive Auntie'
+  | 'Warm/Fatherly'
+  | 'Supportive/Magical';
+
+/**
+ * Star-Mail row as stored in Supabase.
+ * Columns: id, sender_name, message_content, tone_type, is_read, created_at
  */
 export interface StarMailMessage {
   id: string;
-  sender_id: string;
   sender_name: string;
-  recipient_id: string;
-  message_body: string;
+  message_content: string;
+  tone_type: ToneType;
   is_read: boolean;
   created_at: string;
-}
-
-/**
- * Tone metadata for Starlight's Voice
- */
-export type MessageTone = 'Supportive/Magical' | 'Warm/Fatherly';
-
-/**
- * Enhanced message with tone metadata
- */
-export interface EnhancedStarMailMessage extends StarMailMessage {
-  tone: MessageTone;
 }
