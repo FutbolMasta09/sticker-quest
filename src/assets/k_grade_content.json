@@ -1,0 +1,59 @@
+{
+  "grade": "Kindergarten",
+  "version": "2026.2",
+  "lexicon_limit": "TinyStories-1500",
+  "stickers": [
+    {
+      "id": "s_snake",
+      "sticker_name": "Sammy Snake",
+      "target_cvc": "SUN",
+      "phoneme": "/s/",
+      "audio_path": "audio/phonics/s_slither.wav",
+      "skia_asset": "assets/stickers/snake.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_slither",
+          "description": "Snake Slither: Belly crawl on the carpet for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_s.wav"
+        },
+        "fine": {
+          "type": "pincer_scrunch",
+          "description": "Newspaper Scrunch: Use one hand to crumple a piece of paper into a ball.",
+          "instruction_audio": "audio/instructions/k_fine_s.wav"
+        }
+      },
+      "hints": [
+        "Listen to the sound: ssssss. Does your body feel like a wavy snake?",
+        "Try making a big 'S' shape with your arms while you crawl!",
+        "Uncle Ryan says: You're close! Keep that belly low to the ground like Sammy."
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "f_frog",
+      "sticker_name": "Felix Frog",
+      "target_cvc": "HOP",
+      "phoneme": "/h/",
+      "audio_path": "audio/phonics/h_hop.wav",
+      "skia_asset": "assets/stickers/frog.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "explosive_jump",
+          "description": "Frog Jump: Squat deep and jump as high as you can 3 times.",
+          "instruction_audio": "audio/instructions/k_gross_h.wav"
+        },
+        "fine": {
+          "type": "paper_tear",
+          "description": "Lily Pad Tear: Tear a green piece of paper into 5 small strips.",
+          "instruction_audio": "audio/instructions/k_fine_h.wav"
+        }
+      },
+      "hints": [
+        "Take a big breath in... then HHH-OP!",
+        "Can you jump high enough to catch a fly?",
+        "Keep trying! Frog legs are super strong, and yours are too."
+      ],
+      "mastery_gate": "vision_motion_verify"
+    }
+  ]
+}
