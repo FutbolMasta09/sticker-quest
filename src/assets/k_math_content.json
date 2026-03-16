@@ -1,0 +1,399 @@
+{
+  "grade": "Kindergarten",
+  "subject": "Math",
+  "version": "2026.1",
+  "lexicon_limit": "TinyStories-1500",
+  "sticker_count": 15,
+  "stickers": [
+    {
+      "id": "cnt1_ant",
+      "sticker_name": "Annie Ant",
+      "math_domain": "counting",
+      "target_concept": "Count to 5",
+      "audio_path": "audio/math/cnt1_ant.wav",
+      "skia_asset": "assets/stickers/ant.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_stepping",
+          "description": "Annie Ant walks: Take 5 big steps forward and say each number out loud as you step — 1, 2, 3, 4, 5!",
+          "instruction_audio": "audio/instructions/k_gross_cnt1_ant.wav"
+        },
+        "fine": {
+          "type": "pincer_dotting",
+          "description": "Annie Ant dots: Use a crayon to make 5 dots on paper, then point to each dot one at a time and count out loud.",
+          "instruction_audio": "audio/instructions/k_fine_cnt1_ant.wav"
+        }
+      },
+      "hints": [
+        "Every time you take one step, say one number. One step is 1, two steps is 2 — all the way to 5!",
+        "Hold up your fingers to help you count. When you have 5 fingers up, you made it to 5!",
+        "Uncle Ryan says: Say the numbers nice and slow while you step. 1... 2... 3... 4... 5! You can do it!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "cnt2_elephant",
+      "sticker_name": "Ellie Elephant",
+      "math_domain": "counting",
+      "target_concept": "Count to 10",
+      "audio_path": "audio/math/cnt2_elephant.wav",
+      "skia_asset": "assets/stickers/elephant.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_jumping",
+          "description": "Ellie Elephant jumps: Do 10 small jumps in place and say a number out loud each time you land — 1 all the way to 10!",
+          "instruction_audio": "audio/instructions/k_gross_cnt2_elephant.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Ellie Elephant draws: Draw 10 small circles in a row on your paper, then touch each one with your finger and count them out loud.",
+          "instruction_audio": "audio/instructions/k_fine_cnt2_elephant.wav"
+        }
+      },
+      "hints": [
+        "Jump and say a number each time your feet hit the ground. Keep going until you get to 10!",
+        "Touch each circle on your paper one at a time. Say the next number each time you touch a new one.",
+        "Aunt Kira says: If you forget where you stopped, just start over from 1. Starting over is totally okay!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "num1_giraffe",
+      "sticker_name": "Gary Giraffe",
+      "math_domain": "number_recognition",
+      "target_concept": "Recognize written numbers 1–5",
+      "audio_path": "audio/math/num1_giraffe.wav",
+      "skia_asset": "assets/stickers/giraffe.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_finger_show",
+          "description": "Gary Giraffe shows: When you see a number, hold up that many fingers as fast as you can — see the number 3, show 3 fingers!",
+          "instruction_audio": "audio/instructions/k_gross_num1_giraffe.wav"
+        },
+        "fine": {
+          "type": "pincer_tracing",
+          "description": "Gary Giraffe traces: Write the numbers 1, 2, 3, 4, and 5 on paper — trace each one with your finger first, then write it with a crayon.",
+          "instruction_audio": "audio/instructions/k_fine_num1_giraffe.wav"
+        }
+      },
+      "hints": [
+        "Look at the shape of each number. A 1 is just one tall line. A 2 has a curve and a flat bottom.",
+        "When you see a number, hold up the same amount of fingers. That helps your brain remember what it means!",
+        "Uncle Ryan says: Trace the number in the air with your pointer finger and say its name out loud. That is the best way to learn it!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "num2_owl",
+      "sticker_name": "Oliver Owl",
+      "math_domain": "number_recognition",
+      "target_concept": "Recognize written numbers 6–10",
+      "audio_path": "audio/math/num2_owl.wav",
+      "skia_asset": "assets/stickers/owl.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_clapping",
+          "description": "Oliver Owl claps: When you see a number, clap that many times and count out loud — see a 7, clap 7 times!",
+          "instruction_audio": "audio/instructions/k_gross_num2_owl.wav"
+        },
+        "fine": {
+          "type": "pincer_writing",
+          "description": "Oliver Owl writes: Write the numbers 6, 7, 8, 9, and 10 on paper one at a time — say each number out loud as you write it.",
+          "instruction_audio": "audio/instructions/k_fine_num2_owl.wav"
+        }
+      },
+      "hints": [
+        "A 6 has a circle at the bottom. A 9 has a circle at the top. Look for where the circle is to tell them apart!",
+        "Clap and say the number at the same time. Your hands and your voice working together helps your brain remember!",
+        "Aunt Kira says: An 8 looks like two circles sitting on top of each other. Once you see that, you will always know which one is 8!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "otc1_penguin",
+      "sticker_name": "Pete Penguin",
+      "math_domain": "counting",
+      "target_concept": "One-to-one counting",
+      "audio_path": "audio/math/otc1_penguin.wav",
+      "skia_asset": "assets/stickers/penguin.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_tapping",
+          "description": "Pete Penguin taps: Hold up both hands and tap each finger one at a time while counting out loud — say one number for each finger, and only touch each finger once!",
+          "instruction_audio": "audio/instructions/k_gross_otc1_penguin.wav"
+        },
+        "fine": {
+          "type": "pincer_pointing",
+          "description": "Pete Penguin points: Draw 6 small fish on paper, then touch each fish one time with your finger while you count them out loud — do not touch any fish two times!",
+          "instruction_audio": "audio/instructions/k_fine_otc1_penguin.wav"
+        }
+      },
+      "hints": [
+        "Say one number each time you touch one thing. Only say a new number when you touch a new one!",
+        "Move your finger slowly from fish to fish. Touch the next fish only when you say the next number.",
+        "Uncle Ryan says: When you touch each one only one time, you are counting the right way. Slow and careful is the best way!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "shp1_hedgehog",
+      "sticker_name": "Hazel Hedgehog",
+      "math_domain": "geometry",
+      "target_concept": "Recognize and name a circle",
+      "audio_path": "audio/math/shp1_hedgehog.wav",
+      "skia_asset": "assets/stickers/hedgehog.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_spinning",
+          "description": "Hazel Hedgehog rolls: Stretch your arms out wide and spin your whole body around in one big slow circle for 10 seconds — round and round with no corners, just like Hazel rolling through the meadow!",
+          "instruction_audio": "audio/instructions/k_gross_shp1_hedgehog.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Hazel Hedgehog spines: Use a crayon to draw a circle on paper, then draw tiny little lines all the way around the outside edge — just like the spines on Hazel's back!",
+          "instruction_audio": "audio/instructions/k_fine_shp1_hedgehog.wav"
+        }
+      },
+      "hints": [
+        "A circle is round all the way around. It has no corners and no flat sides — just one smooth curvy line!",
+        "When you spin around, the path your body makes is a circle shape. Round and round — that is a circle!",
+        "Aunt Kira says: Start your crayon at the top and go all the way around until the line meets back where it started. No pointy corners anywhere means you drew a circle!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "shp2_duck",
+      "sticker_name": "Daisy Duck",
+      "math_domain": "geometry",
+      "target_concept": "Recognize and name a square",
+      "audio_path": "audio/math/shp2_duck.wav",
+      "skia_asset": "assets/stickers/duck.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_walking_path",
+          "description": "Daisy Duck waddles: Walk forward 3 steps, turn right, walk 3 steps, turn right, walk 3 steps, turn right, walk 3 steps — you just walked the shape of a square!",
+          "instruction_audio": "audio/instructions/k_gross_shp2_duck.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Daisy Duck draws: Use a crayon to draw a square on paper — 4 sides that are all the same size and 4 corners.",
+          "instruction_audio": "audio/instructions/k_fine_shp2_duck.wav"
+        }
+      },
+      "hints": [
+        "A square has 4 sides and 4 corners. All 4 sides are the same size — not long, not short, all the same!",
+        "When you walk the square, count your turns. You turn 4 times because a square has 4 corners!",
+        "Uncle Ryan says: Draw one side going across, then one side going down, then one going back across, then one going back up. Four sides and you have a square!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "shp3_bee",
+      "sticker_name": "Bella Bee",
+      "math_domain": "geometry",
+      "target_concept": "Recognize and name a triangle",
+      "audio_path": "audio/math/shp3_bee.wav",
+      "skia_asset": "assets/stickers/bee.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_arm_shape",
+          "description": "Bella Bee buzzes: Put both arms up over your head and press your fingertips together to make a pointy triangle shape — like a pointy roof on a house!",
+          "instruction_audio": "audio/instructions/k_gross_shp3_bee.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Bella Bee draws: Use a crayon to draw a triangle on paper — make 3 lines that connect at 3 pointy corners.",
+          "instruction_audio": "audio/instructions/k_fine_shp3_bee.wav"
+        }
+      },
+      "hints": [
+        "A triangle has 3 sides and 3 corners. Count the pointy corners when you see one — if you count 3, it is a triangle!",
+        "When you put your hands above your head and touch your fingertips together, that pointy shape is a triangle!",
+        "Aunt Kira says: Draw one line going down to the left, one going down to the right, then one going across the bottom to close it up. Three lines make a triangle!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "shp4_crab",
+      "sticker_name": "Carl Crab",
+      "math_domain": "geometry",
+      "target_concept": "Recognize and name a rectangle",
+      "audio_path": "audio/math/shp4_crab.wav",
+      "skia_asset": "assets/stickers/crab.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_walking_path",
+          "description": "Carl Crab walks sideways: Walk sideways 5 steps, turn, walk sideways 2 steps, turn, walk sideways 5 steps, turn, walk sideways 2 steps — you just walked a rectangle!",
+          "instruction_audio": "audio/instructions/k_gross_shp4_crab.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Carl Crab draws: Use a crayon to draw a rectangle on paper — make 2 long sides and 2 short sides with 4 corners.",
+          "instruction_audio": "audio/instructions/k_fine_shp4_crab.wav"
+        }
+      },
+      "hints": [
+        "A rectangle has 4 sides and 4 corners. But two sides are long and two sides are short — they are not all the same!",
+        "A rectangle looks like a square that got stretched out long on two sides. The long sides match each other and the short sides match each other.",
+        "Uncle Ryan says: Draw a long line, then a short line going down, then a long line going back, then a short line going up to close it. That is your rectangle!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "pat1_kangaroo",
+      "sticker_name": "Kiki Kangaroo",
+      "math_domain": "patterns",
+      "target_concept": "AB patterns",
+      "audio_path": "audio/math/pat1_kangaroo.wav",
+      "skia_asset": "assets/stickers/kangaroo.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_rhythmic_movement",
+          "description": "Kiki Kangaroo moves: Clap your hands then stomp one foot — clap, stomp, clap, stomp! Do it 4 times in a row without stopping.",
+          "instruction_audio": "audio/instructions/k_gross_pat1_kangaroo.wav"
+        },
+        "fine": {
+          "type": "pincer_arranging",
+          "description": "Kiki Kangaroo makes a pattern: Tear paper into small pieces and color some red and some blue with crayons. Lay them in a row: red, blue, red, blue, red, blue.",
+          "instruction_audio": "audio/instructions/k_fine_pat1_kangaroo.wav"
+        }
+      },
+      "hints": [
+        "A pattern does the same thing over and over. Clap, stomp, clap, stomp — it keeps going the same way each time!",
+        "Say the moves while you do them out loud: clap, stomp, clap, stomp. Saying it helps your body stay in the pattern!",
+        "Aunt Kira says: Clap first, stomp second — every single time. If you mix it up, just start over from the clap!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "srt1_ladybug",
+      "sticker_name": "Lila Ladybug",
+      "math_domain": "measurement_and_data",
+      "target_concept": "Sort by size: big vs. small",
+      "audio_path": "audio/math/srt1_ladybug.wav",
+      "skia_asset": "assets/stickers/ladybug.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_body_size",
+          "description": "Lila Ladybug grows and shrinks: Stretch your whole body up as BIG as you can for 3 seconds, then curl up as SMALL as you can for 3 seconds. Do that two times!",
+          "instruction_audio": "audio/instructions/k_gross_srt1_ladybug.wav"
+        },
+        "fine": {
+          "type": "pincer_sorting",
+          "description": "Lila Ladybug sorts: Tear paper into some big pieces and some small pieces. Put all the big pieces in one pile and all the small pieces in a different pile.",
+          "instruction_audio": "audio/instructions/k_fine_srt1_ladybug.wav"
+        }
+      },
+      "hints": [
+        "Big things take up more room and small things take up less room. Look at two pieces and ask: which one is bigger?",
+        "Put all the big pieces together in one pile and all the little pieces together in another pile. Two groups — big and small!",
+        "Uncle Ryan says: Hold up two pieces at the same time. The one that covers more of your hand is the bigger one. That is how you can always tell!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "add1_octopus",
+      "sticker_name": "Ollie Octopus",
+      "math_domain": "operations",
+      "target_concept": "Addition: numbers that make 3",
+      "audio_path": "audio/math/add1_octopus.wav",
+      "skia_asset": "assets/stickers/octopus.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_grouping",
+          "description": "Ollie Octopus adds: Hold up 1 finger on one hand. Then hold up 2 fingers on the other hand. Bring both hands together and count ALL your fingers — how many do you have?",
+          "instruction_audio": "audio/instructions/k_gross_add1_octopus.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Ollie Octopus draws: Draw 1 dot on the left side of your paper and 2 dots on the right side. Now point to every single dot and count them all together.",
+          "instruction_audio": "audio/instructions/k_fine_add1_octopus.wav"
+        }
+      },
+      "hints": [
+        "1 and 2 go together to make 3. Hold up 1 finger, then 2 more fingers — count every finger you see!",
+        "Draw 1 dot, then draw 2 more dots right next to them. Now count every single dot. You will get to 3!",
+        "Aunt Kira says: Adding means putting two groups together. Put your 1 finger group and your 2 finger group together and count them all. That is what adding is!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "add2_panda",
+      "sticker_name": "Pip Panda",
+      "math_domain": "operations",
+      "target_concept": "Addition: numbers that make 4",
+      "audio_path": "audio/math/add2_panda.wav",
+      "skia_asset": "assets/stickers/panda.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_tapping_groups",
+          "description": "Pip Panda taps: Tap your left knee 2 times, then tap your right knee 2 more times. Count every single tap — how many taps was that all together?",
+          "instruction_audio": "audio/instructions/k_gross_add2_panda.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Pip Panda draws: Draw 2 circles on the left side of your paper and 2 more circles on the right side. Count every circle — how many do you have in all?",
+          "instruction_audio": "audio/instructions/k_fine_add2_panda.wav"
+        }
+      },
+      "hints": [
+        "2 and 2 go together to make 4. Tap your left knee 2 times and your right knee 2 times, then count all the taps!",
+        "You can also do 1 and 3 to make 4. Try tapping 1 time then 3 times — count them all and you still get 4!",
+        "Uncle Ryan says: When you add, you put two groups together to make one big group. Count all of them together at the end and you will get 4!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "add3_rhino",
+      "sticker_name": "Remy Rhino",
+      "math_domain": "operations",
+      "target_concept": "Addition: numbers that make 5",
+      "audio_path": "audio/math/add3_rhino.wav",
+      "skia_asset": "assets/stickers/rhino.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_stomping_groups",
+          "description": "Remy Rhino stomps: Stomp 2 times, then stomp 3 more times. Count every stomp out loud — how many stomps was that all together?",
+          "instruction_audio": "audio/instructions/k_gross_add3_rhino.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Remy Rhino draws: Draw 2 stars on one side of your paper and 3 stars on the other side. Touch every star and count them all — how many stars do you have?",
+          "instruction_audio": "audio/instructions/k_fine_add3_rhino.wav"
+        }
+      },
+      "hints": [
+        "2 stomps and 3 more stomps makes 5 stomps in all. Count out loud every time your foot goes down!",
+        "Look at your stars. Touch each one and count: 1, 2 on this side... then keep going: 3, 4, 5 on the other side!",
+        "Aunt Kira says: Hold up 2 fingers on one hand and 3 fingers on the other hand. Count every finger and you will always get 5. That is the magic of 2 and 3!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "cmp1_hippo",
+      "sticker_name": "Hugo Hippo",
+      "math_domain": "measurement_and_data",
+      "target_concept": "More vs. fewer",
+      "audio_path": "audio/math/cmp1_hippo.wav",
+      "skia_asset": "assets/stickers/hippo.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_stomping_groups",
+          "description": "Hugo Hippo stomps: Stomp 2 times for the small group, then stomp 5 times for the big group. Count every stomp — which group made you stomp more times? That is the group with more!",
+          "instruction_audio": "audio/instructions/k_gross_cmp1_hippo.wav"
+        },
+        "fine": {
+          "type": "pincer_drawing",
+          "description": "Hugo Hippo draws: Draw 3 dots inside one circle on your paper and 6 dots inside another circle. Count each group and point to the circle that has more dots.",
+          "instruction_audio": "audio/instructions/k_fine_cmp1_hippo.wav"
+        }
+      },
+      "hints": [
+        "Count both groups. The group with the bigger number has more. The group with the smaller number has fewer!",
+        "Draw a line from one dot in the first group to one dot in the second group. If one group still has dots left with no lines, that group has more!",
+        "Uncle Ryan says: Count the first group and hold up that many fingers. Then count the second group. The group that needs more fingers is the one with more!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    }
+  ]
+}

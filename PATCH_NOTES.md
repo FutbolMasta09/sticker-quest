@@ -1,3 +1,27 @@
+## [2026-03-16o] Session: K Math Stickers + Kira + Trademark Flag
+**Status:** Content sprint — math stickers committed, docs updated
+
+### ACCOMPLISHMENTS
+1. **`k_math_content.json` created** — 15 K math stickers, version 2026.1. Covers: counting 1–5, counting 1–10, number recognition 1–5, number recognition 6–10, one-to-one counting, circle, square, triangle, rectangle, AB patterns, sort by size, addition to 3/4/5, more vs. fewer.
+2. **2 animal conflicts fixed** — lion and tiger were already used in phonics set. Replaced with Hazel Hedgehog (circle) and Hugo Hippo (more vs. fewer). My error in the original prompt — lion, tiger, wolf, monkey, blowfish, thrush were missing from the exclusion list.
+3. **"Penny Panda" renamed to "Pip Panda"** — avoided name collision with "Penny Pig" in phonics set.
+4. **Ryan/Kira hint alternation implemented** — math stickers alternate "Uncle Ryan says:" and "Aunt Kira says:" for Libby's private build. Kira stickers: cnt2, num2, shp1, shp3, pat1, add1, add3.
+5. **Kira added to PROJECT_CONTEXT.md** — People section updated. Note about public build using generic hint attribution added to risk register.
+6. **App name trademark flag added** — "Sticker Quest" needs a full trademark and App Store name search before Phase 4. Name change may be required. Added to 🟡 Must Fix Before Public Launch.
+7. **Localization added to Future Features Backlog** — UI localization is Phase 4+. Content localization (Spanish etc.) is post-revenue, Phase 5+. Documented decision: English V1 first.
+8. **`copy-box-protocol.mdc` rule created** — All copyable content (prompts, JSON, commands) now presented in code blocks with one-click copy button.
+9. **Audio scripts prompt written and ready** — 50-script prompt for all 25 phonics stickers (gross + fine) saved in this session. Ready to run on claude.ai immediately.
+
+### PENDING — RUN NEXT OFF-PEAK
+- Audio scripts sprint: 50 scripts for phonics stickers — prompt is ready, paste into fresh claude.ai chat
+- After audio scripts: lore copy sprint (~60 messages in Starlight's voice)
+- After lore copy: K math audio scripts (30 files — depends on math stickers being final ✅)
+
+### KNOWN NOTE
+- Phonics stickers in k_grade_content.json still use only "Uncle Ryan says:" — needs a future pass to alternate with "Aunt Kira says:" on roughly half the stickers (stickers 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24 by position).
+
+---
+
 ## ⭐ ONE-TIME NEXT SESSION: Cursor Orientation
 **Remove this flag after completing.**
 

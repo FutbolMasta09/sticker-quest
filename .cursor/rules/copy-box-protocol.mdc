@@ -1,0 +1,38 @@
+# COPY BOX PROTOCOL
+
+## The Rule
+Any time Ryan needs to copy text — a prompt, a JSON snippet, a command, a script,
+or anything else meant to be pasted somewhere else — wrap it in a code block.
+
+Code blocks in Cursor show a one-click copy button in the top-right corner on hover.
+This saves Ryan from manually selecting text.
+
+## When to Use a Code Block
+
+Always use a code block when presenting:
+- Claude Pro prompts (the most common case)
+- JSON content to paste into a file
+- Terminal commands to run
+- Any multi-line text Ryan needs to copy and paste somewhere
+
+## Format
+
+Use triple backticks with a language tag (use `text` if it's a plain prompt):
+
+```text
+[content to copy goes here]
+```
+
+For JSON:
+```json
+[json content here]
+```
+
+For terminal commands:
+```bash
+npx expo start
+```
+
+## Never Do This Again
+Do NOT present a copyable prompt as a plain paragraph or a quoted block.
+Ryan should never have to manually select text to copy it.

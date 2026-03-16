@@ -34,7 +34,7 @@ Run this every time new JSON content arrives from Claude Pro (stickers, math pro
 - [ ] **Schema valid?** All required fields present: id, sticker_name, target_concept, phoneme/math_domain, audio_path, skia_asset, motor_tasks (gross + fine), hints (exactly 3), mastery_gate.
 - [ ] **CVC/concept valid?** Phoneme stickers: true CVC word. Math stickers: real K-level concept.
 - [ ] **Hints: exactly 3?** No more, no fewer.
-- [ ] **Hint 3 starts with "Uncle Ryan says:"?** Required on every sticker.
+- [ ] **Hint 3 starts with "Uncle Ryan says:" or "Aunt Kira says:" (alternating)?** Required on every sticker in Libby's private build. Public build uses a configurable generic equivalent.
 - [ ] **TinyStories compliant?** Flag any word in hints or descriptions that a 5-year-old is unlikely to know.
 - [ ] **Motor milestone safe?** No gross motor task requires static balance longer than 5 seconds.
 - [ ] **Gross task under 15 seconds?** No equipment required.

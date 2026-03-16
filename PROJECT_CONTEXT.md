@@ -9,9 +9,12 @@ Ryan built this for his niece Libby. That story is authentic, emotional, and the
 ---
 
 ## People
-- **Ryan** — Non-coder Cognitive Architect (Uncle). Decision-maker. Not a developer.
-- **Libby** — The child this is built for. Kindergarten age, Fall 2026.
+- **Ryan** — Non-coder Cognitive Architect (Uncle). Decision-maker. Not a developer. Based in Florida.
+- **Kira** — Ryan's wife (Aunt). Co-dedicatee. Included in Libby's private version alongside Ryan. Based in Florida.
+- **Libby** — The child this is built for. Kindergarten age, Fall 2026. Based in Tennessee.
 - **Lead Developer** — Cursor AI (this tool).
+
+**Note on Ryan & Kira in content:** In Libby's private version, the third hint on stickers alternates between "Uncle Ryan says:" and "Aunt Kira says:" so both are part of Libby's experience. This personal detail does NOT appear in the public version — the public version uses generic "Coach says:" or a configurable name. All content files for Libby's private build use the Ryan/Kira alternation.
 
 ---
 
@@ -197,12 +200,14 @@ Issues that will cause problems if not addressed before launch. Ordered by sever
 
 | Risk | Detail | Fix |
 |---|---|---|
+| **App name trademark** | "Sticker Quest" may be too saturated or conflicting on app stores — needs thorough search before public submission | Run full trademark + App Store name search before Phase 4 begins. Budget for a name change if needed. |
 | CA SB 243 watermark | All AI content needs visible disclosure text | Draft copy, add to all AI-generated screens |
 | No error boundaries | A single component crash takes down the whole app | Wrap key screens in React error boundaries |
 | Supabase offline | No fallback if tablet has no internet — Star Mail fails silently | Add offline queue or graceful "no internet" message |
 | 3-hour daily lock | Documented requirement, not implemented anywhere | Add session timer to `useUserStore` |
 | Onboarding exposes "Libby" | Welcome screen hardcodes Libby's name for all users | Make generic or load from store after profile exists |
 | No `.env` validation | App silently fails if Supabase keys are missing | Add startup check with clear error message |
+| Ryan/Kira hints in public build | "Uncle Ryan says:" and "Aunt Kira says:" are personal to Libby — public version needs generic equivalent | Replace with configurable hint attribution (e.g., parent-set name, or generic "Great tip:") before public launch |
 
 ### 🟠 Quality Before Fall 2026
 
@@ -365,6 +370,12 @@ A separate seasonal mode, not a new grade. Activated by parent manually in June.
 Math, reading comprehension, science connections. Not in K scope.
 Each subject would need its own motor-task mapping system.
 Flag as potential G2/G3 expansion only.
+
+### International Editions / Localization (Post-Revenue, Phase 5+)
+UI localization (menus, parent screens) is relatively straightforward and could happen in Phase 4.
+**Content localization is a different product entirely.** Spanish phonics, for example, uses a completely different phoneme system — CVC words, motor tasks, hints, lore copy, and audio scripts would all need to be rebuilt from scratch for each language. This is not a translation sprint; it is a full content rebuild.
+**Decision:** Build a strong, proven English V1 first. After K-English is generating revenue and stable, evaluate whether to license the engine to content partners or build international editions in-house.
+Do NOT begin localization work before the English public launch is stable and profitable.
 
 ### Classroom & School Features (Phase 4, Post-Public-Launch)
 Teacher web dashboard, class progress view, school license key system.
