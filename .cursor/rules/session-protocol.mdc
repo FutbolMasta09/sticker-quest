@@ -73,9 +73,25 @@ Run this before ending any conversation where meaningful work was done.
    Tell Ryan: "Everything is saved to GitHub. Your work is backed up."
    If push fails, explain the problem plainly and give a simple fix.
 
-6. **Clear next move**
-   End with the standard "Your next move:" line so Ryan always knows exactly
-   what to do when he comes back.
+6. **Next session options — prioritized**
+   Do not just say "Your next move." Instead, give Ryan a short prioritized menu
+   of 2–4 options based on:
+   - Current phase and what's blocking progress
+   - Whether a time-sensitive promo (Claude 2x, etc.) is active or expiring soon
+   - Whether we're currently in peak or off-peak hours
+   - What's sitting in PENDING_SPRINTS.md
+   - Any open critical flags in PROJECT_CONTEXT.md
+
+   Format it like this:
+
+   **Next Session — Your Options (in my recommended order):**
+   1. [URGENT if applicable] [Option name] — [1-sentence reason why]
+   2. [Option name] — [1-sentence reason why]
+   3. [Option name] — [1-sentence reason why]
+   *(Optional) Off-peak bonus: [Name of Claude Pro sprint to run] — best time: [when]*
+
+   Always give a recommended order. Never just list options without a preference.
+   Always factor in deadlines and promo windows when ranking.
 
 7. **Flag anything time-sensitive**
    If something needs to happen before a deadline (e.g., March 27 Claude Pro sprint),
