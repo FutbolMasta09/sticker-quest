@@ -154,5 +154,13 @@ All protocol rules live in `.cursor/rules/` and are automatically loaded by Curs
 
 ---
 
+### Reference Docs (open these anytime)
+- `PROTOCOLS.md` — this master list
+- `PROJECT_CONTEXT.md` — full project brain
+- `PATCH_NOTES.md` — session history + one-time flags
+- `PENDING_SPRINTS.md` — Claude Pro prompt queue (checked every off-peak session)
+
+---
+
 *Last updated: 2026-03-16*
 *All rules are in `.cursor/rules/` and load automatically in every Cursor session.*

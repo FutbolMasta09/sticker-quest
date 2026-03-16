@@ -10,6 +10,20 @@ Use this any time Ryan is about to run a content generation session on claude.ai
 
 ---
 
+## WHEN A PROMPT IS DEFERRED
+
+If Ryan decides NOT to run a Claude Pro prompt right now:
+1. Add it to PENDING_SPRINTS.md with:
+   - Name and priority
+   - Estimated run time
+   - Where the prompt lives (or write it inline)
+   - Expected output format
+   - What to do with the output after
+2. Tell Ryan: "Saved to the sprint queue. I'll remind you next off-peak session."
+3. Do NOT lose the prompt — it must be recoverable without rebuilding it from scratch.
+
+---
+
 ## PRE-SPRINT CHECKLIST (Do this in Cursor BEFORE going to claude.ai)
 
 1. **Check the time**

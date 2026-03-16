@@ -1,3 +1,21 @@
+## ⭐ ONE-TIME NEXT SESSION: Cursor Orientation
+**Remove this flag after completing.**
+
+At the start of the next session, before any work:
+Walk Ryan through the Cursor UI and tools he has available. Cover:
+1. The left sidebar icons and what each one does
+2. How to open and read the .cursor/rules/ files
+3. How to use @Codebase in the chat box
+4. Where to find and click "Debug with AI" when a terminal error appears
+5. How to open the Source Control panel (Ctrl+Shift+G) for Review Changes
+6. How to use the terminal panel at the bottom (for running `npx expo start`)
+7. Quick tour of the project file structure in the Explorer panel
+
+Keep it practical — show don't tell, reference real files in this project.
+Goal: Ryan feels comfortable navigating Cursor independently before we build more.
+
+---
+
 ## [2026-03-16k] Session: Session Protocol Created
 **Status:** Infrastructure — session entry/exit checklist now permanent
 

@@ -93,6 +93,41 @@ Run this before ending any conversation where meaningful work was done.
 
 ---
 
+## ONE-TIME NEXT SESSION FLAG
+
+Check PATCH_NOTES.md for any items marked "ONE-TIME NEXT SESSION."
+If found, complete that item before proceeding with normal work.
+Remove the flag from PATCH_NOTES after completing it.
+
+Current one-time item: **Cursor Orientation** (see PATCH_NOTES.md)
+
+---
+
+## OFF-PEAK SESSION: CHECK PENDING SPRINTS
+
+At the start of ANY off-peak session (before 8 AM or after 2 PM ET on weekdays,
+or any time on weekends), check PENDING_SPRINTS.md and surface the top item:
+
+"You're in the 2x window. Top pending Claude Pro sprint: [name].
+Estimated time: [X] minutes. Want to run it now or work on code first?"
+
+Do not skip this check during off-peak sessions. The sprint queue exists
+so no prepared prompt is ever forgotten.
+
+---
+
+## INTERIM COMMIT (90-MINUTE RULE)
+
+If a session has been running for 90+ minutes without a commit:
+- Pause and do an interim commit: `git add .` → `git commit` → `git push`
+- Label it clearly: "Checkpoint: [brief description of work in progress]"
+- Tell Ryan: "Saving a checkpoint to GitHub — nothing is lost if we stop here."
+- Continue the session after the commit.
+
+This prevents losing more than 90 minutes of work if anything goes wrong.
+
+---
+
 ## WHEN TO SKIP THE ENTRY BRIEFING
 
 Skip the full briefing if:
