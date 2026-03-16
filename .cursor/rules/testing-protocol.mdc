@@ -6,6 +6,37 @@ alwaysApply: true
 
 # TESTING PROTOCOL
 
+## Testing Cadence — When Ryan Should Test
+
+**NEVER prompt testing after:**
+- Content-only sessions (JSON files, audio scripts, markdown, documentation)
+- Prompt writing or Claude Pro sprint prep
+- Rule or protocol updates
+
+**ALWAYS prompt testing after:**
+- Any code session that touches QuestGrid, useMasteryStore, useUserStore, or `app/_layout.tsx`
+- Any Skia component change (StarlightSpirit, StickerCanvas)
+- Any navigation, routing, or animation change
+- Any new screen or new route added
+- Any AsyncStorage or Supabase change
+
+**Device guidance:**
+- Expo Go on any Android phone: acceptable for quick smoke tests during development
+- Fire HD 10: REQUIRED for any Skia, gesture, or performance testing
+- Fire HD 10: REQUIRED before declaring any phase complete
+- Fire HD 10: REQUIRED before Libby ever uses the app
+
+**Four milestone tests — surface these proactively at phase completion:**
+
+| Milestone | Focus |
+|---|---|
+| Phase 1 complete | Quest grid shows real stickers from JSON. Mastery tracking works. Session lock triggers. |
+| Phase 2 complete | Audio plays. Sticker art loads. Story screens render without crashing. |
+| Phase 3 complete | Motion verify works. Camera data stays on device. No transmission. |
+| Pre-Libby | Full 15-minute session as Libby. Run child safety checklist. Parent PIN tested. |
+
+---
+
 ## When to Tell Ryan to Test
 
 After ANY of the following types of changes, end the response with a TEST REQUIRED block:
