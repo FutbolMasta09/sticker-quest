@@ -1,0 +1,59 @@
+---
+description: Which Cursor Pro tools to use for each task type in Sticker Quest.
+globs: **/*
+alwaysApply: true
+---
+
+# CURSOR PRO TOOL ROUTING
+
+Tell Ryan which tool to use when the task fits. Never make him guess.
+
+## Tool Guide
+
+### Debug with AI (Most Important for Ryan)
+**When:** A red error appears in the terminal, or the app crashes or freezes.
+**How:** Look for the "Debug" button that appears next to the red error text in the terminal panel. Click it. Cursor sends me the full error with context automatically.
+**Do NOT** copy/paste the error manually — use the button. It gives me more information.
+
+### @Codebase (Librarian Search)
+**When:** Ryan asks "where is X?" or "how does Y work?" across multiple files.
+**How:** In the chat box, type @Codebase before the question.
+**Best model for this:** Switch to Gemini Flash in the model picker for near-instant results.
+**Example:** `@Codebase where is the star counter used?`
+
+### Notepads (@-Mentions for Reusable Context)
+**When:** A chunk of information needs to be reused across many sessions.
+**How to find in Cursor UI:**
+Look in the LEFT SIDEBAR of Cursor for a small notebook/page icon. It may also appear as a tab in the chat panel. If you do not see it, your Cursor version may put it under a different label — check cursor.com/docs for "Notepads" in your version.
+
+**If you cannot find Notepads at all:**
+This project already achieves the same result through PROJECT_CONTEXT.md and PATCH_NOTES.md. These are always read at the start of sessions and serve the same purpose. You do not need Notepads for this project to work — they are a nice-to-have, not a requirement.
+
+**If you do find and create Notepads, suggested ones:**
+- `@Libby-Progress` — which stickers she has mastered (update as she levels up)
+- `@Sprint-Goals` — current Phase 1 completion checklist
+
+### Background Agents
+**When:** A task is large and would take many minutes (e.g., "rebuild the entire mastery store and rewire QuestGrid").
+**How:** In the chat, say "run this as a background agent." Cursor works while you do other things. Check back when notified.
+**Caution:** Review all changes before accepting — background agents move fast.
+
+### Review Changes (Before Any Commit)
+**When:** Before committing code to git, especially before any session involving Libby testing the app.
+**How:** Open Source Control panel (Ctrl+Shift+G) → click "Review with AI" on the diff.
+**Goal:** Catch any visible bugs, developer-only text, or TinyStories violations before Libby sees the app.
+
+### Cursor Tab (Always On)
+**What it is:** AI autocomplete that appears as you type. Gray ghost text = Tab to accept.
+**No action needed** — it is always running.
+
+## Quick Reference Card
+
+| Problem | Tool to use |
+|---|---|
+| Red error in terminal | Debug with AI button |
+| "Where is X in the code?" | @Codebase + Gemini Flash |
+| Reuse project context | @Notepad |
+| Big multi-file task | Background Agent |
+| Before committing | Review Changes |
+| Writing new code | Cursor Tab + this chat |

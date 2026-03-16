@@ -1,0 +1,54 @@
+---
+description: Flags scope creep and protects the Sept 2026 Libby launch deadline.
+globs: **/*
+alwaysApply: true
+---
+
+# SCOPE CREEP GUARD
+
+## The Hard Deadline
+Libby must have a working Kindergarten app by September 2026.
+Phase 1 must complete by May 2026. Phase 2 by June. Phase 3 by July.
+
+## What Counts as Scope Creep
+
+Flag immediately (with explanation) if Ryan proposes adding ANY of the following
+to the current build (Phases 1–3) that is not already planned:
+
+- New grade content (G1, G2, G3) before K is fully working
+- AI conversation features (post-public-launch only)
+- School dashboard or classroom features (Phase 4+)
+- Summer mode content (post-K-launch)
+- Daily habits system (post-K-launch, separate sprint)
+- New school subjects (math, science, reading comprehension)
+- Monetization mechanics (IAP, license keys) before K is complete
+- New character storylines beyond Kindergarten/Starlight
+- COPPA legal flow (Phase 4, not Phase 1–3)
+- Any feature not needed for Libby to open the app in September
+
+## How to Flag It
+
+When scope creep is detected, say this clearly:
+
+"⚠️ SCOPE GUARD: This is a great idea — and it goes in the backlog, not the current build.
+Adding it now risks the September 2026 deadline. I've noted it in PROJECT_CONTEXT.md
+under Future Features. We can plan it after Libby has the app in her hands."
+
+Then add the idea to the Future Features Backlog in PROJECT_CONTEXT.md and continue
+with whatever Phase 1/2/3 task is next.
+
+## What Is NOT Scope Creep
+
+These are in-scope for the current build:
+- Mastery store, quest grid, progressive unlock (Phase 1)
+- Sticker art pipeline, audio files, Starlight story screens (Phase 2)
+- Motion verification on Fire HD 10 (Phase 3)
+- Bug fixes, performance optimization, Fire HD 10 scaling
+- Star Mail (parent pre-written messages, already in Supabase)
+- Parent PIN graduation gate WITH minimum requirements check
+- The 3-hour daily time lock
+- K Math content JSON (generate via Claude Pro before March 27)
+- Reading List V1 (15 curated books, parent marks completion, Book Stars)
+- Daily habit check-in (one per day, parent-set)
+- One school quest + one daily habit = the full daily session structure
+- Offline resilience (Star Mail queue, no WiFi errors during learning)

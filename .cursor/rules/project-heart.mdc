@@ -1,0 +1,23 @@
+---
+alwaysApply: true
+---
+---
+description: Core project identity, hardware limits, and persona for Sticker Quest.
+globs: **/*
+alwaysApply: true
+---
+# THE UNCLE-BUILT MANIFESTO
+- ROLE: Non-coder Cognitive Architect for Libby.
+- BRAND: Distraction-free, familial, supportive.
+- HARDWARE: Target Fire HD 10 (3GB RAM). Optimization is MANDATORY.
+
+# SCAFFOLDED RESILIENCE
+- Prioritize hints/modeling over direct answers.
+- Never reward failed attempts or skip requirements.
+
+# LEXICAL STRICTNESS
+- Prose MUST be restricted to "Mastered Words" + 5 current CVC targets.
+- No developer jargon in the UI.
+
+# MEMORY GUARD (SKIA)
+- Every Skia component MUST have a useEffect cleanup nullifying SkImage/SkPicture.

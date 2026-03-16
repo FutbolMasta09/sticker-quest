@@ -84,19 +84,21 @@ export default function RootLayout() {
           <Text style={{ fontSize: 12, color: '#999', textAlign: 'center', marginBottom: 32 }}>
             Try restarting the app. If the problem persists, clear storage below.
           </Text>
-          <TouchableOpacity
-            style={{
-              backgroundColor: '#FF3B30',
-              paddingHorizontal: 24,
-              paddingVertical: 12,
-              borderRadius: 12,
-            }}
-            onPress={handleClearStorage}
-          >
-            <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: 'bold' }}>
-              DEBUG: CLEAR STORAGE
-            </Text>
-          </TouchableOpacity>
+          {__DEV__ && (
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#FF3B30',
+                paddingHorizontal: 24,
+                paddingVertical: 12,
+                borderRadius: 12,
+              }}
+              onPress={handleClearStorage}
+            >
+              <Text style={{ color: '#FFFFFF', fontSize: 16, fontWeight: 'bold' }}>
+                DEBUG: CLEAR STORAGE
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
         <StatusBar style="auto" />
       </ThemeProvider>

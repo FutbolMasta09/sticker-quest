@@ -1,7 +1,8 @@
 {
   "grade": "Kindergarten",
-  "version": "2026.2",
+  "version": "2026.3",
   "lexicon_limit": "TinyStories-1500",
+  "sticker_count": 25,
   "stickers": [
     {
       "id": "s_snake",
@@ -30,28 +31,626 @@
       "mastery_gate": "vision_motion_verify"
     },
     {
+      "id": "b_bear",
+      "sticker_name": "Bobby Bear",
+      "target_cvc": "BED",
+      "phoneme": "/b/",
+      "audio_path": "audio/phonics/b_stomp.wav",
+      "skia_asset": "assets/stickers/bear.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_stomp",
+          "description": "Bear Stomp: Stomp both feet on the floor as loud as you can for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_b.wav"
+        },
+        "fine": {
+          "type": "pincer_scrunch",
+          "description": "Bear Claw: Use all five fingers to scrunch a sheet of paper into the tightest ball you can.",
+          "instruction_audio": "audio/instructions/k_fine_b.wav"
+        }
+      },
+      "hints": [
+        "Say bbb-eh-d real slow. Feel your lips pop open at the very start? That pop is the B sound!",
+        "Bobby stomps and his feet go BOOM! Say B like a big bear boom every time you stomp.",
+        "Uncle Ryan says: Press your lips together tight and then let them pop open — that little pop is a perfect B!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "k_cat",
+      "sticker_name": "Kiki Cat",
+      "target_cvc": "CAT",
+      "phoneme": "/k/",
+      "audio_path": "audio/phonics/k_pounce.wav",
+      "skia_asset": "assets/stickers/cat.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_pounce",
+          "description": "Cat Pounce: Crouch down low and jump forward with both feet together three times.",
+          "instruction_audio": "audio/instructions/k_gross_k.wav"
+        },
+        "fine": {
+          "type": "pincer_tear",
+          "description": "Cat Claws: Use your fingernails to scratch and tear five thin strips from a sheet of paper.",
+          "instruction_audio": "audio/instructions/k_fine_k.wav"
+        }
+      },
+      "hints": [
+        "Say kkk-a-t slow. Feel a little click way in the back of your mouth? That click is the K sound!",
+        "Kiki goes CLICK when she pounces! Say K and feel that click in the back of your mouth.",
+        "Uncle Ryan says: Try to make a click sound way in the back of your throat — that back-of-the-mouth click is your K!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "d_dog",
+      "sticker_name": "Digger Dog",
+      "target_cvc": "DIG",
+      "phoneme": "/d/",
+      "audio_path": "audio/phonics/d_dig.wav",
+      "skia_asset": "assets/stickers/dog.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_crawl_scratch",
+          "description": "Dog Dig: Get on your hands and knees and scratch both hands on the floor as fast as you can for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_d.wav"
+        },
+        "fine": {
+          "type": "pincer_roll",
+          "description": "Dog Bone: Roll a sheet of paper tightly into a long log shape to make a bone.",
+          "instruction_audio": "audio/instructions/k_fine_d.wav"
+        }
+      },
+      "hints": [
+        "Say ddd-i-g. Your tongue tip taps the top of your mouth right at the start — that tap is the D sound!",
+        "Digger taps his paws just like your tongue taps for D. Tap, tap, tap — dig that hole!",
+        "Uncle Ryan says: Touch your tongue right behind your top teeth and tap it down — that little tap is a great D sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
       "id": "f_frog",
-      "sticker_name": "Felix Frog",
-      "target_cvc": "HOP",
-      "phoneme": "/h/",
-      "audio_path": "audio/phonics/h_hop.wav",
+      "sticker_name": "Freddy Frog",
+      "target_cvc": "FIG",
+      "phoneme": "/f/",
+      "audio_path": "audio/phonics/f_jump.wav",
       "skia_asset": "assets/stickers/frog.skp",
       "motor_tasks": {
         "gross": {
-          "type": "explosive_jump",
-          "description": "Frog Jump: Squat deep and jump as high as you can 3 times.",
+          "type": "kinesthetic_frog_jump",
+          "description": "Frog Jump: Crouch down as low as you can and jump forward with both feet five times.",
+          "instruction_audio": "audio/instructions/k_gross_f.wav"
+        },
+        "fine": {
+          "type": "pincer_fold_legs",
+          "description": "Frog Legs: Fold a piece of paper in half, then fold each end back out flat to make two frog legs.",
+          "instruction_audio": "audio/instructions/k_fine_f.wav"
+        }
+      },
+      "hints": [
+        "Say fff-i-g. Put your top teeth on your bottom lip and blow air out — that blowy sound is F!",
+        "Freddy blows air when he jumps — FFFF! Say F while you leap and feel the air on your lip.",
+        "Uncle Ryan says: Rest your top teeth on your lip and blow — feel that air rushing out? That is a perfect F sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "g_goat",
+      "sticker_name": "Gus Goat",
+      "target_cvc": "GOT",
+      "phoneme": "/g/",
+      "audio_path": "audio/phonics/g_charge.wav",
+      "skia_asset": "assets/stickers/goat.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_charge",
+          "description": "Goat Charge: Lower your head and stomp forward three big heavy steps like a goat charging.",
+          "instruction_audio": "audio/instructions/k_gross_g.wav"
+        },
+        "fine": {
+          "type": "pincer_roll_cone",
+          "description": "Goat Horn: Roll a small piece of paper tightly from one corner into a cone shape to make a horn.",
+          "instruction_audio": "audio/instructions/k_fine_g.wav"
+        }
+      },
+      "hints": [
+        "Say ggg-o-t. The G sound comes from way in the back of your throat — like a little gurgle!",
+        "Gus makes a deep throat sound when he charges — grrr! Say G from the very back of your mouth.",
+        "Uncle Ryan says: Make a tiny gurgle sound way in the back of your throat — that deep sound back there is your G!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "h_horse",
+      "sticker_name": "Hattie Horse",
+      "target_cvc": "HOP",
+      "phoneme": "/h/",
+      "audio_path": "audio/phonics/h_gallop.wav",
+      "skia_asset": "assets/stickers/horse.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_gallop",
+          "description": "Horse Gallop: Skip and gallop across the room and back for 10 seconds like a horse running free.",
           "instruction_audio": "audio/instructions/k_gross_h.wav"
         },
         "fine": {
-          "type": "paper_tear",
-          "description": "Lily Pad Tear: Tear a green piece of paper into 5 small strips.",
+          "type": "pincer_tear_strips",
+          "description": "Horse Mane: Tear a sheet of paper into long thin strips and lay them all in a row to make a mane.",
           "instruction_audio": "audio/instructions/k_fine_h.wav"
         }
       },
       "hints": [
-        "Take a big breath in... then HHH-OP!",
-        "Can you jump high enough to catch a fly?",
-        "Keep trying! Frog legs are super strong, and yours are too."
+        "Say hhh-o-p. The H sound is just a warm puff of air coming out of your open mouth — try it!",
+        "Hattie huffs and puffs when she gallops — huh huh huh! Say H with every big step you take.",
+        "Uncle Ryan says: Hold your hand in front of your mouth and breathe out warm air — that warm puff is your H sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "j_jaguar",
+      "sticker_name": "Joey Jaguar",
+      "target_cvc": "JAM",
+      "phoneme": "/j/",
+      "audio_path": "audio/phonics/j_leap.wav",
+      "skia_asset": "assets/stickers/jaguar.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_leap",
+          "description": "Jaguar Leap: Jump forward as far as you can three times in a row like a jaguar leaping through the trees.",
+          "instruction_audio": "audio/instructions/k_gross_j.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_spots",
+          "description": "Jaguar Spots: Tear a piece of paper into many small round pieces and lay them out like jaguar spots.",
+          "instruction_audio": "audio/instructions/k_fine_j.wav"
+        }
+      },
+      "hints": [
+        "Say jjj-a-m. Your tongue jumps up then springs back down at the start — feel that little jump in your mouth?",
+        "Joey leaps and lands — JUMP! Say J every time you jump and feel your tongue spring.",
+        "Uncle Ryan says: Push your tongue up to the top of your mouth then let it spring down fast — that bounce is your J sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "l_lion",
+      "sticker_name": "Leo Lion",
+      "target_cvc": "LIP",
+      "phoneme": "/l/",
+      "audio_path": "audio/phonics/l_roar.wav",
+      "skia_asset": "assets/stickers/lion.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_roar_shake",
+          "description": "Lion Roar: Stand tall, stretch your arms out wide, and roar as loud as you can while shaking your head for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_l.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_mane",
+          "description": "Lion Mane: Tear a sheet of paper into many strips and lay them in a big circle like a lion's fluffy mane.",
+          "instruction_audio": "audio/instructions/k_fine_l.wav"
+        }
+      },
+      "hints": [
+        "Say lll-i-p. Your tongue tip touches just behind your top teeth and stays up — feel that? That is L!",
+        "Leo licks his lips — lll, lll, lll! Keep your tongue tip up high and let the sound flow out.",
+        "Uncle Ryan says: Touch your tongue right behind your top teeth and hold it there while you make sound — that is your L!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "m_monkey",
+      "sticker_name": "Milo Monkey",
+      "target_cvc": "MOP",
+      "phoneme": "/m/",
+      "audio_path": "audio/phonics/m_swing.wav",
+      "skia_asset": "assets/stickers/monkey.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_arm_swing",
+          "description": "Monkey Swing: Swing both arms from side to side while walking forward for 10 seconds like a monkey swinging through trees.",
+          "instruction_audio": "audio/instructions/k_gross_m.wav"
+        },
+        "fine": {
+          "type": "pincer_roll_banana",
+          "description": "Monkey Banana: Roll a piece of paper into a long tube and bend it into a curved banana shape.",
+          "instruction_audio": "audio/instructions/k_fine_m.wav"
+        }
+      },
+      "hints": [
+        "Say mmm-o-p. Close your lips all the way and hum — feel that buzzy tickle? That is the M sound!",
+        "Milo hums while he swings — mmmm! Close your lips tight and let the sound buzz through your nose.",
+        "Uncle Ryan says: Close your lips and hum — if your nose tickles a little bit, you are making a perfect M sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "n_newt",
+      "sticker_name": "Ned Newt",
+      "target_cvc": "NUT",
+      "phoneme": "/n/",
+      "audio_path": "audio/phonics/n_crawl.wav",
+      "skia_asset": "assets/stickers/newt.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_slow_crawl",
+          "description": "Newt Walk: Get on your hands and feet and walk very slowly like a newt for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_n.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_tail",
+          "description": "Newt Tail: Tear one long, very thin strip of paper from end to end to make a newt tail.",
+          "instruction_audio": "audio/instructions/k_fine_n.wav"
+        }
+      },
+      "hints": [
+        "Say nnn-u-t. Your tongue touches behind your top teeth and you hum through your nose — that is N!",
+        "Ned hums as he crawls — nnn nnn nnn! Try humming with your tongue up while you walk on all fours.",
+        "Uncle Ryan says: Put your tongue behind your top teeth and hum — that nose-tickle sound is your N, and it sounds great!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "p_pig",
+      "sticker_name": "Penny Pig",
+      "target_cvc": "PIG",
+      "phoneme": "/p/",
+      "audio_path": "audio/phonics/p_roll.wav",
+      "skia_asset": "assets/stickers/pig.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_floor_roll",
+          "description": "Pig Roll: Lie down on the floor and roll sideways three full times like a pig rolling in mud.",
+          "instruction_audio": "audio/instructions/k_gross_p.wav"
+        },
+        "fine": {
+          "type": "pincer_roll_snout",
+          "description": "Pig Snout: Roll a small piece of paper into a ring and tape the end down to make a round pig snout.",
+          "instruction_audio": "audio/instructions/k_fine_p.wav"
+        }
+      },
+      "hints": [
+        "Say ppp-i-g. Your lips press together then pop open right at the start — that pop is your P sound!",
+        "Penny pops her lips every time she oinks — P, P, P! Pop your lips just like her to say P.",
+        "Uncle Ryan says: Press your lips together really tight and then let them pop open fast — that lip pop is a super P sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "r_rabbit",
+      "sticker_name": "Rosie Rabbit",
+      "target_cvc": "RUN",
+      "phoneme": "/r/",
+      "audio_path": "audio/phonics/r_hop.wav",
+      "skia_asset": "assets/stickers/rabbit.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_bunny_hop",
+          "description": "Rabbit Hop: Jump forward with both feet together eight times as fast as you can.",
+          "instruction_audio": "audio/instructions/k_gross_r.wav"
+        },
+        "fine": {
+          "type": "pincer_fold_ears",
+          "description": "Rabbit Ears: Fold a piece of paper in half lengthwise and fold up two tall points at the top to make a pair of rabbit ears.",
+          "instruction_audio": "audio/instructions/k_fine_r.wav"
+        }
+      },
+      "hints": [
+        "Say rrr-u-n. Pull your tongue back so it does not touch anything and make a growly sound — that is R!",
+        "Rosie makes a little growl when she runs — rrr! Pull your tongue way back and try that growl.",
+        "Uncle Ryan says: Pull your tongue back so it floats in the air and say R — that growly floating sound is perfect!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "t_tiger",
+      "sticker_name": "Tara Tiger",
+      "target_cvc": "TIP",
+      "phoneme": "/t/",
+      "audio_path": "audio/phonics/t_pounce.wav",
+      "skia_asset": "assets/stickers/tiger.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_crouch_pounce",
+          "description": "Tiger Pounce: Crouch down as low as you can and then jump forward as far as you can two times.",
+          "instruction_audio": "audio/instructions/k_gross_t.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_stripes",
+          "description": "Tiger Stripes: Tear a sheet of paper into five long, thin strips and lay them out in a row like tiger stripes.",
+          "instruction_audio": "audio/instructions/k_fine_t.wav"
+        }
+      },
+      "hints": [
+        "Say ttt-i-p. Your tongue taps the top of your mouth very quick and sharp — tap, tap! That is T!",
+        "Tara taps her paws when she sneaks — tap, tap, tap! Say T with each tap and feel your tongue.",
+        "Uncle Ryan says: Tap your tongue fast right at the top of your mouth — that sharp little tap is your T and it is great!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "v_viper",
+      "sticker_name": "Vince Viper",
+      "target_cvc": "VAN",
+      "phoneme": "/v/",
+      "audio_path": "audio/phonics/v_dart.wav",
+      "skia_asset": "assets/stickers/viper.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_head_dart",
+          "description": "Viper Dart: Stand still and shoot your head forward and pull it back quickly five times like a striking snake.",
+          "instruction_audio": "audio/instructions/k_gross_v.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_tongue",
+          "description": "Viper Tongue: Tear a thin strip of paper and then tear a small V-shape notch at one end to make a forked tongue.",
+          "instruction_audio": "audio/instructions/k_fine_v.wav"
+        }
+      },
+      "hints": [
+        "Say vvv-a-n. Put your top teeth on your bottom lip and turn your voice on — feel it buzz? That is V!",
+        "Vince buzzes when he darts — vvvv! Make your lip buzz just like a tiny motor when you say V.",
+        "Uncle Ryan says: Rest your top teeth on your lip and hum — that buzzy feeling on your lip means you have a great V sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "w_wolf",
+      "sticker_name": "Wally Wolf",
+      "target_cvc": "WEB",
+      "phoneme": "/w/",
+      "audio_path": "audio/phonics/w_howl.wav",
+      "skia_asset": "assets/stickers/wolf.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_howl_spin",
+          "description": "Wolf Howl: Tilt your head all the way back and howl at the ceiling while turning slowly in a full circle for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_w.wav"
+        },
+        "fine": {
+          "type": "pincer_press_trace",
+          "description": "Wolf Paw: Press your open hand flat on a sheet of paper and use a finger to trace all the way around it to make a paw print.",
+          "instruction_audio": "audio/instructions/k_fine_w.wav"
+        }
+      },
+      "hints": [
+        "Say www-e-b. Round your lips into a tiny circle like you are blowing on hot soup — that round shape makes W!",
+        "Wally rounds his lips to howl — wooooo! Make that same tiny round lip shape when you say W.",
+        "Uncle Ryan says: Make your lips into the tiniest little circle you can and say W — that cute round mouth is exactly right!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "ks_fox",
+      "sticker_name": "Felix Fox",
+      "target_cvc": "FOX",
+      "phoneme": "/ks/",
+      "audio_path": "audio/phonics/ks_trot.wav",
+      "skia_asset": "assets/stickers/fox.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_tiptoe_trot",
+          "description": "Fox Trot: Tiptoe as quietly as you can all the way across the room and back in 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_ks.wav"
+        },
+        "fine": {
+          "type": "pincer_roll_tail",
+          "description": "Fox Tail: Roll a piece of paper into a thick, fluffy cone shape and tape the edge to make a bushy fox tail.",
+          "instruction_audio": "audio/instructions/k_fine_ks.wav"
+        }
+      },
+      "hints": [
+        "Say f-o-ks slow. Hear that sneaky sound at the end? It is two sounds smooshed into one — K then S!",
+        "Felix has a secret at the end of his name — KS! Say fox and listen very close to that tricky ending.",
+        "Uncle Ryan says: Say fox real slow and sit on that ending — foKSSS. Two sounds hiding at the end — you found them!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "y_yak",
+      "sticker_name": "Yogi Yak",
+      "target_cvc": "YAK",
+      "phoneme": "/y/",
+      "audio_path": "audio/phonics/y_shake.wav",
+      "skia_asset": "assets/stickers/yak.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_head_shake",
+          "description": "Yak Shake: Shake your head from side to side as fast as you can for 10 seconds like a yak in a big wind.",
+          "instruction_audio": "audio/instructions/k_gross_y.wav"
+        },
+        "fine": {
+          "type": "pincer_roll_horns",
+          "description": "Yak Horns: Roll two small pieces of paper into curved cone shapes to make a pair of big yak horns.",
+          "instruction_audio": "audio/instructions/k_fine_y.wav"
+        }
+      },
+      "hints": [
+        "Say yyy-a-k. Your tongue starts up high in your mouth then drops down fast — feel that slide? That is Y!",
+        "Yogi yells and his tongue slides down — yyy! Start high and let your tongue drop when you say Y.",
+        "Uncle Ryan says: Let your tongue start up high then drop down quick — that fast slide is your Y sound and it sounds awesome!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "z_zebra",
+      "sticker_name": "Zara Zebra",
+      "target_cvc": "ZIP",
+      "phoneme": "/z/",
+      "audio_path": "audio/phonics/z_gallop.wav",
+      "skia_asset": "assets/stickers/zebra.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_high_knee_gallop",
+          "description": "Zebra Gallop: Gallop with your knees up high like a fast zebra for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_z.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_stripes",
+          "description": "Zebra Stripes: Tear a sheet of paper into many thin strips and line them up in a neat row like zebra stripes.",
+          "instruction_audio": "audio/instructions/k_fine_z.wav"
+        }
+      },
+      "hints": [
+        "Say zzz-i-p. Make your voice buzz like a little bee — keep that buzz going and that is your Z sound!",
+        "Zara zooms and buzzes — zzz! Say Z and feel your whole mouth buzz just like a tiny bee.",
+        "Uncle Ryan says: Turn on your voice and let it buzz long — zzzz. Feel that buzz in your mouth? That is a perfect Z!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "ch_cheetah",
+      "sticker_name": "Chase Cheetah",
+      "target_cvc": "CHIN",
+      "phoneme": "/ch/",
+      "audio_path": "audio/phonics/ch_sprint.wav",
+      "skia_asset": "assets/stickers/cheetah.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_sprint_in_place",
+          "description": "Cheetah Sprint: Run in place as fast as you possibly can for 10 seconds like the fastest animal alive.",
+          "instruction_audio": "audio/instructions/k_gross_ch.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_dots",
+          "description": "Cheetah Spots: Tear a piece of paper into many tiny little round bits and dot them all over another sheet like cheetah spots.",
+          "instruction_audio": "audio/instructions/k_fine_ch.wav"
+        }
+      },
+      "hints": [
+        "Say ch-i-n. Your tongue goes up and then a big puff of air shoots out — like a tiny sneeze! That is CH!",
+        "Chase goes CH-CH-CH when she runs super fast! Say CH every time you pump your legs.",
+        "Uncle Ryan says: Push your tongue up then shoot a puff of air out fast — that little sneeze sound is a perfect CH!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "sh_shark",
+      "sticker_name": "Shelly Shark",
+      "target_cvc": "SHIP",
+      "phoneme": "/sh/",
+      "audio_path": "audio/phonics/sh_swim.wav",
+      "skia_asset": "assets/stickers/shark.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_belly_wiggle",
+          "description": "Shark Swim: Lie on your tummy with your arms at your sides and wiggle your whole body forward like a shark for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_sh.wav"
+        },
+        "fine": {
+          "type": "pincer_fold_fin",
+          "description": "Shark Fin: Fold a piece of paper into a tall, stiff triangle shape to make a shark fin standing up.",
+          "instruction_audio": "audio/instructions/k_fine_sh.wav"
+        }
+      },
+      "hints": [
+        "Say sh-i-p. Put one finger to your lips and go shhhh — that soft hush sound is your SH!",
+        "Shelly is very quiet when she swims — shhhh! Say SH nice and soft so no one can hear you coming.",
+        "Uncle Ryan says: Put your finger to your lips and shush the whole room — that hush sound is your SH and it is great!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "th_thrush",
+      "sticker_name": "Theo Thrush",
+      "target_cvc": "THIN",
+      "phoneme": "/th/",
+      "audio_path": "audio/phonics/th_flap.wav",
+      "skia_asset": "assets/stickers/thrush.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_flap_hop",
+          "description": "Thrush Flap: Flap both arms up and down like bird wings while hopping in place for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_th.wav"
+        },
+        "fine": {
+          "type": "pincer_scrunch_nest",
+          "description": "Thrush Nest: Slowly scrunch a whole sheet of paper into a round bowl shape to make a little bird nest.",
+          "instruction_audio": "audio/instructions/k_fine_th.wav"
+        }
+      },
+      "hints": [
+        "Say th-i-n. Stick your tongue out just a tiny bit between your teeth and blow soft air — that is TH!",
+        "Theo the thrush sticks his tongue out to sing TH! Try it — tongue peeking out, then blow gently.",
+        "Uncle Ryan says: Poke your tongue out just a little between your teeth and blow — that tickle on your tongue is your TH sound!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "bl_blowfish",
+      "sticker_name": "Blinky Blowfish",
+      "target_cvc": "BLOB",
+      "phoneme": "/bl/",
+      "audio_path": "audio/phonics/bl_puff.wav",
+      "skia_asset": "assets/stickers/blowfish.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_puff_spin",
+          "description": "Blowfish Puff: Puff your cheeks out full of air, spread your arms as wide as you can, and spin in a slow circle for 10 seconds.",
+          "instruction_audio": "audio/instructions/k_gross_bl.wav"
+        },
+        "fine": {
+          "type": "pincer_crumple_round",
+          "description": "Blowfish Body: Use both hands to crumple a whole sheet of paper into the biggest, roundest ball you can make.",
+          "instruction_audio": "audio/instructions/k_fine_bl.wav"
+        }
+      },
+      "hints": [
+        "Say bl-o-b. Start with a lip pop — B — then slide right into L without stopping. BL, BL, BL!",
+        "Blinky goes B then the air flows right into L — no stopping in the middle! Say BL as one fast sound.",
+        "Uncle Ryan says: Pop your lips for B and keep going right into L without a break — BL together is the move!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "br_bronco",
+      "sticker_name": "Bruno Bronco",
+      "target_cvc": "BRIM",
+      "phoneme": "/br/",
+      "audio_path": "audio/phonics/br_kick.wav",
+      "skia_asset": "assets/stickers/bronco.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_back_kick",
+          "description": "Bronco Kick: Lean forward with hands on your knees and kick one foot back five times fast like a wild horse bucking.",
+          "instruction_audio": "audio/instructions/k_gross_br.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_mane",
+          "description": "Bronco Mane: Tear a sheet of paper into thick, wavy strips and pile them all together to make a big wild mane.",
+          "instruction_audio": "audio/instructions/k_fine_br.wav"
+        }
+      },
+      "hints": [
+        "Say br-i-m. Pop your lips for B and then growl an R right away — BR, BR! No pause in the middle!",
+        "Bruno goes BRRR when he bucks! Pop your lips then let the growly R come out fast right after.",
+        "Uncle Ryan says: Pop your lips and growl at the same time — BR! That wild sound means you are riding it perfectly!"
+      ],
+      "mastery_gate": "vision_motion_verify"
+    },
+    {
+      "id": "tr_trout",
+      "sticker_name": "Trixie Trout",
+      "target_cvc": "TRIP",
+      "phoneme": "/tr/",
+      "audio_path": "audio/phonics/tr_flip.wav",
+      "skia_asset": "assets/stickers/trout.skp",
+      "motor_tasks": {
+        "gross": {
+          "type": "kinesthetic_belly_flop",
+          "description": "Trout Flip: Lie on your tummy and lift both arms and legs off the floor at the same time five times like a fish jumping.",
+          "instruction_audio": "audio/instructions/k_gross_tr.wav"
+        },
+        "fine": {
+          "type": "pincer_tear_scales",
+          "description": "Trout Scales: Tear a piece of paper into many small oval pieces and lay them in rows that overlap like fish scales.",
+          "instruction_audio": "audio/instructions/k_fine_tr.wav"
+        }
+      },
+      "hints": [
+        "Say tr-i-p. Your tongue taps for T then growls into R right away — tap and growl, no stopping, TR!",
+        "Trixie splashes with a TR — her tail taps the water then makes a growly wave. Say TR as one fast sound!",
+        "Uncle Ryan says: Tap for T and roll right into R with no break at all — TR! That fast jump from tap to growl is awesome!"
       ],
       "mastery_gate": "vision_motion_verify"
     }

@@ -1,0 +1,48 @@
+---
+description: Tells Ryan when and how to test the app on the Fire HD 10.
+globs: **/*
+alwaysApply: true
+---
+
+# TESTING PROTOCOL
+
+## When to Tell Ryan to Test
+
+After ANY of the following types of changes, end the response with a TEST REQUIRED block:
+
+- Any change to a Skia component (StarlightSpirit, StickerCanvas, future sticker renderers)
+- Any change to useUserStore or useMasteryStore
+- Any change to app/_layout.tsx (the root gate/onboarding logic)
+- Any change to QuestGrid or quest navigation
+- Any new screen or new route added
+- Any animation or gesture change
+- Any change that touches AsyncStorage or Supabase
+
+## TEST REQUIRED Block Format
+
+Use this exact format at the bottom of the response:
+
+---
+🧪 **TEST REQUIRED**
+**What changed:** [one sentence]
+**Test on:** Fire HD 10 (or Expo Go on Android if tablet not handy)
+
+**Step 1 —** [specific thing to tap or do]
+**Step 2 —** [what to look for]
+**Step 3 —** [pass/fail signal — what good looks like vs. broken looks like]
+
+## How to Run the App (Ryan's Reference)
+
+**Start the app:**
+1. Open the black terminal window at the bottom of Cursor
+2. Type: `npx expo start` and press Enter
+3. A QR code appears — scan it with the Expo Go app on the Fire HD 10
+
+**If something looks broken:**
+1. Look at the terminal for red text — that is the error
+2. Click the "Debug with AI" button next to the red text (Cursor Pro feature)
+3. Or copy the red text and paste it into this chat
+
+**Hard reset (if app is stuck):**
+1. In the terminal, press Ctrl+C to stop
+2. Type: `npx expo start --clear` and press Enter

@@ -1,0 +1,34 @@
+---
+description: Suggests the best AI model for each task type in Sticker Quest.
+globs: **/*
+alwaysApply: true
+---
+
+# MODEL ROUTING PROTOCOL
+
+At the start of every conversation, or when the task type shifts, suggest the best model.
+Format: one line, plain English. Example: "For this task, you'll get the best result using [model]."
+
+## Routing Guide
+
+| Task Type | Best Model | Why |
+|---|---|---|
+| Writing or fixing code (UI, Skia, hooks, stores) | **Claude Sonnet 4.6 (Cursor — this tool)** | Best coding taste for React Native + Skia |
+| "Where is X?" / "How do these files connect?" | **Gemini Flash (Cursor)** | Fastest for codebase search with @Codebase |
+| Complex architecture decisions, database design | **Claude Opus 4.6 (Cursor)** | Strongest reasoning, worth the wait |
+| Hard bug that Sonnet cannot fix | **Claude Opus 4.6 (Cursor)** | Most capable debugger |
+| Generating large JSON, audio scripts, batch content | **Claude Pro (claude.ai, off-peak ET)** | 2x usage fuel, handles long outputs |
+| Sticker image / asset creation | **Gemini (image generation, future phase)** | Visual asset generation |
+
+## Rule — Every Single Response
+End EVERY response with a "Next Step" line that tells Ryan which tool to use for whatever comes next in the workflow. Format:
+
+---
+**Your next move:** Go to [tool/model] — [one sentence describing what to do there]
+
+Examples:
+- "Go to claude.ai (off-peak ET) — paste the JSON prompt and wait for the full array."
+- "Stay here in Cursor — paste the JSON back and I'll validate and commit it."
+- "No action needed from you — I'm handling the next step right now."
+
+Never skip this line. It appears on every response, no exceptions.

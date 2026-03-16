@@ -1,0 +1,7 @@
+# LIBRARIAN PROTOCOL
+- ALWAYS check PROJECT_CONTEXT.md and PATCH_NOTES.md before proposing code.
+- ENFORCE 3GB RAM limits (Fire HD 10 target). largeHeap: true is required in app.json.
+- CLEANUP: Ensure every Skia component includes useEffect cleanup for SkImage/SkPicture.
+- UPDATE PATCH_NOTES.md and PROJECT_CONTEXT.md after every significant change.
+- STYLE: "Uncle-Built" brand (supportive, hints over answers).
+- COMMS: Ryan is a non-coder. Always use plain English. See non-coder-comms.mdc for rules.

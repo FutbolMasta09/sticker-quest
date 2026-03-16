@@ -90,9 +90,7 @@ export default function StarlightSpirit({
       
       {showStats && (
         <View style={styles.starStats}>
-          <ThemedText style={styles.statText}>Today's Stars: 3</ThemedText>
-          <ThemedText style={styles.statText}>Weekly Goal: 15/20</ThemedText>
-          <ThemedText style={styles.statText}>Total Collection: {totalStars}</ThemedText>
+          <ThemedText style={styles.statText}>Total Stars: {totalStars}</ThemedText>
         </View>
       )}
     </View>

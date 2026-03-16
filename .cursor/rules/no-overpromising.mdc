@@ -1,0 +1,38 @@
+---
+description: Prevents the app from claiming to measure what it cannot actually verify.
+globs: **/*
+alwaysApply: true
+---
+
+# NO OVERPROMISING PROTOCOL
+
+## The Rule
+Never write UI copy, parent messaging, or feature descriptions that claim the app
+can measure something it cannot actually verify.
+
+## What We Can Measure
+- Whether a physical motor task was completed (camera verification, Phase 3)
+- Whether the child attempted a quest (tap to start)
+- How many times a quest was replayed (count)
+- Parent-confirmed completions (honor system)
+
+## What We Cannot Measure (and must never claim to)
+- Whether the child produced a phoneme correctly (no voice AI in V1)
+- Whether a child truly "mastered" a sound vs. just practiced it
+- Whether a child read a book (parent confirms on honor system)
+- Whether a daily habit was actually performed (parent confirms)
+- Academic readiness or grade-level equivalency
+
+## Required Language Patterns
+
+| Claim to AVOID | Use THIS instead |
+|---|---|
+| "Libby has mastered the /s/ sound" | "Libby has practiced the /s/ sound 3 times with great effort" |
+| "Your child is ready for Grade 1" | "Libby has completed all Kindergarten quests — you decide when she's ready" |
+| "Verified phonics progress" | "Practice and effort tracked" |
+| "Grade-level assessment" | "Starting-point suggestion — you make the final call" |
+
+## Why This Matters
+1. Protects Ryan legally — no false educational claims
+2. Builds parent trust — honest expectations beat overpromised ones
+3. Reinforces the brand principle: the app is a tool, the parent is the educator

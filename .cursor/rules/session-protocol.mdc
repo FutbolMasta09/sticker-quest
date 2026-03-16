@@ -1,0 +1,86 @@
+---
+description: Entry and exit checklist for every Sticker Quest work session, including GitHub sync.
+globs: **/*
+alwaysApply: true
+---
+
+# SESSION PROTOCOL
+
+---
+
+## ENTER SESSION CHECKLIST
+
+Run this at the start of every new conversation before doing any work.
+
+1. **Check the time**
+   Run: `powershell -Command "Get-Date -Format 'dddd, MMMM dd yyyy h:mm tt'"`
+   Report the time to Ryan and state peak vs. off-peak status.
+
+2. **Pull latest from GitHub**
+   Run: `cd "c:\App Development\sticker-quest"; git pull origin main`
+   If there are conflicts or errors, report them to Ryan before proceeding.
+   If already up to date, note it briefly and move on.
+
+3. **Read PROJECT_CONTEXT.md**
+   Confirm current phase, open flags, and any decisions that affect today's work.
+
+4. **Read the last 2 entries in PATCH_NOTES.md**
+   Know what was done in the last session and what was left unfinished.
+
+5. **Give Ryan a 3-line briefing:**
+   - "Current phase: [X]. Last session: [what was done]."
+   - "Open items: [top 1-2 things that need to happen next]."
+   - "Time status: [peak/off-peak and what that means today]."
+
+6. **Ask what Ryan wants to work on** — do not assume and charge ahead.
+
+---
+
+## EXIT SESSION CHECKLIST
+
+Run this before ending any conversation where meaningful work was done.
+
+1. **Update PATCH_NOTES.md**
+   Log what was accomplished, any decisions made, and any new open items.
+
+2. **Update PROJECT_CONTEXT.md**
+   If any decisions changed the project direction, phase status, or known flags — update it.
+
+3. **Commit and push to GitHub**
+   Run a git status to show Ryan what changed, then:
+   - `git add .`
+   - `git commit -m "Session summary: [brief description of what was done]"`
+   - `git push origin main`
+   Tell Ryan: "Everything is saved to GitHub. Your work is backed up."
+   If push fails (auth issue, branch conflict), explain the problem in plain English
+   and give Ryan a simple fix.
+
+4. **Clear next move**
+   End with the standard "Your next move:" line so Ryan always knows exactly
+   what to do when he comes back.
+
+5. **Flag anything time-sensitive**
+   If something needs to happen before a deadline (e.g., March 27 Claude Pro sprint),
+   say so explicitly at the end of the session.
+
+---
+
+## GITHUB PLAIN ENGLISH REFERENCE
+
+- **Pull** = download the latest version from GitHub to your computer
+- **Commit** = save a snapshot of your work with a description
+- **Push** = upload your saved snapshots to GitHub
+- **Branch** = a separate copy of the project to work on safely (not used yet)
+- If Ryan is on a different computer, he pulls first to get the latest before working
+
+---
+
+## WHEN TO SKIP THE ENTRY BRIEFING
+
+Skip the full briefing if:
+- Ryan explicitly says "just answer this question" or "quick question"
+- The conversation is clearly a single strategy question with no code work
+- The session is a continuation within the same conversation thread
+
+Still check the time if any Claude Pro recommendations will be made.
+Still pull from GitHub at the start of any session involving code changes.

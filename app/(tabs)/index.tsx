@@ -83,7 +83,7 @@ export default function HomeScreen() {
               </ThemedText>
             </View>
             
-            <QuestGrid showDebug={true} />
+            <QuestGrid showDebug={__DEV__} />
 
             {/* Star-Mail Notifications */}
             <StarMail />

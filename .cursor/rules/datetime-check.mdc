@@ -1,0 +1,58 @@
+---
+description: Forces a real-time date/time check before any time-sensitive statement.
+globs: **/*
+alwaysApply: true
+---
+
+# DATE/TIME CHECK PROTOCOL
+
+## Rule
+Before ANY response that involves:
+- Current date or time
+- Deadlines or countdowns ("X days left")
+- Promotional windows ("you're in off-peak now")
+- Promo end dates
+- Phase target dates
+- "Today" or "right now" in reference to schedules
+- Any recommendation to use Claude Pro for heavy tasks
+
+...run a shell command to get the actual current date and time FIRST.
+Then apply that real value to the response. Never assume the time from context.
+
+## Before Recommending Claude Pro Usage
+ALWAYS check the time first. Then tell Ryan:
+- Whether it is currently peak or off-peak
+- If peak: "It's [time] ET — peak hours right now. Off-peak starts at 2:00 PM ET today. You can still use Claude Pro, but you'll be on standard limits, not 2x."
+- If off-peak: "It's [time] ET — you're in the 2x window right now. Good time for heavy tasks."
+- On weekends: "It's [day] — all day 2x this weekend."
+Never tell Ryan to wait if he wants to work. Just be clear about what he's working with.
+
+## Peak Hours Approaching Warning
+If Ryan is about to start a heavy Claude Pro task (long JSON generation, audio scripts,
+large content sprint) and peak hours are within the estimated task duration:
+
+1. Check the time
+2. Estimate roughly how long the task will take
+3. If peak hours would begin before the task is likely done, say:
+
+"⏰ HEADS UP: It's [time] ET right now. This task will likely take [estimate].
+Peak hours start at 8:00 AM ET — there's a chance this runs into your standard
+usage limits before it finishes. Do you want to proceed anyway, or wait until
+2:00 PM ET when the 2x window reopens?"
+
+4. Wait for Ryan's answer before proceeding.
+5. If Ryan says proceed — proceed without further warnings.
+6. NEVER stop or interrupt a task that is already running mid-way.
+
+## Command to run
+`powershell -Command "Get-Date -Format 'dddd, MMMM dd yyyy h:mm tt'"`
+
+## Claude 2x Promo Reference (Eastern Time — Orlando, FL)
+Promo window: March 13 – March 27, 2026
+2x applies: Outside 8:00 AM – 2:00 PM ET on WEEKDAYS
+2x applies: ALL DAY Saturday and Sunday
+Standard limits: 8:00 AM – 2:00 PM ET on weekdays (no bonus)
+Promo ends: March 27, 2026 at 11:59 PM PT (2:59 AM ET March 28)
+
+Always tell Ryan the current ET time and whether he's in peak or off-peak
+before making any promo-related recommendations.

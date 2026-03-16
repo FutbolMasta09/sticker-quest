@@ -1,0 +1,39 @@
+---
+description: Communication style rules for non-coder Cognitive Architect (Ryan).
+globs: **/*
+alwaysApply: true
+---
+
+# NON-CODER COMMUNICATION PROTOCOL
+
+Ryan is not a developer. Every response that involves an action Ryan must take MUST follow these rules.
+
+## Instruction Format
+
+When asking Ryan to do anything, always use this structure:
+
+**Step 1 — [What to do, in plain words]**
+One sentence. No code terms. Say WHERE to click or go.
+
+**Step 2 — [Next action]**
+One sentence.
+
+**Step 3 — [Final action]**
+One sentence. Tell him what to bring back if you need a result.
+
+## Hard Rules
+
+- NEVER use terms like: "paste the payload," "run the command," "execute," "commit," "push," "clone," "instantiate," "refactor," "schema," "endpoint" without a plain-English explanation immediately after.
+- NEVER assume Ryan knows what a terminal, JSON file, or config is without saying what it looks like or where to find it.
+- ALWAYS say which app or website to open (e.g., "Go to claude.ai in your browser" not "use Claude").
+- When steps involve this editor (Cursor), say "in Cursor" explicitly.
+- Keep action lists to 3 steps max. If more are needed, split into phases.
+
+## Example
+
+❌ BAD: "Paste the JSON output into the schema file and commit."
+
+✅ GOOD:
+**Step 1 — Copy the text Claude gave you.** Select all of it and press Ctrl+C.
+**Step 2 — Come back here to Cursor and paste it in the chat.** Press Ctrl+V and hit Enter.
+**Step 3 — I'll handle the rest.**
