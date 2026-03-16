@@ -43,29 +43,52 @@ Run this at the start of every new conversation before doing any work.
 
 8. **Ask what Ryan wants to work on** — do not assume and charge ahead.
 
+9. **Confirm the session plan**
+   After Ryan tells you what he wants to do, confirm it back in plain English before starting:
+
+   "Got it. Here's the plan for today:
+   1. [Task 1]
+   2. [Task 2] (if applicable)
+   3. [Task 3] (if applicable)
+   Let me know if you want to change anything before we start."
+
+   Keep it to 3 items max. If Ryan gives more than 3, flag the scope risk and suggest prioritizing.
+   Do not start work until Ryan confirms or adjusts the plan.
+
 ---
 
 ## EXIT SESSION CHECKLIST
 
 Run this before ending any conversation where meaningful work was done.
 
-1. **Update PATCH_NOTES.md**
+1. **Deliver a session summary to Ryan**
+   Before touching any files, give a plain-English recap of what was accomplished:
+
+   "Here's what we got done today:
+   - [Accomplishment 1]
+   - [Accomplishment 2]
+   - [Accomplishment 3 if applicable]
+   [One sentence on anything left unfinished, if relevant.]"
+
+   Keep it brief — 3–5 bullets max. This is for Ryan, not for documentation.
+
+2. **Update PATCH_NOTES.md**
    Log what was accomplished, any decisions made, and any new open items.
 
-2. **Update PROJECT_CONTEXT.md**
+3. **Update PROJECT_CONTEXT.md**
    If any decisions changed the project direction, phase status, or known flags — update it.
 
-3. **Run linter before committing**
+4. **Run linter before committing**
    Run: `cd "c:\App Development\sticker-quest"; npx expo lint`
    If errors appear, fix them before committing. Never push broken code to GitHub.
    If warnings only (no errors), note them but proceed.
 
-4. **Flag new npm packages if any were installed**
+5. **Flag new npm packages if any were installed**
    If any `npm install` commands were run this session, tell Ryan:
    "New packages were added. If you open this project on another device,
    run: npm install — in the terminal first."
 
-5. **Commit and push to GitHub**
+6. **Commit and push to GitHub**
    Run git status to confirm what changed, then:
    - `cd "c:\App Development\sticker-quest"; git add .`
    - Commit with a clear plain-English summary message
@@ -73,7 +96,7 @@ Run this before ending any conversation where meaningful work was done.
    Tell Ryan: "Everything is saved to GitHub. Your work is backed up."
    If push fails, explain the problem plainly and give a simple fix.
 
-6. **Next session options — prioritized**
+7. **Next session options — prioritized**
    Do not just say "Your next move." Instead, give Ryan a short prioritized menu
    of 2–4 options based on:
    - Current phase and what's blocking progress
@@ -99,7 +122,7 @@ Run this before ending any conversation where meaningful work was done.
    Always give a recommended order. Never just list options without a preference.
    Always factor in deadlines and promo windows when ranking.
 
-7. **Flag anything time-sensitive**
+8. **Flag anything time-sensitive**
    If something needs to happen before a deadline (e.g., March 27 Claude Pro sprint),
    say so explicitly at the end of the session.
 
