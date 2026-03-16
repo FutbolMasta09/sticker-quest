@@ -128,6 +128,27 @@ This prevents losing more than 90 minutes of work if anything goes wrong.
 
 ---
 
+## PHASE COMPLETION AUDIT (Run at the end of each phase — not on a timer)
+
+When a phase (1, 2, 3, etc.) is declared complete, run a dead code audit:
+1. List all files in the project
+2. Flag any that have not been touched and appear unrelated to Sticker Quest
+   (Expo boilerplate, old test screens, superseded files)
+3. Show Ryan the list and ask for approval before deleting anything
+4. Never delete without explicit "yes delete this" from Ryan
+5. Log all deletions in PATCH_NOTES.md
+
+Known candidates for Phase 1 audit:
+- `app/(tabs)/explore.tsx` — Expo default explore tab, unused
+- `app/(tabs)/stress-test.tsx` — early test screen, may be unused
+- `components/hello-wave.tsx` — Expo boilerplate
+- `components/parallax-scroll-view.tsx` — Expo boilerplate
+- `components/external-link.tsx` — Expo boilerplate
+
+Do NOT delete these now. Audit happens at Phase 1 completion.
+
+---
+
 ## WHEN TO SKIP THE ENTRY BRIEFING
 
 Skip the full briefing if:

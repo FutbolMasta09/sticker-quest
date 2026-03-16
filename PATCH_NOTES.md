@@ -16,6 +16,25 @@ Goal: Ryan feels comfortable navigating Cursor independently before we build mor
 
 ---
 
+## [2026-03-16l] Session: File Audit Rule + Lint Flag + Exit
+**Status:** Infrastructure — session wrapped cleanly
+
+### NEW RULE ADDED
+- `session-protocol.mdc` updated — "Phase Completion Audit" step added.
+  No periodic file-deletion timer. Instead: at the end of each phase, I will list all Expo boilerplate and unused files and ask Ryan's approval before deleting anything.
+  Known candidates flagged for Phase 1 audit: `explore.tsx`, `hello-wave.tsx`, `parallax-scroll-view.tsx`, `external-link.tsx`, `stress-test.tsx`.
+
+### KNOWN FLAG — LINT ERRORS
+- `npx expo lint` shows **27 errors, 17 warnings** — all pre-existing from prior sessions.
+- Errors are unescaped characters in JSX and unused variables. Not critical (no crashes), but need to be addressed at start of next code session.
+- Files affected: `QuestGrid.tsx`, `SetupPhase.tsx`, `StarlightSpirit.tsx`, `StickerDrawer.tsx`, and others.
+
+### SESSION SUMMARY
+- Today was 100% strategy, documentation, and protocol infrastructure — no code changes.
+- Everything locked and committed. PENDING_SPRINTS.md is ready for tonight's off-peak session.
+
+---
+
 ## [2026-03-16k] Session: Session Protocol Created
 **Status:** Infrastructure — session entry/exit checklist now permanent
 
