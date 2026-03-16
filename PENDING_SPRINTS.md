@@ -12,12 +12,12 @@ Checked automatically at the start of every off-peak session.
 
 ## QUEUE (Run These Next — In Priority Order)
 
-### 1. K Audio Scripts (Phonics — 50 files)
-**Priority:** HIGH — needed for Phase 2
-**Estimated time:** 15–20 minutes on claude.ai (may need 2 sessions — say "continue from where you left off" if it cuts out)
-**Prompt:** WRITTEN AND READY — see session [2026-03-16o] in PATCH_NOTES.md, or ask Cursor to re-display it
-**Output format:** JSON array of 50 objects: audio_file, sticker_id, type, character, script
-**What to do after:** Paste here → validate TinyStories compliance → save to new file `src/assets/k_phonics_audio_scripts.json`
+### 1. Lore Copy (~60 messages)
+**Priority:** MEDIUM-HIGH — needed for Phase 2 before Libby tests
+**Estimated time:** 10–15 minutes on claude.ai
+**Prompt:** Not yet written — generate in Cursor before running
+**Output format:** JSON object with event keys mapped to Starlight's message strings
+**What to do after:** Paste here → validate lore voice + TinyStories → save to lore file
 **Added:** 2026-03-16
 
 ### 3. Lore Copy (~60 messages)
@@ -37,6 +37,10 @@ Checked automatically at the start of every off-peak session.
 ---
 
 ## COMPLETED SPRINTS
+
+### K Phonics Audio Scripts (50 scripts)
+**Completed:** 2026-03-16
+**Result:** Committed to src/assets/k_phonics_audio_scripts.json v2026.1
 
 ### K Math Stickers JSON (15 stickers)
 **Completed:** 2026-03-16

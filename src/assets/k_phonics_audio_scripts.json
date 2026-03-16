@@ -1,0 +1,359 @@
+{
+  "grade": "Kindergarten",
+  "subject": "Phonics",
+  "version": "2026.1",
+  "script_count": 50,
+  "note": "Narrated by Starlight the Unicorn. Each script is a recorded instruction for one motor task. Voice: warm, celebratory, simple vocabulary. TinyStories-1500 compliant.",
+  "scripts": [
+    {
+      "audio_file": "audio/instructions/k_gross_s.wav",
+      "sticker_id": "s_snake",
+      "type": "gross",
+      "character": "Sammy Snake",
+      "script": "Time to move like Sammy Snake! Get down on your tummy and wiggle your whole body forward across the carpet — just like a real snake! Keep your arms close to your sides and slither as far as you can for ten whole seconds. You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_s.wav",
+      "sticker_id": "s_snake",
+      "type": "fine",
+      "character": "Sammy Snake",
+      "script": "Time to use your hands like Sammy Snake! Pick up your piece of paper and start squeezing it with one hand — scrunch it up tight, tight, tight! Keep squishing until it's a tiny little ball. Look how strong your hand is! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_b.wav",
+      "sticker_id": "b_bear",
+      "type": "gross",
+      "character": "Bobby Bear",
+      "script": "Time to move like Bobby Bear! Bobby loves to stomp, so we are going to stomp both feet on the floor as loud as we can! Lift those feet up high and crash them right down — boom, boom, boom! Keep stomping for ten whole seconds. Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_b.wav",
+      "sticker_id": "b_bear",
+      "type": "fine",
+      "character": "Bobby Bear",
+      "script": "Time to use your hands like Bobby Bear! Grab that piece of paper with all five fingers — every single one! Now squeeze and scrunch it as tight as you can until it's the smallest, tightest little ball in the world. Bobby would be so proud of you! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_k.wav",
+      "sticker_id": "k_cat",
+      "type": "gross",
+      "character": "Kiki Cat",
+      "script": "Time to move like Kiki Cat! Kiki loves to pounce, so crouch way down low — as low as you can go! Now jump forward with both feet together — one, two, three big jumps! Can you land nice and quiet like a sneaky cat? You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_k.wav",
+      "sticker_id": "k_cat",
+      "type": "fine",
+      "character": "Kiki Cat",
+      "script": "Time to use your fingers like Kiki Cat! Kiki loves to scratch, so use your fingernails to scratch and pull the paper until you tear off one thin strip. Now do it again — tear off five strips in a row! Nice scratching! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_d.wav",
+      "sticker_id": "d_dog",
+      "type": "gross",
+      "character": "Digger Dog",
+      "script": "Time to move like Digger Dog! Get down on your hands and knees like a big strong dog! Now scratch both hands on the floor as fast as you can — scritch, scritch, scritch! Keep digging for ten whole seconds without stopping. You are amazing! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_d.wav",
+      "sticker_id": "d_dog",
+      "type": "fine",
+      "character": "Digger Dog",
+      "script": "Time to use your hands like Digger Dog! Dogs love bones, so let's make one! Take your piece of paper and start rolling it up from one side — nice and tight — all the way to the other end. Now you've got a paper bone! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_f.wav",
+      "sticker_id": "f_frog",
+      "type": "gross",
+      "character": "Freddy Frog",
+      "script": "Time to move like Freddy Frog! Freddy loves to jump, so crouch down as low as you can go — knees bent, body low! Now jump forward with both feet at the same time — one, two, three, four, five! Big froggy jumps! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_f.wav",
+      "sticker_id": "f_frog",
+      "type": "fine",
+      "character": "Freddy Frog",
+      "script": "Time to use your hands like Freddy Frog! Take your piece of paper and fold it right in the middle. Now take each side and fold it back out flat so it looks like two froggy legs stretching wide. Look at those frog legs! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_g.wav",
+      "sticker_id": "g_goat",
+      "type": "gross",
+      "character": "Gus Goat",
+      "script": "Time to move like Gus Goat! Gus is a very brave goat who loves to charge ahead! Lower your head down, stomp your feet, and walk forward with three big, heavy, powerful steps — boom, boom, boom! Feel the ground shake! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_g.wav",
+      "sticker_id": "g_goat",
+      "type": "fine",
+      "character": "Gus Goat",
+      "script": "Time to use your hands like Gus Goat! Gus has big curly horns, and we are going to make one! Take a small piece of paper and start rolling it from one corner — rolling and rolling — all the way into a pointy cone horn. Amazing work! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_h.wav",
+      "sticker_id": "h_horse",
+      "type": "gross",
+      "character": "Hattie Horse",
+      "script": "Time to move like Hattie Horse! Hattie loves to run free, so skip and gallop all the way across the room! Lift your knees and go as fast as a horse — turn around and gallop all the way back! Keep going for ten seconds. I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_h.wav",
+      "sticker_id": "h_horse",
+      "type": "fine",
+      "character": "Hattie Horse",
+      "script": "Time to use your hands like Hattie Horse! Horses have beautiful flowing manes, so let's make one! Grab your piece of paper and tear it into long, thin strips — one at a time — until you have lots and lots of them. Now lay them all in a neat row. Beautiful! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_j.wav",
+      "sticker_id": "j_jaguar",
+      "type": "gross",
+      "character": "Joey Jaguar",
+      "script": "Time to move like Joey Jaguar! Jaguars can jump super far through the trees, so let's see how far you can jump! Crouch down low and then leap forward with all your might — one, two, three huge jumps in a row! Wow, you are flying! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_j.wav",
+      "sticker_id": "j_jaguar",
+      "type": "fine",
+      "character": "Joey Jaguar",
+      "script": "Time to use your hands like Joey Jaguar! Jaguars have the coolest spots, so let's make some! Tear your piece of paper into lots and lots of little round pieces — as many as you can! Now lay them all out like spots on a jaguar. So cool! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_l.wav",
+      "sticker_id": "l_lion",
+      "type": "gross",
+      "character": "Leo Lion",
+      "script": "Time to move like Leo Lion! Leo is the king of the jungle, and kings are BIG and LOUD! Stand up tall, stretch your arms out as wide as they can go, and ROAR as loud as you can while you shake your head for ten whole seconds. You are so mighty! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_l.wav",
+      "sticker_id": "l_lion",
+      "type": "fine",
+      "character": "Leo Lion",
+      "script": "Time to use your hands like Leo Lion! Leo has the fluffiest mane around, and we are going to make one! Tear your piece of paper into lots of long strips. Now lay all the strips in a big round circle — that is Leo's fluffy mane! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_m.wav",
+      "sticker_id": "m_monkey",
+      "type": "gross",
+      "character": "Milo Monkey",
+      "script": "Time to move like Milo Monkey! Monkeys swing their arms when they move through the trees, so let's do that too! Swing both arms from side to side and walk forward — left, right, left, right — for ten whole seconds like a silly, happy monkey. So fun! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_m.wav",
+      "sticker_id": "m_monkey",
+      "type": "fine",
+      "character": "Milo Monkey",
+      "script": "Time to use your hands like Milo Monkey! Monkeys love bananas, so let's make one! Roll your piece of paper up into a long, skinny tube — then gently bend it into a curve, just like a banana. Now you've made a paper banana! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_n.wav",
+      "sticker_id": "n_newt",
+      "type": "gross",
+      "character": "Ned Newt",
+      "script": "Time to move like Ned Newt! Newts move very slow and very careful, so get on your hands and feet and walk just like Ned. Take it nice and easy — slow and steady — all the way across the floor for ten seconds. Slow and strong wins the race! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_n.wav",
+      "sticker_id": "n_newt",
+      "type": "fine",
+      "character": "Ned Newt",
+      "script": "Time to use your hands like Ned Newt! Newts have long, amazing tails, and we are going to make one! Grab your piece of paper and slowly tear one very long, very thin strip from one end all the way to the other. That is Ned's tail! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_p.wav",
+      "sticker_id": "p_pig",
+      "type": "gross",
+      "character": "Penny Pig",
+      "script": "Time to move like Penny Pig! Penny loves rolling around in the mud — it is her favorite thing! Lie down on the floor and roll your whole body sideways — one, two, three full rolls! Wheee! Did you feel the room spin? You are such a fun pig! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_p.wav",
+      "sticker_id": "p_pig",
+      "type": "fine",
+      "character": "Penny Pig",
+      "script": "Time to use your hands like Penny Pig! Pigs have cute round snouts, so let's make one! Roll a small piece of paper into a little ring and push the end flat so it stays. Now you've got a round pig snout — so adorable! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_r.wav",
+      "sticker_id": "r_rabbit",
+      "type": "gross",
+      "character": "Rosie Rabbit",
+      "script": "Time to move like Rosie Rabbit! Rosie is the fastest hopper in the whole meadow, and it is your turn to hop! Jump forward with both feet together — one, two, three, four, five, six, seven, eight hops — as fast as you can! Wow, you are zooming! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_r.wav",
+      "sticker_id": "r_rabbit",
+      "type": "fine",
+      "character": "Rosie Rabbit",
+      "script": "Time to use your hands like Rosie Rabbit! Rosie has the tallest, most beautiful ears, and we are going to make them! Fold your piece of paper in half the long way. Now fold two tall pointy shapes up at the top for the ears. Those are perfect rabbit ears! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_t.wav",
+      "sticker_id": "t_tiger",
+      "type": "gross",
+      "character": "Tara Tiger",
+      "script": "Time to move like Tara Tiger! Tigers are sneaky and powerful — they crouch down low before they leap! Get as low as you can, then JUMP forward as far as you can — two huge tiger leaps! Feel that power! You are so strong! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_t.wav",
+      "sticker_id": "t_tiger",
+      "type": "fine",
+      "character": "Tara Tiger",
+      "script": "Time to use your hands like Tara Tiger! Tigers have awesome stripes all over their bodies! Tear your piece of paper into five long, thin strips. Now lay all five strips in a nice row — those are Tara's beautiful tiger stripes! You did it! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_v.wav",
+      "sticker_id": "v_viper",
+      "type": "gross",
+      "character": "Vince Viper",
+      "script": "Time to move like Vince Viper! Vipers are super fast — they shoot their heads forward and pull back in the blink of an eye! Stand still, then shoot your head forward and pull it back quickly — do that five times in a row! Lightning fast! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_v.wav",
+      "sticker_id": "v_viper",
+      "type": "fine",
+      "character": "Vince Viper",
+      "script": "Time to use your hands like Vince Viper! Vipers have a special forked tongue — it has a little V at the very end! Tear a thin strip of paper, then carefully tear a small V-shaped notch right at one end. Now Vince has his tongue! So cool! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_w.wav",
+      "sticker_id": "w_wolf",
+      "type": "gross",
+      "character": "Wally Wolf",
+      "script": "Time to move like Wally Wolf! Wolves love to look up at the sky and howl at the top of their lungs! Tilt your head all the way back, look up at the ceiling, and howl as loud as you can while you slowly turn in a full circle for ten seconds. AWOOOO! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_w.wav",
+      "sticker_id": "w_wolf",
+      "type": "fine",
+      "character": "Wally Wolf",
+      "script": "Time to use your hands like Wally Wolf! Wolves have big, awesome paw prints, and we are going to make one! Put your hand flat on the paper and trace all the way around every single finger. Lift it up and look at that paw print! Amazing! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_ks.wav",
+      "sticker_id": "ks_fox",
+      "type": "gross",
+      "character": "Felix Fox",
+      "script": "Time to move like Felix Fox! Foxes are sneaky and quiet — they never make a sound when they walk! Lift up onto your tiptoes and walk as quietly as you can all the way across the room and back in ten seconds. Shhh! So sneaky! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_ks.wav",
+      "sticker_id": "ks_fox",
+      "type": "fine",
+      "character": "Felix Fox",
+      "script": "Time to use your hands like Felix Fox! Foxes have the most beautiful bushy tails! Roll your piece of paper into a thick, fluffy cone shape — nice and round — then tape the edge down so it holds its shape. Now Felix has his gorgeous tail! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_y.wav",
+      "sticker_id": "y_yak",
+      "type": "gross",
+      "character": "Yogi Yak",
+      "script": "Time to move like Yogi Yak! Yaks live on big windy mountains, and the wind blows their fur all over the place! Shake your head from side to side as fast as you can for ten whole seconds — whoosh, whoosh, whoosh! You are so wild and free! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_y.wav",
+      "sticker_id": "y_yak",
+      "type": "fine",
+      "character": "Yogi Yak",
+      "script": "Time to use your hands like Yogi Yak! Yaks have two big beautiful horns on their heads! Roll two small pieces of paper into curved cone shapes — one for each horn. Now set them side by side and look at those beauties! You've made Yogi's horns! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_z.wav",
+      "sticker_id": "z_zebra",
+      "type": "gross",
+      "character": "Zara Zebra",
+      "script": "Time to move like Zara Zebra! Zebras gallop across the plains with their knees up super high! Start galloping right where you are — knees up, knees up — as fast as a zebra for ten whole seconds! You are such a fast, beautiful zebra! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_z.wav",
+      "sticker_id": "z_zebra",
+      "type": "fine",
+      "character": "Zara Zebra",
+      "script": "Time to use your hands like Zara Zebra! Zebras are covered in amazing stripes from head to toe! Tear your piece of paper into lots of thin strips. Now line them all up in a neat row right next to each other — those are Zara's beautiful stripes! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_ch.wav",
+      "sticker_id": "ch_cheetah",
+      "type": "gross",
+      "character": "Chase Cheetah",
+      "script": "Time to move like Chase Cheetah! Cheetahs are the fastest animals on the whole entire planet, and right now YOU are the fastest! Run in place as fast as your legs will go — pump those arms, pump those legs — for ten whole seconds! Go, go, GO! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_ch.wav",
+      "sticker_id": "ch_cheetah",
+      "type": "fine",
+      "character": "Chase Cheetah",
+      "script": "Time to use your hands like Chase Cheetah! Cheetahs are covered in tons and tons of little spots! Tear your piece of paper into many tiny round little bits. Now dot them all over another sheet of paper — spots everywhere, just like Chase! So awesome! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_sh.wav",
+      "sticker_id": "sh_shark",
+      "type": "gross",
+      "character": "Shelly Shark",
+      "script": "Time to move like Shelly Shark! Sharks glide through the water with their bodies long and smooth! Lie down on your tummy, put your arms flat at your sides, and wiggle your whole body forward like a shark swimming through the deep blue sea for ten seconds. Amazing! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_sh.wav",
+      "sticker_id": "sh_shark",
+      "type": "fine",
+      "character": "Shelly Shark",
+      "script": "Time to use your hands like Shelly Shark! Every shark has a tall fin sticking straight up on their back! Take your piece of paper and fold it into a tall, stiff triangle shape. Press it flat at the bottom so it stands up all by itself. That is Shelly's fin! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_th.wav",
+      "sticker_id": "th_thrush",
+      "type": "gross",
+      "character": "Theo Thrush",
+      "script": "Time to move like Theo Thrush! Theo is a beautiful bird who loves to flap and fly! Flap both arms up and down like big strong bird wings while you hop in place for ten whole seconds! Up and down, up and down — you are really flying! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_th.wav",
+      "sticker_id": "th_thrush",
+      "type": "fine",
+      "character": "Theo Thrush",
+      "script": "Time to use your hands like Theo Thrush! Birds build cozy round nests for their babies, and you are going to make one! Take your whole piece of paper and slowly scrunch it — gently, gently — into a round bowl shape. That is the perfect little nest! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_bl.wav",
+      "sticker_id": "bl_blowfish",
+      "type": "gross",
+      "character": "Blinky Blowfish",
+      "script": "Time to move like Blinky Blowfish! Blowfish puff up as big and round as a ball when they feel brave! Puff your cheeks out full of air, spread your arms as wide as they can go, and spin slowly in a full circle for ten seconds. Big and round and brave! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_bl.wav",
+      "sticker_id": "bl_blowfish",
+      "type": "fine",
+      "character": "Blinky Blowfish",
+      "script": "Time to use your hands like Blinky Blowfish! Blinky puffs up into the biggest, roundest ball you have ever seen! Use both hands to crumple your whole sheet of paper — squeeze it, push it, round it out — until you have the biggest, most perfect round ball ever! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_br.wav",
+      "sticker_id": "br_bronco",
+      "type": "gross",
+      "character": "Bruno Bronco",
+      "script": "Time to move like Bruno Bronco! Broncos are wild horses that love to buck and kick! Lean forward and put your hands on your knees, then kick one foot back — fast, fast, fast — five times in a row! Whoa there, wild horse! You are so strong! I believe in you!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_br.wav",
+      "sticker_id": "br_bronco",
+      "type": "fine",
+      "character": "Bruno Bronco",
+      "script": "Time to use your hands like Bruno Bronco! Broncos have wild, wavy manes that fly all over in the wind! Tear your piece of paper into thick, wavy strips — make them as wild and wavy as you can! Now pile them all in a big bunch. That is Bruno's amazing mane! Let's go!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_tr.wav",
+      "sticker_id": "tr_trout",
+      "type": "gross",
+      "character": "Trixie Trout",
+      "script": "Time to move like Trixie Trout! Trout are amazing fish that leap right up out of the water! Lie down on your tummy and lift both your arms and both your legs off the floor at the same time — then lower them down. Do that five times! You are leaping! You've got this, superstar!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_tr.wav",
+      "sticker_id": "tr_trout",
+      "type": "fine",
+      "character": "Trixie Trout",
+      "script": "Time to use your hands like Trixie Trout! Fish are covered in beautiful little scales that overlap like tiny tiles! Tear your piece of paper into many small oval pieces. Now lay them out in rows on another sheet, each one overlapping the next — just like real fish scales! I believe in you!"
+    }
+  ]
+}
