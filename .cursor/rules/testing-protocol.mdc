@@ -20,11 +20,22 @@ alwaysApply: true
 - Any new screen or new route added
 - Any AsyncStorage or Supabase change
 
-**Device guidance:**
-- Expo Go on any Android phone: acceptable for quick smoke tests during development
-- Fire HD 10: REQUIRED for any Skia, gesture, or performance testing
-- Fire HD 10: REQUIRED before declaring any phase complete
-- Fire HD 10: REQUIRED before Libby ever uses the app
+**Device guidance — Two-Tier System:**
+
+Tier 1 — Ryan's iPhone 17 Pro Max (solo, fast):
+- Run after every major code session before coordinating with Amber
+- Catches crashes, broken navigation, obvious UI issues, audio problems
+- Does NOT catch: RAM limits, Skia/Android rendering bugs, Fire OS gesture differences
+- Goal: "Does it work at all?" — 5 minutes, catches obvious problems
+
+Tier 2 — Fire HD 10 with Amber and Libby in Tennessee (coordinated, milestone only):
+- Only schedule after Tier 1 passes cleanly
+- Required for: Skia rendering, gesture handling, performance at 3GB RAM, child UX observation
+- Coordinate session timing with Amber in advance — do not waste her or Libby's time debugging
+- When approaching a milestone test, flag Ryan to plan the Amber session at least a few days ahead
+- Details on remote coordination (video call, screen share, recording) to be planned when Phase 1 is ready
+
+Fire HD 10 is REQUIRED (Tier 2) before declaring any phase complete or before Libby uses the app independently.
 
 **Four milestone tests — surface these proactively at phase completion:**
 
