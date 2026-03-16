@@ -27,12 +27,21 @@ Run this at the start of every new conversation before doing any work.
 4. **Read the last 2 entries in PATCH_NOTES.md**
    Know what was done in the last session and what was left unfinished.
 
-5. **Give Ryan a 3-line briefing:**
+5. **Surface the top open Known Flag**
+   Check the "Known Flags" section of PROJECT_CONTEXT.md. Name the single most
+   urgent unresolved issue so Ryan stays aware of it — even if we're not fixing it today.
+
+6. **Check .env has real values (if code work is planned)**
+   If the session involves Supabase features, verify EXPO_PUBLIC_SUPABASE_URL and
+   EXPO_PUBLIC_SUPABASE_ANON_KEY in .env are not placeholder strings.
+   If blank: warn Ryan that Star Mail and any backend features will silently fail.
+
+7. **Give Ryan a 3-line briefing:**
    - "Current phase: [X]. Last session: [what was done]."
    - "Open items: [top 1-2 things that need to happen next]."
    - "Time status: [peak/off-peak and what that means today]."
 
-6. **Ask what Ryan wants to work on** — do not assume and charge ahead.
+8. **Ask what Ryan wants to work on** — do not assume and charge ahead.
 
 ---
 
@@ -46,20 +55,29 @@ Run this before ending any conversation where meaningful work was done.
 2. **Update PROJECT_CONTEXT.md**
    If any decisions changed the project direction, phase status, or known flags — update it.
 
-3. **Commit and push to GitHub**
-   Run a git status to show Ryan what changed, then:
-   - `git add .`
-   - `git commit -m "Session summary: [brief description of what was done]"`
+3. **Run linter before committing**
+   Run: `cd "c:\App Development\sticker-quest"; npx expo lint`
+   If errors appear, fix them before committing. Never push broken code to GitHub.
+   If warnings only (no errors), note them but proceed.
+
+4. **Flag new npm packages if any were installed**
+   If any `npm install` commands were run this session, tell Ryan:
+   "New packages were added. If you open this project on another device,
+   run: npm install — in the terminal first."
+
+5. **Commit and push to GitHub**
+   Run git status to confirm what changed, then:
+   - `cd "c:\App Development\sticker-quest"; git add .`
+   - Commit with a clear plain-English summary message
    - `git push origin main`
    Tell Ryan: "Everything is saved to GitHub. Your work is backed up."
-   If push fails (auth issue, branch conflict), explain the problem in plain English
-   and give Ryan a simple fix.
+   If push fails, explain the problem plainly and give a simple fix.
 
-4. **Clear next move**
+6. **Clear next move**
    End with the standard "Your next move:" line so Ryan always knows exactly
    what to do when he comes back.
 
-5. **Flag anything time-sensitive**
+7. **Flag anything time-sensitive**
    If something needs to happen before a deadline (e.g., March 27 Claude Pro sprint),
    say so explicitly at the end of the session.
 

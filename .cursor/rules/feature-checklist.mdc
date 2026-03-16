@@ -1,0 +1,46 @@
+---
+description: Checklist for every new feature and every new content addition.
+globs: **/*
+alwaysApply: false
+---
+
+# FEATURE & CONTENT CHECKLIST
+
+Run the appropriate checklist any time a new feature is built or new content is added.
+
+---
+
+## NEW FEATURE CHECKLIST
+
+Before writing a single line of code for any new feature, answer all of these:
+
+- [ ] **Offline?** Does this feature work without internet? If not, does it queue gracefully?
+- [ ] **Skia cleanup?** If this uses a Skia Canvas, is there a useEffect cleanup nullifying SkImage/SkPicture?
+- [ ] **Parent PIN?** If this is a parent action, is it behind the PIN gate so the child cannot reach it?
+- [ ] **Child cannot self-complete?** No bypass exists for parent-only confirmations.
+- [ ] **TinyStories?** All visible text uses 1,500-word vocabulary. No developer jargon in UI.
+- [ ] **In lore?** All child-facing messages are written in Starlight's voice, in character.
+- [ ] **Fire HD 10 RAM?** No new heavy allocations without a cleanup path. Stays within 384MB.
+- [ ] **No overpromising?** Feature does not claim to measure what it cannot verify.
+- [ ] **Scope check?** Feature is in the current phase plan. If not, flag it before building.
+- [ ] **Test required?** Add a TEST REQUIRED block to the response if this touches Skia, stores, navigation, or gestures.
+
+---
+
+## CONTENT ADDITION CHECKLIST
+
+Run this every time new JSON content arrives from Claude Pro (stickers, math problems, lore copy, audio scripts):
+
+- [ ] **Schema valid?** All required fields present: id, sticker_name, target_concept, phoneme/math_domain, audio_path, skia_asset, motor_tasks (gross + fine), hints (exactly 3), mastery_gate.
+- [ ] **CVC/concept valid?** Phoneme stickers: true CVC word. Math stickers: real K-level concept.
+- [ ] **Hints: exactly 3?** No more, no fewer.
+- [ ] **Hint 3 starts with "Uncle Ryan says:"?** Required on every sticker.
+- [ ] **TinyStories compliant?** Flag any word in hints or descriptions that a 5-year-old is unlikely to know.
+- [ ] **Motor milestone safe?** No gross motor task requires static balance longer than 5 seconds.
+- [ ] **Gross task under 15 seconds?** No equipment required.
+- [ ] **Fine task household-only?** Only paper, tape, or common household items.
+- [ ] **mastery_gate set to "vision_motion_verify"?** Required on all stickers.
+- [ ] **ID naming convention?** Format: concept_abbreviation + underscore + animal name (e.g., b_bear, cnt1_ant).
+- [ ] **No duplicate IDs?** Check against existing stickers in k_grade_content.json.
+- [ ] **sticker_count updated?** Update the count field at the schema root after any additions.
+- [ ] **Version bumped?** Increment version string (e.g., 2026.3 → 2026.4) on any content change.

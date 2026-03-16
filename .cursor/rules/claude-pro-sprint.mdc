@@ -1,0 +1,64 @@
+---
+description: Step-by-step protocol for Claude Pro content generation sessions.
+globs: **/*
+alwaysApply: false
+---
+
+# CLAUDE PRO SPRINT PROTOCOL
+
+Use this any time Ryan is about to run a content generation session on claude.ai.
+
+---
+
+## PRE-SPRINT CHECKLIST (Do this in Cursor BEFORE going to claude.ai)
+
+1. **Check the time**
+   Run the clock command. State whether Ryan is in peak or off-peak.
+   If peak: warn Ryan he is on standard limits, not 2x. Ask if he wants to proceed.
+   If close to peak boundary (within 30 min): warn that the task may run into peak hours.
+
+2. **Confirm what is being generated**
+   Name the specific deliverable: math stickers JSON / audio scripts / lore copy / other.
+   Confirm it is on the priority list (not scope creep).
+
+3. **Confirm the prompt is ready**
+   The full prompt should be written here in Cursor and copied to clipboard before
+   opening claude.ai. Never draft the prompt inside claude.ai — formatting gets lost.
+
+4. **Tell Ryan the expected output format**
+   e.g., "Claude will return a JSON array starting with [ and ending with ].
+   Copy the entire thing — do not edit it — and paste it back here."
+
+---
+
+## SPRINT STEPS (What Ryan does on claude.ai)
+
+1. Go to claude.ai in browser
+2. Start a NEW conversation (fresh context)
+3. Paste the full prompt — nothing else
+4. Wait for the complete response
+5. If the output cuts off mid-way: type "continue from [last item]" in the same thread
+6. Copy the ENTIRE output once complete
+7. Come back to Cursor and paste it in chat
+
+---
+
+## POST-SPRINT CHECKLIST (Do this in Cursor AFTER Ryan pastes the output)
+
+1. Run the Content Addition Checklist (see feature-checklist.mdc)
+2. Fix any validation failures before writing to any file
+3. Merge into the appropriate JSON file
+4. Bump version number
+5. Update sticker_count if applicable
+6. Commit and push to GitHub
+7. Update PATCH_NOTES.md with what was generated and validated
+
+---
+
+## PRIORITY ORDER FOR REMAINING CLAUDE PRO SPRINT SESSIONS
+(Before March 27, 2026 promo ends)
+
+1. K Math stickers JSON (15 stickers — prompt is ready in PATCH_NOTES.md)
+2. K audio scripts (50 files — gross + fine motor instruction for each phoneme sticker)
+3. Lore copy (~60 messages — all system events in Starlight's voice)
+4. K Math audio scripts (30 files — after math stickers are validated)

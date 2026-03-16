@@ -1,0 +1,62 @@
+---
+description: Safety checklist before Libby or any child uses the app.
+globs: **/*
+alwaysApply: false
+---
+
+# CHILD SAFETY REVIEW PROTOCOL
+
+Run this checklist BEFORE Libby tests the app for the first time, and again before
+any public release. This is non-negotiable.
+
+---
+
+## CONTENT SAFETY
+
+- [ ] No child's real name is hardcoded anywhere in the UI (must come from store, not code)
+- [ ] All visible text passes TinyStories-1500 vocabulary review
+- [ ] All hint text has been reviewed — no confusing, scary, or inappropriate language
+- [ ] All lore messages are warm, encouraging, and age-appropriate
+- [ ] No developer debug text is visible to the child (__DEV__ gates confirmed)
+- [ ] No placeholder text ("Lorem ipsum", "TODO", "test string") in any visible UI
+
+---
+
+## PARENT CONTROL SAFETY
+
+- [ ] All parent-only actions require the PIN — child has no bypass path
+- [ ] Graduation gate requires minimum mastery requirements AND parent PIN
+- [ ] Daily time limit (3-hour hard cap) is implemented and enforced
+- [ ] Parent manual completion confirmation requires a deliberate tap (no misclick risk)
+- [ ] "Guardian" label used consistently for parent in all in-app text
+
+---
+
+## DATA SAFETY
+
+- [ ] No child name, age, or grade is sent to any external server except Star Mail
+- [ ] Camera (motion verify) processes on-device only — zero data transmitted
+- [ ] No third-party analytics, ad networks, or tracking SDKs are present
+- [ ] .env Supabase keys are real and the database has Row Level Security active
+- [ ] Star Mail only stores parent-authored messages — no child behavioral data
+
+---
+
+## TECHNICAL SAFETY
+
+- [ ] App runs fully offline (core features) — test with airplane mode enabled
+- [ ] Skia components all have useEffect cleanup for SkImage/SkPicture
+- [ ] No crashes on Fire HD 10 during a normal 15-minute session
+- [ ] largeHeap: true confirmed in app.json
+- [ ] App recovers gracefully from being backgrounded and reopened
+
+---
+
+## PRE-PUBLIC LAUNCH ADDITIONS (Phase 4)
+
+These are NOT required for Libby's private September test, but required before App Store:
+- [ ] COPPA verifiable parental consent flow at onboarding
+- [ ] Privacy policy live at a real URL
+- [ ] CA SB 243 AI watermark visible on all AI-generated content screens
+- [ ] Data deletion mechanism available to parents
+- [ ] App Store children's category compliance confirmed
