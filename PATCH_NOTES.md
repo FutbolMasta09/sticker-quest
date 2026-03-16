@@ -16,6 +16,16 @@ Goal: Ryan feels comfortable navigating Cursor independently before we build mor
 
 ---
 
+## [2026-03-16n] Session: Exit Protocol Final Upgrades
+**Status:** Infrastructure — session fully wrapped
+
+### UPDATES
+- `session-protocol.mdc` — Exit step 6 now requires a ranked menu of 2–4 options with reasoning and time estimates.
+- Content tasks labeled "reliable." Code tasks labeled "may vary" — always with a caveat warning.
+- Honest advisor note: code time estimates are ballparks only. Never treat them as deadlines.
+
+---
+
 ## [2026-03-16l] Session: File Audit Rule + Lint Flag + Exit
 **Status:** Infrastructure — session wrapped cleanly
 
