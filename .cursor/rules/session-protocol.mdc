@@ -85,10 +85,16 @@ Run this before ending any conversation where meaningful work was done.
    Format it like this:
 
    **Next Session — Your Options (in my recommended order):**
-   1. [URGENT if applicable] [Option name] — [1-sentence reason why]
-   2. [Option name] — [1-sentence reason why]
-   3. [Option name] — [1-sentence reason why]
+   1. [URGENT if applicable] [Option name] — [1-sentence reason why] | ⏱ ~X min (reliable/may vary)
+   2. [Option name] — [1-sentence reason why] | ⏱ ~X min (reliable/may vary)
+   3. [Option name] — [1-sentence reason why] | ⏱ ~X min (reliable/may vary)
    *(Optional) Off-peak bonus: [Name of Claude Pro sprint to run] — best time: [when]*
+
+   Time estimate rules:
+   - Content tasks (Claude Pro sprints, JSON merges): label as "reliable" — these are predictable
+   - Code tasks (building features, fixing bugs): label as "may vary" — unexpected issues are normal
+   - Never give a code estimate without a "may vary" warning
+   - If a code task has a known hidden risk (e.g., touching a stub that may cascade), flag it explicitly
 
    Always give a recommended order. Never just list options without a preference.
    Always factor in deadlines and promo windows when ranking.
