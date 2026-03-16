@@ -13,25 +13,58 @@ Checked automatically at the start of every off-peak session.
 ## QUEUE (Run These Next — In Priority Order)
 
 ### 1. Lore Copy (~60 messages)
-**Priority:** MEDIUM-HIGH — needed for Phase 2 before Libby tests
+**Priority:** HIGH — needed for Phase 2 before Libby tests
 **Estimated time:** 10–15 minutes on claude.ai
 **Prompt:** Not yet written — generate in Cursor before running
 **Output format:** JSON object with event keys mapped to Starlight's message strings
 **What to do after:** Paste here → validate lore voice + TinyStories → save to lore file
 **Added:** 2026-03-16
 
-### 3. Lore Copy (~60 messages)
-**Priority:** MEDIUM — needed for Phase 2 before Libby tests
-**Estimated time:** 10–15 minutes on claude.ai
-**Prompt:** Not yet written — generate in Cursor before running
-**Output format:** JSON object with event keys mapped to Starlight's message strings
-**What to do after:** Paste here → validate lore voice + TinyStories → save to lore file
-**Added:** 2026-03-16
-
-### 4. K Math Audio Scripts (30 files)
-**Priority:** MEDIUM — needed for Phase 2, after math stickers are validated
+### 2. K Math Audio Scripts (30 files)
+**Priority:** HIGH — needed for Phase 2, math stickers now finalized ✅
 **Estimated time:** 10 minutes on claude.ai
-**Prompt:** Not yet written — depends on math stickers being finalized first
+**Prompt:** Not yet written — generate in Cursor before running
+**Output format:** JSON array of 30 script objects matching k_phonics_audio_scripts.json structure
+**What to do after:** Paste here → validate → save to k_math_audio_scripts.json
+**Added:** 2026-03-16
+
+### 3. Starlight Story Intro Script
+**Priority:** HIGH — needed for Phase 2 (illustrated opening narration, 2–3 min)
+**Estimated time:** ~10 minutes on claude.ai
+**Prompt:** Not yet written — requires a design planning conversation first to lock story beats
+**Output format:** Narration script with scene descriptions and line-by-line Starlight dialogue
+**What to do after:** Paste here → review for TinyStories + lore voice → save to story scripts file
+**Added:** 2026-03-16
+
+### 4. Quest Completion Celebration Lines (30+ variations)
+**Priority:** MEDIUM — needed before Libby tests (prevents repetition after many stickers)
+**Estimated time:** ~10 minutes on claude.ai
+**Prompt:** Not yet written — generate in Cursor before running
+**Output format:** JSON array of celebration strings in Starlight's voice
+**What to do after:** Paste here → validate → save to lore file
+**Added:** 2026-03-16
+
+### 5. Daily Greeting Variations (14+ lines)
+**Priority:** MEDIUM — needed before Libby tests
+**Estimated time:** ~10 minutes on claude.ai
+**Prompt:** Not yet written — generate in Cursor before running
+**Output format:** JSON array of daily welcome strings in Starlight's voice
+**What to do after:** Paste here → validate → save to lore file
+**Added:** 2026-03-16
+
+### 6. Kira Phonics Hint Variants (12 rewrites)
+**Priority:** MEDIUM — needed before Libby tests (phonics set is currently all Uncle Ryan)
+**Estimated time:** ~5 minutes on claude.ai
+**Prompt:** Not yet written — will reference the 12 stickers that need Aunt Kira attribution
+**Output format:** JSON array of updated hint objects (hint 3 only, for 12 stickers)
+**What to do after:** Paste here → merge into k_grade_content.json → bump version to 2026.4
+**Added:** 2026-03-16
+
+### 7. Parent Onboarding Copy
+**Priority:** LOW — needed for Phase 4 public launch, not urgent
+**Estimated time:** ~15 minutes on claude.ai
+**Prompt:** Not yet written
+**Output format:** JSON object with screen keys mapped to copy strings
 **Added:** 2026-03-16
 
 ---

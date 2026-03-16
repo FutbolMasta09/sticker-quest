@@ -371,6 +371,9 @@ Math, reading comprehension, science connections. Not in K scope.
 Each subject would need its own motor-task mapping system.
 Flag as potential G2/G3 expansion only.
 
+### Social Studies Strand — History & Geography (Post-K-Launch)
+K-level history (community helpers, family traditions) and geography (basic maps, land and water) are genuinely interesting candidates for future subject expansion. However, they require a curriculum framework design sprint before any content can be generated — the phonics-motor and math-motor connections are natural, but the history/geography-motor connection needs to be designed from scratch. Do NOT begin until K phonics and math are proven stable.
+
 ### International Editions / Localization (Post-Revenue, Phase 5+)
 UI localization (menus, parent screens) is relatively straightforward and could happen in Phase 4.
 **Content localization is a different product entirely.** Spanish phonics, for example, uses a completely different phoneme system — CVC words, motor tasks, hints, lore copy, and audio scripts would all need to be rebuilt from scratch for each language. This is not a translation sprint; it is a full content rebuild.
