@@ -5,27 +5,29 @@ import QuestGrid from '@/src/components/QuestGrid';
 import StarCounter from '@/src/components/StarCounter';
 import StarMail from '@/src/components/StarMail';
 import StarlightSpirit from '@/src/components/StarlightSpirit';
+import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
+import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { useUserStore } from '@/src/store/useUserStore';
 import { Star } from 'lucide-react-native';
-import {
-  ScrollView,
-  StyleSheet,
-  useWindowDimensions,
-  View
-} from 'react-native';
+import { useEffect } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   const { childName, stars } = useUserStore();
-  const { width, height } = useWindowDimensions();
-  const isLandscape = width > height;
-  
-  // PixelPusher scaling: Use percentages for layout
-  const containerPadding = Math.min(width * 0.05, 24);
-  const columnGap = Math.min(width * 0.04, 16);
-  const leftColumnWidth = isLandscape ? width * 0.4 : width * 0.95;
-  const rightColumnWidth = isLandscape ? width * 0.6 : width * 0.95;
-  const canvasSize = Math.min(width * 0.25, 140);
+  const { startSession } = useMasteryStore();
+  const { scale, moderateScale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
+
+  const isLandscape = screenWidth > screenHeight;
+  const containerPadding = scale(16);
+  const columnGap = scale(12);
+  const leftColumnWidth = isLandscape ? screenWidth * 0.38 : screenWidth * 0.95;
+  const rightColumnWidth = isLandscape ? screenWidth * 0.58 : screenWidth * 0.95;
+  const canvasSize = isTablet ? scale(160) : scale(120);
+
+  useEffect(() => {
+    startSession();
+  }, []);
 
   return (
     <ThemedView style={styles.container}>

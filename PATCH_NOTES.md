@@ -1,3 +1,19 @@
+## [2026-03-17g] Session: Phase 1 Core Engine — First Build
+**Status:** Phase 1 code — three core files built
+
+### BUILT
+1. **`src/hooks/useResponsiveScale.ts`** — NEW. Scale hook for Fire HD 10. Provides `scale()`, `verticalScale()`, `moderateScale()`, `isTablet`. Baseline: 390px wide (iPhone 14). Clamped between 0.75x and 1.9x.
+2. **`src/store/useMasteryStore.ts`** — REBUILT from stub. Full sticker progress tracking: stars (0–3), attempts, dates. Session tracking with 3-hour daily lock. Progressive unlock (5 stickers at start, +5 per chapter). Persists to AsyncStorage.
+3. **`src/components/QuestGrid.tsx`** — REBUILT. Now reads from k_grade_content.json. Shows all 25 phonics stickers in a responsive grid. Locked stickers greyed out. Star count per sticker. Animal emoji placeholders until Phase 2 art arrives.
+4. **`app/(tabs)/index.tsx`** — Updated to use `useResponsiveScale` instead of inline math. Calls `startSession()` on mount via useEffect.
+
+### KNOWN NOTES
+- QuestGrid tapping an unlocked sticker does nothing yet — quest flow screen is Phase 2 work
+- Animal emojis are placeholders for the real .skp sticker art
+- Math stickers (k_math_content.json) not yet wired — phonics only for now
+
+---
+
 ## [2026-03-17f] Session: Sticker Earned Celebrations + Copy-Box Rule Update
 **Status:** Content update + rule fix
 
