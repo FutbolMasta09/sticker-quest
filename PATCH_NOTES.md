@@ -1,4 +1,7 @@
 ## [2026-03-17k] Session: Game Design — The Anchor's Desk Concept Locked
+**ONE-TIME NEXT SESSION:** Add marketing plans to the roadmap — Sticker Quest (detailed, timely) and The Anchor's Desk (Steam wishlist strategy only, not a full plan). ~20–30 min. See session notes below for context.
+
+
 **Status:** Design only — no code changes. Parallel track to Sticker Quest.
 
 ### ACCOMPLISHMENTS
