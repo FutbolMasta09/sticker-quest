@@ -1,3 +1,22 @@
+## [2026-03-17j] Session: Prompt Coaching System + Cross-Project Carryover
+**Status:** Prompt training workflow implemented and made reusable
+
+### ACCOMPLISHMENTS
+1. **Prompt coaching system implemented in `docs/`** — added `PROMPT_COACHING_PLAYBOOK.md`, `PROMPT_TEMPLATE.md`, `PROMPT_COACHING_LOG.md`, `MODEL_ROUTING_CHEAT_SHEET.md`, `PROJECT_PROFILE_TEMPLATE.md`, and `PROMPT_WEEKLY_SCORECARD.md`.
+2. **Live coaching loop executed on real Sticker Quest task** — ran draft -> upgraded prompt -> execution -> scoring, and logged the result in `PROMPT_COACHING_LOG.md`.
+3. **Session behavior upgraded** — playbook now requires:
+   - start-of-session reminder from last session's scorecard
+   - end-of-session scorecard summary (what went well + what to improve next)
+4. **Cross-project carryover added** — copied prompt coaching docs into `starter/rules-pack/docs/` so new projects inherit the same workflow by default.
+5. **Project status cleanup** — updated `PROJECT_CONTEXT.md` to mark the `f_frog` mismatch as resolved (content file already had the fix).
+
+### NEXT STEPS
+1. Keep logging each meaningful coached task in `docs/PROMPT_COACHING_LOG.md`.
+2. At session start, read and report the "Last Session Reminder" block.
+3. At session close, give the scorecard recap and update weekly metrics.
+
+---
+
 ## [2026-03-17i] Session: Celebration Overlay + Star Selector Fix + Lessons Log
 **Status:** Quest loop polished and fully verified on device
 

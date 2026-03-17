@@ -188,7 +188,7 @@ All core learning is 100% offline. App never stops due to lost WiFi.
 ---
 
 ## Known Flags / Open Issues
-1. **`f_frog` phoneme mismatch:** `sticker_name` is "Felix Frog" but `phoneme` is `/h/` (targeting CVC "HOP"). Either rename character to "Harvey Hopper" or change phoneme to `/f/` with a new CVC word. NOT yet resolved.
+1. **`f_frog` phoneme mismatch:** Resolved. `f_frog` now uses `sticker_name` "Freddy Frog", `target_cvc` "FIG", and `phoneme` `/f/` in `k_grade_content.json`.
 2. **Missing `.skp` assets:** `k_grade_content.json` references `assets/stickers/snake.skp` and `frog.skp` — these files do not exist yet. Phase 2 work.
 3. **Mastered Words list missing:** No formal Mastered Words list has been written. Needs to be added here when defined.
 4. **`useResponsiveScale.ts` is missing:** March 11 patch notes say it was built but it does not exist in the project. Fire HD 10 scaling logic needs to be rebuilt.
