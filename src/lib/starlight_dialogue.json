@@ -1,0 +1,71 @@
+{
+  "version": "2026.1",
+  "character": "Starlight the Unicorn",
+  "messages": {
+    "daily_greetings": [
+      "You came back! My horn is glowing just for you! Let's play!",
+      "Yay! My favorite friend is here! I missed you so much!",
+      "Look who it is! The meadow has been waiting for you all day!",
+      "Hello, hello, hello! The flowers are dancing because you are here!",
+      "Oh my sparkles! You are back! Today is going to be so fun!",
+      "There you are! The stars told me you were coming! Let's go!",
+      "Welcome back to the meadow! I saved the best sparkles for you!",
+      "Hip hip hooray! My wonderful friend is here! Ready to play?",
+      "The rainbow got extra bright because you came back! I love it!",
+      "Guess what? The whole meadow lit up when you walked in! Let's start!"
+    ],
+    "star_1_celebration": [
+      "You moved your body so well! That was amazing! Here is your first star!",
+      "Look at you go! Your hands did such a great job! One shiny star for you!",
+      "Wow! You really did it! Your first star is sparkling just for you!",
+      "That was so cool! You tried so hard and you did it! Star number one!",
+      "I saw you move and try your best! That is worth a beautiful star!"
+    ],
+    "star_2_celebration": [
+      "I saw you do it perfectly! Your second star is glowing so bright!",
+      "Oh my goodness! You did it just right! Two stars now — look at them shine!",
+      "You are getting so good at this! Star number two is all yours!",
+      "That was just the way to do it! Your second star is dancing for you!",
+      "Beautiful! You did it the right way! Two sparkly stars — I am so proud!"
+    ],
+    "star_3_celebration": [
+      "You are a superstar! Three stars! You really know this one now!",
+      "All three stars are yours! You did it again and again! I am so proud of you!",
+      "Wow wow wow! Three shiny stars! You are the best at this! Amazing!",
+      "You learned it all the way! Three stars and a brand new sticker! You rock!",
+      "Look at all three stars glowing! You worked so hard and now you are a master!"
+    ],
+    "parent_gate_locked": [
+      "This is a special door! Only a grown-up can open it. Can you ask your mommy or daddy for help?",
+      "Ooh, this door needs a grown-up's magic touch! Go find your big person!",
+      "This part is just for grown-ups! Ask someone big to help you open it!"
+    ],
+    "parent_gate_wrong_pin": [
+      "Hmm, that is not the magic number! Ask a grown-up for help!",
+      "Oopsie! That was not quite right. A grown-up will know the secret number!",
+      "Almost! But that is not it. Can you ask your mommy or daddy to try?"
+    ],
+    "graduation_door_revealed": [
+      "Oh my sparkles! Look over there! A big golden door just showed up in the meadow! I have never seen it before! I think something wonderful is behind it!",
+      "Wait — do you see that? A shining door with stars all around it just came out of the ground! It is so pretty! I think it is here because of all your hard work!",
+      "Whoa! A magical door is glowing at the end of the meadow! It has a big number one on it! I think it is calling your name!"
+    ],
+    "graduation_ceremony": [
+      "This is the biggest day ever! You did every single quest in the meadow! You learned so much, and I am so, so proud of you. Now it is time to walk through the golden door. Are you ready? On the other side is a whole new world to explore — Grade One! I will always be right here cheering for you. Go ahead, superstar. Open the door!",
+      "Look at you! You finished everything! Every sticker, every star, every quest! My heart is so full of sparkles right now. The golden door is open just for you. When you walk through, you will be a Grade One kid! I believe in you with all my heart. You are going to do amazing things. Go on — your next big adventure is waiting!",
+      "I cannot believe this day is here! You started as a little learner, and now look at you — you are ready for Grade One! You worked so hard, you never gave up, and you made the whole meadow proud. The golden door is shining so bright for you. Take a deep breath, smile big, and step on through. I love you, superstar. Go shine!"
+    ],
+    "daily_limit_reached": [
+      "You played so much today! Your brain needs a little rest now. Go run outside and play! I will be right here when you come back tomorrow!",
+      "What a big day of learning! Time to close your eyes, play outside, and let your brain dream up new ideas. See you tomorrow, friend!",
+      "You did so many wonderful things today! Now it is time to go have fun outside. The meadow will be here waiting for you tomorrow!"
+    ],
+    "session_complete": [
+      "You finished your quest! I am so proud of you! See you next time!",
+      "Amazing job today! Every star you earned is still shining for you. Come back soon!",
+      "You did it! What a wonderful quest! Rest up and we will play again soon!",
+      "That was so much fun! You are getting better every day. See you later, friend!",
+      "Great work, superstar! The meadow will miss you. Come back and play again soon!"
+    ]
+  }
+}
