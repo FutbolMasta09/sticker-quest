@@ -15,13 +15,6 @@ Checked automatically at the start of every off-peak session.
 
 
 
-### 4. Quest Completion Celebration Lines (30+ variations)
-**Priority:** MEDIUM — needed before Libby tests (prevents repetition after many stickers)
-**Estimated time:** ~10 minutes on claude.ai
-**Prompt:** Not yet written — generate in Cursor before running
-**Output format:** JSON array of celebration strings in Starlight's voice
-**What to do after:** Paste here → validate → save to lore file
-**Added:** 2026-03-16
 
 ### 5. Daily Greeting Variations (14+ lines)
 **Priority:** MEDIUM — needed before Libby tests
@@ -65,6 +58,10 @@ Checked automatically at the start of every off-peak session.
 ### Chapter Transitions + Peggy Cameos
 **Completed:** 2026-03-17
 **Result:** Committed to src/assets/k_story_chapters.json v2026.1 — Peggy's full K arc complete
+
+### Quest Completion Celebration Lines (30 lines)
+**Completed:** 2026-03-17
+**Result:** Added to src/assets/k_lore_messages.json v2026.2 as "sticker_earned"
 
 ### K Phonics Audio Scripts (50 scripts)
 **Completed:** 2026-03-16

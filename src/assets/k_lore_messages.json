@@ -1,5 +1,5 @@
 {
-  "version": "2026.1",
+  "version": "2026.2",
   "character": "Starlight the Unicorn",
   "messages": {
     "daily_greetings": [
@@ -59,6 +59,38 @@
       "You played so much today! Your brain needs a little rest now. Go run outside and play! I will be right here when you come back tomorrow!",
       "What a big day of learning! Time to close your eyes, play outside, and let your brain dream up new ideas. See you tomorrow, friend!",
       "You did so many wonderful things today! Now it is time to go have fun outside. The meadow will be here waiting for you tomorrow!"
+    ],
+    "sticker_earned": [
+      "A new star is shining because of YOU!",
+      "That sticker is yours forever — you earned every bit of it!",
+      "The meadow just got a little brighter — did you feel that?",
+      "Look at that sparkle! Your sticker found its way home to you!",
+      "Oh my goodness, it is SO pretty! And it is all yours!",
+      "Every time you earn a sticker, the sky gets one more star!",
+      "You worked so hard for this one — I could see it in your eyes!",
+      "Can you hear the flowers clapping? They are cheering for YOU!",
+      "Right there in your collection — shining like it was always meant to be!",
+      "My horn is glowing extra bright because of what you just did!",
+      "I knew you could do it, and you did it even better than I dreamed!",
+      "The whole meadow is dancing right now — all because of you!",
+      "That one is special, and so are you — what a perfect match!",
+      "Your collection is growing and growing — just like how much you know!",
+      "Do you see how it sparkles? It is happy to be yours!",
+      "Wow, wow, WOW! Another sticker comes home to your collection!",
+      "The stars in the sky are winking at you right now — I can see them!",
+      "Nobody else in the whole world earned that sticker — only you!",
+      "Feel that warm glow? That is what happens when you try your very best!",
+      "One more beautiful sticker, safe and sound in your book forever!",
+      "I am so proud of you that my tail is wagging — wait, do unicorns wag tails?",
+      "This might be my favorite one yet — but I say that every time because they are ALL amazing!",
+      "You did something really wonderful just now — never forget that!",
+      "Another star found its way home, all because you never gave up!",
+      "Quick, look at your collection! It is even more beautiful now!",
+      "That sticker was waiting for someone brave and smart — and here you are!",
+      "The rainbow is doing a little dance just for this moment!",
+      "So many sparkles! So much to be proud of! You are incredible!",
+      "Hold on — let me look at that sticker one more time — SO beautiful!",
+      "From me to you, with all the sparkles in the meadow — you are a superstar!"
     ],
     "session_complete": [
       "You finished your quest! I am so proud of you! See you next time!",

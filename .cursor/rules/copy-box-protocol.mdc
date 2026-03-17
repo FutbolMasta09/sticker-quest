@@ -38,8 +38,14 @@ Any time a prompt is written for Ryan to paste into an external tool (claude.ai,
 the prompt itself MUST include an instruction telling that tool to return its output inside
 a code block. This ensures Ryan can copy the result with one click when he brings it back.
 
-Add this line to the end of every external prompt:
-"Return your entire response inside a single code block so I can copy it easily."
+The external tool must ALSO include any design notes, key decisions, or analysis INSIDE
+the same code block — not as separate text outside it. Ryan should never have to make a
+second copy to capture the reasoning.
+
+Add these two lines to the end of every external prompt:
+"Include any design notes, key decisions, or analysis as a comment block at the bottom of
+the output — inside the same code block. Return your entire response in a single code block
+so I can copy everything with one click."
 
 ## Never Do This Again
 Do NOT present a copyable prompt as a plain paragraph or a quoted block.

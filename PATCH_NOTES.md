@@ -1,3 +1,12 @@
+## [2026-03-17f] Session: Sticker Earned Celebrations + Copy-Box Rule Update
+**Status:** Content update + rule fix
+
+### ACCOMPLISHMENTS
+1. **30 sticker_earned celebration lines added** to k_lore_messages.json — v2026.2. Every opener unique, mix of punchy and warm, Starlight personality moments included (tail-wagging joke, "I say that every time").
+2. **copy-box-protocol.mdc updated** — External prompts must now ask for design notes/analysis INSIDE the code block, not as separate text. Ryan can copy everything in one click.
+
+---
+
 ## [2026-03-17e] Session: Chapter Transitions + Peggy Cameos Committed
 **Status:** Content sprint — story chapter arc complete
 
