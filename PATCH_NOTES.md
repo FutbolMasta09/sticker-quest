@@ -1,3 +1,14 @@
+## [2026-03-17d] Session: Kira Phonics Hints Merged
+**Status:** Content update — k_grade_content.json updated to v2026.4
+
+### ACCOMPLISHMENTS
+1. **12 phonics hint 3 lines rewritten** — stickers at positions 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24 now use "Aunt Kira says:" instead of "Uncle Ryan says:"
+2. **Kira's voice established** — sensory imagery and gentle comparisons (raindrops, lullabies, kitten sneezes, little hills, friendly bears) vs. Ryan's direct action-focused style
+3. **Version bumped** to 2026.4
+4. **Ryan/Kira alternation is now complete** — all 25 phonics stickers properly alternate between Uncle Ryan and Aunt Kira for hint 3
+
+---
+
 ## [2026-03-17c] Session: Starlight Story Intro Script Committed
 **Status:** Content sprint — story intro script committed, Peggy character locked
 
