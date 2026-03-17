@@ -65,6 +65,15 @@ Do not assume the session is over because a task was completed.
 
 Run this before ending any conversation where meaningful work was done.
 
+**Always tell Ryan to start a NEW chat next session — never continue this one.**
+Say this explicitly at the end of every exit:
+"Start a fresh chat next time — don't continue this one. The rules and project files
+will reload everything automatically. A fresh chat thinks faster and makes fewer mistakes."
+
+Reason: long conversations reduce the model's available thinking space, leading to slower
+responses and subtle errors. PROJECT_CONTEXT.md, PATCH_NOTES.md, and the rules ensure
+no context is lost between sessions.
+
 1. **Deliver a session summary to Ryan**
    Before touching any files, give a plain-English recap of what was accomplished:
 
