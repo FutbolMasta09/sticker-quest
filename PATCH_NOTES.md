@@ -1,3 +1,21 @@
+## [2026-03-17i] Session: Celebration Overlay + Star Selector Fix + Lessons Log
+**Status:** Quest loop polished and fully verified on device
+
+### BUILT
+1. **`app/quest/[id].tsx`** — Updated. Replaced single "I Did It!" button with three self-report buttons: "I Tried" (1 star), "I Did It!" (2 stars), "I Nailed It!" (3 stars). Added Starlight celebration overlay: random `sticker_earned` line, sticker emoji, stars earned, animated fade-in (300ms) → hold (1.8s) → fade-out (300ms) → `router.back()`.
+2. **`app/(tabs)/index.tsx`** — Fixed. Switched `stars` from `getTotalStars()` function call to an explicit Zustand selector (`state.progress` reduce). Added `useFocusEffect` to force a re-render when the screen comes back into focus after navigation.
+3. **`src/components/QuestGrid.tsx`** — Fixed. Switched from `getProgress()` and `getUnlockedCount()` function calls to explicit `state.progress` and inline `completedCount` selectors. Cards now reliably update when returning from quest screen.
+4. **`LESSONS_LEARNED.md`** — NEW. Running log of platform bugs and hard-won patterns. 8 entries covering: lineHeight clipping, SafeAreaView vs useSafeAreaInsets, Zustand background screen re-renders, two-store divergence, Animated.sequence pattern, PowerShell heredoc issue, && separator issue.
+5. **`session-protocol.mdc`** — Updated. Added LESSONS_LEARNED.md check to session protocol. Added rule to always ask Ryan before running exit checklist.
+
+### TESTED ON DEVICE
+- All 5 unlocked stickers + Gus Goat (6th): star buttons work, celebration overlay plays, grid cards and header star count update correctly on return.
+
+### ROOT CAUSE NOTE
+Zustand background screen re-render issue: React Navigation deprioritizes re-renders for screens mounted behind the active screen in the stack. Explicit selectors + `useFocusEffect` is the reliable pattern going forward. Documented in LESSONS_LEARNED.md.
+
+---
+
 ## [2026-03-17h] Session: Phase 1 Core Loop — Completed and Tested
 **Status:** Phase 1 core loop complete and verified on device
 
