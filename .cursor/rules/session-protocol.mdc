@@ -151,6 +151,48 @@ no context is lost between sessions.
 
 ---
 
+## CHAT LENGTH MONITOR
+
+At the start of every response, check whether a "[Previous conversation summary]" block
+is present in the context. This block is injected automatically by Cursor when the
+conversation has grown too long and had to be compressed.
+
+**If a summary block is present:**
+- The chat is already overdue for a split.
+- Complete the current task in progress (do not abandon mid-task).
+- At the end of that task, say:
+
+"⚠️ CHAT LENGTH WARNING: This conversation has been running long enough that Cursor
+compressed part of it. Response quality may start to degrade. When you're ready,
+start a new chat — I'll generate a handoff now."
+
+Then immediately generate a HANDOFF DOCUMENT using this format:
+
+---
+## HANDOFF — Continue in New Chat
+
+**Session date:** [date]
+**Completed this session:**
+- [bullet list of what was finished]
+
+**In progress / next task:**
+- [exactly what to work on next, with enough detail to pick up cold]
+
+**Open issues to watch:**
+- [any bugs, flags, or decisions that are unresolved]
+
+**Key files touched this session:**
+- [list of files changed — so the new chat knows where to look]
+
+**Say this to start the new chat:**
+"We're continuing Sticker Quest from [date]. [One sentence on what was just done].
+Next task: [specific thing]. Check PATCH_NOTES.md for full context."
+---
+
+**If no summary block is present:** no action needed. Continue normally.
+
+---
+
 ## LESSONS LEARNED
 
 Before touching any file that involves UI layout, Zustand stores, navigation, or animations,
