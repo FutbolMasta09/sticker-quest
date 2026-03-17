@@ -166,7 +166,16 @@ conversation has grown too long and had to be compressed.
 compressed part of it. Response quality may start to degrade. When you're ready,
 start a new chat — I'll generate a handoff now."
 
-Then immediately generate a HANDOFF DOCUMENT using this format:
+Then ask:
+
+"Are you wrapping up here, or do you want to keep going in a new chat?
+- If wrapping up: just start fresh next time — no handoff needed.
+- If continuing now: I'll generate a handoff document to paste into the new chat."
+
+Only generate the handoff document if Ryan says he wants to continue in a new chat.
+If he's done for the day, end normally — PATCH_NOTES.md and the entry checklist handle the rest.
+
+When a handoff IS requested, use this format:
 
 ---
 ## HANDOFF — Continue in New Chat
@@ -180,9 +189,6 @@ Then immediately generate a HANDOFF DOCUMENT using this format:
 
 **Open issues to watch:**
 - [any bugs, flags, or decisions that are unresolved]
-
-**Key files touched this session:**
-- [list of files changed — so the new chat knows where to look]
 
 **Say this to start the new chat:**
 "We're continuing Sticker Quest from [date]. [One sentence on what was just done].
