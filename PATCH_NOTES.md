@@ -1,3 +1,19 @@
+## [2026-03-17c] Session: Starlight Story Intro Script Committed
+**Status:** Content sprint — story intro script committed, Peggy character locked
+
+### ACCOMPLISHMENTS
+1. **`k_story_intro.json` created** — 5-scene narrated story intro, ~2–3 minute runtime. Version 2026.1.
+2. **Peggy the Pegasus locked** — baby pegasus, Starlight's clumsy friend, SEL theme: forgiveness.
+3. **Full K–G3 Peggy character arc documented** in PROJECT_CONTEXT.md — forgiveness → courage → perseverance → responsibility.
+4. **"Star Seeker" nickname established** — Starlight's name for the child. Used after first [CHILD_NAME] introduction.
+5. **[CHILD_NAME] placeholder pattern confirmed** — screen shows real name, audio uses "Star Seeker" to avoid TTS pronunciation risk.
+
+### NEXT SPRINT IN QUEUE
+- Quest Completion Celebration Lines (30+ variations)
+- Kira Phonics Hint Variants (12 rewrites)
+
+---
+
 ## [2026-03-17b] Session: K Math Audio Scripts — 30 Scripts Committed
 **Status:** Content sprint — math audio scripts committed
 

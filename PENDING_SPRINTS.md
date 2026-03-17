@@ -14,13 +14,6 @@ Checked automatically at the start of every off-peak session.
 
 
 
-### 3. Starlight Story Intro Script
-**Priority:** HIGH — needed for Phase 2 (illustrated opening narration, 2–3 min)
-**Estimated time:** ~10 minutes on claude.ai
-**Prompt:** Not yet written — requires a design planning conversation first to lock story beats
-**Output format:** Narration script with scene descriptions and line-by-line Starlight dialogue
-**What to do after:** Paste here → review for TinyStories + lore voice → save to story scripts file
-**Added:** 2026-03-16
 
 ### 4. Quest Completion Celebration Lines (30+ variations)
 **Priority:** MEDIUM — needed before Libby tests (prevents repetition after many stickers)
@@ -64,6 +57,10 @@ Checked automatically at the start of every off-peak session.
 ### K Math Audio Scripts (30 scripts)
 **Completed:** 2026-03-17
 **Result:** Committed to src/assets/k_math_audio_scripts.json v2026.1
+
+### Starlight Story Intro Script
+**Completed:** 2026-03-17
+**Result:** Committed to src/assets/k_story_intro.json v2026.1 — 5 scenes, Peggy introduced, Star Seeker nickname established
 
 ### K Phonics Audio Scripts (50 scripts)
 **Completed:** 2026-03-16

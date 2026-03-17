@@ -1,0 +1,131 @@
+{
+  "version": "2026.1",
+  "title": "Starlight's Scattered Stars",
+  "runtime_estimate": "2-3 minutes",
+  "characters": ["Starlight", "Peggy"],
+  "scenes": [
+    {
+      "scene_number": 1,
+      "scene_title": "Welcome to the Meadow",
+      "scene_description": "The screen slowly fills with a warm golden glow. A beautiful meadow fades in — soft green grass, tiny glowing flowers, and a wide open sky. Starlight the Unicorn steps forward. Her horn shimmers with gentle light. She looks right at the child and smiles.",
+      "lines": [
+        {
+          "character": "Starlight",
+          "text": "Oh! Oh my goodness — hello!"
+        },
+        {
+          "character": "Starlight",
+          "text": "I have been waiting and waiting, and here you are!"
+        },
+        {
+          "character": "Starlight",
+          "text": "My name is Starlight, and this is my meadow. It is the most beautiful place in the whole wide world."
+        },
+        {
+          "character": "Starlight",
+          "text": "Well, [CHILD_NAME], it used to be full of shining stars — hundreds of them, all floating in the air like tiny night lights."
+        },
+        {
+          "character": "Starlight",
+          "text": "But right now, the meadow looks a little dark. And there is a reason for that."
+        }
+      ]
+    },
+    {
+      "scene_number": 2,
+      "scene_title": "The Problem",
+      "scene_description": "A small pegasus peeks out from behind Starlight's leg. Peggy has big round eyes and tiny crumpled wings. She looks down at her hooves, shy and sad. Starlight looks at Peggy with a warm, loving smile.",
+      "lines": [
+        {
+          "character": "Starlight",
+          "text": "This is my friend Peggy. She is a baby pegasus, and she is learning how to fly."
+        },
+        {
+          "character": "Starlight",
+          "text": "Today Peggy was so happy and so excited that she tried a great big loop all the way across the meadow!"
+        },
+        {
+          "character": "Starlight",
+          "text": "She went up and around and upside down — and her little wings bumped into every single star."
+        },
+        {
+          "character": "Starlight",
+          "text": "All the stars went flying off and hid all over the meadow. Every last one."
+        },
+        {
+          "character": "Starlight",
+          "text": "Poor Peggy feels really, really bad about it. Look at her little face."
+        },
+        {
+          "character": "Starlight",
+          "text": "But you know what? I am not angry at Peggy. Not even a tiny bit. She did not mean to do it. She was just so excited to fly!"
+        }
+      ]
+    },
+    {
+      "scene_number": 3,
+      "scene_title": "The Ask",
+      "scene_description": "Starlight's horn glows brighter. She steps closer to the child. Little sparkles float in the air around her. Her eyes are full of hope and warmth.",
+      "lines": [
+        {
+          "character": "Starlight",
+          "text": "[CHILD_NAME], I think you are very special. I could feel it the moment you got here."
+        },
+        {
+          "character": "Starlight",
+          "text": "I am going to give you a special meadow name. From now on, you are my Star Seeker."
+        },
+        {
+          "character": "Starlight",
+          "text": "Star Seeker, will you help me find all the lost stars and bring them home?"
+        },
+        {
+          "character": "Starlight",
+          "text": "Here is how the magic works. Every time you move your body and learn something new, a hidden star wakes up."
+        },
+        {
+          "character": "Starlight",
+          "text": "It sees your light, and it flies all the way back home to the meadow. You make the magic happen!"
+        }
+      ]
+    },
+    {
+      "scene_number": 4,
+      "scene_title": "The Lesson",
+      "scene_description": "Starlight nuzzles Peggy gently with her nose. Peggy looks up and gives a tiny smile. Starlight looks back at the child.",
+      "lines": [
+        {
+          "character": "Starlight",
+          "text": "Star Seeker, Peggy did not mean to cause any trouble. Everyone makes mistakes sometimes — even me!"
+        },
+        {
+          "character": "Starlight",
+          "text": "What matters is that we help each other when things go wrong. And that is just what we are going to do — together."
+        }
+      ]
+    },
+    {
+      "scene_number": 5,
+      "scene_title": "The First Star",
+      "scene_description": "A faint golden glow pulses softly in the grass nearby. Starlight's ears perk up. Peggy bounces on her little hooves. The glow gets a tiny bit brighter, waiting to be found.",
+      "lines": [
+        {
+          "character": "Starlight",
+          "text": "Oh! Star Seeker, look! Do you see that little glow over there in the grass?"
+        },
+        {
+          "character": "Starlight",
+          "text": "That is a star! The very first one! It is so close — I think it can already feel your light!"
+        },
+        {
+          "character": "Starlight",
+          "text": "Are you ready for your very first quest? All you have to do is move your body and try your best."
+        },
+        {
+          "character": "Starlight",
+          "text": "Let's go wake up that star and bring it home! Come on, Star Seeker — your adventure starts right now!"
+        }
+      ]
+    }
+  ]
+}
