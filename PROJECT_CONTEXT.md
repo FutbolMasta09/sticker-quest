@@ -30,6 +30,15 @@ Ryan built this for his niece Libby. That story is authentic, emotional, and the
 | Grade | Character | Personality | World | Story Arc |
 |---|---|---|---|---|
 | **K** | Starlight the Unicorn | Warm, sparkly, celebrates everything | Starlight's Meadow | Her stars were scattered — child collects them back by mastering phonemes |
+
+### K Supporting Character: Peggy the Pegasus
+- **Role:** Starlight's baby pegasus friend — clumsy, learning to fly, lovable
+- **What happened:** Peggy got excited and did a big loop through the meadow, bumping into all of Starlight's stars and scattering them
+- **NOT a villain:** Peggy is a friend who made a mistake. Starlight is not angry.
+- **SEL theme:** Forgiveness and empathy — "everyone makes mistakes, what matters is we help each other"
+- **Arc:** Appears in story intro (caused problem) → brief cameos as stars are collected → graduation ceremony (Peggy apologizes and celebrates with Libby)
+- **Public launch note:** "Peggy the Pegasus" is a common name in children's books — run a trademark check before Phase 4 public submission.
+- **Future grades:** Same character may appear as a "wanderer" who follows Libby into G1–G3 worlds, learning a new SEL lesson each grade. Design the G1 arc when G1 content begins (Spring 2027).
 | **G1** | Barnaby the Brave Bear | Strong, protective, tells campfire stories | Enchanted Forest | A shadow silenced the forest's songs — words restore them |
 | **G2** | Marina the Dolphin | Curious, explorer, loves riddles | Crystal Ocean | Ancient word-crystals sank to the deep — dive to recover them |
 | **G3** | Nova the Star Fox | Scientific, witty, problem-solver | Star Academy | The Star Academy's library was scrambled — rebuild it word by word |
