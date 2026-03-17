@@ -1,3 +1,26 @@
+## [2026-03-17h] Session: Phase 1 Core Loop — Completed and Tested
+**Status:** Phase 1 core loop complete and verified on device
+
+### BUILT
+1. **`src/components/SessionLockScreen.tsx`** — NEW. Full-screen lock screen for the 3-hour daily limit. Uses Starlight's `daily_limit_reached` voice lines (random pick on mount). Shows total stars earned. Dark purple background. Auto-triggers via 60-second poll in `index.tsx` — lock appears without app restart.
+2. **`app/quest/[id].tsx`** — NEW. Quest detail screen. Reads sticker data from `k_grade_content.json` by ID. Shows: animal emoji, sticker name, phoneme badge, CVC word badge, current star count, both motor tasks (gross + fine), all 3 hints in yellow-bordered cards. "I Did It!" button records 1-star attempt and returns to grid. Custom header with back button.
+3. **`src/components/QuestGrid.tsx`** — Updated. Sticker cards now navigate to `/quest/[id]` on tap. Removed unused `columns` variable.
+4. **`app/(tabs)/index.tsx`** — Updated. `stars` now reads from `useMasteryStore.getTotalStars()` instead of `useUserStore.stars` — single source of truth. Added `SessionLockScreen` gate. Removed unused `moderateScale`.
+5. **`components/themed-text.tsx`** — Fixed. Removed hardcoded `lineHeight: 32` from `title` style. This was silently clipping capital letters when `fontSize` was overridden above 32 (e.g., the 38px greeting). Root cause of multi-session "greeting cut off" bug.
+6. **`src/components/Achievements.tsx`** — Fixed. Achievement badge text color changed from `#FFD700` to `#5C3800` — gold text on gold badge was unreadable.
+
+### TESTED ON DEVICE
+- Lock screen: tested by setting SESSION_LIMIT_MINUTES to 0.17 — triggered instantly on mount as expected (existing session already exceeded limit). Reverted to 180.
+- Quest detail screen: tapped sticker → detail screen opened → "I Did It!" → returned to grid with 1 star on card.
+- Star counter: confirmed total stars update live after recording attempt. Data persists across reloads.
+
+### KNOWN NOTES
+- `useUserStore.stars` is now unused for display — flagged for Phase 1 dead code audit.
+- 25 pre-existing lint errors (`react/no-unescaped-entities`) in `VisualStressTest.tsx`, `OnboardingFlow.tsx`, `PerformanceView.tsx`, `SetupPhase.tsx` — not introduced this session, flagged for separate cleanup.
+- Animal emojis are placeholders for Phase 2 sticker art.
+
+---
+
 ## [2026-03-17g] Session: Phase 1 Core Engine — First Build
 **Status:** Phase 1 code — three core files built
 

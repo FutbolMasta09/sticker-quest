@@ -1,5 +1,6 @@
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
+import { router } from 'expo-router';
 import { Lock, Star } from 'lucide-react-native';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import contentData from '@/src/assets/k_grade_content.json';
@@ -44,7 +45,6 @@ export default function QuestGrid() {
 
   const unlockedCount = getUnlockedCount();
   const cardSize = isTablet ? scale(130) : scale(100);
-  const columns = isTablet ? 4 : 3;
 
   return (
     <View style={styles.container}>
@@ -72,6 +72,7 @@ export default function QuestGrid() {
                 progress.stars > 0 && styles.cardEarned,
               ]}
               disabled={!isUnlocked}
+              onPress={() => isUnlocked && router.push(`/quest/${sticker.id}`)}
             >
               {isUnlocked ? (
                 <>

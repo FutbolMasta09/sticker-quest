@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
   },
   achievementText: {
     fontSize: 12,
-    color: '#FFD700',
+    color: '#5C3800',
   },
 });

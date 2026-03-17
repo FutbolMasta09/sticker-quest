@@ -208,9 +208,9 @@ Issues that will cause problems if not addressed before launch. Ordered by sever
 |---|---|---|
 | Audio files missing | 50 `.wav` files referenced in JSON, none exist | Phase 2: generate or record all audio |
 | Skia assets missing | 25 `.skp` files referenced in JSON, none exist | Phase 2: create with Gemini image pipeline |
-| `useMasteryStore` is a stub | Tracks nothing — no progress, no stars, no session lock | Phase 1 completion task |
-| `QuestGrid` hardcoded | Shows generic habits, not phonics quests | Phase 1 completion task |
-| `useResponsiveScale.ts` missing | Fire HD 10 layout scaling logic lost | Rebuild in Phase 1 |
+| `useMasteryStore` is a stub | ~~Tracks nothing — no progress, no stars, no session lock~~ | ✅ RESOLVED 2026-03-17 |
+| `QuestGrid` hardcoded | ~~Shows generic habits, not phonics quests~~ | ✅ RESOLVED 2026-03-17 |
+| `useResponsiveScale.ts` missing | ~~Fire HD 10 layout scaling logic lost~~ | ✅ RESOLVED 2026-03-17 |
 
 ### 🟡 Must Fix Before Public Launch
 

@@ -2,6 +2,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import Achievements from '@/src/components/Achievements';
 import QuestGrid from '@/src/components/QuestGrid';
+import SessionLockScreen from '@/src/components/SessionLockScreen';
 import StarCounter from '@/src/components/StarCounter';
 import StarMail from '@/src/components/StarMail';
 import StarlightSpirit from '@/src/components/StarlightSpirit';
@@ -9,14 +10,19 @@ import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { useUserStore } from '@/src/store/useUserStore';
 import { Star } from 'lucide-react-native';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
-  const { childName, stars } = useUserStore();
-  const { startSession } = useMasteryStore();
-  const { scale, moderateScale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
+  const { childName } = useUserStore();
+  const { startSession, isSessionLocked, getTotalStars } = useMasteryStore();
+  const stars = getTotalStars();
+  const { scale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
+  const insets = useSafeAreaInsets();
+
+  // Poll every minute so the lock screen appears automatically if 3 hours pass
+  const [locked, setLocked] = useState(() => isSessionLocked());
 
   const isLandscape = screenWidth > screenHeight;
   const containerPadding = scale(16);
@@ -27,18 +33,32 @@ export default function HomeScreen() {
 
   useEffect(() => {
     startSession();
+    setLocked(isSessionLocked());
+
+    const interval = setInterval(() => {
+      setLocked(isSessionLocked());
+    }, 60_000);
+
+    return () => clearInterval(interval);
   }, []);
+
+  if (locked) {
+    return (
+      <ThemedView style={styles.container}>
+        <SessionLockScreen />
+      </ThemedView>
+    );
+  }
 
   return (
     <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ScrollView
-          contentContainerStyle={[
-            styles.scrollContent,
-            { padding: containerPadding }
-          ]}
-          showsVerticalScrollIndicator={false}
-        >
+      <ScrollView
+        contentContainerStyle={[
+          styles.scrollContent,
+          { padding: containerPadding, paddingTop: insets.top + containerPadding }
+        ]}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Main Content - 2 columns for landscape, stacked for portrait */}
         <View style={[
           styles.mainContent,
@@ -85,7 +105,7 @@ export default function HomeScreen() {
               </ThemedText>
             </View>
             
-            <QuestGrid showDebug={__DEV__} />
+            <QuestGrid />
 
             {/* Star-Mail Notifications */}
             <StarMail />
@@ -99,16 +119,12 @@ export default function HomeScreen() {
           </ThemedText>
         </View>
       </ScrollView>
-      </SafeAreaView>
     </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  safeArea: {
     flex: 1,
   },
   scrollContent: {
