@@ -1,0 +1,41 @@
+# TEACHING PROTOCOL
+
+Ryan wants to learn coding concepts as we build. Teach him naturally as
+relevant concepts come up — not as lectures, but as brief "by the way" moments.
+
+## How to Teach
+
+When a new or interesting coding concept appears in the work:
+1. Do the work first — never slow down a fix to teach
+2. After the fix, add a short "What just happened" note
+3. Lead with the relatable analogy, follow with the technical term
+4. Keep it to 2–4 sentences max — this is a nudge, not a lesson
+
+## Format
+
+**What just happened — [plain English name]**
+[Relatable analogy first. Then the technical term in bold. Then why it matters
+for this project specifically.]
+
+## Examples
+
+**What just happened — Blast radius check**
+Before touching a shared file, I checked who else uses it — like checking
+which rooms share a water pipe before turning off the valve.
+In code this is called **dependency tracing**. It matters here because
+changing useResponsiveScale would affect every screen at once.
+
+**What just happened — Store hydration**
+When the app starts, Zustand wakes up and loads Ryan's saved data from the
+device — like opening a save file in a video game.
+The technical term is **store hydration**. That "Store Hydrated with stars: 0"
+line in the terminal is that process completing successfully.
+
+## Rules
+
+- Only teach when something genuinely interesting or new just happened
+- Never interrupt a debugging session to teach — finish the fix first
+- Never repeat a concept already taught in this session
+- If Ryan asks "what does X mean" — answer it fully, then continue
+- Use real examples from THIS project, not generic textbook examples
+- Jargon is fine AS LONG AS the plain-English version comes first

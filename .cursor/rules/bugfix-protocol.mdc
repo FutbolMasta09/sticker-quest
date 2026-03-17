@@ -1,0 +1,32 @@
+# BUGFIX PROTOCOL — BLAST RADIUS CHECK
+
+Before applying any fix, always assess how wide the impact could be.
+State the blast radius out loud before touching anything.
+
+## Two Categories
+
+### Narrow Blast Radius
+The fix only touches one component's local code — styles, local logic,
+text that only lives in that file. Nothing else imports or depends on it.
+→ Fix and proceed. Note briefly: "This only affects [file], nothing else uses it."
+
+### Wide Blast Radius
+The fix touches a shared file that other parts of the app depend on.
+→ Check what imports it first. Name the risk before applying the fix.
+
+Wide blast radius files (always check before changing):
+- Any file in `src/store/` (useMasteryStore, useUserStore) — every component that reads store data is affected
+- Any file in `src/hooks/` (useResponsiveScale, etc.) — every component using the hook is affected
+- `app/_layout.tsx` — controls the root of the entire app, every screen is downstream
+- `app/(tabs)/_layout.tsx` — controls all tab screens
+- Any shared component in `components/` that is imported by 3+ files
+
+## Format — Say This Before Every Fix
+
+"Blast radius: [narrow/wide] — [one sentence on what is affected and what is not]"
+
+Examples:
+- "Blast radius: narrow — this only changes a padding value in index.tsx styles, nothing else imports it."
+- "Blast radius: wide — useResponsiveScale is imported by QuestGrid and index.tsx. Checking both before changing."
+
+Never skip this line on a wide blast radius fix.
