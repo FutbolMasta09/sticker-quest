@@ -40,10 +40,14 @@ function StarRow({ count }: { count: 0 | 1 | 2 | 3 }) {
 }
 
 export default function QuestGrid() {
-  const { getProgress, getUnlockedCount } = useMasteryStore();
+  // Explicit selectors so Zustand re-renders this component whenever progress changes
+  const progress = useMasteryStore((state) => state.progress);
+  const completedCount = useMasteryStore(
+    (state) => Object.values(state.progress).filter((p) => p.stars >= 1).length
+  );
   const { scale, moderateScale, isTablet } = useResponsiveScale();
 
-  const unlockedCount = getUnlockedCount();
+  const unlockedCount = Math.min(25, 5 + Math.floor(completedCount / 5) * 5);
   const cardSize = isTablet ? scale(130) : scale(100);
 
   return (
@@ -54,7 +58,7 @@ export default function QuestGrid() {
       <View style={[styles.grid, { gap: scale(10) }]}>
         {stickers.map((sticker, index) => {
           const isUnlocked = index < unlockedCount;
-          const progress = getProgress(sticker.id);
+          const stickerProgress = progress[sticker.id] ?? { stars: 0 as const };
 
           return (
             <TouchableOpacity
@@ -69,7 +73,7 @@ export default function QuestGrid() {
                   borderRadius: scale(14),
                   padding: scale(8),
                 },
-                progress.stars > 0 && styles.cardEarned,
+                stickerProgress.stars > 0 && styles.cardEarned,
               ]}
               disabled={!isUnlocked}
               onPress={() => isUnlocked && router.push(`/quest/${sticker.id}`)}
@@ -88,7 +92,7 @@ export default function QuestGrid() {
                   <Text style={[styles.phoneme, { fontSize: moderateScale(10) }]}>
                     {sticker.phoneme}
                   </Text>
-                  <StarRow count={progress.stars} />
+                  <StarRow count={stickerProgress.stars as 0 | 1 | 2 | 3} />
                 </>
               ) : (
                 <>

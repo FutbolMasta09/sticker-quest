@@ -1,11 +1,19 @@
 import { ThemedText } from '@/components/themed-text';
 import contentData from '@/src/assets/k_grade_content.json';
+import loreMessages from '@/src/assets/k_lore_messages.json';
 import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft, Star } from 'lucide-react-native';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+const CELEBRATION_LINES = loreMessages.messages.sticker_earned;
+
+function pickRandom<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
 interface MotorTask {
   type: string;
@@ -70,10 +78,25 @@ export default function QuestDetailScreen() {
   const progress = getProgress(sticker.id);
   const emoji = ANIMAL_EMOJI[sticker.id] ?? '⭐';
 
-  const handleDidIt = () => {
-    recordAttempt(sticker.id, 1);
-    router.back();
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [celebrationMessage] = useState(() => pickRandom(CELEBRATION_LINES));
+  const [earnedStars, setEarnedStars] = useState<1 | 2 | 3>(1);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  const handleStarSelect = (stars: 1 | 2 | 3) => {
+    recordAttempt(sticker.id, stars);
+    setEarnedStars(stars);
+    setShowCelebration(true);
   };
+
+  useEffect(() => {
+    if (!showCelebration) return;
+    Animated.sequence([
+      Animated.timing(fadeAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
+      Animated.delay(1800),
+      Animated.timing(fadeAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
+    ]).start(() => router.back());
+  }, [showCelebration]);
 
   return (
     <>
@@ -152,18 +175,46 @@ export default function QuestDetailScreen() {
           <View style={{ height: scale(100) }} />
         </ScrollView>
 
-        {/* Sticky "I Did It!" button */}
-        <View style={[styles.footer, { paddingBottom: insets.bottom + scale(16) }]}>
-          <TouchableOpacity
-            style={[styles.didItButton, { borderRadius: scale(18) }]}
-            onPress={handleDidIt}
-            activeOpacity={0.8}
-          >
-            <Text style={[styles.didItText, { fontSize: moderateScale(18) }]}>
-              ⭐  I Did It!
-            </Text>
-          </TouchableOpacity>
+        {/* Sticky star-rating footer */}
+        <View style={[styles.footer, { paddingBottom: insets.bottom + scale(12) }]}>
+          <Text style={[styles.footerLabel, { fontSize: moderateScale(13) }]}>
+            How did you do?
+          </Text>
+          <View style={styles.starButtons}>
+            {([
+              { stars: 1 as const, label: 'I Tried', color: '#7B5EA7' },
+              { stars: 2 as const, label: 'I Did It!', color: '#5B2D9E' },
+              { stars: 3 as const, label: 'I Nailed It!', color: '#3A1A7A' },
+            ]).map(({ stars, label, color }) => (
+              <TouchableOpacity
+                key={stars}
+                style={[styles.starButton, { backgroundColor: color, borderRadius: scale(14) }]}
+                onPress={() => handleStarSelect(stars)}
+                activeOpacity={0.8}
+              >
+                <Text style={[styles.starButtonStars, { fontSize: moderateScale(16) }]}>
+                  {'⭐'.repeat(stars)}
+                </Text>
+                <Text style={[styles.starButtonLabel, { fontSize: moderateScale(11) }]}>
+                  {label}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
+
+        {/* Celebration overlay */}
+        {showCelebration && (
+          <Animated.View style={[styles.celebration, { opacity: fadeAnim }]}>
+            <Text style={[styles.celebrationEmoji, { fontSize: scale(80) }]}>{emoji}</Text>
+            <Text style={[styles.celebrationStars, { fontSize: scale(32) }]}>
+              {'⭐'.repeat(earnedStars)}
+            </Text>
+            <Text style={[styles.celebrationMessage, { fontSize: moderateScale(20), lineHeight: moderateScale(30) }]}>
+              {celebrationMessage}
+            </Text>
+          </Animated.View>
+        )}
 
       </View>
     </>
@@ -285,21 +336,59 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   footer: {
-    paddingHorizontal: 24,
-    paddingTop: 12,
+    paddingHorizontal: 16,
+    paddingTop: 10,
     backgroundColor: '#FDFAFF',
     borderTopWidth: 1,
     borderTopColor: '#EEE8FF',
+    gap: 8,
   },
-  didItButton: {
-    backgroundColor: '#5B2D9E',
-    paddingVertical: 16,
+  footerLabel: {
+    textAlign: 'center',
+    color: '#666',
+    fontWeight: '600',
+  },
+  starButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  starButton: {
+    flex: 1,
+    paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 4,
   },
-  didItText: {
+  starButtonStars: {
+    textAlign: 'center',
+  },
+  starButtonLabel: {
     color: '#FFFFFF',
-    fontWeight: '800',
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  celebration: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: '#1a0a2e',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 32,
+    gap: 20,
+  },
+  celebrationEmoji: {
+    textAlign: 'center',
+  },
+  celebrationStars: {
+    textAlign: 'center',
+  },
+  celebrationMessage: {
+    color: '#f0e6ff',
+    textAlign: 'center',
+    fontWeight: '600',
   },
   notFound: {
     flex: 1,

@@ -9,15 +9,28 @@ import StarlightSpirit from '@/src/components/StarlightSpirit';
 import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { useUserStore } from '@/src/store/useUserStore';
+import { useFocusEffect } from 'expo-router';
 import { Star } from 'lucide-react-native';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   const { childName } = useUserStore();
-  const { startSession, isSessionLocked, getTotalStars } = useMasteryStore();
-  const stars = getTotalStars();
+  const { startSession, isSessionLocked } = useMasteryStore();
+
+  // Explicit selector — Zustand tracks this precisely and re-renders when progress changes
+  const stars = useMasteryStore(
+    (state) => Object.values(state.progress).reduce((sum, p) => sum + p.stars, 0)
+  );
+
+  // Force a re-render when this screen comes back into focus after returning from a quest
+  const [, forceRefresh] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      forceRefresh((n) => n + 1);
+    }, [])
+  );
   const { scale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
   const insets = useSafeAreaInsets();
 

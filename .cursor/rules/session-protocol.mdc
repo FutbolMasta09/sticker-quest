@@ -59,6 +59,10 @@ Run this at the start of every new conversation before doing any work.
 
 ## EXIT SESSION CHECKLIST
 
+**BEFORE starting exit: always ask Ryan if he is done.**
+Never run the exit checklist unless Ryan explicitly says he is done, wrapping up, or leaving.
+Do not assume the session is over because a task was completed.
+
 Run this before ending any conversation where meaningful work was done.
 
 1. **Deliver a session summary to Ryan**
@@ -135,6 +139,20 @@ Run this before ending any conversation where meaningful work was done.
 - **Push** = upload your saved snapshots to GitHub
 - **Branch** = a separate copy of the project to work on safely (not used yet)
 - If Ryan is on a different computer, he pulls first to get the latest before working
+
+---
+
+## LESSONS LEARNED
+
+Before touching any file that involves UI layout, Zustand stores, navigation, or animations,
+check LESSONS_LEARNED.md for relevant prior bugs and patterns.
+
+When a session produces a new hard-won lesson (unexpected bug, surprising platform behavior,
+tooling quirk), add it to LESSONS_LEARNED.md before committing. Format:
+- Short title
+- Date discovered + file
+- What happened (plain English)
+- The fix or rule going forward
 
 ---
 
