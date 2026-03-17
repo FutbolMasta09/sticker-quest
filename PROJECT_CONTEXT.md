@@ -439,6 +439,19 @@ Sept 2027             G1 unlocks — Libby starts Grade 1, gets it first as alwa
 2029                  G3 — Nova + Star Academy
 ```
 
+### Parallel Track — Next Project Planning
+
+Game design planning runs as a low-priority parallel track during the Sticker Quest build.
+It does NOT compete with or interrupt any Sticker Quest phase work.
+
+- **Now → Sticker Quest launch:** Design only. No building, no spending, no installation.
+  Complete Tier 2 checklist items in GAME_DESIGN.md (sample documents, unlockable word list).
+- **At Sticker Quest launch:** Game design is locked and building begins on the post-launch timeline.
+- **Full game design document:** See `GAME_DESIGN.md` in this repo.
+
+The next project is: **The Anchor's Desk** — a text-based roguelike set in the Inkborne Universe.
+Platform: PC via Steam. Engine: Godot. Core mechanic: document redaction.
+
 ---
 
 ## Session Log

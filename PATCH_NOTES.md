@@ -1,3 +1,27 @@
+## [2026-03-17k] Session: Game Design — The Anchor's Desk Concept Locked
+**Status:** Design only — no code changes. Parallel track to Sticker Quest.
+
+### ACCOMPLISHMENTS
+1. **Game concept locked** — The Anchor's Desk: a text-based roguelike set in the Inkborne Universe. Hybrid of simple roguelike structure (The Hollow Road) with Inkborne skin (Vesper Finch, Oakhaven, redaction mechanic, noir tone).
+2. **All five Tier 1 design decisions locked** — Concept, core loop sentence, platform (PC/Steam), engine (Godot), V1 scope boundary (IN/OUT list).
+3. **`GAME_DESIGN.md` written** — Full design document covering core loop, Ink resource, Lexical Strictness, document types, turn structure, V1 scope, budget, build timeline, and pre-launch checklist with Tier 1 items complete.
+4. **`PROJECT_CONTEXT.md` updated** — Official Roadmap now includes a parallel track section pointing to `GAME_DESIGN.md` and noting that game design work does not compete with Sticker Quest phases.
+5. **Solo dev ceiling mapped** — Documented four tiers of complexity for a solo non-coder with AI tools and moderate budget. Saved to Cursor plans.
+6. **Utility app debate resolved** — Sticker Quest IS the utility app / first-ship learning experience. Go straight from Sticker Quest to the game.
+
+### DECISIONS MADE
+- Platform: PC via Steam (not mobile for V1)
+- Engine: Godot (not React Native — purpose-built for games, GDScript is AI-assisted)
+- Game timeline anchored to Sticker Quest launch, not a fixed calendar date
+- G1–G3 Sticker Quest: post-K backlog only, not planned until K ships
+- LLC planning: noted as future goal, not a current design or code decision
+
+### OPEN — INKBORNE TIER 2 CHECKLIST (no urgency, before Sticker Quest launch)
+- [ ] Write 3–5 sample document templates in Vesper's voice (~30 min)
+- [ ] Name unlockable words 11–15 and draft lore unlock snippets (~20 min)
+
+---
+
 ## [2026-03-17j] Session: Prompt Coaching System + Cross-Project Carryover
 **Status:** Prompt training workflow implemented and made reusable
 
