@@ -12,13 +12,6 @@ Checked automatically at the start of every off-peak session.
 
 ## QUEUE (Run These Next — In Priority Order)
 
-### 1. Lore Copy (~60 messages)
-**Priority:** HIGH — needed for Phase 2 before Libby tests
-**Estimated time:** 10–15 minutes on claude.ai
-**Prompt:** Not yet written — generate in Cursor before running
-**Output format:** JSON object with event keys mapped to Starlight's message strings
-**What to do after:** Paste here → validate lore voice + TinyStories → save to lore file
-**Added:** 2026-03-16
 
 ### 2. K Math Audio Scripts (30 files)
 **Priority:** HIGH — needed for Phase 2, math stickers now finalized ✅
@@ -70,6 +63,10 @@ Checked automatically at the start of every off-peak session.
 ---
 
 ## COMPLETED SPRINTS
+
+### Lore Copy (60 messages)
+**Completed:** 2026-03-17
+**Result:** Committed to src/assets/k_lore_messages.json v2026.1
 
 ### K Phonics Audio Scripts (50 scripts)
 **Completed:** 2026-03-16

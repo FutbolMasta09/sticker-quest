@@ -6,8 +6,23 @@ alwaysApply: true
 
 # MODEL ROUTING PROTOCOL
 
-At the start of every conversation, or when the task type shifts, suggest the best model.
-Format: one line, plain English. Example: "For this task, you'll get the best result using [model]."
+Before every response that involves a task transition, I will explain the reasoning for the model choice and then provide a specific recommendation.
+
+## Rule — Every Single Response
+End EVERY response with:
+1. A **Reasoning** section explaining why a specific Cursor model is best for the next message Ryan sends in this chat.
+2. A **Next model** line telling Ryan exactly which model to select in the Cursor chat model picker.
+3. If the next step involves an external tool (e.g., claude.ai), also specify which model to use THERE — in a separate line labeled **External model**.
+
+## Formatting Requirement
+---
+**Reasoning for next model:**
+[One or two sentences explaining why the chosen model is the best fit for Ryan's next message in this chat.]
+
+**Next model:** [Cursor model name] — [one-sentence reason]
+**External model (if applicable):** [Tool name] → use [specific model name] — [one-sentence reason]
+
+---
 
 ## Routing Guide
 
@@ -20,15 +35,3 @@ Format: one line, plain English. Example: "For this task, you'll get the best re
 | Generating large JSON, audio scripts, batch content | **Claude Pro (claude.ai, off-peak ET)** | 2x usage fuel, handles long outputs |
 | Sticker image / asset creation | **Gemini (image generation, future phase)** | Visual asset generation |
 
-## Rule — Every Single Response
-End EVERY response with a "Next Step" line that tells Ryan which tool to use for whatever comes next in the workflow. Format:
-
----
-**Your next move:** Go to [tool/model] — [one sentence describing what to do there]
-
-Examples:
-- "Go to claude.ai (off-peak ET) — paste the JSON prompt and wait for the full array."
-- "Stay here in Cursor — paste the JSON back and I'll validate and commit it."
-- "No action needed from you — I'm handling the next step right now."
-
-Never skip this line. It appears on every response, no exceptions.

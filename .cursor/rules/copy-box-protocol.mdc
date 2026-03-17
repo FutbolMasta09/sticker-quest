@@ -33,6 +33,14 @@ For terminal commands:
 npx expo start
 ```
 
+## Prompts Sent to External Sources
+Any time a prompt is written for Ryan to paste into an external tool (claude.ai, Gemini, etc.),
+the prompt itself MUST include an instruction telling that tool to return its output inside
+a code block. This ensures Ryan can copy the result with one click when he brings it back.
+
+Add this line to the end of every external prompt:
+"Return your entire response inside a single code block so I can copy it easily."
+
 ## Never Do This Again
 Do NOT present a copyable prompt as a plain paragraph or a quoted block.
 Ryan should never have to manually select text to copy it.

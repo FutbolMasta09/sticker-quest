@@ -1,3 +1,22 @@
+## [2026-03-17a] Session: Lore Copy Sprint + Rule Updates
+**Status:** Content sprint — lore messages committed, rules updated
+
+### ACCOMPLISHMENTS
+1. **`k_lore_messages.json` created** — 60 lore messages across 10 categories. Narrated by Starlight the Unicorn. Version 2026.1.
+2. **All messages validated** — TinyStories compliant, no developer jargon, warm and age-appropriate throughout.
+3. **`model-routing.mdc` updated** — Every response now includes reasoning for model choice + which model to pick in Cursor AND on external tools.
+4. **`copy-box-protocol.mdc` updated** — All prompts sent to external tools now must instruct that tool to return output in a single copyable code block.
+
+### LORE CATEGORIES COVERED
+daily_greetings (10), star_1_celebration (5), star_2_celebration (5), star_3_celebration (5), parent_gate_locked (3), parent_gate_wrong_pin (3), graduation_door_revealed (3), graduation_ceremony (3), daily_limit_reached (3), session_complete (5)
+
+### PENDING — RUN NEXT OFF-PEAK
+- K Math Audio Scripts (30 files) — prompt not yet written, generate in Cursor before running
+- Starlight Story Intro Script — requires design planning conversation first
+- Quest Completion Celebration Lines (30+ variations)
+
+---
+
 ## [2026-03-16p] Session: K Phonics Audio Scripts — 50 Scripts Committed
 **Status:** Content sprint — audio scripts committed
 
