@@ -1,0 +1,17 @@
+{
+  "version": "2026.1",
+  "chapter_transitions": {
+    "chapter_2": "Look, Star Seeker! Five little stars found their way home, and the meadow is starting to glow again. Can you see it? Even the flowers are lifting their heads to feel the light.",
+    "chapter_3": "Oh my! Ten stars are shining in the sky tonight. The meadow is getting so much brighter, Star Seeker. Peggy tried a little practice flight today — just a tiny hop — and she smiled for the first time in a long while.",
+    "chapter_4": "Star Seeker, you have brought fifteen stars home! More than half! The meadow is warm and bright, and the trees are sparkling like they used to. Peggy is standing a little taller now, and I think she feels proud.",
+    "chapter_5": "Twenty stars, Star Seeker! The meadow is almost full of light again. The sky is so pretty tonight — soft and golden and warm. Peggy can feel it too. She keeps looking up and smiling.",
+    "chapter_final": "Every single star is home. All twenty-five of them, shining together in the sky above Starlight's Meadow. The whole world is glowing, Star Seeker — and it is all because of you. Peggy is flying up there right now, happy as can be."
+  },
+  "peggy_cameos": {
+    "peggy_cameo_1": "Peggy peeked out from behind a big flower and whispered, \"You... you really found five? Maybe the stars will come home after all.\" Then she hid again, but her little tail was wagging.",
+    "peggy_cameo_2": "Peggy flapped her tiny wings today — just two small flaps! She wobbled and sat right back down, but her eyes were big and bright. \"I want to try again,\" she said softly.",
+    "peggy_cameo_3": "Peggy took a deep breath and jumped into the air. She flew up, up, up — a little wobbly, a little wiggly — but she did it! She landed with a soft bump and laughed. \"Did you see that, Star Seeker? I flew!\"",
+    "peggy_cameo_4": "Peggy has been practicing every single day now. She flies a little higher and a little smoother each time. \"I used to feel so bad about the stars,\" she said. \"But now I feel strong. Thank you for not giving up on me.\"",
+    "peggy_cameo_5": "Peggy spread her wings wide and flew one big, beautiful loop around the whole meadow — up over the trees, past the glowing stars, and back down without bumping a single thing. She landed right in front of you and said, \"We did it, Star Seeker. We really, really did it!\" And every star in the sky twinkled just for her."
+  }
+}

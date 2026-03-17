@@ -62,6 +62,10 @@ Checked automatically at the start of every off-peak session.
 **Completed:** 2026-03-17
 **Result:** Committed to src/assets/k_story_intro.json v2026.1 — 5 scenes, Peggy introduced, Star Seeker nickname established
 
+### Chapter Transitions + Peggy Cameos
+**Completed:** 2026-03-17
+**Result:** Committed to src/assets/k_story_chapters.json v2026.1 — Peggy's full K arc complete
+
 ### K Phonics Audio Scripts (50 scripts)
 **Completed:** 2026-03-16
 **Result:** Committed to src/assets/k_phonics_audio_scripts.json v2026.1
