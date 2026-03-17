@@ -12,8 +12,9 @@ This saves Ryan from manually selecting text.
 Always use a code block when presenting:
 - Claude Pro prompts (the most common case)
 - JSON content to paste into a file
-- Terminal commands to run
+- Terminal commands to run — ALWAYS, even single-line commands like `npx expo start`
 - Any multi-line text Ryan needs to copy and paste somewhere
+- Any single-line text Ryan needs to type somewhere
 
 ## Format
 
