@@ -13,13 +13,6 @@ Checked automatically at the start of every off-peak session.
 ## QUEUE (Run These Next — In Priority Order)
 
 
-### 2. K Math Audio Scripts (30 files)
-**Priority:** HIGH — needed for Phase 2, math stickers now finalized ✅
-**Estimated time:** 10 minutes on claude.ai
-**Prompt:** Not yet written — generate in Cursor before running
-**Output format:** JSON array of 30 script objects matching k_phonics_audio_scripts.json structure
-**What to do after:** Paste here → validate → save to k_math_audio_scripts.json
-**Added:** 2026-03-16
 
 ### 3. Starlight Story Intro Script
 **Priority:** HIGH — needed for Phase 2 (illustrated opening narration, 2–3 min)
@@ -67,6 +60,10 @@ Checked automatically at the start of every off-peak session.
 ### Lore Copy (60 messages)
 **Completed:** 2026-03-17
 **Result:** Committed to src/assets/k_lore_messages.json v2026.1
+
+### K Math Audio Scripts (30 scripts)
+**Completed:** 2026-03-17
+**Result:** Committed to src/assets/k_math_audio_scripts.json v2026.1
 
 ### K Phonics Audio Scripts (50 scripts)
 **Completed:** 2026-03-16

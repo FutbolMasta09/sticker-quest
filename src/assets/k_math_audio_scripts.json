@@ -1,0 +1,219 @@
+{
+  "grade": "Kindergarten",
+  "subject": "Math",
+  "version": "2026.1",
+  "script_count": 30,
+  "note": "Narrated by Starlight the Unicorn. Each script is a recorded instruction for one motor task. Voice: warm, celebratory, simple vocabulary. TinyStories-1500 compliant.",
+  "scripts": [
+    {
+      "audio_file": "audio/instructions/k_gross_cnt1_ant.wav",
+      "sticker_id": "cnt1_ant",
+      "type": "gross",
+      "character": "Annie Ant",
+      "script": "Annie Ant loves to march in a line! Stand up tall and take 5 big steps forward — say each number out loud as you step: 1, 2, 3, 4, 5! You marched just like Annie!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_cnt1_ant.wav",
+      "sticker_id": "cnt1_ant",
+      "type": "fine",
+      "character": "Annie Ant",
+      "script": "Annie Ant loves to make little dots in the dirt! Pick up your crayon and make 5 dots on your paper. Now point to each dot and count them out loud — 1, 2, 3, 4, 5! You counted every single one!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_cnt2_elephant.wav",
+      "sticker_id": "cnt2_elephant",
+      "type": "gross",
+      "character": "Ellie Elephant",
+      "script": "Ellie Elephant loves to jump and play! Stand up and do 10 small jumps in place — every time you land, say the next number: 1, 2, 3, all the way to 10! Wow, you jumped all the way to ten!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_cnt2_elephant.wav",
+      "sticker_id": "cnt2_elephant",
+      "type": "fine",
+      "character": "Ellie Elephant",
+      "script": "Ellie Elephant loves to draw in a nice long row! Draw 10 small circles in a row on your paper. Now touch each one and count them out loud — all the way to 10! Look at that beautiful row you made!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_num1_giraffe.wav",
+      "sticker_id": "num1_giraffe",
+      "type": "gross",
+      "character": "Gary Giraffe",
+      "script": "Gary Giraffe loves to reach up high and show numbers with his fingers! When you see a number on the screen, hold up that many fingers as fast as you can. Ready? Watch and show me! Those fingers are so fast!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_num1_giraffe.wav",
+      "sticker_id": "num1_giraffe",
+      "type": "fine",
+      "character": "Gary Giraffe",
+      "script": "Gary Giraffe loves to write numbers with his long neck! Write the numbers 1, 2, 3, 4, and 5 on your paper. First trace each one with your finger, then write it with your crayon. You are writing numbers just like Gary!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_num2_owl.wav",
+      "sticker_id": "num2_owl",
+      "type": "gross",
+      "character": "Oliver Owl",
+      "script": "Oliver Owl loves to clap his wings! When you see a number on the screen, clap your hands that many times and count out loud. If you see 7, clap 7 times! What a great clapper you are!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_num2_owl.wav",
+      "sticker_id": "num2_owl",
+      "type": "fine",
+      "character": "Oliver Owl",
+      "script": "Oliver Owl loves to write big numbers! Write the numbers 6, 7, 8, 9, and 10 on your paper. Say each number out loud as you write it. You sound so smart saying those big numbers!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_otc1_penguin.wav",
+      "sticker_id": "otc1_penguin",
+      "type": "gross",
+      "character": "Pete Penguin",
+      "script": "Pete Penguin loves to count his little fingers! Tap each finger one at a time while counting out loud — one number for each finger, and only touch each finger once. You touched every finger just right!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_otc1_penguin.wav",
+      "sticker_id": "otc1_penguin",
+      "type": "fine",
+      "character": "Pete Penguin",
+      "script": "Pete Penguin loves to count his fish! Draw 6 small fish on your paper. Now touch each fish one time while you count — do not touch any fish twice! Every fish got counted once, just like Pete does it!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_shp1_hedgehog.wav",
+      "sticker_id": "shp1_hedgehog",
+      "type": "gross",
+      "character": "Hazel Hedgehog",
+      "script": "Hazel Hedgehog loves to curl up and spin! Stretch your arms out wide and spin your whole body in one big slow circle. Nice and slow, all the way around! You made a beautiful circle with your body!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_shp1_hedgehog.wav",
+      "sticker_id": "shp1_hedgehog",
+      "type": "fine",
+      "character": "Hazel Hedgehog",
+      "script": "Hazel Hedgehog loves her round, spiny shape! Draw a circle with your crayon, then draw tiny lines all around the outside edge — like little spines! That looks just like a hedgehog!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_shp2_duck.wav",
+      "sticker_id": "shp2_duck",
+      "type": "gross",
+      "character": "Daisy Duck",
+      "script": "Daisy Duck loves to waddle in a square! Walk forward 3 steps, then turn right. Do that 4 times and you will walk a whole square! You walked a perfect square, Daisy is so proud!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_shp2_duck.wav",
+      "sticker_id": "shp2_duck",
+      "type": "fine",
+      "character": "Daisy Duck",
+      "script": "Daisy Duck loves squares because her pond is shaped like one! Draw a square on your paper — 4 sides all the same size and 4 corners. That is one wonderful square!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_shp3_bee.wav",
+      "sticker_id": "shp3_bee",
+      "type": "gross",
+      "character": "Bella Bee",
+      "script": "Bella Bee loves pointy shapes! Put both arms up high and press your fingertips together to make a pointy triangle shape with your body. Hold it nice and still! Look at you, you are a triangle!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_shp3_bee.wav",
+      "sticker_id": "shp3_bee",
+      "type": "fine",
+      "character": "Bella Bee",
+      "script": "Bella Bee loves triangles because her wings look like them! Draw a triangle — 3 lines that connect at 3 pointy corners. What a sharp and pretty triangle that is!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_shp4_crab.wav",
+      "sticker_id": "shp4_crab",
+      "type": "gross",
+      "character": "Carl Crab",
+      "script": "Carl Crab loves to walk sideways! Walk sideways 5 steps, then turn. Walk sideways 2 steps, then turn. Keep going until you walk a big rectangle! You walked just like a crab!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_shp4_crab.wav",
+      "sticker_id": "shp4_crab",
+      "type": "fine",
+      "character": "Carl Crab",
+      "script": "Carl Crab loves rectangles because his shell looks like one! Draw a rectangle — 2 long sides and 2 short sides with 4 corners. That rectangle is so good, Carl would love it!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_pat1_kangaroo.wav",
+      "sticker_id": "pat1_kangaroo",
+      "type": "gross",
+      "character": "Kiki Kangaroo",
+      "script": "Kiki Kangaroo loves to make patterns! Clap your hands then stomp one foot — clap, stomp, clap, stomp — do it 4 times in a row! You made a pattern with your whole body, how cool is that!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_pat1_kangaroo.wav",
+      "sticker_id": "pat1_kangaroo",
+      "type": "fine",
+      "character": "Kiki Kangaroo",
+      "script": "Kiki Kangaroo loves to put things in a pattern! Tear paper into pieces and color some red and some blue. Now lay them in a pattern: red, blue, red, blue. That pattern is beautiful!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_srt1_ladybug.wav",
+      "sticker_id": "srt1_ladybug",
+      "type": "gross",
+      "character": "Lila Ladybug",
+      "script": "Lila Ladybug loves big and small! Stretch your body up as BIG as you can for 3 seconds, then curl up as SMALL as you can for 3 seconds. Do it two times! You showed big and small so well!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_srt1_ladybug.wav",
+      "sticker_id": "srt1_ladybug",
+      "type": "fine",
+      "character": "Lila Ladybug",
+      "script": "Lila Ladybug loves to sort things by size! Tear paper into big pieces and small pieces. Now sort them into two piles — one pile for big and one pile for small. You are a super sorter!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_add1_octopus.wav",
+      "sticker_id": "add1_octopus",
+      "type": "gross",
+      "character": "Ollie Octopus",
+      "script": "Ollie Octopus loves to add with his arms! Hold up 1 finger on one hand and 2 fingers on the other hand. Now bring your hands together and count all your fingers! You just added 1 and 2 together!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_add1_octopus.wav",
+      "sticker_id": "add1_octopus",
+      "type": "fine",
+      "character": "Ollie Octopus",
+      "script": "Ollie Octopus loves to count his dots! Draw 1 dot on the left side of your paper and 2 dots on the right side. Now count all the dots together — how many do you have? You are adding like a star!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_add2_panda.wav",
+      "sticker_id": "add2_panda",
+      "type": "gross",
+      "character": "Pip Panda",
+      "script": "Pip Panda loves to tap and count! Tap your left knee 2 times, then tap your right knee 2 times. Now count every tap you did! Pip thinks you are amazing!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_add2_panda.wav",
+      "sticker_id": "add2_panda",
+      "type": "fine",
+      "character": "Pip Panda",
+      "script": "Pip Panda loves circles! Draw 2 circles on the left side and 2 circles on the right side of your paper. Now count every circle you drew. You added them all up, great job!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_add3_rhino.wav",
+      "sticker_id": "add3_rhino",
+      "type": "gross",
+      "character": "Remy Rhino",
+      "script": "Remy Rhino loves to stomp! Stomp your feet 2 times, then stomp 3 more times. Count every stomp out loud as you go! That is some mighty stomping, just like Remy!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_add3_rhino.wav",
+      "sticker_id": "add3_rhino",
+      "type": "fine",
+      "character": "Remy Rhino",
+      "script": "Remy Rhino loves to draw stars! Draw 2 stars on one side and 3 stars on the other side. Now touch every star and count them all up. You are a star at adding!"
+    },
+    {
+      "audio_file": "audio/instructions/k_gross_cmp1_hippo.wav",
+      "sticker_id": "cmp1_hippo",
+      "type": "gross",
+      "character": "Hugo Hippo",
+      "script": "Hugo Hippo loves to compare! Stomp 2 times for the small group, then stomp 5 times for the big group. Count every stomp and tell me — which group had more stomps? You figured it out!"
+    },
+    {
+      "audio_file": "audio/instructions/k_fine_cmp1_hippo.wav",
+      "sticker_id": "cmp1_hippo",
+      "type": "fine",
+      "character": "Hugo Hippo",
+      "script": "Hugo Hippo loves to see which group is bigger! Draw a circle and put 3 dots inside it. Draw another circle and put 6 dots inside it. Count each group and point to the one with more. You found the bigger group, way to go!"
+    }
+  ]
+}
