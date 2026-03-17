@@ -38,7 +38,14 @@ Ryan built this for his niece Libby. That story is authentic, emotional, and the
 - **SEL theme:** Forgiveness and empathy — "everyone makes mistakes, what matters is we help each other"
 - **Arc:** Appears in story intro (caused problem) → brief cameos as stars are collected → graduation ceremony (Peggy apologizes and celebrates with Libby)
 - **Public launch note:** "Peggy the Pegasus" is a common name in children's books — run a trademark check before Phase 4 public submission.
-- **Future grades:** Same character may appear as a "wanderer" who follows Libby into G1–G3 worlds, learning a new SEL lesson each grade. Design the G1 arc when G1 content begins (Spring 2027).
+- **Full character arc (K–G3):**
+  - K: Peggy causes the problem and gets forgiven — SEL: forgiveness
+  - G1: Peggy keeps trying to fly even though she's scared of messing up again — SEL: courage
+  - G2: Peggy practices and slowly improves — SEL: perseverance
+  - G3: Peggy is grown enough to help a NEW struggling character — SEL: responsibility
+  - **G3 payoff:** Peggy becomes the helper. This mirrors Libby's own 4-year learning journey.
+- **Late-starter onboarding:** Kids who begin at G1+ get a one-line intro from that grade's character ("You might meet Starlight's friend Peggy — she's been on quite a journey..."). No K required.
+- **Design rule:** Do NOT script G1–G3 Peggy scenes now. Document the arc, build it when each grade is in active development.
 | **G1** | Barnaby the Brave Bear | Strong, protective, tells campfire stories | Enchanted Forest | A shadow silenced the forest's songs — words restore them |
 | **G2** | Marina the Dolphin | Curious, explorer, loves riddles | Crystal Ocean | Ancient word-crystals sank to the deep — dive to recover them |
 | **G3** | Nova the Star Fox | Scientific, witty, problem-solver | Star Academy | The Star Academy's library was scrambled — rebuild it word by word |
