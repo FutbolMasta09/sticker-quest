@@ -1,0 +1,42 @@
+---
+description: Reusable workflow skeleton for app and game sessions.
+alwaysApply: true
+---
+
+# WORKFLOW RULESHEET
+
+## Purpose
+- Keep each session predictable: start clean, report progress clearly, close cleanly.
+- Use this as the reusable backbone for future projects.
+
+## Priority Order
+1. Follow explicit user requests first.
+2. If rules conflict, follow the more specific rule file.
+3. Otherwise follow this workflow skeleton.
+
+## Session Start
+- Confirm the task in plain English before major work.
+- Do quick context checks needed for the task type.
+- For code work, verify repo state and key context files before edits.
+
+## In-Session Updates
+- Give short progress updates regularly during longer work.
+- State what you are about to do before editing files.
+- If blocked, explain the blocker and the next best option.
+
+## Safe Change Rules
+- Make the smallest change that solves the requested outcome.
+- Do not revert unrelated user changes.
+- Avoid destructive actions unless explicitly approved.
+
+## Session Close
+- Report what changed and why in plain English.
+- List any follow-up checks or tests still needed.
+- Confirm completion status against the requested scope.
+- If a phase milestone was completed this session: update ROADMAP_TIMELINE.md — mark phase complete, record actual completion date, note any items that slipped to the next phase.
+- If a phase milestone was completed this session: update ESTIMATION_RETROSPECTIVE.md and FORECAST_BASELINES.md — log safe vs actual delta and adjust forecast multipliers only when evidence supports it.
+
+## Reuse Template (Copy to New Projects)
+- Replace project name and path assumptions.
+- Keep sections: Priority Order, Session Start, In-Session Updates, Safe Change Rules, Session Close.
+- Add project-specific protocols in separate rule files, not in this skeleton.

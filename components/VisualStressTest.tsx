@@ -1,7 +1,6 @@
 import { Canvas, Circle, Group, Paint } from '@shopify/react-native-skia';
 import React, { useEffect, useRef, useState } from 'react';
 import {
-    Dimensions,
     ScrollView,
     StyleSheet,
     Text,
@@ -12,18 +11,15 @@ import {
 import { ThemedText } from './themed-text';
 import { ThemedView } from './themed-view';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
 export default function VisualStressTest() {
   const { width, height } = useWindowDimensions();
-  const isLandscape = width > height;
   
   // State for orientation simulation
   const [simulatedOrientation, setSimulatedOrientation] = useState<'portrait' | 'landscape'>('portrait');
   const [orientationChanges, setOrientationChanges] = useState(0);
   const [ghostDetected, setGhostDetected] = useState(false);
   const [canvasKey, setCanvasKey] = useState(0);
-  const [testResults, setTestResults] = useState<Array<{time: string, result: string}>>([]);
+  const [testResults, setTestResults] = useState<{ time: string; result: string }[]>([]);
   
   // Canvas dimensions based on simulated orientation
   const canvasWidth = simulatedOrientation === 'portrait' 
@@ -318,19 +314,19 @@ export default function VisualStressTest() {
             Visual Stress Test Instructions:
           </ThemedText>
           <ThemedText type="default" style={styles.instruction}>
-            1. Click "Switch to Landscape/Portrait" to toggle orientation
+            1. Click Switch to Landscape/Portrait to toggle orientation
           </ThemedText>
           <ThemedText type="default" style={styles.instruction}>
             2. Observe if the Skia canvas re-renders instantly
           </ThemedText>
           <ThemedText type="default" style={styles.instruction}>
-            3. Look for "ghost" images or rendering artifacts
+            3. Look for ghost images or rendering artifacts
           </ThemedText>
           <ThemedText type="default" style={styles.instruction}>
-            4. Use "Run Stress Test" for rapid orientation changes
+            4. Use Run Stress Test for rapid orientation changes
           </ThemedText>
           <ThemedText type="default" style={styles.instruction}>
-            5. "Force Canvas Re-render" manually refreshes the canvas
+            5. Force Canvas Re-render manually refreshes the canvas
           </ThemedText>
         </View>
       </ScrollView>

@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 const PAGE_SIZE = 5;
 
 export const StickerDrawer = ({ stickers }: { stickers: any[] }) => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage] = useState(0);
 
   // MEMORY GUARD: Only process 5 stickers at a time
   const visibleStickers = useMemo(() => {

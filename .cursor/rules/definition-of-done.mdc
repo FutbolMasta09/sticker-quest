@@ -1,0 +1,34 @@
+---
+description: Universal checklist for confirming a feature or task is truly complete.
+alwaysApply: true
+---
+
+# DEFINITION OF DONE
+
+Before declaring any feature, fix, or task complete, confirm all of the following:
+
+## Code Quality
+- [ ] Lint passes with no new errors introduced
+- [ ] No obvious crash paths added (null access, unhandled promise rejections, missing error states)
+- [ ] No unrelated files changed
+
+## Behavior
+- [ ] Feature works as described in the original request
+- [ ] Works offline or fails gracefully with a user-friendly message
+- [ ] No regression in adjacent screens or features
+
+## Communication
+- [ ] Plain-English summary of what changed and why is ready to log
+- [ ] Any new decisions are noted in DECISION_LOG.md
+
+## Testing
+- [ ] If code was touched: device test required (defer to testing-protocol rule for exact steps)
+- [ ] If content-only: no device test needed
+
+## Documentation
+- [ ] PATCH_NOTES.md entry written or queued
+- [ ] PROJECT_CONTEXT.md updated if phase status, flags, or decisions changed
+
+## Reuse Notes
+- Keep this rule always-on across projects.
+- Adjust checklist items to match project-specific quality gates as needed.

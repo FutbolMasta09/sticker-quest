@@ -34,7 +34,6 @@ export default function StarlightSpirit({
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;
-      const delta = time - lastTime;
       lastTime = time;
 
       // Pulse scale: 0.9 to 1.1 with sine wave

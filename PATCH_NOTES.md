@@ -1,3 +1,73 @@
+## [2026-03-18b] Session: Amber Remote Test Executed (PASS) + Protocol Hardening
+**ONE-TIME NEXT SESSION (FIRST ACTION):** Execute Amber feedback build sequence in strict order:
+1. Tutorial V1 (first-run guidance, skippable)
+2. Color + cartoon visual pass (more vibrant kid appeal)
+3. Star motivation emphasis
+4. Onboarding copy simplification
+5. Fire HD readability check + re-test prep
+
+**Status:** Remote Fire HD validation completed successfully; next session is implementation-focused.
+
+### ACCOMPLISHMENTS
+1. **Live Amber remote test completed end-to-end** on Fire HD 10 using backup APK delivery path after tunnel failure.
+2. **Smoke path passed fully** — home load, quest open, star selection, return-home, and no freeze/errors.
+3. **Persistence verified** — app relaunched, user stayed signed in, and star totals remained intact.
+4. **Qualitative feedback captured** — Amber confirmed Libby fit and star engagement, requested tutorial guidance plus more colorful/cartoon-forward visual polish.
+5. **Amber logs updated** — `docs/TONIGHT_AMBER_TEST_RESULTS.md` and `docs/AMBER_TEST_HISTORY.md` now reflect real outcomes and next actions.
+6. **Session protocol upgraded** — added Amber triage at entry, Amber maintenance at exit, and pre-close safety check when Ryan forgets to request full exit protocol.
+
+### DECISIONS LOCKED
+- Keep stars as the core motivation mechanic.
+- Prioritize colorful/cartoon visual pass for parent-perceived appeal.
+- Add a short onboarding tutorial before broader parent-facing launch tests.
+
+### OPEN ITEMS
+- [ ] Run prompt-coaching checkpoint in next session per prior protocol requirement.
+- [ ] Implement the five-step Amber feedback build sequence above.
+
+---
+
+## [2026-03-18a] Session: Lint Stabilization + Amber Remote Test Readiness
+**ONE-TIME NEXT SESSION (FIRST ACTION):** Prep for Amber call first, then run Amber Fire HD smoke test and complete `docs/TONIGHT_AMBER_TEST_RESULTS.md` live. If primary path fails by minute 10, switch to backup decision flow in `docs/AMBER_REMOTE_TEST_RUNBOOK.md`.
+**ONE-TIME NEXT SESSION (SECOND ACTION):** Run prompt-coaching checkpoint: read last session reminder from `docs/PROMPT_WEEKLY_SCORECARD.md`, then log at least one coached task in `docs/PROMPT_COACHING_LOG.md` if any meaningful prompt work happens.
+**ONE-TIME NEXT SESSION (THIRD ACTION):** Execute Amber feedback implementation plan in this order: (1) Tutorial V1 (first-run guidance), (2) Color + cartoon visual pass (more color, higher kid appeal), (3) Star motivation emphasis, (4) Onboarding copy simplification, (5) Fire HD readability check + re-test prep.
+
+**Status:** Code quality stabilized; remote test packet fully documented; backup path prepared but requires EAS login/config completion.
+
+### ACCOMPLISHMENTS
+1. **Lint stabilized to clean baseline** — `npx expo lint` now passes with 0 errors, 0 warnings after fixing hook-order issue and JSX/unescaped text issues.
+2. **Marketing + memory lock completed** — added `docs/MARKETING_STRATEGY.md`, `docs/MARKETING_STRATEGY_TEMPLATE.md` in rules pack, and Anchor repo kickoff trigger checklist in `PROJECT_CONTEXT.md`.
+3. **Feedback + AI transparency language documented** — reusable parent and indie copy blocks added, with single-channel feedback intake policy.
+4. **Amber remote test packet created** — added:
+   - `docs/AMBER_REMOTE_TEST_RUNBOOK.md`
+   - `docs/TONIGHT_AMBER_TEST_PACKET.md`
+   - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
+   - `docs/POST_TEST_BRANCH_PLAN.md`
+   - `docs/AMBER_TEST_HISTORY.md`
+   - `docs/BACKUP_APK_PLAN.md`
+5. **Primary + backup delivery paths defined** — primary is Expo Go + tunnel; backup is preview APK flow with minute-10 switch decision.
+6. **Clarification rule made permanent + portable** — added `clarification-gate.mdc` to project rules and starter rules pack; updated `scripts/build-rules-pack.js` so future projects inherit it.
+7. **Backup APK groundwork prepared** — `eas.json` added with `preview` APK profile and `production` app bundle profile.
+
+### OPEN ITEMS BEFORE TONIGHT CALL
+- [x] Run `npx eas-cli login` (machine currently not logged in).
+- [x] Complete EAS first-time Android configure if prompted.
+- [x] Confirm whether backup APK link can be generated before call.
+- [x] Run live Fire HD smoke test with Amber and log outcome in `docs/TONIGHT_AMBER_TEST_RESULTS.md`.
+
+### TEST OUTCOME + PLAN LOCK (added after live call)
+- Fire HD remote smoke test passed on backup APK path.
+- Persistence check passed (app reopened, user remained signed in, stars persisted).
+- Amber feedback signals:
+  - Libby-fit: yes
+  - Core engagement: stars are motivating
+  - Improvement priority: more colorful/cartoon visual design
+  - Launch readiness improvement: add quick tutorial/onboarding guidance
+  - Parent market signal: likely interest from other parents after polish
+- Next build plan is now locked to the five-step Amber feedback sequence listed in ONE-TIME NEXT SESSION (THIRD ACTION).
+
+---
+
 ## [2026-03-17k] Session: Game Design — The Anchor's Desk Concept Locked
 **ONE-TIME NEXT SESSION:** Add marketing plans to the roadmap — Sticker Quest (detailed, timely) and The Anchor's Desk (Steam wishlist strategy only, not a full plan). ~20–30 min. See session notes below for context.
 

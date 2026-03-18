@@ -61,8 +61,28 @@ export default function QuestDetailScreen() {
   const { getProgress, recordAttempt } = useMasteryStore();
   const insets = useSafeAreaInsets();
   const { scale, moderateScale } = useResponsiveScale();
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [celebrationMessage] = useState(() => pickRandom(CELEBRATION_LINES));
+  const [earnedStars, setEarnedStars] = useState<1 | 2 | 3>(1);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const sticker = stickers.find((s) => s.id === id);
+
+  const handleStarSelect = (stars: 1 | 2 | 3) => {
+    if (!sticker) return;
+    recordAttempt(sticker.id, stars);
+    setEarnedStars(stars);
+    setShowCelebration(true);
+  };
+
+  useEffect(() => {
+    if (!showCelebration) return;
+    Animated.sequence([
+      Animated.timing(fadeAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
+      Animated.delay(1800),
+      Animated.timing(fadeAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
+    ]).start(() => router.back());
+  }, [fadeAnim, showCelebration]);
 
   if (!sticker) {
     return (
@@ -77,26 +97,6 @@ export default function QuestDetailScreen() {
 
   const progress = getProgress(sticker.id);
   const emoji = ANIMAL_EMOJI[sticker.id] ?? '⭐';
-
-  const [showCelebration, setShowCelebration] = useState(false);
-  const [celebrationMessage] = useState(() => pickRandom(CELEBRATION_LINES));
-  const [earnedStars, setEarnedStars] = useState<1 | 2 | 3>(1);
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-
-  const handleStarSelect = (stars: 1 | 2 | 3) => {
-    recordAttempt(sticker.id, stars);
-    setEarnedStars(stars);
-    setShowCelebration(true);
-  };
-
-  useEffect(() => {
-    if (!showCelebration) return;
-    Animated.sequence([
-      Animated.timing(fadeAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
-      Animated.delay(1800),
-      Animated.timing(fadeAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
-    ]).start(() => router.back());
-  }, [showCelebration]);
 
   return (
     <>

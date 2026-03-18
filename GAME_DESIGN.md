@@ -188,6 +188,44 @@ The Anchor's Desk is one entry point into a larger world. The Inkborne Universe 
 
 ---
 
+## XIII. STEAM WISHLIST STRATEGY (LIGHTWEIGHT)
+
+This is a focused wishlist strategy only, not a full marketing plan.
+It should run in parallel with Sticker Quest only when it does not impact delivery.
+
+### Positioning sentence
+
+"A text-noir roguelike where redacting one word rewrites reality."
+
+### Minimal execution cadence
+
+1. **Seed phase (early):** Share one strong concept post and 2-3 short writing samples to test hook clarity.
+2. **Page prep phase:** Draft Steam page copy, capsule art direction, and a short teaser loop before page publish.
+3. **Wishlist phase:** Once Steam page is live, post small, consistent updates with a clear wishlist call to action.
+4. **Pre-release phase:** Use one focused beat (demo or playtest window) to convert passive interest into wishlists.
+
+### Guardrail
+
+If wishlist work starts reducing Sticker Quest delivery speed, pause it immediately and resume after major Sticker Quest milestones.
+
+---
+
+## XIV. AI-FIRST EXECUTION GUARDRAILS
+
+Reference: `docs/AI_FIRST_BUILD_STRATEGY.md`
+
+AI is a production accelerator for this project, especially for prototype code support, draft consequence variants, and QA scenario generation.
+
+Shipping rules:
+1. Human-final pass is required on every ship-facing document template.
+2. Narrative quality beats quantity: fewer stronger templates are preferred over bulk drafts.
+3. Claims in marketing and patch notes must match playable behavior.
+4. Any AI-generated prose that feels repetitive or generic must be rewritten before release.
+
+This preserves speed while protecting voice quality and player trust.
+
+---
+
 *Document owner: Ryan*
 *Last updated: March 2026*
 *Next review: At Sticker Quest launch*

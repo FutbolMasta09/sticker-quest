@@ -396,7 +396,7 @@ UI localization (menus, parent screens) is relatively straightforward and could 
 **Decision:** Build a strong, proven English V1 first. After K-English is generating revenue and stable, evaluate whether to license the engine to content partners or build international editions in-house.
 Do NOT begin localization work before the English public launch is stable and profitable.
 
-### Classroom & School Features (Phase 4, Post-Public-Launch)
+### Classroom & School Features (Post-Public-Launch Expansion — Phase 4+)
 Teacher web dashboard, class progress view, school license key system.
 Students identified as "Student 1, Student 2" by default (no names to server).
 Teacher can opt in to name association with parental consent documentation.
@@ -451,6 +451,15 @@ It does NOT compete with or interrupt any Sticker Quest phase work.
 
 The next project is: **The Anchor's Desk** — a text-based roguelike set in the Inkborne Universe.
 Platform: PC via Steam. Engine: Godot. Core mechanic: document redaction.
+
+### One-time kickoff checklist (when Anchor's Desk repo starts)
+
+When Sticker Quest is ready and the Anchor's Desk repo is created, run this in order:
+
+1. Open the new repo as a separate project in Cursor (not inside Sticker Quest).
+2. Install the rules pack into the new repo.
+3. Copy the Anchor's Desk strategy section from `docs/MARKETING_STRATEGY.md` in Sticker Quest into the new repo's marketing strategy file.
+4. Confirm alignment across the new repo's game design, roadmap, and marketing docs before coding starts.
 
 ---
 

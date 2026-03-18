@@ -1,0 +1,52 @@
+---
+description: Periodic project health check prompt — run at session start every 5th session or weekly.
+alwaysApply: true
+---
+
+# PROJECT HEALTH CHECK
+
+## When to Run
+- Every 5th session (roughly once per week at 10–20 hrs/week)
+- Any time Ryan asks "how are we doing?" or "are we on track?"
+- At the start of a session after a milestone is hit
+
+## How to Trigger
+Check PATCH_NOTES.md — if the last health check was more than 5 sessions ago, run it before starting work. Otherwise skip.
+
+## Health Check Questions
+
+Ask and answer each of these. Keep answers to one sentence each.
+
+1. **On track?**
+   Compare current phase progress to ROADMAP_TIMELINE.md. Are we at or ahead of pace?
+
+2. **Any flags overdue?**
+   Check PROJECT_CONTEXT.md Known Flags. Any unresolved flag older than 2 weeks? Name it.
+
+3. **Any rules that need tightening?**
+   Check LESSONS_LEARNED.md and POSTMORTEM_TEMPLATE.md. Any pattern that keeps repeating? Name it.
+
+4. **Upcoming deadline pressure?**
+   Is a phase deadline or milestone test within the next 4 weeks? Flag it.
+
+5. **Content pipeline healthy?**
+   Are content assets (JSON, audio scripts, lore) keeping ahead of code needs? Flag any gap.
+
+## Output Format
+
+Report the health check results to Ryan as a short block:
+
+---
+**PROJECT HEALTH CHECK**
+- Pace: [On track / Ahead / Behind — one sentence]
+- Top open flag: [Name it or "none overdue"]
+- Rule to tighten: [Name it or "none identified"]
+- Deadline pressure: [Name it or "none in next 4 weeks"]
+- Content pipeline: [Healthy or gap identified]
+---
+
+Then ask what Ryan wants to work on. Do not assume.
+
+## Reuse Notes
+- Keep this rule always-on across projects.
+- Update the "When to Run" frequency if the session cadence changes significantly.

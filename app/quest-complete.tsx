@@ -8,14 +8,11 @@ import { Star } from 'lucide-react-native';
 import { useEffect, useRef, useState } from 'react';
 import {
   Animated,
-  Dimensions,
   StyleSheet,
   TouchableOpacity,
   View,
   useWindowDimensions
 } from 'react-native';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface StarParticle {
   id: number;
@@ -61,7 +58,7 @@ export default function QuestCompleteScreen() {
     );
     pulse.start();
     return () => pulse.stop();
-  }, []);
+  }, [pulseAnim]);
 
   // Initialize particles on mount
   useEffect(() => {
@@ -75,8 +72,6 @@ export default function QuestCompleteScreen() {
       // Random angle and speed for explosion
       const angle = Math.random() * Math.PI * 2;
       const speed = 2 + Math.random() * 4; // pixels per ms
-      const distance = 50 + Math.random() * 100; // initial offset
-
       newParticles.push({
         id: i,
         x: centerX,
@@ -152,7 +147,7 @@ export default function QuestCompleteScreen() {
     // 2. Haptic feedback
     try {
       await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    } catch (error) {
+    } catch {
       // Haptics not available, ignore
     }
 

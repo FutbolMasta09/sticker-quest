@@ -53,7 +53,7 @@ export default function HomeScreen() {
     }, 60_000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isSessionLocked, startSession]);
 
   if (locked) {
     return (

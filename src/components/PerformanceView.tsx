@@ -18,9 +18,9 @@ export const PerformanceView = ({ stickerName, isAutoMode, onSuccess, onFail }: 
       <View style={styles.messageCard}>
         <Text style={styles.heartIcon}>❤️</Text>
         <Text style={styles.bondingNote}>
-          "We love the 'AI Scout,' but nothing beats a high-five from you. 
-          The best part of Sticker Quest is the time you spend together. 
-          If you're able, stick around to cheer her on!"
+          We love the &apos;AI Scout,&apos; but nothing beats a high-five from you.
+          The best part of Sticker Quest is the time you spend together.
+          If you&apos;re able, stick around to cheer her on!
         </Text>
       </View>
 

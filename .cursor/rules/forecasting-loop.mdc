@@ -1,0 +1,36 @@
+---
+description: Keep safe-vs-actual forecasting updated at every milestone.
+alwaysApply: true
+---
+
+# FORECASTING LOOP
+
+## Purpose
+- Improve timeline guesses over time using evidence, not intuition.
+- Track both safe-plan dates and actual outcomes.
+
+## Milestone Trigger
+- When a phase milestone is completed, update:
+  - `docs/ROADMAP_TIMELINE.md`
+  - `docs/ESTIMATION_RETROSPECTIVE.md`
+  - `docs/FORECAST_BASELINES.md`
+
+## Required Milestone Updates
+1. Record actual completion date and schedule delta (days early/late).
+2. Rate capability factors for the milestone:
+   - Cursor assist effectiveness
+   - Ryan familiarity with domain
+   - Scope clarity at start
+   - Technical unknowns
+   - Content pipeline readiness
+   - Test friction
+3. Decide if baseline multipliers should change.
+4. If a pattern repeats twice, tighten or add a rule.
+
+## Output To Ryan
+- Report one line at milestone close:
+  - "Forecast accuracy update: [early/on-time/late], delta [X days], next-phase forecast [safer/faster/same]."
+
+## Reuse Notes
+- Keep this rule always-on in every project.
+- Update only at milestones to avoid noisy data.

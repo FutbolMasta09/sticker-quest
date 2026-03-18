@@ -5,6 +5,8 @@
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
+    "rules:pack:build": "node ./scripts/build-rules-pack.js",
+    "rules:pack:install": "node ./scripts/install-rules-pack.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",

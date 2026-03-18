@@ -23,11 +23,11 @@ export const SetupPhase = ({ stickerName, taskDescription, audioPath, onReady }:
         
         <View style={styles.instructionCard}>
           <Text style={styles.parentRole}>🎬 Parent Note: Hold the tablet and watch Libby shine!</Text>
-          <Text style={styles.taskText}>"{taskDescription}"</Text>
+          <Text style={styles.taskText}>{taskDescription}</Text>
         </View>
 
         <TouchableOpacity style={styles.readyButton} onPress={onReady}>
-          <Text style={styles.readyButtonText}>WE'RE READY!</Text>
+          <Text style={styles.readyButtonText}>WE&apos;RE READY!</Text>
         </TouchableOpacity>
 
         <Text style={styles.footer}>The reward unlocks after the move!</Text>

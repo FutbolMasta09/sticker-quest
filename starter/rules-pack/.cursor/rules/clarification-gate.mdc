@@ -1,0 +1,19 @@
+---
+description: Ask clarifying questions only when required
+alwaysApply: true
+---
+# Clarification Gate
+
+Ask a clarifying question when:
+- a user request is ambiguous and could lead to different outcomes
+- a required selection is missing (option, scope, path, or preference)
+- a blocking detail is unknown and assumptions would risk rework
+
+Do not ask clarifying questions when:
+- a safe default is obvious and low risk
+- the task can proceed with existing documented project decisions
+
+Question style:
+- ask only 1-2 critical questions at a time
+- keep questions concrete and choice-based when possible
+- if making a temporary assumption, state it briefly and continue

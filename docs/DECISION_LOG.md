@@ -41,3 +41,51 @@ Keep entries short. The goal is a quick reference, not a full essay.
 **Chose:** One active build (Sticker Quest), one idea notebook (future game). No second repo opened until Sticker Quest ships.
 **Why:** Splitting focus before shipping anything is the most common way passion projects die. Sticker Quest has a hard September 2026 deadline (Libby's school year). The game idea is preserved in IDEAS_NOTEBOOK.md with no pressure.
 **Rejected:** Starting a second active repo in parallel — too early, no budget for split focus.
+
+---
+
+## Feedback-Open, Single-Channel Intake + AI Transparency Wording
+**Date:** 2026-03-18
+**Chose:** Keep "feedback always welcome" on both projects, but route it through one primary intake channel per project. Also use explicit AI transparency wording: AI bridges coding gaps now, final quality decisions are human-owned, and human collaborators are planned as budget allows.
+**Why:** Encourages community trust without creating feedback chaos. Clear AI phrasing reduces defensive threads while preserving honest creator context.
+**Rejected:** "Feedback anywhere" messaging (too noisy to triage) and AI messaging that is either hidden or over-promoted (both reduce trust).
+
+---
+
+## Inkborne Monster Project Planning Standard
+**Date:** 2026-03-18
+**Chose:** Bring the Inkborne monster game to the same planning maturity as Anchor's Desk before deciding build order.
+**Why:** A fair priority decision needs parity in planning depth. Comparing one fully scoped project to one rough idea would bias the outcome and increase rework risk later.
+**Rejected:** Choosing a first-build project based on excitement alone, and delaying structured planning until after repo kickoff.
+
+---
+
+## First-Build Decision Uses Weighted Criteria
+**Date:** 2026-03-18
+**Chose:** Decide project order using five weighted criteria: cost, community growth potential, technical feasibility, long-term brand/IP potential, and personal motivation sustainability.
+**Why:** This aligns with current constraints (solo build, limited budget, long horizon) and reduces the chance of over-prioritizing one factor at the expense of shipping.
+**Rejected:** Equal-weight scoring (too blunt), and single-factor decisions (high risk of blind spots).
+
+---
+
+## AI-First, Human-Final Production Policy
+**Date:** 2026-03-18
+**Chose:** Operate in AI-first mode for speed and cost, but enforce human-final quality control for all ship-facing outputs (code, content, art, and claims).
+**Why:** This preserves AI leverage while reducing the major failure modes: inconsistency, legal ambiguity, and community trust loss.
+**Rejected:** AI-only shipping workflows (too much quality/trust risk) and AI-avoidant workflows (too slow and expensive for current constraints).
+
+---
+
+## Adaptive AI Intensity + Periodic Tool Scans
+**Date:** 2026-03-18
+**Chose:** AI usage level will adapt over time (high/hybrid/low), and the tool landscape will be reviewed monthly with quarterly deep checks to capture real-world changes in quality, cost, and risk.
+**Why:** Workflow should match current reality. As Ryan codes more independently or hires specialists, AI should shift from primary producer to selective accelerator.
+**Rejected:** A fixed "always high AI" policy and ad-hoc tool switching without evidence.
+
+---
+
+## Session-Start AI Radar + Project Phase Tool Matrix
+**Date:** 2026-03-18
+**Chose:** Add a mandatory session-start AI market scan for planning/build sessions and require a per-phase tool matrix at new project planning kickoff.
+**Why:** Tool quality changes quickly in real life, and explicit phase-by-phase choices prevent vague or stale tool usage.
+**Rejected:** Static tool stacks that only update occasionally, and project plans without explicit tool ownership by phase.

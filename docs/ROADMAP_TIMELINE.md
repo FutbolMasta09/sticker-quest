@@ -160,6 +160,36 @@ Tracks where the project started, where it is now, and the full schedule to laun
 
 ---
 
+## SECTION D — Marketing Timeline (Execution Plan)
+
+Use this section to keep marketing aligned with build phases and prevent last-minute launch scramble.
+
+### Sticker Quest Marketing Plan (Detailed + Time-Aware)
+
+| Window | Primary Goal | Actions | Exit Criteria |
+|---|---|---|---|
+| Mar-Apr 2026 (Phase 1 active) | Foundation | Lock core brand message ("Uncle-built for Libby"), collect 5-10 polished in-app screenshots from stable screens, draft one-paragraph app story for future store copy. | Brand one-liner and screenshot folder ready. |
+| May-Jun 2026 (Phase 1 -> 2) | Proof of progress | Capture short progress clips (quest loop, celebration, session lock), write parent-facing value bullets (offline, no ads, no tracking), start a changelog-style build diary. | Reusable media pack + value bullets drafted. |
+| Jul-Aug 2026 (Phase 3 + soft test prep) | Trust and readiness | Record one complete 10-15 minute test session internally, document safety/privacy statements in plain English, draft private launch announcement copy for family/friends. | Private launch message and trust copy approved. |
+| Sep 2026 (Libby private launch) | Private launch storytelling | Share launch story with close circle, collect qualitative parent feedback, log recurring questions to refine future public-facing copy. | Feedback summary with top 5 insights. |
+| Oct-Nov 2026 (Phase 4 prep) | Public store readiness | Finalize App Store description, screenshots, and compliance wording; prep simple website/landing page with privacy policy link and "K free forever" positioning. | Submission-ready store package complete. |
+| Dec 2026-Jan 2027 (public launch window) | Launch + early traction | Publish launch post, ask early parents for honest reviews, track first 30-day feedback themes and prioritize top 3 fixes. | 30-day post-launch review completed. |
+
+**Operational note:** Before any public posting begins, define one primary feedback intake channel and publish it consistently in every post CTA.
+
+### The Anchor's Desk Marketing Plan (Steam Wishlist Strategy Only)
+
+This is intentionally lightweight and does not compete with Sticker Quest delivery.
+
+| Window (relative to Sticker Quest launch) | Goal | Actions | Exit Criteria |
+|---|---|---|---|
+| Launch + 0 to 2 months | Audience seed | Reserve game name/handles, post one clear concept pitch ("redact one word, reality changes"), share 2-3 tone snippets to test resonance. | Core pitch validated by initial reactions. |
+| Launch + 3 to 5 months | Wishlist page prep | Draft Steam capsule text, collect placeholder key art direction, prepare a short teaser GIF or mock sequence. | Steam page assets checklist ready. |
+| Launch + 6 to 8 months | Wishlist activation | Publish Steam page, announce wishlist CTA in devlog updates, post small weekly updates (document snippet + consequence). | Wishlist baseline established and trending weekly. |
+| Launch + 9 to 12 months | Pre-release momentum | Share demo timing window, run a tight "wishlist + playtest" beat, iterate store copy based on click-through and wishlist conversion. | Release window supported by active wishlist growth. |
+
+---
+
 ## HOW TO UPDATE THIS FILE
 
 **At session close when a milestone is hit:**

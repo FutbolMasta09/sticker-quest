@@ -1,0 +1,38 @@
+---
+description: Adaptive AI tooling selection and session-start market scan
+alwaysApply: true
+---
+# AI Tooling Radar Protocol
+
+## Purpose
+- Keep tool choices current as the AI landscape changes.
+- Match AI usage intensity to Ryan's real workflow (solo, hybrid, low-AI).
+
+## New Project Planning Gate
+At the planning phase of every new project, define and confirm:
+1. AI intensity mode: high assist, hybrid, or low assist.
+2. Tool by phase: planning, prototype, vertical slice, pre-release.
+3. Human-owned outputs by phase (code, art, writing, QA).
+4. Replacement plan if a selected tool underperforms.
+
+If this matrix is missing, do not finalize project plan.
+
+## Session-Start AI Scan
+At the beginning of each session involving planning or build decisions:
+1. Run a live AI ecosystem scan for better tools/models.
+2. Check coding agents, art/audio tools, and workflow tooling.
+3. Compare against current stack on quality, speed, cost, legal clarity, and integration friction.
+4. Report only actionable changes (continue, trial, replace).
+
+## Adoption Rule
+Recommend switching tools only if all are true:
+1. Better real-task output in at least two comparable tasks.
+2. Equal or lower legal/trust risk.
+3. Net workflow gain after integration overhead.
+
+## Communication Rule
+When suggesting a tool change, include:
+- What improves
+- What risk changes
+- Whether to trial or fully replace
+- One simple next step for Ryan

@@ -8,14 +8,11 @@ import { Hand } from 'lucide-react-native';
 import { useEffect, useRef, useState } from 'react';
 import {
   Animated,
-  Dimensions,
   StyleSheet,
   TouchableOpacity,
   View,
   useWindowDimensions
 } from 'react-native';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface StarParticle {
   id: number;
@@ -59,7 +56,7 @@ export default function CelebrationScreen() {
     );
     pulse.start();
     return () => pulse.stop();
-  }, []);
+  }, [pulseAnim]);
 
   // Initialize star explosion on mount
   useEffect(() => {
@@ -73,8 +70,6 @@ export default function CelebrationScreen() {
       // Random angle and speed for explosion
       const angle = Math.random() * Math.PI * 2;
       const speed = 3 + Math.random() * 5; // pixels per ms
-      const distance = 30 + Math.random() * 80; // initial offset
-
       newParticles.push({
         id: i,
         x: centerX,
@@ -150,7 +145,7 @@ export default function CelebrationScreen() {
     // 2. Haptic feedback
     try {
       await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    } catch (error) {
+    } catch {
       // Haptics not available, ignore
     }
 

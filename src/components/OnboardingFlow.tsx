@@ -38,9 +38,9 @@ export const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
             <Text style={styles.title}>Welcome to the Garden!</Text>
             <View style={styles.noteBox}>
               <Text style={styles.body}>
-                "Hi! I'm Ryan. I'm a 'Dev-Uncle' and I built this for my niece, Libby. 
-                I wanted an app that gets kids moving and learning—without the 'screen-suck.' 
-                Ready to meet your new friends?"
+                Hi! I&apos;m Ryan. I&apos;m a &apos;Dev-Uncle&apos; and I built this for my niece, Libby.
+                I wanted an app that gets kids moving and learning-without the &apos;screen-suck.&apos;
+                Ready to meet your new friends?
               </Text>
             </View>
             <TouchableOpacity style={styles.mainButton} onPress={() => setStep(1)}>
@@ -89,7 +89,7 @@ export const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
             <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
               <Text style={styles.title}>Magic Details 📝</Text>
               
-              <Text style={styles.label}>Child's Name</Text>
+              <Text style={styles.label}>Child&apos;s Name</Text>
               <TextInput 
                 style={styles.input} 
                 placeholder="e.g. Libby" 

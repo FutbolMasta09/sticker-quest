@@ -27,6 +27,17 @@ Run this at the start of every new conversation before doing any work.
 4. **Read the last 2 entries in PATCH_NOTES.md**
    Know what was done in the last session and what was left unfinished.
 
+4a. **Amber notes triage (when Amber docs exist)**
+   Review Amber-related notes before planning work:
+   - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
+   - `docs/AMBER_TEST_HISTORY.md`
+   - `docs/NEXT_TASK_TEST_GATE.md`
+   Classify Amber follow-ups into:
+   - **Do now (this session)**
+   - **Schedule next session**
+   - **Save for later backlog**
+   Surface the top Amber priority in the 3-line briefing so it is not missed.
+
 5. **Surface the top open Known Flag**
    Check the "Known Flags" section of PROJECT_CONTEXT.md. Name the single most
    urgent unresolved issue so Ryan stays aware of it — even if we're not fixing it today.
@@ -65,6 +76,16 @@ Do not assume the session is over because a task was completed.
 
 Run this before ending any conversation where meaningful work was done.
 
+### PRE-CLOSE SAFETY CHECK (run even if Ryan forgets to ask for full exit)
+
+If the conversation appears to be ending and Ryan has not explicitly requested the full exit checklist:
+- Run a brief critical check and report it before final sign-off:
+  1. Any unlogged test outcome that should be written to docs
+  2. Any unresolved blocker that could cause next-session confusion
+  3. Any required next-session one-time action that must be surfaced now
+- Keep this lightweight (3 bullets max), then ask Ryan if he wants full exit protocol.
+- Do NOT run commits/push or full exit sequence unless Ryan explicitly confirms he is done.
+
 **Always tell Ryan to start a NEW chat next session — never continue this one.**
 Say this explicitly at the end of every exit:
 "Start a fresh chat next time — don't continue this one. The rules and project files
@@ -88,8 +109,30 @@ no context is lost between sessions.
 2. **Update PATCH_NOTES.md**
    Log what was accomplished, any decisions made, and any new open items.
 
+2a. **Amber notes maintenance (if Amber work happened this session)**
+   If an Amber test session occurred, or Amber action items were completed:
+   - Update `docs/AMBER_TEST_HISTORY.md` with date, delivery path, pass/fail, and key feedback.
+   - Update `docs/TONIGHT_AMBER_TEST_RESULTS.md` with final outcomes and next actions.
+   - Remove or delete Amber one-time prep docs only when they are fully completed and their important details are already captured in history/results files.
+   - If new Amber follow-up tests are needed, create the next test note/checklist in `docs/` before ending the session.
+
 3. **Update PROJECT_CONTEXT.md**
    If any decisions changed the project direction, phase status, or known flags — update it.
+
+3a. **Update ROADMAP_TIMELINE.md (milestone sessions only)**
+   If a phase milestone was completed this session (all checklist items for a phase marked done):
+   - Mark the phase complete in Section C and record the actual completion date.
+   - Update the Pace Check table in the header with the actual date and revised verdict.
+   - Update Section A "Today" column to reflect the new state.
+   - Note any items that slipped to the next phase.
+   If no milestone was hit this session, skip this step.
+
+3b. **Update forecasting docs (milestone sessions only)**
+   If a phase milestone was completed this session:
+   - Update `docs/ESTIMATION_RETROSPECTIVE.md` with safe target, actual date, and delta (days early/late).
+   - Score capability factors (Cursor assist effectiveness + Ryan familiarity + scope clarity + unknowns + test friction).
+   - Update `docs/FORECAST_BASELINES.md` only if evidence supports a multiplier change.
+   If no milestone was hit this session, skip this step.
 
 4. **Run linter before committing**
    Run: `cd "c:\App Development\sticker-quest"; npx expo lint`

@@ -1,0 +1,36 @@
+---
+description: General coding standards and guardrails for app/game projects.
+alwaysApply: true
+---
+
+# CODING STANDARDS (GENERAL)
+
+## Purpose
+- Keep changes safe, readable, and easy to verify.
+- Favor small, testable updates over broad rewrites.
+
+## Core Standards
+- Solve the requested outcome with the smallest reasonable change.
+- Match existing project patterns before introducing new abstractions.
+- Prefer clear naming and straightforward control flow.
+- Add comments only where intent is non-obvious.
+
+## Safety Guardrails
+- Do not revert unrelated local changes.
+- Avoid destructive operations unless explicitly approved.
+- Confirm assumptions with evidence from the codebase before acting.
+- If requirements conflict, pause and ask for clarification.
+
+## Quality Checks
+- After substantive edits, run the project's lint/type checks when available.
+- Fix issues introduced by the change before considering task complete.
+- Call out any remaining risks or unverified paths.
+
+## Git Hygiene
+- Do not create commits unless explicitly requested.
+- When committing, keep messages clear about intent and outcome.
+- Do not push unless explicitly requested.
+
+## Reuse Notes
+- Keep this rule always-on for active projects.
+- Add project-specific constraints in separate rules so this file stays reusable.
