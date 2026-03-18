@@ -482,6 +482,23 @@ There are now two Inkborne project paths competing for post-launch priority:
 Both are in the Inkborne universe. A dedicated session is needed to pick the lead project before any build work begins.
 Full analysis in `docs/INKBORNE_AUDIT_2026_03_18.md`.
 
+**UNIVERSE STRATEGY (locked 2026-03-18):**
+Inkborne is an expandable Universe OS — not a single game. One set of core laws, modular lore packs, project-specific story layers. Multiple games, stories, and formats can share the world.
+
+Canon tier system:
+- Tier 1 = immutable truths (Palimpsest, Authors, Ink consequences)
+- Tier 2 = stable but updateable (factions, places, calendar)
+- Tier 3 = project-specific (this game's version of events)
+
+Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypothesis to revisit per project, not a permanent constraint.
+
+**⚠️ NEXT SESSION MUST-DO (before any new Inkborne project starts):**
+Create two governance documents:
+1. **Universe Protection Framework** — cross-project legal/ethical baseline (IP safety, AI disclosure, data policy, business protection gates)
+2. **Universe Governance Spec** — canon tiers, lore registry format, contradiction policy, project inheritance model
+
+Trigger phrase for next session: "Create the Universe Protection Framework and Universe Governance Spec."
+
 ### One-time kickoff checklist (when Anchor's Desk repo starts)
 
 When Sticker Quest is ready and the Anchor's Desk repo is created, run this in order:

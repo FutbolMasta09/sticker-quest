@@ -1,3 +1,28 @@
+## [2026-03-18d] Session: Universe Strategy — Expandability + Legal/Ethical Protection
+**Status:** Strategy only — no code changes.
+
+### DECISIONS AGREED
+1. **Inkborne is an expandable universe, not a single game.** The goal is a Universe OS: one set of core laws, modular lore packs, project-specific story layers. Multiple games, stories, and formats can share the same world without contradiction.
+2. **Canon tiers locked as the governance model:**
+   - Tier 1 = immutable truths (Palimpsest exists, Authors exist, Ink has consequences)
+   - Tier 2 = stable but updateable lore (factions, places, calendar rituals)
+   - Tier 3 = run-specific / medium-specific truths (this game's version of events)
+3. **Platform agnosticism for the universe.** "Originally mobile" was a hypothesis, not a permanent constraint. Universe and lore design will be platform-agnostic. Platform choices are made per project at launch planning time.
+4. **Legal/ethical protection framework needed.** A cross-project "Universe Protection Framework" will be created next session covering:
+   - Legal claims guard (no overpromising across any project)
+   - IP safety (trademark checks, license logs)
+   - Privacy + data rules per project type
+   - AI governance (disclosure, moderation, incident response)
+   - Business protection (terms/privacy templates, entity/insurance checkpoints)
+5. **Platform decisions revisited.** All prior "mobile-first" assumptions are open for review. Every project picks platform by fastest safe launch + lowest compliance overhead + lowest validation cost.
+
+### NEXT SESSION ACTION ITEMS
+- [ ] **Create Universe Protection Framework** — cross-project legal/ethical baseline, pre-beta and pre-launch gates, and "no-overpromising" wording standard applied to all Inkborne + Sticker Quest projects
+- [ ] **Create Universe Governance Spec** — 1-page format reusable for every Inkborne project: canon tiers, lore registry format, contradiction policy, project inheritance model
+- [ ] Start new chat and say: "Create the Universe Protection Framework and Universe Governance Spec for the Inkborne universe and Sticker Quest."
+
+---
+
 ## [2026-03-18c] Session: Inkborne Universe Full Audit + Build Plan
 **Status:** Strategy + documentation only — no code changes to Sticker Quest.
 
