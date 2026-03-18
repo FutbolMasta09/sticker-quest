@@ -354,6 +354,29 @@ Graduation requires: 2-star minimum on all stickers. This is a Phase 3 requireme
 Ideas confirmed as good — parked here until after September 2026 Libby launch.
 DO NOT build these during Phases 1–3.
 
+### Inkborne Reuse Candidates (HIGH PRIORITY — Plan Before Phase 4)
+> Source: `docs/INKBORNE_AUDIT_2026_03_18.md` — identified during 2026-03-18 Inkborne audit.
+> These are patterns from the Inkborne codebase worth adopting in Sticker Quest at the right phase.
+
+**1. Content Gate Architecture Pattern (Phase 2–3)**
+Inkborne uses a centralized `isContentUnlocked(key)` function. All premium/locked content checks go through one function — never hardcoded gates scattered through components. Sticker Quest should adopt this pattern for grade-level gating (K free, G1–G3 gated). Prevents gate logic from spreading across 15+ files.
+
+**2. AppContext + AsyncStorage Persistence Pattern (Phase 1 cleanup)**
+Inkborne's `AppContext.js` is a clean, battle-tested pattern: single `multiGet` on startup, immediate state update + async persist on every write, graceful fallback if storage fails. Sticker Quest's Zustand stores could be validated against this pattern — especially the `useMasteryStore` rewrite.
+
+**3. Achievement Toast Animation System (Phase 2)**
+Inkborne's `AchievementToast.js` uses `Animated.sequence` slide-in/out, always-on-top absolute overlay, never blocking touch. The animation pattern is reusable for Sticker Quest's sticker mastery celebrations and star earning moments.
+
+**4. Accessibility Theme System (Phase 2–3)**
+Inkborne's `useTheme()` hook provides high-contrast mode, text scaling, and dyslexia-friendly font switching app-wide — all from a single context call. Sticker Quest could benefit from a parallel system, especially for the Fire HD 10's varied display conditions and for parent-configurable accessibility settings.
+
+**5. Living Epitaph — Parent-Facing "Libby's Learning Story" (Phase 4+)**
+Inkborne's ProfileScreen generates an AI paragraph describing the player's adventuring soul from their stats. The same concept applied to Sticker Quest: at the end of a month or a grade, generate a warm AI paragraph for parents: "This month, Libby has practiced the /s/ sound 12 times and earned 3 stars on the /b/ blend..." This is a parent retention and engagement feature — not for Phase 1–3.
+
+**DO NOT BUILD ANY OF THESE DURING PHASES 1–3.** Note them here so they don't get forgotten.
+
+---
+
 ### AI Character Conversations (Post-Public-Launch — Phase 5+)
 Child unlocks the ability to "talk" to Starlight after mastering all K stickers.
 **Decision: Use pre-written branching conversations for V1, not live AI.**
@@ -451,6 +474,13 @@ It does NOT compete with or interrupt any Sticker Quest phase work.
 
 The next project is: **The Anchor's Desk** — a text-based roguelike set in the Inkborne Universe.
 Platform: PC via Steam. Engine: Godot. Core mechanic: document redaction.
+
+**⚠️ OPEN DECISION (discuss first session after Sticker Quest Sept 2026 launch):**
+There are now two Inkborne project paths competing for post-launch priority:
+1. **inkborne-native** — React Native/Expo AI text adventure, Stage 5 of 6 complete, working on iOS/Android. Ongoing API costs per player.
+2. **The Anchor's Desk** — PC/Steam roguelike in Godot, not yet built, one-time purchase model, no per-play API costs.
+Both are in the Inkborne universe. A dedicated session is needed to pick the lead project before any build work begins.
+Full analysis in `docs/INKBORNE_AUDIT_2026_03_18.md`.
 
 ### One-time kickoff checklist (when Anchor's Desk repo starts)
 

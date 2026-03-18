@@ -1,3 +1,35 @@
+## [2026-03-18c] Session: Inkborne Universe Full Audit + Build Plan
+**Status:** Strategy + documentation only — no code changes to Sticker Quest.
+
+### ACCOMPLISHMENTS
+1. **Full two-pass audit of Inkborne universe completed** — scanned both `inkborne-import-full/Inkborne App/` (Vite React web prototype, v9) and `inkborne-import-full/inkborne-native/` (React Native/Expo migration, Stage 5 complete).
+2. **Pass 1 (truth audit) delivered** — lore bible assessed as strong foundation (7.5/10), game assessed as real working prototype at 7/10 quality with 20+ built components and a complete adventure loop.
+3. **Pass 2 (build plan) delivered** — concrete MVP path (Stage 6–10), flagship evolution path (Phases 3–5), model stack for runtime AI, scope cuts, and a "do this next" prioritized checklist.
+4. **Critical security issue flagged** — Anthropic API key is currently exposed in client (`anthropic-dangerous-direct-browser-access: true`). Must be proxied through Supabase Edge Function before expanding beta.
+5. **Sticker Quest reuse items identified** — AppContext pattern, content gate architecture, achievement toast system, accessibility theme system, and living epitaph concept flagged for future Sticker Quest phases.
+6. **Inkborne project priority question documented** — Ryan wants to decide: inkborne-native text adventure vs The Anchor's Desk as the post-Sticker Quest lead project. Flagged for dedicated discussion.
+7. **Full audit saved** to `docs/INKBORNE_AUDIT_2026_03_18.md`.
+8. **PROJECT_CONTEXT.md updated** — Inkborne reuse items added to Future Features Backlog, priority flag added.
+
+### DECISIONS AGREED
+- Sticker Quest remains primary through September 2026. No Inkborne build work until post-launch.
+- Lore Bible is NOT starting from scratch — extract from `CLAUDE.md`, fill five documented gaps.
+- inkborne-native is the lead Inkborne project (most momentum, Stage 5 of 6 complete).
+- All three Inkborne projects catalogued: web prototype (origin), inkborne-native (primary), The Anchor's Desk (separate PC/Steam game in Godot).
+
+### OPEN ITEMS FOR NEXT INKBORNE SESSION (post September 2026)
+- [ ] **Priority decision:** inkborne-native text adventure vs The Anchor's Desk — which leads?
+- [ ] Fix API key exposure (Supabase Edge Function proxy) — BLOCKER before any public beta
+- [ ] Wire seasonal calendar into `buildSystem()` — 2 hours, high payoff
+- [ ] Wire world state injection into adventure prompts — 1 line, immediate payoff
+- [ ] Lore Bible extraction sprint (claude.ai, Opus, 2x window)
+- [ ] Voice ID audition session on ElevenLabs
+
+### NOTE FOR AMBER NEXT SESSION
+Amber feedback implementation (tutorial, color/cartoon pass, star emphasis, onboarding copy, readability check) remains the first priority when Sticker Quest code work resumes. See `[2026-03-18b]` entry below.
+
+---
+
 ## [2026-03-18b] Session: Amber Remote Test Executed (PASS) + Protocol Hardening
 **ONE-TIME NEXT SESSION (FIRST ACTION):** Execute Amber feedback build sequence in strict order:
 1. Tutorial V1 (first-run guidance, skippable)
