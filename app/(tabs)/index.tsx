@@ -6,23 +6,28 @@ import SessionLockScreen from '@/src/components/SessionLockScreen';
 import StarCounter from '@/src/components/StarCounter';
 import StarMail from '@/src/components/StarMail';
 import StarlightSpirit from '@/src/components/StarlightSpirit';
+import TutorialOverlay, { type CardLayout } from '@/src/components/TutorialOverlay';
 import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { useUserStore } from '@/src/store/useUserStore';
 import { useFocusEffect } from 'expo-router';
 import { Star } from 'lucide-react-native';
-import { useCallback, useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   const { childName } = useUserStore();
+  const tutorialStep = useUserStore((s) => s.tutorialStep);
   const { startSession, isSessionLocked } = useMasteryStore();
 
   // Explicit selector — Zustand tracks this precisely and re-renders when progress changes
   const stars = useMasteryStore(
     (state) => Object.values(state.progress).reduce((sum, p) => sum + p.stars, 0)
   );
+
+  const [firstCardLayout, setFirstCardLayout] = useState<CardLayout | undefined>(undefined);
+  const scrollViewRef = useRef<ScrollView>(null);
 
   // Force a re-render when this screen comes back into focus after returning from a quest
   const [, forceRefresh] = useState(0);
@@ -31,6 +36,15 @@ export default function HomeScreen() {
       forceRefresh((n) => n + 1);
     }, [])
   );
+  // Scroll to top whenever the tutorial is active so Sally Snake card is visible
+  useEffect(() => {
+    if (tutorialStep === 0) {
+      setTimeout(() => {
+        scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+      }, 150);
+    }
+  }, [tutorialStep]);
+
   const { scale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
   const insets = useSafeAreaInsets();
 
@@ -55,6 +69,24 @@ export default function HomeScreen() {
     return () => clearInterval(interval);
   }, [isSessionLocked, startSession]);
 
+  const handleDevReset = () => {
+    Alert.alert(
+      'Reset Tutorial',
+      'Wipes all star progress and restarts the tutorial from step 1.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Reset',
+          style: 'destructive',
+          onPress: () => {
+            useMasteryStore.getState().resetAll();
+            useUserStore.setState({ tutorialStep: 0, stars: 0 });
+          },
+        },
+      ]
+    );
+  };
+
   if (locked) {
     return (
       <ThemedView style={styles.container}>
@@ -66,6 +98,7 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <ScrollView
+        ref={scrollViewRef}
         contentContainerStyle={[
           styles.scrollContent,
           { padding: containerPadding, paddingTop: insets.top + containerPadding }
@@ -118,7 +151,7 @@ export default function HomeScreen() {
               </ThemedText>
             </View>
             
-            <QuestGrid />
+            <QuestGrid onFirstCardMeasured={setFirstCardLayout} />
 
             {/* Star-Mail Notifications */}
             <StarMail />
@@ -130,8 +163,16 @@ export default function HomeScreen() {
           <ThemedText style={styles.footerText}>
             Keep going! Every small step earns you stars. 🌟
           </ThemedText>
+          {__DEV__ && (
+            <TouchableOpacity style={styles.devResetBtn} onPress={handleDevReset}>
+              <Text style={styles.devResetText}>DEV: Reset Tutorial</Text>
+            </TouchableOpacity>
+          )}
         </View>
       </ScrollView>
+
+      {/* First-run tutorial — Modal stacks above all content automatically */}
+      <TutorialOverlay cardLayout={firstCardLayout} />
     </ThemedView>
   );
 }
@@ -139,6 +180,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F7F1FF',
   },
   scrollContent: {
     flexGrow: 1,
@@ -164,20 +206,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
     marginBottom: 12,
+    backgroundColor: '#EFE3FF',
+    borderRadius: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
   },
   sectionTitle: {
     fontSize: 18,
+    color: '#5A2AA8',
+    fontWeight: '800',
   },
   footer: {
     marginTop: 24,
     paddingTop: 16,
     borderTopWidth: 1,
-    borderTopColor: 'rgba(0, 0, 0, 0.1)',
+    borderTopColor: 'rgba(107, 47, 217, 0.2)',
     alignItems: 'center',
   },
   footerText: {
     fontSize: 14,
-    color: '#666',
+    color: '#6B5A80',
     textAlign: 'center',
+    fontWeight: '600',
+  },
+  devResetBtn: {
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#FF3B30',
+    borderRadius: 8,
+  },
+  devResetText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: 'bold',
   },
 });

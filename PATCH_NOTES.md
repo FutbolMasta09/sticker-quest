@@ -1,3 +1,137 @@
+## [2026-03-19d] Session: Over-the-Top Color + Character Pass + Star Motivation Emphasis
+**Status:** Completed — visual/style pass only, behavior unchanged.
+
+### WHAT CHANGED
+1. **Star emphasis upgrades**
+   - `src/components/StarCounter.tsx`: brighter gold badge, stronger border/shadow, bigger star count.
+   - `src/components/StarlightSpirit.tsx`: more character-themed stat copy and warm celebratory panel styling.
+   - `app/quest/[id].tsx`: star picker now uses more playful button colors and stronger “Pick your stars!” motivation copy.
+2. **Character-y reward feel**
+   - `src/components/Achievements.tsx`: achievement container and chips now use bolder gold/lavender styling and stronger text emphasis.
+3. **Debug cleanup**
+   - Removed leftover quest debug logging from `app/quest/[id].tsx`.
+
+### QUALITY CHECK
+- Lint diagnostics for touched files: clean.
+- Scope stayed inside locked gate sequence (Step 3: star motivation emphasis).
+
+### NEXT LOCKED STEP
+Step 4 from `docs/NEXT_TASK_TEST_GATE.md`: **Onboarding wording simplification**.
+
+### DEFERRED (INTENTIONAL)
+- Deep decoration pass (character polish, effects, final palette tuning) is deferred until after the next feature/screens milestone and a Fire HD device check.
+
+---
+
+## [2026-03-19e] Session: Onboarding Wording Simplification (Phase B Step 4)
+**Status:** Completed — copy simplification only, no functional changes.
+
+### WHAT CHANGED
+1. **`src/components/OnboardingFlow.tsx`**
+   - Simplified welcome copy to a short, parent-friendly setup explanation.
+   - Simplified step labels/buttons:
+     - "Start Setup"
+     - "Continue"
+     - "Quick Details"
+     - "Finish Setup"
+   - Simplified field labels/placeholders for faster parent completion.
+   - Kept character tone while removing extra verbosity.
+
+### QUALITY CHECK
+- Lint diagnostics for edited file: clean.
+
+### TODAY CARRY-FORWARD / DEFERRED
+- **Phase B Step 5 (Fire HD readability sanity pass)** deferred because Fire HD tablet was not available today.
+- Resume with Step 5 at next session with tablet access.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Friday Community/Business block from weekly plan (KPI update + one community post + monetization/admin check).
+- **Carry-forward from today:** Run Fire HD readability sanity pass (Step 5) at first available tablet-access session.
+- **Work-ahead status:** On-plan (core Thursday build objectives completed; tablet-only validation deferred by device access).
+- **Tomorrow sync tasks:** Run entry checklist, confirm if Fire HD is available, and if available execute Step 5 before opening new polish scope.
+
+---
+
+## [2026-03-19c] Session: Color + Cartoon Visual Pass (Phase B Step 2)
+**Status:** Completed — style-only polish, no behavior changes.
+
+### CHANGES APPLIED
+1. **`src/components/QuestGrid.tsx`**
+   - Added playful card container treatment (lavender panel, rounded border).
+   - Increased quest card vibrancy (pink/lavender cards, stronger earned-state gold).
+   - Improved text emphasis and lock-state readability.
+2. **`src/components/OnboardingFlow.tsx`**
+   - Shifted onboarding to a warmer, kid-friendly palette (purple + soft gold accents).
+   - Improved chip/input/habit card contrast and button pop.
+   - Added soft button/card shadows for cartoon-style depth.
+3. **`app/(tabs)/index.tsx`**
+   - Applied home background tint and brighter section-header chips.
+   - Increased section-title and footer text color contrast.
+
+### QUALITY CHECK
+- Lint diagnostics on edited files: clean (no new errors).
+- Scope discipline maintained: style-only pass inside locked gate sequence.
+
+### NEXT LOCKED STEP
+Step 3 from `docs/NEXT_TASK_TEST_GATE.md`: **Star motivation emphasis** (clearer star gain + total-star feedback).
+
+---
+
+## [2026-03-19b] Session: Temporary API Override Implemented + Runtime-Evidence Debug Pass
+**Status:** Execution plan activated for cap window (through 2026-04-16)
+
+### PLAN IMPLEMENTATION COMPLETED
+1. **Temporary routing override activated** — updated `.cursor/rules/model-routing.mdc` with cap-window routing: Auto+Composer default, Gemini Flash for lookup, premium API escalation only for critical blockers.
+2. **Active gate focus locked** — added `docs/API_CAP_OVERRIDE_PROTOCOL.md` that enforces execution only through the current `docs/NEXT_TASK_TEST_GATE.md` sequence.
+3. **Runtime-evidence debug instrumentation added** for tutorial step 2 visibility:
+   - `src/components/QuestTutorialOverlay.tsx`: DEV logs for tutorial state, hidden branch path, and step action presses.
+   - `app/quest/[id].tsx`: DEV logs for quest render state + star selection and a DEV-only on-screen tutorial step badge for Sally Snake.
+4. **Usage guardrails operationalized** — one-objective-per-session and one-verified-increment rules now documented in `docs/API_CAP_OVERRIDE_PROTOCOL.md` and linked to Monday check-in script.
+5. **Usage-to-roadmap sync applied**:
+   - `PROJECT_CONTEXT.md` updated with temporary cap-window execution section.
+   - `docs/ROADMAP_TIMELINE.md` updated with constrained-intensity execution note through reset.
+   - `docs/WEEKLY_EXECUTION_TRACKER.md` updated with weekly mode decision: **Upgrade Plan**.
+6. **Reset transition prepared** — added `docs/API_RESET_TRANSITION_CHECKLIST.md` for reset-week restore and retrospective.
+
+### CURRENT EXECUTION MODE (LOCKED)
+- Weekly mode: **Upgrade Plan** (tighten process, protect quality, no scope expansion).
+- Session rule: one technical objective per session, verify before moving on.
+- Blocker focus: tutorial step 2 visibility remains the active first objective.
+
+### DEBUG RESOLUTION (2026-03-19)
+- Added HTTP + console instrumentation to test 5 hypotheses (stickerId type, tutorialStep flow, visibility, unmount, early exit).
+- User repro logs confirmed: step 2 renders and is tappable (`rendering-step2`, `step2-continue-pressed`).
+- Hypotheses A, B, C, D, E all rejected by evidence — logic path works correctly.
+- Removed all debug instrumentation. Tutorial step 2 flow verified working on iOS Simulator. If Fire HD 10 still fails, treat as device-specific Modal/stacking issue for separate investigation.
+
+---
+
+## [2026-03-19a] Session: Tutorial Spotlight Polish + Pause Handoff
+**ONE-TIME NEXT SESSION (FIRST ACTION):** Resume tutorial debugging exactly here:
+1. Run `DEV: Reset Tutorial`
+2. Go to Sally Snake and advance to quest tutorial step 2
+3. Verify orange card + "I'm Ready! Tap a Star! ⭐" button render visibly
+4. If still not visible, inspect live state in `src/components/QuestTutorialOverlay.tsx` (step 2 block) before any new redesign
+
+**Status:** In progress — step 1 is acceptable for now, step 2 visual polish still failing on-device.
+
+### ACCOMPLISHMENTS
+1. **Home tutorial reliability improved** — added `DEV: Reset Tutorial` in `app/(tabs)/index.tsx` so we can restart tutorial testing quickly.
+2. **Scroll-to-top safeguard added** — home screen now auto-scrolls to top when tutorial step 0 starts, so the highlighted card is visible.
+3. **Step 0 tutorial visual upgrade shipped** — replaced static pointer with larger animated waterfall chevrons in `src/components/TutorialOverlay.tsx`.
+4. **Quest tutorial color pass implemented in code** — rebuilt `src/components/QuestTutorialOverlay.tsx` with stronger kid-focused colors, larger emoji, and action button flow.
+5. **No new lint issues introduced** — lint checks on edited tutorial files remained clean.
+
+### OPEN ISSUE (BLOCKING POLISH)
+- [ ] **On-device mismatch:** Ryan reports no visible change on quest tutorial step 2 (orange card/button not observed), even though code reflects updated design. Needs device-side verification and targeted fix next session.
+
+### NEXT SESSION PLAN (START HERE)
+1. Validate step 2 render path on device with reset flow.
+2. Confirm whether stale bundle/cache or layering/visibility issue is hiding the new UI.
+3. Apply smallest fix needed, then re-test full tutorial path end-to-end.
+
+---
+
 ## [2026-03-18d] Session: Universe Strategy — Expandability + Legal/Ethical Protection
 **Status:** Strategy only — no code changes.
 
@@ -358,24 +492,6 @@ daily_greetings (10), star_1_celebration (5), star_2_celebration (5), star_3_cel
 
 ### KNOWN NOTE
 - Phonics stickers in k_grade_content.json still use only "Uncle Ryan says:" — needs a future pass to alternate with "Aunt Kira says:" on roughly half the stickers (stickers 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24 by position).
-
----
-
-## ⭐ ONE-TIME NEXT SESSION: Cursor Orientation
-**Remove this flag after completing.**
-
-At the start of the next session, before any work:
-Walk Ryan through the Cursor UI and tools he has available. Cover:
-1. The left sidebar icons and what each one does
-2. How to open and read the .cursor/rules/ files
-3. How to use @Codebase in the chat box
-4. Where to find and click "Debug with AI" when a terminal error appears
-5. How to open the Source Control panel (Ctrl+Shift+G) for Review Changes
-6. How to use the terminal panel at the bottom (for running `npx expo start`)
-7. Quick tour of the project file structure in the Explorer panel
-
-Keep it practical — show don't tell, reference real files in this project.
-Goal: Ryan feels comfortable navigating Cursor independently before we build more.
 
 ---
 

@@ -1,12 +1,13 @@
 import { ThemedText } from '@/components/themed-text';
 import contentData from '@/src/assets/k_grade_content.json';
 import loreMessages from '@/src/assets/k_lore_messages.json';
+import QuestTutorialOverlay from '@/src/components/QuestTutorialOverlay';
 import { useResponsiveScale } from '@/src/hooks/useResponsiveScale';
 import { useMasteryStore } from '@/src/store/useMasteryStore';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft, Star } from 'lucide-react-native';
 import { useEffect, useRef, useState } from 'react';
-import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const CELEBRATION_LINES = loreMessages.messages.sticker_earned;
@@ -61,10 +62,28 @@ export default function QuestDetailScreen() {
   const { getProgress, recordAttempt } = useMasteryStore();
   const insets = useSafeAreaInsets();
   const { scale, moderateScale } = useResponsiveScale();
+  const { width: screenWidth } = useWindowDimensions();
   const [showCelebration, setShowCelebration] = useState(false);
   const [celebrationMessage] = useState(() => pickRandom(CELEBRATION_LINES));
   const [earnedStars, setEarnedStars] = useState<1 | 2 | 3>(1);
+  // Celebration animations
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const bounceAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(40)).current;
+  const msgFadeAnim = useRef(new Animated.Value(0)).current;
+
+  // 5 floating sparkles — fixed positions calculated once
+  const SPARKLE_COUNT = 5;
+  const sparkleEmojis = ['⭐', '✨', '🌟', '💫', '✨'];
+  const sparkleXPositions = useRef(
+    [0.08, 0.24, 0.48, 0.68, 0.84].map((pct) => pct * screenWidth)
+  ).current;
+  const sparkleTranslates = useRef(
+    Array.from({ length: SPARKLE_COUNT }, () => new Animated.Value(0))
+  ).current;
+  const sparkleOpacities = useRef(
+    Array.from({ length: SPARKLE_COUNT }, () => new Animated.Value(0))
+  ).current;
 
   const sticker = stickers.find((s) => s.id === id);
 
@@ -77,12 +96,63 @@ export default function QuestDetailScreen() {
 
   useEffect(() => {
     if (!showCelebration) return;
+
+    // Reset all animation values before starting
+    bounceAnim.setValue(0);
+    slideAnim.setValue(40);
+    msgFadeAnim.setValue(0);
+    sparkleTranslates.forEach((a) => a.setValue(0));
+    sparkleOpacities.forEach((a) => a.setValue(0));
+
+    // Start floating sparkles — each loops independently with a staggered delay
+    sparkleTranslates.forEach((translate, i) => {
+      const opacity = sparkleOpacities[i];
+      Animated.loop(
+        Animated.sequence([
+          Animated.delay(i * 180),
+          Animated.parallel([
+            Animated.timing(translate, { toValue: -220, duration: 1400, useNativeDriver: true }),
+            Animated.sequence([
+              Animated.timing(opacity, { toValue: 1, duration: 300, useNativeDriver: true }),
+              Animated.delay(800),
+              Animated.timing(opacity, { toValue: 0, duration: 300, useNativeDriver: true }),
+            ]),
+          ]),
+          // Reset for next loop
+          Animated.parallel([
+            Animated.timing(translate, { toValue: 0, duration: 0, useNativeDriver: true }),
+            Animated.timing(opacity, { toValue: 0, duration: 0, useNativeDriver: true }),
+          ]),
+        ])
+      ).start();
+    });
+
+    // Main entrance + hold + exit sequence
     Animated.sequence([
-      Animated.timing(fadeAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
+      Animated.parallel([
+        Animated.timing(fadeAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
+        // Emoji bounces in
+        Animated.sequence([
+          Animated.timing(bounceAnim, { toValue: 1.25, duration: 220, useNativeDriver: true }),
+          Animated.timing(bounceAnim, { toValue: 0.92, duration: 120, useNativeDriver: true }),
+          Animated.timing(bounceAnim, { toValue: 1.0, duration: 100, useNativeDriver: true }),
+        ]),
+        // Stars slide up
+        Animated.timing(slideAnim, { toValue: 0, duration: 380, useNativeDriver: true }),
+        // Message fades in slightly after
+        Animated.sequence([
+          Animated.delay(250),
+          Animated.timing(msgFadeAnim, { toValue: 1, duration: 350, useNativeDriver: true }),
+        ]),
+      ]),
       Animated.delay(1800),
       Animated.timing(fadeAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
-    ]).start(() => router.back());
-  }, [fadeAnim, showCelebration]);
+    ]).start(() => {
+      sparkleTranslates.forEach((a) => a.stopAnimation());
+      sparkleOpacities.forEach((a) => a.stopAnimation());
+      router.back();
+    });
+  }, [fadeAnim, showCelebration, bounceAnim, slideAnim, msgFadeAnim, sparkleTranslates, sparkleOpacities]);
 
   if (!sticker) {
     return (
@@ -178,13 +248,16 @@ export default function QuestDetailScreen() {
         {/* Sticky star-rating footer */}
         <View style={[styles.footer, { paddingBottom: insets.bottom + scale(12) }]}>
           <Text style={[styles.footerLabel, { fontSize: moderateScale(13) }]}>
-            How did you do?
+            Pick your stars!
+          </Text>
+          <Text style={[styles.footerSubLabel, { fontSize: moderateScale(12) }]}>
+            More stars = bigger Starlight glow
           </Text>
           <View style={styles.starButtons}>
             {([
-              { stars: 1 as const, label: 'I Tried', color: '#7B5EA7' },
-              { stars: 2 as const, label: 'I Did It!', color: '#5B2D9E' },
-              { stars: 3 as const, label: 'I Nailed It!', color: '#3A1A7A' },
+              { stars: 1 as const, label: 'I Tried', color: '#FF8A65' },
+              { stars: 2 as const, label: 'I Did It!', color: '#7E57C2' },
+              { stars: 3 as const, label: 'I Nailed It!', color: '#EC407A' },
             ]).map(({ stars, label, color }) => (
               <TouchableOpacity
                 key={stars}
@@ -203,16 +276,66 @@ export default function QuestDetailScreen() {
           </View>
         </View>
 
+        {/* Guided tutorial overlay — steps 1 and 2, Sally Snake only */}
+        <QuestTutorialOverlay stickerId={id ?? ''} />
+
         {/* Celebration overlay */}
         {showCelebration && (
           <Animated.View style={[styles.celebration, { opacity: fadeAnim }]}>
-            <Text style={[styles.celebrationEmoji, { fontSize: scale(80) }]}>{emoji}</Text>
-            <Text style={[styles.celebrationStars, { fontSize: scale(32) }]}>
-              {'⭐'.repeat(earnedStars)}
-            </Text>
-            <Text style={[styles.celebrationMessage, { fontSize: moderateScale(20), lineHeight: moderateScale(30) }]}>
+
+            {/* Background glow layers for depth */}
+            <View style={styles.celebGlowOuter} />
+            <View style={styles.celebGlowInner} />
+
+            {/* Floating sparkles */}
+            {sparkleEmojis.map((sparkEmoji, i) => (
+              <Animated.Text
+                key={i}
+                style={[
+                  styles.sparkle,
+                  {
+                    left: sparkleXPositions[i],
+                    fontSize: scale(i % 2 === 0 ? 24 : 18),
+                    opacity: sparkleOpacities[i],
+                    transform: [{ translateY: sparkleTranslates[i] }],
+                  },
+                ]}
+              >
+                {sparkEmoji}
+              </Animated.Text>
+            ))}
+
+            {/* Bouncing animal emoji */}
+            <Animated.Text
+              style={[
+                styles.celebrationEmoji,
+                { fontSize: scale(90), transform: [{ scale: bounceAnim }] },
+              ]}
+            >
+              {emoji}
+            </Animated.Text>
+
+            {/* Stars slide up */}
+            <Animated.View style={{ transform: [{ translateY: slideAnim }] }}>
+              <Text style={[styles.celebrationStars, { fontSize: scale(36) }]}>
+                {'⭐'.repeat(earnedStars)}
+              </Text>
+            </Animated.View>
+
+            {/* Message fades in */}
+            <Animated.Text
+              style={[
+                styles.celebrationMessage,
+                {
+                  fontSize: moderateScale(20),
+                  lineHeight: moderateScale(30),
+                  opacity: msgFadeAnim,
+                },
+              ]}
+            >
               {celebrationMessage}
-            </Text>
+            </Animated.Text>
+
           </Animated.View>
         )}
 
@@ -345,7 +468,12 @@ const styles = StyleSheet.create({
   },
   footerLabel: {
     textAlign: 'center',
-    color: '#666',
+    color: '#6B2FD9',
+    fontWeight: '800',
+  },
+  footerSubLabel: {
+    textAlign: 'center',
+    color: '#7C5B00',
     fontWeight: '600',
   },
   starButtons: {
@@ -358,6 +486,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 4,
+    borderWidth: 1.5,
+    borderColor: 'rgba(255,255,255,0.55)',
+    shadowColor: '#5A2AA8',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.22,
+    shadowRadius: 6,
+    elevation: 5,
   },
   starButtonStars: {
     textAlign: 'center',
@@ -373,17 +508,42 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: '#1a0a2e',
+    zIndex: 300,
+    backgroundColor: '#12053a',
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 32,
-    gap: 20,
+    gap: 16,
+    overflow: 'hidden',
+  },
+  celebGlowOuter: {
+    position: 'absolute',
+    width: 420,
+    height: 420,
+    borderRadius: 210,
+    backgroundColor: 'rgba(123, 63, 242, 0.18)',
+    alignSelf: 'center',
+    top: '15%',
+  },
+  celebGlowInner: {
+    position: 'absolute',
+    width: 220,
+    height: 220,
+    borderRadius: 110,
+    backgroundColor: 'rgba(255, 215, 0, 0.1)',
+    alignSelf: 'center',
+    top: '25%',
+  },
+  sparkle: {
+    position: 'absolute',
+    bottom: 80,
   },
   celebrationEmoji: {
     textAlign: 'center',
   },
   celebrationStars: {
     textAlign: 'center',
+    letterSpacing: 6,
   },
   celebrationMessage: {
     color: '#f0e6ff',

@@ -12,6 +12,15 @@ alwaysApply: true
 
 Run this at the start of every new conversation before doing any work.
 
+Quick trigger phrase Ryan can use:
+"Run entry checklist + weekly tracker sync."
+When this is requested, run the full entry checklist including 4b and (if Saturday) 4c/4d.
+
+Automatic trigger rule:
+- If Ryan starts a new chat with a message that implies session start (examples: "new session", "start session", "let's begin", "what should we work on today", "run the checklist"), run the full Enter Session Checklist automatically before other work.
+- Do not wait for exact wording.
+- Exception: if Ryan clearly says this is a quick one-off question, follow the "WHEN TO SKIP THE ENTRY BRIEFING" rules.
+
 1. **Check the time**
    Run: `powershell -Command "Get-Date -Format 'dddd, MMMM dd yyyy h:mm tt'"`
    Report the time to Ryan and state peak vs. off-peak status.
@@ -38,6 +47,41 @@ Run this at the start of every new conversation before doing any work.
    - **Save for later backlog**
    Surface the top Amber priority in the 3-line briefing so it is not missed.
 
+4b. **Weekly tracker sync (always)**
+   Open `docs/WEEKLY_EXECUTION_TRACKER.md` and confirm:
+   - Current week block exists
+   - Today's day theme is defined
+   - Planned hours for today are set
+   If missing, set them before starting work.
+
+4b.1 **Daily schedule sync with prior exit (always)**
+   Before proposing today's work, sync against the previous session's exit plan:
+   - Read the last "Tomorrow Schedule + Carry-Forward" note in `PATCH_NOTES.md`
+   - Confirm today's planned task from that note
+   - Confirm unfinished items that carried forward
+   - Confirm whether prior session worked ahead, on-plan, or behind
+   Then report a "Today Schedule Snapshot" to Ryan:
+   - **Scheduled today:** primary task for this day
+   - **Carry-forward:** unfinished item(s) from prior session
+   - **Work-ahead status:** worked ahead / on-plan / catch-up needed
+   - **Sync tasks:** any quick admin/log updates that must be done first
+
+4c. **Saturday audit trigger**
+   If today is Saturday:
+   - Run weekly quick audit first (before deep task work)
+   - Produce Green/Yellow/Red verdict and top 2 corrective actions
+   - Lock next week's must-ship item and day themes in the tracker
+
+4d. **Saturday review runbook (30 minutes, repeatable)**
+   Use this sequence every Saturday:
+   1. Review planned vs actual hours and finish rate
+   2. Score 6 habit signals (0/1/2) and compute weekly risk
+   3. Set Green/Yellow/Red verdict + timeline impact
+   4. Define top 2 corrective actions for next week
+   5. Lock next week's must-ship item + daily themes
+   6. Decide optional Saturday flex mode after planning: catch-up, work-ahead, or rest
+   7. Confirm family-time priority before doing any optional Saturday work
+
 5. **Surface the top open Known Flag**
    Check the "Known Flags" section of PROJECT_CONTEXT.md. Name the single most
    urgent unresolved issue so Ryan stays aware of it — even if we're not fixing it today.
@@ -51,6 +95,7 @@ Run this at the start of every new conversation before doing any work.
    - "Current phase: [X]. Last session: [what was done]."
    - "Open items: [top 1-2 things that need to happen next]."
    - "Time status: [peak/off-peak and what that means today]."
+   - "Today's schedule: [today's planned task + carry-forward + work-ahead status]."
 
 8. **Ask what Ryan wants to work on** — do not assume and charge ahead.
 
@@ -86,6 +131,24 @@ If the conversation appears to be ending and Ryan has not explicitly requested t
 - Keep this lightweight (3 bullets max), then ask Ryan if he wants full exit protocol.
 - Do NOT run commits/push or full exit sequence unless Ryan explicitly confirms he is done.
 
+### DAILY EXECUTION CLOSEOUT (run whenever meaningful work happened)
+
+Before final sign-off for the session, update `docs/WEEKLY_EXECUTION_TRACKER.md`:
+- Planned hours vs actual hours for today
+- Drift reason and carry-forward item
+- Tasks planned vs tasks done for today
+- Confidence of evidence used (logged/reported/inferred)
+
+If today is Saturday:
+- Complete weekly quick audit block in tracker
+- Write next-week corrective actions
+- Set next week's daily objectives before ending the session
+
+If today is the last Saturday of the month:
+- Run the monthly deep audit block in tracker
+- Record verdict and recovery actions in `docs/ACCOUNTABILITY_AUDIT_LOG.md`
+- State timeline impact on full-time target (on track/slight risk/off track)
+
 **Always tell Ryan to start a NEW chat next session — never continue this one.**
 Say this explicitly at the end of every exit:
 "Start a fresh chat next time — don't continue this one. The rules and project files
@@ -108,6 +171,15 @@ no context is lost between sessions.
 
 2. **Update PATCH_NOTES.md**
    Log what was accomplished, any decisions made, and any new open items.
+
+2b. **Record tomorrow schedule + carry-forward in PATCH_NOTES.md (always)**
+   At the end of every meaningful session, add a short block Ryan can execute tomorrow:
+   - **Tomorrow scheduled task:** one primary task tied to day theme
+   - **Carry-forward from today:** unfinished item(s), if any
+   - **Work-ahead status:** worked ahead / on-plan / behind
+   - **Tomorrow sync tasks:** any required setup/checklist items first
+   Rule: if work was completed ahead of schedule, explicitly say what tomorrow can skip.
+   Rule: if behind schedule, explicitly state the catch-up target for tomorrow.
 
 2a. **Amber notes maintenance (if Amber work happened this session)**
    If an Amber test session occurred, or Amber action items were completed:
@@ -262,7 +334,7 @@ Check PATCH_NOTES.md for any items marked "ONE-TIME NEXT SESSION."
 If found, complete that item before proceeding with normal work.
 Remove the flag from PATCH_NOTES after completing it.
 
-Current one-time item: **Cursor Orientation** (see PATCH_NOTES.md)
+Current one-time item: **None active** (check `PATCH_NOTES.md` each session)
 
 ---
 

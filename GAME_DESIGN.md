@@ -186,6 +186,13 @@ The Anchor's Desk is one entry point into a larger world. The Inkborne Universe 
 
 *A lore development thread exists separately. It does not block or inform V1 scope.*
 
+### Narrative Seed Backlog (Post-V1)
+
+This idea is tracked intentionally as a future narrative layer, not a current build requirement:
+- **The Anchor concept:** "The Anchor" (or "Anchor's Desk") may connect to a hidden antagonist, false authority, or buried truth inside the Archive system.
+- Reveal intent: surprising but fair; clues should be present in earlier documents without making the twist obvious.
+- Scope guard: no additional mechanics are added for this in V1. Keep as lore/canon backlog until V1 ships and core loop quality is stable.
+
 ---
 
 ## XIII. STEAM WISHLIST STRATEGY (LIGHTWEIGHT)

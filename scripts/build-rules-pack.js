@@ -59,6 +59,22 @@ const docsToCopy = [
     from: path.join(repoRoot, "docs", "PLANNING_CADENCE.md"),
     to: path.join(packDocsDir, "PLANNING_CADENCE.md"),
   },
+  {
+    from: path.join(repoRoot, "docs", "WEEKLY_EXECUTION_TRACKER_TEMPLATE.md"),
+    to: path.join(packDocsDir, "WEEKLY_EXECUTION_TRACKER_TEMPLATE.md"),
+  },
+  {
+    from: path.join(repoRoot, "docs", "ACCOUNTABILITY_AUDIT_LOG_TEMPLATE.md"),
+    to: path.join(packDocsDir, "ACCOUNTABILITY_AUDIT_LOG_TEMPLATE.md"),
+  },
+  {
+    from: path.join(
+      repoRoot,
+      "docs",
+      "SOLO_DEV_CAREER_MASTER_PLAN_TEMPLATE.md"
+    ),
+    to: path.join(packDocsDir, "SOLO_DEV_CAREER_MASTER_PLAN_TEMPLATE.md"),
+  },
 ];
 
 function ensureDir(dirPath) {

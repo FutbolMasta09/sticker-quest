@@ -15,11 +15,11 @@ export default function Achievements({
 }: AchievementsProps) {
   return (
     <View style={styles.achievements}>
-      <ThemedText type="defaultSemiBold">Recent Achievements</ThemedText>
+      <ThemedText type="defaultSemiBold" style={styles.heading}>Recent Achievements</ThemedText>
       <View style={styles.achievementList}>
         {achievements.map((achievement, idx) => (
           <View key={idx} style={styles.achievementBadge}>
-            <Star size={16} color="#FFD700" />
+            <Star size={16} color="#FFB300" fill="#FFB300" />
             <ThemedText style={styles.achievementText}>{achievement}</ThemedText>
           </View>
         ))}
@@ -30,9 +30,15 @@ export default function Achievements({
 
 const styles = StyleSheet.create({
   achievements: {
-    backgroundColor: 'rgba(255, 215, 0, 0.05)',
-    borderRadius: 16,
+    backgroundColor: '#FFF6C9',
+    borderRadius: 18,
+    borderWidth: 1.5,
+    borderColor: '#FFD54F',
     padding: 16,
+  },
+  heading: {
+    color: '#6B2FD9',
+    fontWeight: '800',
   },
   achievementList: {
     flexDirection: 'row',
@@ -43,14 +49,17 @@ const styles = StyleSheet.create({
   achievementBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 215, 0, 0.15)',
+    backgroundColor: '#FFE082',
+    borderWidth: 1,
+    borderColor: '#FFCA28',
     paddingHorizontal: 12,
     paddingVertical: 6,
-    borderRadius: 12,
+    borderRadius: 14,
     gap: 6,
   },
   achievementText: {
     fontSize: 12,
-    color: '#5C3800',
+    color: '#6B3F00',
+    fontWeight: '700',
   },
 });

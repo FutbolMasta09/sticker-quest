@@ -90,6 +90,12 @@ function run() {
   installDoc("ASK_TEMPLATE.md", "ASK_TEMPLATE.md");
   installDoc("STRATEGY_HORIZONS.md", "STRATEGY_HORIZONS.md");
   installDoc("PLANNING_CADENCE.md", "PLANNING_CADENCE.md");
+  installDoc("WEEKLY_EXECUTION_TRACKER_TEMPLATE.md", "WEEKLY_EXECUTION_TRACKER.md");
+  installDoc("ACCOUNTABILITY_AUDIT_LOG_TEMPLATE.md", "ACCOUNTABILITY_AUDIT_LOG.md");
+  installDoc(
+    "SOLO_DEV_CAREER_MASTER_PLAN_TEMPLATE.md",
+    "SOLO_DEV_CAREER_MASTER_PLAN.md"
+  );
 
   console.log("Rules pack install complete.");
 }

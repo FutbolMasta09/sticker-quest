@@ -6,6 +6,12 @@ alwaysApply: true
 
 # MODEL ROUTING PROTOCOL
 
+## Temporary Override (API Cap Window)
+- Active through: **2026-04-16 reset**
+- Primary route: **Auto + Composer**
+- Secondary route: **Gemini Flash for fast codebase lookup only**
+- During this window, do not recommend Sonnet/Codex/Opus unless explicitly needed for a critical blocker and the user confirms paid overage usage.
+
 Before every response that involves a task transition, I will explain the reasoning for the model choice and then provide a specific recommendation.
 
 ## Rule — Every Single Response

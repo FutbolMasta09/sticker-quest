@@ -21,6 +21,8 @@ Tracks where the project started, where it is now, and the full schedule to laun
 
 **Verdict:** ON TRACK — Phase 1 is active and ahead of internal pace. Core quest loop built in first 6 days.
 
+**Temporary execution note (through 2026-04-16):** API capacity is capped for premium routing this cycle. Delivery pace stays active, but workload intensity is constrained to one must-ship objective per session with runtime verification before opening new scope.
+
 ---
 
 ## SECTION A — Day 1 vs. Today

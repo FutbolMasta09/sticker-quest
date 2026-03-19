@@ -281,6 +281,12 @@ Ryan's founding principle: collect only what the child needs for the app to func
 - **Gemini:** Sticker asset generation (future phase).
 - **Workflow:** Draft in Claude Pro → paste output here → Cursor validates and commits.
 
+### Temporary API Cap Override (through 2026-04-16)
+- API bucket is currently exhausted for this cycle; default route is Auto + Composer.
+- Scope lock is active to protect quality: follow `docs/NEXT_TASK_TEST_GATE.md` sequence only.
+- Weekly pacing decision is required via `docs/MONDAY_API_CAP_CHECKIN_SCRIPT.md`.
+- Reset transition checklist lives at `docs/API_RESET_TRANSITION_CHECKLIST.md`.
+
 ---
 
 ## Parent Control Philosophy (Baked Into Every Feature)

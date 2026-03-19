@@ -89,7 +89,8 @@ export default function StarlightSpirit({
       
       {showStats && (
         <View style={styles.starStats}>
-          <ThemedText style={styles.statText}>Total Stars: {totalStars}</ThemedText>
+          <ThemedText style={styles.statText}>Starlight Power: {totalStars} ⭐</ThemedText>
+          <ThemedText style={styles.subText}>Keep collecting to make Starlight glow brighter!</ThemedText>
         </View>
       )}
     </View>
@@ -100,8 +101,10 @@ const styles = StyleSheet.create({
   starCanvasContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 215, 0, 0.05)',
-    borderRadius: 16,
+    backgroundColor: '#FFEFC4',
+    borderRadius: 18,
+    borderWidth: 1.5,
+    borderColor: '#FFD54F',
     padding: 16,
     gap: 16,
   },
@@ -112,5 +115,12 @@ const styles = StyleSheet.create({
   statText: {
     fontSize: 14,
     marginBottom: 4,
+    color: '#6B2FD9',
+    fontWeight: '800',
+  },
+  subText: {
+    fontSize: 12,
+    color: '#7C5B00',
+    fontWeight: '600',
   },
 });

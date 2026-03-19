@@ -16,23 +16,7 @@ Checked automatically at the start of every off-peak session.
 
 
 
-### 5. Daily Greeting Variations (14+ lines)
-**Priority:** MEDIUM — needed before Libby tests
-**Estimated time:** ~10 minutes on claude.ai
-**Prompt:** Not yet written — generate in Cursor before running
-**Output format:** JSON array of daily welcome strings in Starlight's voice
-**What to do after:** Paste here → validate → save to lore file
-**Added:** 2026-03-16
-
-### 6. Kira Phonics Hint Variants (12 rewrites)
-**Priority:** MEDIUM — needed before Libby tests (phonics set is currently all Uncle Ryan)
-**Estimated time:** ~5 minutes on claude.ai
-**Prompt:** Not yet written — will reference the 12 stickers that need Aunt Kira attribution
-**Output format:** JSON array of updated hint objects (hint 3 only, for 12 stickers)
-**What to do after:** Paste here → merge into k_grade_content.json → bump version to 2026.4
-**Added:** 2026-03-16
-
-### 7. Parent Onboarding Copy
+### 5. Parent Onboarding Copy
 **Priority:** LOW — needed for Phase 4 public launch, not urgent
 **Estimated time:** ~15 minutes on claude.ai
 **Prompt:** Not yet written
@@ -74,3 +58,11 @@ Checked automatically at the start of every off-peak session.
 ### K Phonics Stickers JSON (25 stickers)
 **Completed:** 2026-03-16
 **Result:** Committed to src/assets/k_grade_content.json v2026.3
+
+### Daily Greeting Variations (30 lines)
+**Completed:** 2026-03-19
+**Result:** Added to src/assets/k_lore_messages.json v2026.3 — daily_greetings expanded from 10 to 30 lines
+
+### Kira Phonics Hint Variants (12 rewrites)
+**Completed:** 2026-03-17 (confirmed in file 2026-03-19)
+**Result:** Already merged into src/assets/k_grade_content.json v2026.4 — 12 stickers at even positions now use "Aunt Kira says:"

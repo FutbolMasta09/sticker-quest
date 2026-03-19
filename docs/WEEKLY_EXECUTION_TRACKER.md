@@ -1,0 +1,230 @@
+---
+title: Weekly Execution Tracker
+purpose: Planned vs actual daily execution and weekly program alignment
+owner: Ryan
+---
+
+# Weekly Execution Tracker
+
+Use one section per week. Keep entries short and consistent.
+
+## Week Of: YYYY-MM-DD
+
+### Planned Availability
+- Monday: X hours
+- Tuesday: X hours
+- Wednesday: X hours
+- Thursday: X hours
+- Friday: X hours
+- Saturday: X hours (30-min review + planning, optional extra build)
+- Sunday: X hours (optional or church/rest)
+
+### Weekly Capacity Targets
+- Weekday planned total (Mon-Fri):
+- Weekday actual total (Mon-Fri):
+- Weekday variance hours:
+- Weekday variance percent:
+- Weekly target band check (20+ weekday hours): pass/fail
+
+### Daily Plan (Before Week Starts)
+- Monday (Deep Build): top objective
+- Tuesday (Deep Build): top objective
+- Wednesday (Design/Planning): top objective
+- Thursday (Deep Build): top objective
+- Friday (Community/Business): top objective
+- Saturday (Review/Planning + Flex): top objective
+- Sunday (Optional/Rest): top objective or rest
+- Saturday flex intent after planning: catch-up / work-ahead / rest
+
+### Daily Actuals (Fill After Each Day)
+- Monday:
+  - Planned hours:
+  - Actual hours:
+  - Variance hours:
+  - Variance percent:
+  - Tasks planned:
+  - Tasks done:
+  - Drift reason:
+  - Carry-forward:
+- Tuesday:
+  - Planned hours:
+  - Actual hours:
+  - Variance hours:
+  - Variance percent:
+  - Tasks planned:
+  - Tasks done:
+  - Drift reason:
+  - Carry-forward:
+- Wednesday:
+  - Planned hours: 4-5
+  - Actual hours: 3.0 (documentation + automation setup session)
+  - Variance hours: -1.0 to -2.0
+  - Variance percent: approx -25% to -40%
+  - Tasks planned: finalize ops-ready docs, add cross-repo bootstrap guidance, keep accountability system aligned
+  - Tasks done: completed ops-ready closeout, added new-repo bootstrap runbook, added template automation + weekly initializer script, linked references in master plan
+  - Drift reason: shifted time to documentation automation and process hardening instead of product build task
+  - Carry-forward: execute highest-impact Sticker Quest must-ship task on next deep-build block
+- Thursday:
+  - Planned hours: 4-5
+  - Actual hours: reported partial session (exact hours not logged)
+  - Variance hours: unknown (insufficient evidence)
+  - Variance percent: unknown (insufficient evidence)
+  - Tasks planned: execute highest-impact Sticker Quest must-ship task
+  - Tasks done: tutorial step 2 issue resolved; color/cartoon pass completed; star emphasis pass completed; onboarding wording simplification completed
+  - Drift reason: visual iteration took longer than expected, but no blocker remains on iPhone path
+  - Carry-forward: run Fire HD readability sanity pass (deferred today due no tablet access)
+  - Weekly mode decision (API cap): Upgrade Plan
+  - Mode rationale: maintain quality while premium API is capped by shrinking scope to one verified increment per session
+  - Deferred polish note: Deep decoration pass (character polish, effects, final palette tuning) is intentionally deferred until after next feature/screens milestone plus Fire HD check
+- Friday:
+  - Planned hours:
+  - Actual hours:
+  - Variance hours:
+  - Variance percent:
+  - Tasks planned:
+  - Tasks done:
+  - Drift reason:
+  - Carry-forward:
+- Saturday:
+  - Planned hours:
+  - Actual hours:
+  - Variance hours:
+  - Variance percent:
+  - Tasks planned:
+  - Tasks done:
+  - Drift reason:
+  - Carry-forward:
+  - Flex decision after planning: catch-up / work-ahead / rest
+  - Family priority honored: yes/no
+- Sunday:
+  - Planned hours:
+  - Actual hours:
+  - Variance hours:
+  - Variance percent:
+  - Tasks planned:
+  - Tasks done:
+  - Drift reason:
+  - Carry-forward:
+
+### Weekly Totals
+- Planned hours (all days):
+- Actual hours (all days):
+- Variance hours (actual - planned):
+- Variance percent:
+- Tasks started:
+- Tasks finished:
+- Finish rate (finished/started):
+- Must-ship item completed: yes/no
+
+### Habit Signal Scoring (0/1/2)
+Score each signal: `0` good, `1` watch, `2` problem.
+- Scope creep:
+- Time drift:
+- Context switching:
+- Avoidance of high-impact tasks:
+- Finish rate quality:
+- Energy-to-task fit:
+- Weekly risk score (sum of six):
+- Confidence tags used: logged/reported/inferred
+
+### Evidence Log (For Audit Confidence)
+- High-confidence evidence (logged):
+- Medium-confidence evidence (reported):
+- Low-confidence evidence (inferred):
+
+### Weekly Program Review (Saturday)
+- Sticker Quest status (phase + milestone movement):
+- Anchor's Desk status (design/orientation/build stage):
+- Inkborne status (canon + community movement):
+- KPI movement (up/down/flat):
+- Top blocker:
+- Scope creep alerts:
+- Keep/Kill/Pause decisions:
+- Next week must-ship item:
+- Saturday family-time fit: good / strained
+
+### Weekly Quick Audit Verdict (Saturday)
+- Verdict: Green/Yellow/Red
+- Timeline impact: on track/slight risk/off track
+- Top 2 behavior issues:
+- Required corrective actions (next week):
+- Scope freeze needed this week: yes/no
+
+### Interim Quick Audit (Pre-Saturday Baseline)
+- Verdict: Yellow (provisional)
+- Timeline impact: slight risk (provisional)
+- Top 2 behavior issues:
+  - Build-time displacement by operations/doc work
+  - Partial week logging coverage (not all day blocks fully logged yet)
+- Required corrective actions (next session):
+  - Start with one deep-build must-ship block before any additional process work
+  - Complete missing daily closeouts within 24 hours for higher-confidence audit signals
+- Scope freeze needed this week: no
+
+### Monthly Deep Audit (Last Saturday Of Month)
+- 4-week planned hours total:
+- 4-week actual hours total:
+- 4-week variance percent:
+- 4-week finish rate trend:
+- 4-week risk score trend:
+- Trend verdict: improving/flat/slipping
+- Full-time target impact: on track/slight risk/off track
+- One-week recovery actions:
+- Four-week recovery actions:
+
+---
+
+## Week Of: 2026-03-16 (Active Week Bootstrap)
+
+### Planned Availability
+- Monday: 0-2 hours (retro capture only if possible)
+- Tuesday: 0-2 hours (retro capture only if possible)
+- Wednesday: 4-5 hours
+- Thursday: 4-5 hours
+- Friday: 4-5 hours
+- Saturday: 1-2 hours (30-min review + optional flex build)
+- Sunday: 0-1 hours (church/rest)
+
+### Weekly Capacity Targets
+- Weekday planned total (Mon-Fri): 20 hours
+- Weekday actual total (Mon-Fri):
+- Weekday variance hours:
+- Weekday variance percent:
+- Weekly target band check (20+ weekday hours): pass/fail
+
+### Daily Plan (Before Week Starts)
+- Monday (Deep Build): retro-log key outcomes and carry-forward items if missed.
+- Tuesday (Deep Build): retro-log key outcomes and carry-forward items if missed.
+- Wednesday (Design/Planning): finalize ops-ready docs and launch accountability system.
+- Thursday (Deep Build): execute highest-impact Sticker Quest must-ship task.
+- Friday (Community/Business): KPI update + one community post + monetization/admin check.
+- Saturday (Review/Planning + Flex): run weekly quick audit, set corrective actions, lock next week plan.
+- Sunday (Optional/Rest): rest/church; optional light backlog cleanup only.
+
+### Weekly Totals
+- Planned hours (all days): 22-27
+- Actual hours (all days):
+- Variance hours (actual - planned):
+- Variance percent:
+- Tasks started:
+- Tasks finished:
+- Finish rate (finished/started):
+- Must-ship item completed: yes/no
+
+### Weekly Program Review (Saturday)
+- Sticker Quest status (phase + milestone movement):
+- Anchor's Desk status (design/orientation/build stage):
+- Inkborne status (canon + community movement):
+- KPI movement (up/down/flat):
+- Top blocker:
+- Scope creep alerts:
+- Keep/Kill/Pause decisions:
+- Next week must-ship item:
+
+### Weekly Quick Audit Verdict (Saturday)
+- Verdict: Green/Yellow/Red
+- Timeline impact: on track/slight risk/off track
+- Top 2 behavior issues:
+- Required corrective actions (next week):
+- Scope freeze needed this week: yes/no
+
