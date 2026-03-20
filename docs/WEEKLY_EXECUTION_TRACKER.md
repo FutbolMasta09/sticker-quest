@@ -82,7 +82,7 @@ Use one section per week. Keep entries short and consistent.
   - Variance hours:
   - Variance percent:
   - Tasks planned: Community/Business block (deferred); planning/docs
-  - Tasks done: Cursor model & mode reference (full build: routing modes, pools, billing, backup plans); doc verification; exit protocol
+  - Tasks done: Cursor model & mode reference (full build: routing modes, pools, billing, backup plans); model-doc propagation to starter pack + rollout checklist; doc verification; exit protocol
   - Drift reason: Community/Business deferred per Ryan; focused on Cursor doc completion
   - Carry-forward: Amber Fire HD test (next session with tablet); Community/Business planning next Friday
 - Saturday:

@@ -75,6 +75,17 @@ const docsToCopy = [
     ),
     to: path.join(packDocsDir, "SOLO_DEV_CAREER_MASTER_PLAN_TEMPLATE.md"),
   },
+  {
+    from: path.join(
+      repoRoot,
+      "docs",
+      "CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md"
+    ),
+    to: path.join(
+      packDocsDir,
+      "CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md"
+    ),
+  },
 ];
 
 function ensureDir(dirPath) {

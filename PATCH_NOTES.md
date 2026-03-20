@@ -1,3 +1,21 @@
+## [2026-03-21d] Session: Model-doc propagation to future projects + rollout checklist
+**Status:** Completed — docs/scripts only.
+
+### WHAT CHANGED
+1. **`docs/CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md`** — new reusable template for model/mode routing, billing resets, usage pools, and fallback logic.
+2. **`scripts/build-rules-pack.js`** — now copies the template into starter rules-pack docs, so future projects inherit it.
+3. **`starter/rules-pack/docs/MODEL_ROUTING_CHEAT_SHEET.md`** — linked to template + Agent/Ask/Plan reminder.
+4. **`docs/MODEL_DOC_ROLLOUT_CHECKLIST.md`** — checklist for current repo, external current repos, and future repos.
+5. **`docs/REPO_INDEX.md`** — added rollout checklist entry + future-project guarantee note.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Saturday audit flow (4c/4d) then Amber test prep check if tablet available.
+- **Carry-forward from today:** Manual rollout of model doc to current external repos (e.g., inkborne-native) when those repos are open in Cursor.
+- **Work-ahead status:** On-plan.
+- **Tomorrow sync tasks:** Entry checklist first; if Saturday, complete weekly quick audit before deep work.
+
+---
+
 ## [2026-03-21c] Session: Cursor routing modes + billing period
 **Status:** Completed — doc update only.
 

@@ -1,5 +1,10 @@
 # Model Routing Cheat Sheet
 
+## Use this with
+
+- `CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md` (fill activated models, usage pools, and fallbacks per project)
+- Chat modes: Agent (edit), Ask (read-only), Plan (design-first)
+
 ## Task -> Best Model
 
 - Search and discovery: Gemini Flash + `@Codebase`

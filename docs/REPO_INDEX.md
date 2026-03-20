@@ -13,7 +13,10 @@ Update when a new repo is created or renamed.
 | **Code map strategy** | — | `docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md` |
 | **Solo weekly discipline** | — | `docs/SOLO_PRO_OPERATING_SYSTEM.md` |
 | **Cursor models & modes** | — | `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` |
+| **Model doc rollout checklist** | — | `docs/MODEL_DOC_ROLLOUT_CHECKLIST.md` |
 
 **Code map:** `docs/CODEBASE_MAP.md` (update after architecture changes — see `session-protocol.mdc`).
 
-*Last updated: 2026-03-20*
+**Future-project guarantee:** `scripts/build-rules-pack.js` now copies `docs/CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md` into every new rules-pack project.
+
+*Last updated: 2026-03-21*
