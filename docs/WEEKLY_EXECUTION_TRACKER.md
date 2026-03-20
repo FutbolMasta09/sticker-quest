@@ -77,14 +77,14 @@ Use one section per week. Keep entries short and consistent.
   - Mode rationale: maintain quality while premium API is capped by shrinking scope to one verified increment per session
   - Deferred polish note: Deep decoration pass (character polish, effects, final palette tuning) is intentionally deferred until after next feature/screens milestone plus Fire HD check
 - Friday:
-  - Planned hours:
-  - Actual hours:
+  - Planned hours: 4-5 (Community/Business deferred)
+  - Actual hours: (report if known)
   - Variance hours:
   - Variance percent:
-  - Tasks planned:
-  - Tasks done:
-  - Drift reason:
-  - Carry-forward:
+  - Tasks planned: Community/Business block (deferred); planning/docs
+  - Tasks done: Cursor model & mode reference (full build: routing modes, pools, billing, backup plans); doc verification; exit protocol
+  - Drift reason: Community/Business deferred per Ryan; focused on Cursor doc completion
+  - Carry-forward: Amber Fire HD test (next session with tablet); Community/Business planning next Friday
 - Saturday:
   - Planned hours:
   - Actual hours:

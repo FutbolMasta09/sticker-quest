@@ -1,3 +1,105 @@
+## [2026-03-21c] Session: Cursor routing modes + billing period
+**Status:** Completed — doc update only.
+
+### WHAT CHANGED
+1. **`docs/CURSOR_MODEL_AND_MODE_REFERENCE.md`** — Added **Routing modes** section: Auto, Premium, Max mode, Use multiple models (what each does, when to use, cost notes). Set billing period Mar 16 – Apr 16, 2026; next reset Apr 16, 2026.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Saturday — run weekly quick audit, set corrective actions, lock next week plan (per day theme).
+- **Carry-forward from today:** None. Cursor model doc is complete; Amber test plan ready for next session with tablet.
+- **Work-ahead status:** On-plan (planning/docs session; Community/Business deferred per Ryan).
+- **Tomorrow sync tasks:** Entry checklist; if Saturday, run 4c/4d (audit + review runbook).
+
+---
+
+## [2026-03-21b] Session: Cursor model doc — pools, billing refresh, backup plans
+**Status:** Completed — docs + session protocol only.
+
+### WHAT CHANGED
+1. **`docs/CURSOR_MODEL_AND_MODE_REFERENCE.md`** — Added Gemini 3 Pro, GPT-5.4 Nano, GPT-5 Mini to activated list; **Usage pools** table (API vs Auto+Composer); **Billing cycle reset date** placeholder + AI refresh instructions; **Backup plans** matrix (when primary unavailable); **Cost tier** (budget/mid/premium) for conserving API pool.
+2. **`.cursor/rules/session-protocol.mdc`** — **Step 4e:** On entry, if today matches billing reset date, refresh Usage table and update doc.
+
+### RYAN TODO
+Fill **Next reset** date in `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` from Cursor dashboard so the refresh trigger works.
+
+---
+
+## [2026-03-21] Session: Cursor model & mode reference doc + routing footer update
+**Status:** Completed — docs + rule tweak only.
+
+### WHAT CHANGED
+1. **`docs/CURSOR_MODEL_AND_MODE_REFERENCE.md`** — Agent vs Ask vs Plan, Debug/@Codebase/agents, Composer 1.5/2.0 + table routing; **Your plan snapshot** now populated with Ryan's activated models + **Usage status** table (Sonnet 4.6 marked usage exhausted).
+2. **`.cursor/rules/model-routing.mdc`** — Links to that doc; end-of-response block now includes **Next mode:** (Agent | Ask | Plan).
+3. **`docs/REPO_INDEX.md`**, **`PROJECT_CONTEXT.md`** — Links added.
+
+### USAGE STATUS NOTE
+When models hit usage limits (e.g. Sonnet exhausted), update the **Usage status** table in `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` so AI recommendations stay accurate. Fallback for coding when Sonnet is exhausted: Composer 2, Opus 4.6, or GPT-5.4.
+
+---
+
+## [2026-03-20d] Session: Solo Pro OS template + CODEBASE_MAP baseline + code-doc sync in protocol
+**Status:** Completed — docs + session rule update only.
+
+### WHAT CHANGED
+1. **`docs/SOLO_PRO_OPERATING_SYSTEM.md`** — single-page weekly template (WIP limit, money guardrail, 3 KPIs, evidence-based done, risks, review).
+2. **`docs/CODEBASE_MAP.md`** — baseline map for Sticker Quest (entry points, stores, `src/` features, config).
+3. **`.cursor/rules/session-protocol.mdc`** — **Step 10:** trigger phrase **"Run code-doc sync."** + architecture-change rule; **Exit 2c:** map hygiene carry-forward.
+4. **`docs/REPO_INDEX.md`**, **`docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md`**, **`PROJECT_CONTEXT.md` Key Files** — links updated.
+
+### STILL RECOMMENDED
+Use the weekly template every Monday (or copy block into tracker); say **"Run code-doc sync."** after routing/store/integration work.
+
+---
+
+## [2026-03-20c] Session: Post–K project lock + cross-repo doc strategy
+**Status:** Completed — planning docs only.
+
+### WHAT CHANGED
+1. **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — one-page locked intent: Sticker Quest first → Anchor's Desk → Inkborne native (with revisit conditions + Native platform review at green-light) → three-way decision including **Inkborne: Field Guide** (monster collecting).
+2. **`docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md`** — layered documentation strategy (frozen vs living maps; honest note on tokens vs reading code).
+3. **`docs/REPO_INDEX.md`** — master pointer table for repos and doc anchors.
+4. **`PROJECT_CONTEXT.md`** — Parallel track now links lock + repo index + code map strategy.
+
+### RYAN NOTES CAPTURED
+- Anchor's Desk: more sellable positioning today; North star alignment recorded.
+- Native: platform strategy reopen at green-light (mobile not assumed forever).
+
+---
+
+## [2026-03-20b] Session: Inkborne governance drafts + Composer routing rule
+**Status:** Completed — documentation + rules only.
+
+### WHAT CHANGED
+1. **`docs/UNIVERSE_PROTECTION_FRAMEWORK.md`** — first-pass cross-project protection baseline (gates, IP, AI, data, business checklist).
+2. **`docs/UNIVERSE_GOVERNANCE_SPEC.md`** — first-pass canon tiers, lore registry format, contradiction policy, project inheritance.
+3. **`.cursor/rules/model-routing.mdc`** — adopted **Composer 2.0** for planning/deep work and **Composer 1.5** for quick tasks; routing table updated.
+4. **`PROJECT_CONTEXT.md`** — Inkborne section now links to the two docs and states next step = pick lead project after Sticker Quest.
+
+### NOTE
+Drafts are v1; lawyer review still required before public beta or store submission paths.
+
+---
+
+## [2026-03-20] Session: Portrait orientation lock aligned + next-session Amber carry-forward
+**Status:** Completed — layout/docs sync; one navigation-adjacent file touched.
+
+### WHAT CHANGED
+1. **`app/(tabs)/index.tsx`** — Removed unused landscape two-column branch; home is always single-column to match `app.json` `"orientation": "portrait"`.
+2. **`PROJECT_CONTEXT.md`** — Known flag + risk table updated: orientation decision locked to portrait-only for now.
+3. **`PENDING_SPRINTS.md`** — Note: **Parent Onboarding Copy** is explicitly the **next off-peak** content sprint (not this session).
+4. **Next session (ONE-TIME FIRST ACTION):** Coordinate **Amber Fire HD test** — full smoke path + readability/contrast sanity pass (Step 5 from `docs/NEXT_TASK_TEST_GATE.md`) and log results in `docs/TONIGHT_AMBER_TEST_RESULTS.md` / `docs/AMBER_TEST_HISTORY.md` as appropriate.
+5. **New test plan doc:** `docs/AMBER_NEXT_SESSION_TEST_PLAN.md` added as the step-by-step script to keep the session on track.
+
+### ONE-TIME NEXT SESSION REMINDER (ENTRY CHECKLIST PICKUP)
+1. Start with `docs/AMBER_NEXT_SESSION_TEST_PLAN.md`.
+2. Run the test in this order: readability sanity pass -> 5-step smoke path -> persistence check.
+3. Log outcomes in `docs/TONIGHT_AMBER_TEST_RESULTS.md` and `docs/AMBER_TEST_HISTORY.md` before any new build work.
+
+### QUALITY CHECK
+- Lint: run `npx expo lint` before any commit.
+
+---
+
 ## [2026-03-19d] Session: Over-the-Top Color + Character Pass + Star Motivation Emphasis
 **Status:** Completed — visual/style pass only, behavior unchanged.
 

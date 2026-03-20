@@ -82,6 +82,11 @@ Automatic trigger rule:
    6. Decide optional Saturday flex mode after planning: catch-up, work-ahead, or rest
    7. Confirm family-time priority before doing any optional Saturday work
 
+4e. **Cursor model doc refresh (when billing reset)**
+   Open `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` and check the **Billing cycle reset date**.
+   If **today's date matches or has passed** that date: refresh the Usage status table (mark all models usable, clear exhausted notes), update the **Next reset** field with the new cycle date from the [Cursor dashboard](https://cursor.com/dashboard/usage), and note the refresh in `PATCH_NOTES.md`.
+   If the reset date is blank, skip — Ryan will fill it when known.
+
 5. **Surface the top open Known Flag**
    Check the "Known Flags" section of PROJECT_CONTEXT.md. Name the single most
    urgent unresolved issue so Ryan stays aware of it — even if we're not fixing it today.
@@ -110,6 +115,13 @@ Automatic trigger rule:
 
    Keep it to 3 items max. If Ryan gives more than 3, flag the scope risk and suggest prioritizing.
    Do not start work until Ryan confirms or adjusts the plan.
+
+10. **Code-doc sync (reminder)**
+   Quick trigger phrase Ryan can use: **"Run code-doc sync."**
+   At **session wrap-up**, if Ryan used that phrase **or** the session changed **architecture** (root routing, new routes, Zustand store shape, major folder moves, new third-party integrations):
+   - Update `docs/CODEBASE_MAP.md` (affected sections + **Last verified** date)
+   - Mention the map update in `PATCH_NOTES.md` when non-trivial  
+   *(See also Exit checklist 2c.)*
 
 ---
 
@@ -180,6 +192,9 @@ no context is lost between sessions.
    - **Tomorrow sync tasks:** any required setup/checklist items first
    Rule: if work was completed ahead of schedule, explicitly say what tomorrow can skip.
    Rule: if behind schedule, explicitly state the catch-up target for tomorrow.
+
+2c. **Code map hygiene (when architecture changed)**
+   If enter checklist **step 10** (code-doc sync) was not run during the session but routing, stores, or integrations were materially changed, either run **"Run code-doc sync."** now or add a carry-forward line in PATCH_NOTES: `CODEBASE_MAP.md` needs update.
 
 2a. **Amber notes maintenance (if Amber work happened this session)**
    If an Amber test session occurred, or Amber action items were completed:

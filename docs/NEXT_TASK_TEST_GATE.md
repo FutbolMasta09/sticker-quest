@@ -57,3 +57,4 @@ Reference files for tonight:
 - `docs/TONIGHT_AMBER_TEST_PACKET.md`
 - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
 - `docs/POST_TEST_BRANCH_PLAN.md`
+- `docs/AMBER_NEXT_SESSION_TEST_PLAN.md`

@@ -6,6 +6,14 @@ alwaysApply: true
 
 # MODEL ROUTING PROTOCOL
 
+**Human-readable reference:** `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` (models + Agent / Ask / Plan + Debug). Ryan should paste his live model list into that doc when Cursor updates.
+
+## Cursor Composer — rule of thumb (Ryan’s setup)
+- **Composer 2.0** — Planning, architecture, cross-project decisions, governance docs, multi-step refactors, and anything needing cleaner structure.
+- **Composer 1.5** — Quick execution: short edits, checklist updates, simple lookups, fast status passes.
+
+When recommending a model for the **next message**, prefer **Composer 2.0** unless the task is explicitly small/fast-only; then say **Composer 1.5**.
+
 ## Temporary Override (API Cap Window)
 - Active through: **2026-04-16 reset**
 - Primary route: **Auto + Composer**
@@ -17,15 +25,17 @@ Before every response that involves a task transition, I will explain the reason
 ## Rule — Every Single Response
 End EVERY response with:
 1. A **Reasoning** section explaining why a specific Cursor model is best for the next message Ryan sends in this chat.
-2. A **Next model** line telling Ryan exactly which model to select in the Cursor chat model picker.
-3. If the next step involves an external tool (e.g., claude.ai), also specify which model to use THERE — in a separate line labeled **External model**.
+2. A **Next mode** line: **Agent** | **Ask** | **Plan** — when to use that mode for the follow-up.
+3. A **Next model** line telling Ryan exactly which model to select in the Cursor chat model picker.
+4. If the next step involves an external tool (e.g., claude.ai), also specify which model to use THERE — in a separate line labeled **External model**.
 
 ## Formatting Requirement
 ---
 **Reasoning for next model:**
 [One or two sentences explaining why the chosen model is the best fit for Ryan's next message in this chat.]
 
-**Next model:** [Cursor model name] — [one-sentence reason]
+**Next mode:** Agent | Ask | Plan — [one-sentence reason]
+**Next model:** [Composer 1.5 or Composer 2.0, or other Cursor model] — [one-sentence reason]
 **External model (if applicable):** [Tool name] → use [specific model name] — [one-sentence reason]
 
 ---
@@ -34,6 +44,8 @@ End EVERY response with:
 
 | Task Type | Best Model | Why |
 |---|---|---|
+| Planning / governance / long decisions | **Composer 2.0 (Cursor)** | Stronger structure, fewer missed edge cases |
+| Quick fixes / short answers | **Composer 1.5 (Cursor)** | Fast loop when depth isn’t needed |
 | Writing or fixing code (UI, Skia, hooks, stores) | **Claude Sonnet 4.6 (Cursor — this tool)** | Best coding taste for React Native + Skia |
 | "Where is X?" / "How do these files connect?" | **Gemini Flash (Cursor)** | Fastest for codebase search with @Codebase |
 | Complex architecture decisions, database design | **Claude Opus 4.6 (Cursor)** | Strongest reasoning, worth the wait |

@@ -173,6 +173,9 @@ All core learning is 100% offline. App never stops due to lost WiFi.
 ## Key Files
 | File | Purpose |
 |---|---|
+| `docs/CODEBASE_MAP.md` | Living map of routes, stores, and folders (update after architecture changes) |
+| `docs/SOLO_PRO_OPERATING_SYSTEM.md` | Weekly solo-dev discipline template (WIP, money, KPIs, evidence) |
+| `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` | Cursor models, Agent/Ask/Plan, Debug — routing reference for sessions |
 | `src/assets/k_grade_content.json` | Master sticker content (phonemes, CVC words, motor tasks, hints) |
 | `src/store/useMasteryStore.ts` | Tracks which stickers Libby has mastered |
 | `src/store/useUserStore.ts` | User profile and session state |
@@ -194,7 +197,7 @@ All core learning is 100% offline. App never stops due to lost WiFi.
 4. **`useResponsiveScale.ts` is missing:** March 11 patch notes say it was built but it does not exist in the project. Fire HD 10 scaling logic needs to be rebuilt.
 5. **`useMasteryStore` is a stub:** Currently only has an `autoVerify` toggle. Needs full sticker progress tracking, attempt history, star counts, and the 3-hour daily session lock before content JSON can power the quest system.
 6. **`QuestGrid` not reading from content JSON:** Shows hardcoded habit buttons (Read, Clean, Brush, Eat Veggies). Must be rewired to read from `k_grade_content.json` in Phase 1 completion.
-7. **Orientation mismatch:** `app.json` locks orientation to "portrait" but `index.tsx` has a full landscape two-column layout. Decision needed: lock to portrait, or unlock both.
+7. **Orientation (locked):** `app.json` uses **portrait** only. Home (`app/(tabs)/index.tsx`) matches: single-column layout, no landscape branch. Revisit unlocking rotation only if a future milestone needs landscape on tablet.
 
 ---
 
@@ -231,7 +234,7 @@ Issues that will cause problems if not addressed before launch. Ordered by sever
 |---|---|---|
 | No crash reporting | Crashes on Fire HD 10 go undetected | Add Expo's built-in crash handler or Sentry |
 | Grade options incomplete | Onboarding only shows K and G1, store supports K–G3 | Add G2/G3 to onboarding options |
-| Orientation decision pending | Portrait locked in app.json, landscape code exists | Decide and align both files |
+| Orientation | Portrait-only in app.json; home uses portrait stack layout | Unlock later only if product asks for landscape |
 | No app version strategy | Version stuck at 1.0.0 | Define versioning plan before any public build |
 
 ---
@@ -498,12 +501,13 @@ Canon tier system:
 
 Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypothesis to revisit per project, not a permanent constraint.
 
-**⚠️ NEXT SESSION MUST-DO (before any new Inkborne project starts):**
-Create two governance documents:
-1. **Universe Protection Framework** — cross-project legal/ethical baseline (IP safety, AI disclosure, data policy, business protection gates)
-2. **Universe Governance Spec** — canon tiers, lore registry format, contradiction policy, project inheritance model
+**Governance docs (first-pass drafts in this repo):**
+1. **`docs/UNIVERSE_PROTECTION_FRAMEWORK.md`** — cross-project legal/ethical baseline (IP safety, AI disclosure, data policy, business protection gates)
+2. **`docs/UNIVERSE_GOVERNANCE_SPEC.md`** — canon tiers, lore registry format, contradiction policy, project inheritance model
 
-Trigger phrase for next session: "Create the Universe Protection Framework and Universe Governance Spec."
+**Post–K flagship sequence (locked intent):** See **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Anchor's Desk first; Inkborne native after revisit conditions; Field Guide in the three-way decision after Native. Native platform/monetization reviewed at green-light.
+
+**Cross-repo pointers:** `docs/REPO_INDEX.md` | **Code documentation strategy:** `docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md`
 
 ### One-time kickoff checklist (when Anchor's Desk repo starts)
 

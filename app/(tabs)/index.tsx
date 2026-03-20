@@ -45,17 +45,15 @@ export default function HomeScreen() {
     }
   }, [tutorialStep]);
 
-  const { scale, screenWidth, screenHeight, isTablet } = useResponsiveScale();
+  const { scale, isTablet } = useResponsiveScale();
   const insets = useSafeAreaInsets();
 
   // Poll every minute so the lock screen appears automatically if 3 hours pass
   const [locked, setLocked] = useState(() => isSessionLocked());
 
-  const isLandscape = screenWidth > screenHeight;
+  // Portrait-only: app.json locks orientation; avoid a dead "landscape" layout branch.
   const containerPadding = scale(16);
   const columnGap = scale(12);
-  const leftColumnWidth = isLandscape ? screenWidth * 0.38 : screenWidth * 0.95;
-  const rightColumnWidth = isLandscape ? screenWidth * 0.58 : screenWidth * 0.95;
   const canvasSize = isTablet ? scale(160) : scale(120);
 
   useEffect(() => {
@@ -105,19 +103,16 @@ export default function HomeScreen() {
         ]}
         showsVerticalScrollIndicator={false}
       >
-        {/* Main Content - 2 columns for landscape, stacked for portrait */}
+        {/* Main content — single column (portrait lock in app.json) */}
         <View style={[
           styles.mainContent,
           {
-            flexDirection: isLandscape ? 'row' : 'column',
+            flexDirection: 'column',
             gap: columnGap
           }
         ]}>
-          {/* LEFT COLUMN: Starlight Section */}
-          <View style={[
-            styles.column,
-            { width: isLandscape ? leftColumnWidth : '100%' }
-          ]}>
+          {/* Starlight section */}
+          <View style={[styles.column, { width: '100%' }]}>
             <View style={styles.sectionHeader}>
               <Star size={20} color="#FFD700" />
               <ThemedText type="subtitle" style={styles.sectionTitle}>
@@ -132,11 +127,8 @@ export default function HomeScreen() {
             <Achievements />
           </View>
           
-          {/* RIGHT COLUMN: Quest Controls */}
-          <View style={[
-            styles.column,
-            { width: isLandscape ? rightColumnWidth : '100%' }
-          ]}>
+          {/* Quest controls */}
+          <View style={[styles.column, { width: '100%' }]}>
             {/* Greeting Header */}
             <View style={styles.header}>
               <ThemedText type="title" style={styles.greeting}>
