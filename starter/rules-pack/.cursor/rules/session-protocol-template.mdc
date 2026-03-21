@@ -1,0 +1,130 @@
+---
+description: Reusable session entry and exit checklist. Copy to new projects and replace PROJECT_PATH, add project-specific steps.
+alwaysApply: true
+---
+
+# SESSION PROTOCOL (Template)
+
+**When copying to a new project:** Replace `<PROJECT_PATH>` with your repo path (e.g., `c:\App Development\my-project`). Add project-specific steps (e.g., 4a for stakeholder notes) in separate subsections. Keep the work-status logic (4b, 4b.1, step 7, 2b) unchanged — it is the reusable backbone.
+
+---
+
+## ENTER SESSION CHECKLIST
+
+Run this at the start of every new conversation before major work.
+
+Quick trigger phrase:
+"Run entry checklist + weekly tracker sync."
+
+Automatic trigger:
+- If the user starts a new chat with a message that implies session start ("new session", "start session", "let's begin", "what should we work on today", "run the checklist"), run the full Enter Session Checklist.
+- Exception: if the user clearly says this is a quick one-off question, skip the full briefing (see WHEN TO SKIP).
+
+1. **Check the time**
+   Run a date/time command for the user's locale. Report peak vs. off-peak if relevant to their tools (e.g., Claude Pro usage).
+
+2. **Pull latest from Git**
+   Run: `cd "<PROJECT_PATH>"; git pull origin main`
+   If conflicts or errors, report before proceeding.
+
+3. **Read PROJECT_CONTEXT.md**
+   Confirm current phase, open flags, and decisions affecting today's work.
+
+4. **Read the last 2 entries in PATCH_NOTES.md**
+   Know what was done in the last session and what was left unfinished.
+
+4b. **Weekly tracker sync (always) — CORE BONES**
+   Open `docs/WEEKLY_EXECUTION_TRACKER.md` (or project equivalent) and confirm:
+   - Current week block exists
+   - Today's day theme is defined
+   - Planned hours for today are set
+   - **Today's planned task** from the Daily Plan (what to do today)
+   - **Work status:** Check Daily Actuals for prior days this week. Any day with empty "Tasks done" or a "Carry-forward" entry = undone. Build the carry-forward list.
+   - **Status verdict:** Behind (prior days undone), On-plan (prior days done), or Ahead (prior days done + optional flex)
+   - **Recommendation:** If behind — surface carry-forward first, recommend tackling it before today's plan. If on-plan — today's task. If ahead — today's task or flex to next; note what can be skipped.
+   Do not rewrite the Daily Plan mid-week; only Daily Actuals get updated at exit.
+
+4b.1 **Daily schedule sync with prior exit (always) — CORE BONES**
+   Before proposing today's work, sync against the previous session's exit plan and the weekly tracker:
+   - Read the last "Tomorrow Schedule + Carry-Forward" note in PATCH_NOTES.md
+   - Combine with work status from 4b: prior-days undone tasks from Daily Actuals take precedence for carry-forward
+   - If tracker shows behind: carry-forward = those undone tasks first; recommend tackling before today's plan
+   - If tracker shows ahead: today's planned task may already be done — check PATCH_NOTES; suggest next task or flex
+   Report a "Today Schedule Snapshot":
+   - **Scheduled today:** primary task (from Daily Plan; adjust if work-ahead already completed it)
+   - **Carry-forward:** undone items from prior days or prior session — tackle first if behind
+   - **Work-ahead status:** behind / on-plan / ahead
+   - **Sync tasks:** any quick admin/log updates that must be done first
+
+4c. **Saturday audit (if project uses weekly cadence)**
+   If today is Saturday: Run weekly quick audit, produce Green/Yellow/Red verdict, lock next week's must-ship item and day themes.
+
+5. **Surface the top open Known Flag**
+   From PROJECT_CONTEXT.md Known Flags, name the single most urgent unresolved issue.
+
+7. **Give a 3-line briefing**
+   - "Current phase: [X]. Last session: [what was done]."
+   - "Open items: [top 1-2 things that need to happen next]."
+   - "Today's schedule: [today's planned task from Daily Plan]. Status: [behind/on-plan/ahead]. [If behind: carry-forward items — recommend tackling first. If ahead: optional flex.]"
+
+8. **Ask what the user wants to work on** — do not assume.
+
+9. **Confirm the session plan**
+   Restate the plan in plain English before starting. Keep to 3 items max. Do not start work until the user confirms.
+
+---
+
+## EXIT SESSION CHECKLIST
+
+**BEFORE starting exit: always ask if the user is done.** Never assume the session is over because a task was completed.
+
+### DAILY EXECUTION CLOSEOUT
+
+Before final sign-off, update `docs/WEEKLY_EXECUTION_TRACKER.md`:
+- Planned hours vs actual hours for today
+- Drift reason and carry-forward item
+- Tasks planned vs tasks done for today
+
+1. **Deliver a session summary** — plain-English recap, 3–5 bullets max.
+
+2. **Update PATCH_NOTES.md** — log accomplishments, decisions, open items.
+
+2b. **Record tomorrow schedule + carry-forward (always) — CORE BONES**
+   At the end of every meaningful session, add:
+   - **Tomorrow scheduled task:** one primary task tied to day theme
+   - **Carry-forward from today:** unfinished item(s), if any
+   - **Work-ahead status:** worked ahead / on-plan / behind
+   - **Tomorrow sync tasks:** any required setup first
+   Rule: if ahead of schedule, say what tomorrow can skip. If behind, state the catch-up target for tomorrow.
+
+3. **Update PROJECT_CONTEXT.md** if decisions changed phase status or known flags.
+
+4. **Run linter** (or project equivalent) before committing. Fix errors.
+
+5. **Commit and push**
+   Tell the user their work is backed up. If push fails, explain plainly.
+
+6. **Next session options** — prioritized menu of 2–4 options based on phase, blockers, deadlines.
+
+**Always tell the user to start a NEW chat next session** — long threads degrade quality. PROJECT_CONTEXT.md and PATCH_NOTES.md carry context.
+
+---
+
+## WHEN TO SKIP THE ENTRY BRIEFING
+
+Skip the full briefing if:
+- User says "just answer this question" or "quick question"
+- Single strategy question with no code work
+- Continuation within the same conversation thread
+
+Still pull from Git at the start of any session involving code changes.
+
+---
+
+## Reuse Template (Copy to New Projects)
+
+1. Copy this file to `<project>/.cursor/rules/session-protocol.mdc`.
+2. Replace `<PROJECT_PATH>` with the actual repo path everywhere it appears.
+3. Add project-specific steps (e.g., 4a for stakeholder triage, 6 for env checks) as optional subsections.
+4. **Do not remove or weaken 4b, 4b.1, step 7, or 2b** — the work-status logic (behind/on-plan/ahead, carry-forward, today's schedule) is the reusable backbone.
+5. Ensure the project has: PROJECT_CONTEXT.md, PATCH_NOTES.md, docs/WEEKLY_EXECUTION_TRACKER.md (or equivalent). The tracker must have Daily Plan and Daily Actuals (Tasks planned, Tasks done, Carry-forward per day).

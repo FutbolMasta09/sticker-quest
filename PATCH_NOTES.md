@@ -1,3 +1,20 @@
+## [2026-03-21k] Session: Session protocol work-status bones + rules-pack template
+**Status:** Completed — rules only.
+
+**One-line summary:** Work status (behind/on-plan/ahead) and carry-forward logic added to entry protocol; portable session-protocol-template created for future projects.
+
+### WHAT CHANGED
+1. **`.cursor/rules/session-protocol.mdc`** — 4b, 4b.1, step 7: Work status from Daily Actuals (prior days undone = behind; done = on-plan/ahead). Carry-forward surfaced first when behind. Reuse Template section added.
+2. **`starter/rules-pack/.cursor/rules/session-protocol-template.mdc`** — New. Portable session protocol with work-status bones; copy to new projects, replace PROJECT_PATH.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan (Amber feedback: floor vs carpet first).
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan.
+- **Tomorrow sync tasks:** Entry checklist; work-status will surface from tracker + PATCH_NOTES.
+
+---
+
 ## [2026-03-21i] Session: Amber test #2 PASS + session closeout
 **Status:** Completed — test + docs.
 

@@ -53,19 +53,22 @@ Automatic trigger rule:
    - Current week block exists
    - Today's day theme is defined
    - Planned hours for today are set
-   - **Today's planned task** from the Daily Plan (what to do today) — surface this in the briefing
-   If missing, set them before starting work.
+   - **Today's planned task** from the Daily Plan (what to do today)
+   - **Work status:** Check Daily Actuals for prior days this week. Any day with empty "Tasks done" or a "Carry-forward" entry = undone. Build the carry-forward list.
+   - **Status verdict:** Behind (prior days undone), On-plan (prior days done), or Ahead (prior days done + optional flex)
+   - **Recommendation:** If behind — surface carry-forward first, recommend tackling it before today's plan. If on-plan — today's task. If ahead — today's task or flex to next; note what can be skipped.
+   Do not rewrite the Daily Plan mid-week; only Daily Actuals get updated at exit. If missing, set them before starting work.
 
 4b.1 **Daily schedule sync with prior exit (always)**
-   Before proposing today's work, sync against the previous session's exit plan:
+   Before proposing today's work, sync against the previous session's exit plan and the weekly tracker:
    - Read the last "Tomorrow Schedule + Carry-Forward" note in `PATCH_NOTES.md`
-   - Confirm today's planned task from that note
-   - Confirm unfinished items that carried forward
-   - Confirm whether prior session worked ahead, on-plan, or behind
+   - Combine with work status from 4b: prior-days undone tasks from Daily Actuals take precedence for carry-forward
+   - If tracker shows behind (prior days undone): carry-forward = those undone tasks first; recommend tackling before today's plan
+   - If tracker shows ahead: today's planned task may already be done — check PATCH_NOTES; suggest next task or flex
    Then report a "Today Schedule Snapshot" to Ryan:
-   - **Scheduled today:** primary task for this day
-   - **Carry-forward:** unfinished item(s) from prior session
-   - **Work-ahead status:** worked ahead / on-plan / catch-up needed
+   - **Scheduled today:** primary task for this day (from Daily Plan; adjust if work-ahead already completed it)
+   - **Carry-forward:** undone items from prior days or prior session — tackle first if behind
+   - **Work-ahead status:** behind / on-plan / ahead — drives whether to prioritize catch-up vs today's plan vs flex
    - **Sync tasks:** any quick admin/log updates that must be done first
 
 4c. **Saturday audit trigger**
@@ -105,7 +108,7 @@ Automatic trigger rule:
    - "Current phase: [X]. Last session: [what was done]."
    - "Open items: [top 1-2 things that need to happen next]."
    - "Time status: [peak/off-peak and what that means today]."
-   - "Today's schedule: [today's planned task + carry-forward + work-ahead status]."
+   - "Today's schedule: [today's planned task from Daily Plan]. Status: [behind/on-plan/ahead]. [If behind: carry-forward items — recommend tackling first. If ahead: optional flex.]"
 
 8. **Ask what Ryan wants to work on** — do not assume and charge ahead.
 
@@ -402,6 +405,19 @@ Known candidates for Phase 1 audit:
 - `components/external-link.tsx` — Expo boilerplate
 
 Do NOT delete these now. Audit happens at Phase 1 completion.
+
+---
+
+## Reuse Template (Copy to New Projects)
+
+When bootstrapping a new project, copy `session-protocol-template.mdc` from your rules-pack (e.g., `starter/rules-pack/.cursor/rules/`) to the project's `.cursor/rules/session-protocol.mdc`. Replace `<PROJECT_PATH>` with the repo path. Add project-specific steps (e.g., 4a Amber triage, 6 .env check) as needed.
+
+**Preserve these bones in every project:**
+- **4b, 4b.1:** Weekly tracker sync with work status (behind/on-plan/ahead), carry-forward from prior days, today's planned task.
+- **Step 7:** Briefing includes today's schedule + status + carry-forward recommendation.
+- **2b:** Exit records tomorrow schedule + carry-forward + work-ahead status.
+
+Do not remove or weaken this logic — it ensures the plan adapts to work-ahead and catch-up without rewriting the Daily Plan mid-week.
 
 ---
 
