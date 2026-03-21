@@ -1,6 +1,8 @@
 # Amber Recurring Test Packet
 
-Purpose: reusable checklist for every Amber remote Fire HD test session.
+**Master runbook:** `docs/AMBER_TEST_STEP_BY_STEP.md` — follow Prep → Testing → After Testing every time.
+
+Purpose: supporting detail for every Amber remote Fire HD test session.
 
 ---
 
@@ -71,14 +73,19 @@ Assumption for this session:
 
 ## Feedback questions (after pass/fail checks)
 
-Ask these after pass/fail checks are done:
+**Required after every test** — always ask these two first:
 
-1. "As Libby's mom, from what you just saw, do you think Libby would enjoy this daily?"
-2. "Did the tutorial make the first steps clear, or did anything feel confusing?"
-3. "Do the colors and character style feel fun and kid-friendly, or still too plain?"
-4. "As a daycare owner, do you think other parents would pay for something like this once it is fully built?"
-5. "What would need to improve first before you would confidently recommend it?"
-6. "Anything you expected to see that is not here yet?"
+1. **"What did you like?"** — Capture what’s working from her perspective.
+2. **"What do you think we should change?"** — Open-ended; capture her top improvement ideas.
+
+Then ask these if time allows:
+
+3. "As Libby's mom, from what you just saw, do you think Libby would enjoy this daily?"
+4. "Did the tutorial make the first steps clear, or did anything feel confusing?"
+5. "Do the colors and character style feel fun and kid-friendly, or still too plain?"
+6. "As a daycare owner, do you think other parents would pay for something like this once it is fully built?"
+7. "What would need to improve first before you would confidently recommend it?"
+8. "Anything you expected to see that is not here yet?"
 
 Note to Ryan:
 - Record exact words where possible, not paraphrases.

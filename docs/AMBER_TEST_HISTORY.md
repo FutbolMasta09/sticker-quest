@@ -10,6 +10,7 @@ Use this to improve future test prep and estimate time accurately.
 
 | Date | Session type | Delivery path | Duration | Outcome | First failing step | Top blocker | Next action |
 |---|---|---|---|---|---|---|---|
+| 2026-03-21 | Second test — visual polish | Backup APK | *(fill if known)* | PASS | n/a | None | Tutorial read-aloud, floor vs carpet, more colors/decorations |
 | 2026-03-18 | Remote smoke test (live) | Backup APK | 90 min total (distraction-heavy) | PASS | n/a | Expo tunnel/ngrok failed (`Cannot read properties of undefined (reading 'body')`) | Execute Amber feedback build sequence: tutorial V1 -> more colorful/cartoon visual pass -> stars emphasis -> onboarding wording cleanup -> Fire HD re-test prep |
 
 ---

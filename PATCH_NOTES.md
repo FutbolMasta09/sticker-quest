@@ -1,3 +1,23 @@
+## [2026-03-21i] Session: Amber test #2 PASS + session closeout
+**Status:** Completed — test + docs.
+
+**One-line summary:** Second Amber test passed; Fire HD readability complete; Amber feedback backlog created; session wrap.
+
+### WHAT CHANGED
+1. **Amber test #2** — PASS. Tutorial, decoration/readability, smoke flow, persistence all passed.
+2. **`docs/AMBER_FEEDBACK_BACKLOG.md`** — New. Captures: tutorial read-aloud, floor vs carpet, more colors.
+3. **`docs/NEXT_TASK_TEST_GATE.md`** — Marked steps 1–5 complete; Fire HD readability pass complete.
+4. **`docs/TONIGHT_AMBER_TEST_RESULTS.md`** — Filled with 2026-03-21 test results.
+5. **`docs/AMBER_TEST_HISTORY.md`** — Added 2026-03-21 row.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Implement Amber feedback (floor vs carpet first — quick fix; then plan tutorial read-aloud + more colors).
+- **Carry-forward from today:** None. All logged.
+- **Work-ahead status:** On-plan. Fire HD pass done ahead of next week.
+- **Tomorrow sync tasks:** Entry checklist; pick first Amber feedback item to implement.
+
+---
+
 ## [2026-03-21h] Session: Anchor's Desk 100% next; pool consolidated; planning rhythm locked
 **Status:** Completed — docs only.
 

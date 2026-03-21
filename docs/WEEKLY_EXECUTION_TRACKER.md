@@ -86,16 +86,16 @@ Use one section per week. Keep entries short and consistent.
   - Drift reason: Community/Business deferred per Ryan; focused on Cursor doc completion
   - Carry-forward: Amber Fire HD test (next session with tablet); Community/Business planning next Friday; optional Future Pool Intake paste from ideation exports when approved
 - Saturday:
-  - Planned hours:
-  - Actual hours:
+  - Planned hours: 1-2 (30-min review + optional flex build)
+  - Actual hours: (fill if known)
   - Variance hours:
   - Variance percent:
-  - Tasks planned:
-  - Tasks done:
+  - Tasks planned: entry checklist (4c/4d), Lore Bible surface, weekly audit, Amber tablet prep
+  - Tasks done: weekly audit; Amber prep; Amber test #2 (PASS); Fire HD readability complete; Amber feedback backlog
   - Drift reason:
-  - Carry-forward:
-  - Flex decision after planning: catch-up / work-ahead / rest
-  - Family priority honored: yes/no
+  - Carry-forward: implement Amber feedback next session (floor vs carpet, tutorial read-aloud, more colors)
+  - Flex decision after planning: catch-up
+  - Family priority honored: (confirm)
 - Sunday:
   - Planned hours:
   - Actual hours:
@@ -203,28 +203,41 @@ Score each signal: `0` good, `1` watch, `2` problem.
 
 ### Weekly Totals
 - Planned hours (all days): 22-27
-- Actual hours (all days):
-- Variance hours (actual - planned):
-- Variance percent:
-- Tasks started:
-- Tasks finished:
-- Finish rate (finished/started):
-- Must-ship item completed: yes/no
+- Actual hours (all days): ~8-10 (Wed 3 + Thu partial + Fri partial; Mon/Tue minimal; Sat in progress)
+- Variance hours (actual - planned): negative (incomplete logging)
+- Variance percent: unknown (partial evidence)
+- Tasks started: ops docs, Sticker Quest visual pass (tutorial, color, star, onboarding), Cursor model doc, planning
+- Tasks finished: ops closeout, visual pass 4/5 steps (Fire HD deferred), model doc, Anchor's Desk lock, Lore Bible prep
+- Finish rate (finished/started): good on locked scope
+- Must-ship item completed: yes (Fire HD readability pass done 2026-03-21)
 
 ### Weekly Program Review (Saturday)
-- Sticker Quest status (phase + milestone movement):
-- Anchor's Desk status (design/orientation/build stage):
-- Inkborne status (canon + community movement):
-- KPI movement (up/down/flat):
-- Top blocker:
-- Scope creep alerts:
-- Keep/Kill/Pause decisions:
-- Next week must-ship item:
+- Sticker Quest status (phase + milestone movement): Phase 1 in progress. Core loop stable. Visual polish (tutorial, color, star, onboarding) done on iPhone. Fire HD validation deferred.
+- Anchor's Desk status (design/orientation/build stage): 100% next after SQ; locked in POST_STICKER_QUEST_PROJECT_LOCK.
+- Inkborne status (canon + community movement): Lore Bible sprint ready; pool consolidated.
+- KPI movement (up/down/flat): flat
+- Top blocker: Fire HD tablet access for readability pass
+- Scope creep alerts: none
+- Keep/Kill/Pause decisions: keep locked scope; Fire HD pass when tablet available
+- Next week must-ship item: Fire HD readability sanity pass (Step 5) when tablet available
 
 ### Weekly Quick Audit Verdict (Saturday)
-- Verdict: Green/Yellow/Red
-- Timeline impact: on track/slight risk/off track
+- Verdict: Yellow
+- Timeline impact: slight risk (Fire HD validation pending)
 - Top 2 behavior issues:
+  1. Build-time displacement by ops/doc work
+  2. Fire HD readability pass deferred (no tablet access)
 - Required corrective actions (next week):
-- Scope freeze needed this week: yes/no
+  1. Schedule Fire HD readability pass at first session with tablet; coordinate Amber follow-up if ready
+  2. Start each deep-build day with one must-ship task before ops/process work
+- Scope freeze needed this week: no
+
+### Next Week Plan (Week of 2026-03-23)
+- Must-ship: Fire HD readability sanity pass when tablet available
+- Monday (Deep Build): Fire HD pass if tablet ready; else highest-impact Phase 1 task
+- Tuesday (Deep Build): continue Phase 1 or Fire HD pass
+- Wednesday (Design/Planning): per tracker
+- Thursday (Deep Build): per tracker
+- Friday (Community/Business): KPI + one community post + monetization check
+- Saturday: weekly audit + next week lock
 

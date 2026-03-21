@@ -38,6 +38,7 @@ Automatic trigger rule:
 
 4a. **Amber notes triage (when Amber docs exist)**
    Review Amber-related notes before planning work:
+   - `docs/AMBER_TEST_STEP_BY_STEP.md` — master runbook for every Amber test (Prep → Testing → After Testing)
    - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
    - `docs/AMBER_TEST_HISTORY.md`
    - `docs/NEXT_TASK_TEST_GATE.md`
@@ -201,8 +202,9 @@ no context is lost between sessions.
 
 2a. **Amber notes maintenance (if Amber work happened this session)**
    If an Amber test session occurred, or Amber action items were completed:
+   - Follow Section 3 (After Testing) of `docs/AMBER_TEST_STEP_BY_STEP.md`.
    - Update `docs/AMBER_TEST_HISTORY.md` with date, delivery path, pass/fail, and key feedback.
-   - Update `docs/TONIGHT_AMBER_TEST_RESULTS.md` with final outcomes and next actions.
+   - Update `docs/TONIGHT_AMBER_TEST_RESULTS.md` with final outcomes, "what she likes," and "what she thinks we should change."
    - Remove or delete Amber one-time prep docs only when they are fully completed and their important details are already captured in history/results files.
    - If new Amber follow-up tests are needed, create the next test note/checklist in `docs/` before ending the session.
 

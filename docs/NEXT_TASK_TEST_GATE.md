@@ -9,6 +9,7 @@ Purpose: allow progress while protecting quality when Fire HD testing is pending
 - Code quality: lint clean
 - Device verification: pass (Fire HD + Amber remote test complete)
 - Release confidence: smoke test passed (backup APK path)
+- Fire HD readability pass: ✅ complete (2026-03-21)
 
 ---
 
@@ -47,13 +48,18 @@ Gate result:
 
 ## Next implementation sequence (locked)
 
-1. Tutorial V1: 3-step first-run guide (`Pick a quest` -> `Do movement` -> `Earn stars`) with Skip/Got it.
-2. Color/cartoon pass: increase color richness and kid-friendly visual cues across onboarding + home + quest cards.
-3. Star emphasis polish: make star gain and total-star feedback more visually obvious.
-4. Onboarding wording cleanup: keep labels plain and fast for parent completion.
-5. Re-test prep: run a quick Fire HD sanity pass focused on readability and flow confidence.
+1. ✅ Tutorial V1: 3-step first-run guide (`Pick a quest` -> `Do movement` -> `Earn stars`) with Skip/Got it.
+2. ✅ Color/cartoon pass: increase color richness and kid-friendly visual cues across onboarding + home + quest cards.
+3. ✅ Star emphasis polish: make star gain and total-star feedback more visually obvious.
+4. ✅ Onboarding wording cleanup: keep labels plain and fast for parent completion.
+5. ✅ Fire HD readability pass (2026-03-21) — Amber test PASS. Next: implement feedback.
 
-Reference files for tonight:
-- `docs/AMBER_RECURRING_TEST_PACKET.md`
-- `docs/TONIGHT_AMBER_TEST_RESULTS.md`
+**Amber feedback to implement:** `docs/AMBER_FEEDBACK_BACKLOG.md` — tutorial read-aloud, floor vs carpet, more colors.
+
+**Every Amber test:** Use `docs/AMBER_TEST_STEP_BY_STEP.md` — Prep, Testing, After Testing.
+
+Reference files:
+- `docs/AMBER_TEST_STEP_BY_STEP.md` — master runbook
+- `docs/TONIGHT_AMBER_TEST_RESULTS.md` — fill during call
+- `docs/AMBER_RECURRING_TEST_PACKET.md` — supporting detail
 - `docs/POST_TEST_BRANCH_PLAN.md`

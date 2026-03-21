@@ -6,15 +6,15 @@ Fill this during the call.
 
 ## Session metadata
 
-- Date: 2026-03-18
-- Start time: 12:04 PM
-- End time: 1:34 PM
+- Date: 2026-03-21
+- Start time: *(fill if known)*
+- End time: *(fill if known)*
 - Device: Fire HD 10
 - Tester: Amber (remote), coordinated by Ryan
-- Session context note: Libby and Ryan's granddad were present during testing, with frequent distractions. Extra pauses were expected and should be considered normal for timing.
-- Build reference: https://expo.dev/accounts/futbolmasta09/projects/sticker-quest/builds/17de79ef-6af5-48de-b3d0-5297f3bf8931
+- Session context note: Second Amber test; visual polish build
+- Build reference: Preview APK
 - Delivery path used: Backup (preview APK)
-- Setup blocker (if any): Tunnel path failed (`TypeError: Cannot read properties of undefined (reading 'body')` from ngrok flow), switched to preview APK install.
+- Setup blocker (if any): None — she installed ahead of call
 
 ---
 
@@ -22,11 +22,11 @@ Fill this during the call.
 
 1. Tutorial guidance appears and is usable
 - Pass/Fail: Pass
-- Notes: Tutorial flow was understandable; no blocker reported.
+- Notes: She went through tutorial; suggested read-aloud for kindergarteners, floor instead of carpet
 
 2. Decoration/readability looks colorful and clear
 - Pass/Fail: Pass
-- Notes: Baseline passed, but Amber requested even more color/cartoon styling.
+- Notes: More colorful and kid-friendly than before; suggests more colors/decorations; instructions should be easy for Libby when read
 
 ---
 
@@ -34,23 +34,23 @@ Fill this during the call.
 
 1. Home opens
 - Pass/Fail: Pass
-- Notes: App opened on Fire HD and reached onboarding/home path successfully.
+- Notes:
 
 2. Quest opens
 - Pass/Fail: Pass
-- Notes: Amber opened quest cards successfully from home.
+- Notes:
 
 3. Star result tap works
 - Pass/Fail: Pass
-- Notes: Star-rating action worked in quest flow.
+- Notes:
 
 4. Return to home works
 - Pass/Fail: Pass
-- Notes: Returned to home after quest flow and saw updated state.
+- Notes:
 
 5. No freeze or red error
 - Pass/Fail: Pass
-- Notes: No freeze observed during test flow.
+- Notes:
 
 ---
 
@@ -58,19 +58,24 @@ Fill this during the call.
 
 - Final outcome: PASS
 - If fail, first failing step: n/a
-- Exact error text or behavior: n/a (no runtime failure in backup install path)
-- Recommended next action: Keep Phase 1 core stable; add onboarding tutorial guidance and visual polish (more colorful/cartoon-forward UI) before broader parent-facing launch tests.
+- Exact error text or behavior: n/a
+- Recommended next action: Prioritize Amber suggestions (tutorial read-aloud, floor vs carpet, more colors). Mark Fire HD readability pass complete; unblock next Phase 1 work.
 
 ---
 
 ## Amber qualitative feedback (capture exact wording)
 
-- Libby-fit (mom perspective): "Yes, she would enjoy the app."
-- Engagement moment: "She would be engaged with getting stars."
-- Confusion moment: "It was fine and I could figure things out, but maybe add a tutorial screen or something to show how to do things or use the app."
-- Daycare-owner perspective: "Probably yes, other parents might be interested. The kids have their own tablets to play on."
-- Purchase confidence blocker: "Add more color and cartoony stuff."
-- Missing expectations: "The more colors you have the more attractive it is."
+**Required after every test — ask if not already answered:**
+- What she likes: Tutorial on first open so she knows what to do
+- What she thinks we should change: No corrections at this point. Suggestions during test: tutorial read aloud (kindergarteners can't read), floor instead of carpet on cards, more colors and decorations
+
+**Additional feedback (from structured questions):**
+- Libby-fit (mom perspective):
+- Engagement moment:
+- Confusion moment:
+- Daycare-owner perspective:
+- Purchase confidence blocker:
+- Missing expectations:
 
 ---
 
@@ -81,4 +86,4 @@ Fill this during the call.
 - [x] Final outcome marked (PASS/FAIL)
 - [x] Next action written
 - [x] Delivery path recorded
-- [x] Amber qualitative feedback captured
+- [x] **"What do you like?"** and **"What do you think we should change?"** asked and captured

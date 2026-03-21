@@ -5,6 +5,7 @@ Update when a new repo is created or renamed.
 | Project | Code location | Primary docs (this repo unless noted) |
 |---------|----------------|----------------------------------------|
 | **Sticker Quest** | This workspace | `PROJECT_CONTEXT.md`, `PATCH_NOTES.md`, `LESSONS_LEARNED.md`, `docs/CODEBASE_MAP.md` |
+| **Amber test runbook** | — | `docs/AMBER_TEST_STEP_BY_STEP.md` — use every Amber test (Prep → Testing → After Testing) |
 | **Post–K sequence lock** | — | `docs/POST_STICKER_QUEST_PROJECT_LOCK.md` |
 | **The Anchor's Desk** | Future Godot repo | `GAME_DESIGN.md` |
 | **Inkborne native** | Separate repo (path TBD) | `docs/INKBORNE_AUDIT_2026_03_18.md` |

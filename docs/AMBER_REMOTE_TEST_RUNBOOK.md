@@ -1,6 +1,8 @@
 # Amber Remote Test Runbook
 
-Use this when Ryan is in Florida and Amber/Libby are in Tennessee.
+**Master runbook:** `docs/AMBER_TEST_STEP_BY_STEP.md` — follow Prep → Testing → After Testing every time.
+
+Use this when Ryan is in Florida and Amber/Libby are in Tennessee. Supporting detail for delivery paths and timing.
 
 ---
 
@@ -158,3 +160,7 @@ Additionally, mark delivery path used:
 - Failed steps:
 - Error text (if any):
 - Next action:
+
+**After every Amber test** — ask and record:
+- "What do you like?"
+- "What do you think we should change?"
