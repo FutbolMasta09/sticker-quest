@@ -219,7 +219,7 @@ Score each signal: `0` good, `1` watch, `2` problem.
 - Top blocker: Fire HD tablet access for readability pass
 - Scope creep alerts: none
 - Keep/Kill/Pause decisions: keep locked scope; Fire HD pass when tablet available
-- Next week must-ship item: Fire HD readability sanity pass (Step 5) when tablet available
+- Next week must-ship item: Floor vs carpet fix (Mon); Amber feedback implementation
 
 ### Weekly Quick Audit Verdict (Saturday)
 - Verdict: Yellow
@@ -233,11 +233,95 @@ Score each signal: `0` good, `1` watch, `2` problem.
 - Scope freeze needed this week: no
 
 ### Next Week Plan (Week of 2026-03-23)
-- Must-ship: Fire HD readability sanity pass when tablet available
-- Monday (Deep Build): Fire HD pass if tablet ready; else highest-impact Phase 1 task
-- Tuesday (Deep Build): continue Phase 1 or Fire HD pass
-- Wednesday (Design/Planning): per tracker
-- Thursday (Deep Build): per tracker
-- Friday (Community/Business): KPI + one community post + monetization check
-- Saturday: weekly audit + next week lock
+- Must-ship: Floor vs carpet fix (Mon); Amber feedback implementation
+- Monday (Deep Build): Floor vs carpet fix — k_grade_content.json + k_phonics_audio_scripts.json; mark done in AMBER_FEEDBACK_BACKLOG. If time: plan tutorial read-aloud.
+- Tuesday (Deep Build): More colors/decorations pass — quest cards or home headers. If time: wire math stickers.
+- Wednesday (Design/Planning): Libby personalization discussion — graduation message, Star Mail from family, EAS Update. Off-peak: Lore Bible sprint.
+- Thursday (Deep Build): Math stickers wire OR lint fix OR Phase 1 dead code audit. One verified increment.
+- Friday (Community/Business): KPI update + one community post + monetization check (deferred from last week).
+- Saturday: Weekly audit, lock next week plan. Optional: Lore Bible if not done Wed.
+
+---
+
+## Week Of: 2026-03-23 (Next Week)
+
+### Planned Availability
+- Monday: 4-5 hours
+- Tuesday: 4-5 hours
+- Wednesday: 4-5 hours
+- Thursday: 4-5 hours
+- Friday: 4-5 hours
+- Saturday: 1-2 hours (30-min review + optional flex)
+- Sunday: 0-1 hours (optional/rest)
+
+### Weekly Capacity Targets
+- Weekday planned total (Mon-Fri): 20 hours
+- Weekday actual total (Mon-Fri):
+- Weekday variance hours:
+- Weekday variance percent:
+- Weekly target band check (20+ weekday hours): pass/fail
+
+### Daily Plan (Before Week Starts)
+- Monday (Deep Build): Floor vs carpet fix — k_grade_content.json, k_phonics_audio_scripts.json; mark done in AMBER_FEEDBACK_BACKLOG. If time: plan tutorial read-aloud.
+- Tuesday (Deep Build): More colors/decorations pass. If time: wire math stickers.
+- Wednesday (Design/Planning): Libby personalization discussion; Lore Bible sprint (off-peak option).
+- Thursday (Deep Build): Math stickers OR lint fix OR dead code audit — one verified increment.
+- Friday (Community/Business): KPI + community post + monetization check.
+- Saturday (Review/Planning + Flex): Weekly audit, next week lock.
+- Sunday (Optional/Rest): rest; optional backlog cleanup
+
+### Daily Actuals (Fill After Each Day)
+- Monday:
+  - Planned hours: 4-5
+  - Actual hours:
+  - Tasks planned: Floor vs carpet fix
+  - Tasks done:
+  - Carry-forward:
+- Tuesday:
+  - Planned hours: 4-5
+  - Actual hours:
+  - Tasks planned: More colors pass
+  - Tasks done:
+  - Carry-forward:
+- Wednesday:
+  - Planned hours: 4-5
+  - Actual hours:
+  - Tasks planned: Libby personalization; Lore Bible option
+  - Tasks done:
+  - Carry-forward:
+- Thursday:
+  - Planned hours: 4-5
+  - Actual hours:
+  - Tasks planned: Math stickers or lint or dead code audit
+  - Tasks done:
+  - Carry-forward:
+- Friday:
+  - Planned hours: 4-5
+  - Actual hours:
+  - Tasks planned: KPI, community post, monetization
+  - Tasks done:
+  - Carry-forward:
+- Saturday:
+  - Planned hours: 1-2
+  - Actual hours:
+  - Tasks planned: Weekly audit, next week lock
+  - Tasks done:
+  - Carry-forward:
+- Sunday:
+  - Planned hours: 0-1
+  - Actual hours:
+  - Tasks planned: optional
+  - Tasks done:
+  - Carry-forward:
+
+### Weekly Totals
+- Planned hours (all days): 22-27
+- Actual hours (all days):
+- Must-ship item: Floor vs carpet (Mon)
+
+### Weekly Quick Audit Verdict (Saturday)
+- Verdict:
+- Timeline impact:
+- Top 2 behavior issues:
+- Required corrective actions:
 

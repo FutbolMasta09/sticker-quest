@@ -12,6 +12,17 @@
 
 ### TOMORROW SCHEDULE + CARRY-FORWARD
 - **Tomorrow scheduled task:** Implement Amber feedback (floor vs carpet first — quick fix; then plan tutorial read-aloud + more colors).
+
+---
+
+## [2026-03-21j] Session: Next week daily plan locked
+**Status:** Completed — docs only.
+
+**One-line summary:** Week of 2026-03-23 daily plan added to WEEKLY_EXECUTION_TRACKER.
+
+### WHAT CHANGED
+1. **`docs/WEEKLY_EXECUTION_TRACKER.md`** — Next Week Plan (2026-03-23) expanded with full daily objectives per plan. New Week Of 2026-03-23 block added with Planned Availability, Daily Plan, Daily Actuals template, Weekly Totals.
+2. **Next week must-ship:** Floor vs carpet fix (Mon); Amber feedback implementation.
 - **Carry-forward from today:** None. All logged.
 - **Work-ahead status:** On-plan. Fire HD pass done ahead of next week.
 - **Tomorrow sync tasks:** Entry checklist; pick first Amber feedback item to implement.
