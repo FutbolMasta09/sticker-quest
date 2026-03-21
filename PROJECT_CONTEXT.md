@@ -482,14 +482,9 @@ It does NOT compete with or interrupt any Sticker Quest phase work.
 - **Full game design document:** See `GAME_DESIGN.md` in this repo.
 
 The next project is: **The Anchor's Desk** — a text-based roguelike set in the Inkborne Universe.
-Platform: PC via Steam. Engine: Godot. Core mechanic: document redaction.
+Platform: PC via Steam. Engine: Godot. Core mechanic: document redaction. **100% confirmed next.**
 
-**⚠️ OPEN DECISION (discuss first session after Sticker Quest Sept 2026 launch):**
-There are now two Inkborne project paths competing for post-launch priority:
-1. **inkborne-native** — React Native/Expo AI text adventure, Stage 5 of 6 complete, working on iOS/Android. Ongoing API costs per player.
-2. **The Anchor's Desk** — PC/Steam roguelike in Godot, not yet built, one-time purchase model, no per-play API costs.
-Both are in the Inkborne universe. A dedicated session is needed to pick the lead project before any build work begins.
-Full analysis in `docs/INKBORNE_AUDIT_2026_03_18.md`.
+**Future Projects Pool:** Inkborne native, Field Guide, Chronicle Rift, Ashen Compact — all in `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`. Compare and pick next when Anchor's Desk hits vertical slice. Planning rhythm: one in production, one in pre-production.
 
 **UNIVERSE STRATEGY (locked 2026-03-18):**
 Inkborne is an expandable Universe OS — not a single game. One set of core laws, modular lore packs, project-specific story layers. Multiple games, stories, and formats can share the world.
@@ -505,9 +500,7 @@ Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypot
 1. **`docs/UNIVERSE_PROTECTION_FRAMEWORK.md`** — cross-project legal/ethical baseline (IP safety, AI disclosure, data policy, business protection gates)
 2. **`docs/UNIVERSE_GOVERNANCE_SPEC.md`** — canon tiers, lore registry format, contradiction policy, project inheritance model
 
-**Post–K flagship sequence (locked intent):** See **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Anchor's Desk first; Inkborne native after revisit conditions; Field Guide in the three-way decision after Native. Native platform/monetization reviewed at green-light.
-
-**Chronicle Rift — deferred.** Deckbuilding roguelite (Godot 4); placement TBD at post–Anchor's Desk review. Design-only during SQ; build deferred. Full audit: `docs/GDD_AUDIT_Chronicle_Rift_2026-03-21.md`.
+**Post–K flagship sequence (locked intent):** See **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Anchor's Desk next; then pool decision per **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`**.
 
 **Cross-repo pointers:** `docs/REPO_INDEX.md` | **Code documentation strategy:** `docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md`
 

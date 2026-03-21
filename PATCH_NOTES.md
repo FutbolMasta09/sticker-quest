@@ -1,3 +1,20 @@
+## [2026-03-21h] Session: Anchor's Desk 100% next; pool consolidated; planning rhythm locked
+**Status:** Completed — docs only.
+
+**One-line summary:** Anchor's Desk confirmed next; Inkborne native, Field Guide, Chronicle Rift, Ashen Compact moved to Future Projects Pool; planning rhythm added (vertical slice → pool comparison → pre-production).
+
+### WHAT CHANGED
+1. **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Simplified to SQ → Anchor's Desk (100%) → pool. All other projects now in masterlist.
+2. **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`** — Rewrite: pool table (Native, Field Guide, Chronicle Rift, Ashen Compact); Inkborne Native special passion-project note; planning rhythm (when vertical slice → 2–4 week planning window → pick next); decision trigger.
+3. **`PROJECT_CONTEXT.md`** — Open Decision resolved; points to lock + masterlist; Chronicle Rift folded into pool.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Saturday scheduled task:** Entry checklist (4c/4d), Lore Bible sprint surface, weekly audit.
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan.
+
+---
+
 ## [2026-03-21g] Session: Chronicle Rift follow-up + exit (laptop)
 **Status:** Completed — docs only.
 

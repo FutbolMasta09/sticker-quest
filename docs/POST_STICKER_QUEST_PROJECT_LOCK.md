@@ -1,6 +1,6 @@
 ---
 title: Post–Sticker Quest project sequence (LOCKED INTENT)
-status: Locked 2026-03-20 — Ryan + collaborator agreement
+status: Locked 2026-03-21 — Anchor's Desk confirmed next; pool moved to masterlist
 review_trigger: Sticker Quest K private gift shipped OR Anchor's Desk V1 shipped (whichever forces first revision)
 ---
 
@@ -9,9 +9,9 @@ review_trigger: Sticker Quest K private gift shipped OR Anchor's Desk V1 shipped
 ## North star (why this order)
 
 1. **Protect Sticker Quest through K → G1–G3** — hours and headspace stay available for grade releases after Libby's K launch.
-2. **Prefer a finite first ship** after K — bounded scope, clearer milestone psychology.
-3. **Defer the heaviest ongoing product** (runtime AI + mobile ops) until we can **fund it** and **message it** without fighting parallel flagship work.
-4. **Anchor's Desk is arguably more sellable today** — PC / Steam, noir hook, no "AI slop" stigma for players if V 1 stays hand‑authored; fits current market readability.
+2. **Anchor's Desk is 100% the next flagship** — bounded scope, finite ship, Godot/Steam. No ambiguity.
+3. **All other projects live in the Future Projects Pool** — Inkborne native, Field Guide, Chronicle Rift, Ashen Compact. They get a fair shot when the time is right.
+4. **Production + pre-production cycle** — when the current flagship hits vertical slice, planning begins for the next. See `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`.
 
 ---
 
@@ -20,44 +20,29 @@ review_trigger: Sticker Quest K private gift shipped OR Anchor's Desk V1 shipped
 | Phase | Project | Notes |
 |-------|---------|--------|
 | **Now → Sept 2026 (target)** | **Sticker Quest** | Primary. K private gift; Phases 1–3 as already planned. |
-| **Next flagship build (after K stable)** | **The Anchor's Desk** | Lead Inkborne **ship** track: Godot, Steam, V1 per `GAME_DESIGN.md`. |
-| **Then** | **Inkborne native** (working title TBD) | Passion / high‑ambition flagship — **only after** revisit conditions below. |
-| **Then (decision, not assumed)** | **Inkborne: Field Guide** (monster collecting) *or* continue expanding whichever universe product has clearest traction | **Three‑way choice:** Native follow‑through vs Field Guide vs deliberate pause — see below. |
+| **Next flagship build (after K stable)** | **The Anchor's Desk** | 100% confirmed. Godot, Steam, V1 per `GAME_DESIGN.md`. |
+| **Then (from pool)** | **Future Projects Pool** | Compare candidates; pick next. See `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`. |
 
-**Frozen until revised:** No new Inkborne **repo** or **public flagship commitment** displaces Sticker Quest before K gift is in Libby's hands.
-
----
-
-## Conditions to **revisit** and **start** Inkborne native as lead
-
-Native may move up **only if all** of these are true (or Ryan explicitly revises this doc):
-
-1. **Bandwidth:** Sticker Quest K is stable enough that weekly capacity exists **without** slipping G1–G3 milestones Ryan commits to.
-2. **Money:** A written **API + infra budget** exists (monthly ceiling + model tier plan); not "we'll figure it out when it hurts."
-3. **Security / trust:** Client holds **no** production API keys; proxy (e.g. Supabase Edge) + rate limits are **shipped** before widened beta (see `docs/INKBORNE_AUDIT_2026_03_18.md`).
-4. **Positioning:** Player‑facing copy and feature set answer "why AI" without over‑claiming; moderation path is defined.
-5. **Platform / monetization review (required):** Before green‑lighting Native build, run a **deliberate platform pass** — **mobile may or may not** remain the target; alternatives (PC, web, hybrid) are in scope for analysis. **No default** that "because it's Expo it must stay mobile forever."
+**Frozen until revised:** No new flagship commitment displaces Sticker Quest before K gift is in Libby's hands. Anchor's Desk is locked as next.
 
 ---
 
-## After Native: three‑way decision (do not forget Field Guide)
+## Where the pool lives
 
-When Native reaches **"ship or stop"** clarity, schedule a **single decision session** that compares:
+All deferred projects — Inkborne native, Inkborne: Field Guide, Chronicle Rift, The Ashen Compact — are tracked in `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`.
 
-| Candidate | Doc anchor |
-|-----------|------------|
-| **Continue / double down on Native** | `docs/INKBORNE_AUDIT_2026_03_18.md` + live repo |
-| **Inkborne: Field Guide** (monster collecting) | `docs/INKBORNE_MONSTER_GAME_DESIGN.md` |
-| **Pause / mothball / sell differently** | Honest option if metrics or energy don't support a third flagship |
-
-**Rule:** Field Guide is **not** auto‑third; it **competes** on interest, sellability, and available Godot/engine bandwidth after Anchor + Native outcomes are known.
+That doc defines:
+- Pool table with maturity, constraints, and notes
+- Inkborne native special status (passion project; do when capabilities allow)
+- **Planning rhythm:** when to start planning the next project during the current build
+- Decision trigger and comparison process
 
 ---
 
 ## Explicit deferrals (still important)
 
 - **Governance:** `docs/UNIVERSE_PROTECTION_FRAMEWORK.md` + `docs/UNIVERSE_GOVERNANCE_SPEC.md` apply to all tracks.
-- **Native platform:** Reopen mobile vs other **at Native green‑light**, not before.
+- **Inkborne native conditions:** When Native is selected from the pool, the conditions in `docs/INKBORNE_AUDIT_2026_03_18.md` apply (API budget, security, platform review). See masterlist for details.
 
 ---
 
@@ -66,4 +51,4 @@ When Native reaches **"ship or stop"** clarity, schedule a **single decision ses
 - Edit this file with **date + one sentence reason**.
 - Mirror a one‑line link in `PROJECT_CONTEXT.md` under Parallel Track if direction changes.
 
-*Last updated: 2026-03-20*
+*Last updated: 2026-03-21*
