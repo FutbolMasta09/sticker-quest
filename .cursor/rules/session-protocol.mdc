@@ -53,6 +53,7 @@ Automatic trigger rule:
    - Current week block exists
    - Today's day theme is defined
    - Planned hours for today are set
+   - **Today's planned task** from the Daily Plan (what to do today) — surface this in the briefing
    If missing, set them before starting work.
 
 4b.1 **Daily schedule sync with prior exit (always)**
