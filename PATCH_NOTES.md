@@ -1,4 +1,21 @@
-## [2026-03-21e] Session: Adult ideation pipeline + post–SQ lock advisory (chat; exit)
+## [2026-03-21g] Session: Chronicle Rift follow-up + exit (laptop)
+**Status:** Completed — docs only.
+
+**One-line summary:** Added Chronicle Rift to PROJECT_CONTEXT Parallel Track; appended how-to-proceed and thoughts addendum to audit doc.
+
+### WHAT CHANGED
+1. **`PROJECT_CONTEXT.md`** — Chronicle Rift one-line note under Parallel Track: deferred; placement TBD at post–Anchor's Desk review; link to audit.
+2. **`docs/GDD_AUDIT_Chronicle_Rift_2026-03-21.md`** — Addendum: how to proceed (design-only now, sequencing session at Anchor's Desk milestone), thoughts on Chronicle Rift (strengths, concerns, bottom line).
+
+### TOMORROW SCHEDULE + CARRY-FORWARD (Saturday)
+- **Saturday scheduled task:** Entry checklist (4c/4d), Lore Bible sprint surface first, then weekly audit + next week planning.
+- **Carry-forward from today:** None. Chronicle Rift is documented; Lore Bible sprint ready for off-peak.
+- **Work-ahead status:** On-plan.
+- **Saturday sync tasks:** Run full entry checklist in new chat; 4d.1 will surface Lore Bible; complete weekly quick audit before optional design work.
+
+---
+
+## [2026-03-21e-desktop] Session: Adult ideation pipeline + post–SQ lock advisory (desktop)
 **Status:** Completed — advisory only until this log entry.
 
 ### WHAT CHANGED
@@ -69,6 +86,33 @@
 - **Tomorrow scheduled task:** Per weekly tracker / prior exit plan.
 - **Carry-forward from today:** None for Ashen Compact unless Ryan wants a second draft pass on the bible.
 - **Work-ahead status:** N/A (documentation only).
+
+---
+
+## [2026-03-21f] Session: Chronicle Rift GDD audit
+**Status:** Completed — docs only.
+
+**One-line summary:** Added GDD audit for Chronicle Rift — Anchor’s Desk stays next after Sticker Quest K; Chronicle Rift stays design-only during SQ; production build deferred until post–Anchor’s Desk or explicit reprioritization.
+
+### WHAT CHANGED
+1. **`docs/GDD_AUDIT_Chronicle_Rift_2026-03-21.md`** — Full audit vs. PROJECT_CONTEXT, POST_STICKER_QUEST_PROJECT_LOCK, ROADMAP_TIMELINE: now vs. later, timing, fit, risks, placement (Anchor’s Desk remains next; CR design-only during SQ; build deferred).
+
+---
+
+## [2026-03-21e] Session: Lore Bible sprint ready + Saturday protocol + GDD audit directions
+**Status:** Completed — docs + rules only.
+
+### WHAT CHANGED
+1. **`docs/LORE_BIBLE_SPRINT_READY.md`** — Source path, extraction section, five gaps, sprint protocol. Blocks cleared.
+2. **`PENDING_SPRINTS.md`** — Lore Bible added; target: off-peak this week when possible.
+3. **`.cursor/rules/session-protocol.mdc`** — **4d.1 Saturday Lore Bible surface:** When Saturday, surface Lore Bible sprint as top design task.
+4. **`docs/GAME_DESIGN_DOCUMENT_AUDIT_DIRECTIONS.md`** — Step-by-step: model (Opus), mode (Plan), context to attach, prompt, output location, follow-up.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** If Saturday: entry checklist (4c/4d), Lore Bible sprint surface, then GDD audit when ready.
+- **Carry-forward from today:** Lore Bible sprint — run off-peak this week when possible. After that: GDD audit per `docs/GAME_DESIGN_DOCUMENT_AUDIT_DIRECTIONS.md` (attach GDD, use Opus + Plan, save audit to docs/).
+- **Work-ahead status:** On-plan.
+- **Tomorrow sync tasks:** Entry checklist; if Saturday, 4d.1 surfaces Lore Bible; then GDD audit directions for the document Ryan will show.
 
 ---
 

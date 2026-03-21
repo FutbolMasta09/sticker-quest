@@ -82,6 +82,9 @@ Automatic trigger rule:
    6. Decide optional Saturday flex mode after planning: catch-up, work-ahead, or rest
    7. Confirm family-time priority before doing any optional Saturday work
 
+4d.1 **Saturday — Lore Bible sprint surface**
+   If today is Saturday: Surface the **Inkborne Lore Bible** sprint as the top off-peak design task. Target: run this week when possible. Say: "Lore Bible sprint is ready — ~30–45 min on claude.ai with Opus. See `docs/LORE_BIBLE_SPRINT_READY.md`. Want to run it today or slot it for later this week?" Include in the 3-line briefing or next-options.
+
 4e. **Cursor model doc refresh (when billing reset)**
    Open `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` and check the **Billing cycle reset date**.
    If **today's date matches or has passed** that date: refresh the Usage status table (mark all models usable, clear exhausted notes), update the **Next reset** field with the new cycle date from the [Cursor dashboard](https://cursor.com/dashboard/usage), and note the refresh in `PATCH_NOTES.md`.

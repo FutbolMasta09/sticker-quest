@@ -507,6 +507,8 @@ Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypot
 
 **Post–K flagship sequence (locked intent):** See **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Anchor's Desk first; Inkborne native after revisit conditions; Field Guide in the three-way decision after Native. Native platform/monetization reviewed at green-light.
 
+**Chronicle Rift — deferred.** Deckbuilding roguelite (Godot 4); placement TBD at post–Anchor's Desk review. Design-only during SQ; build deferred. Full audit: `docs/GDD_AUDIT_Chronicle_Rift_2026-03-21.md`.
+
 **Cross-repo pointers:** `docs/REPO_INDEX.md` | **Code documentation strategy:** `docs/CROSS_PROJECT_CODE_MAP_STRATEGY.md`
 
 ### One-time kickoff checklist (when Anchor's Desk repo starts)

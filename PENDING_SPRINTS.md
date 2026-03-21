@@ -12,8 +12,17 @@ Checked automatically at the start of every off-peak session.
 
 ## QUEUE (Run These Next — In Priority Order)
 
-**Next off-peak (Ryan’s pick after March 20 session):** Parent Onboarding Copy sprint below.
+**Next off-peak (Ryan’s pick after March 20 session):** Parent Onboarding Copy or Inkborne Lore Bible (see docs/LORE_BIBLE_SPRINT_READY.md).
 
+
+### 4. Inkborne Lore Bible (LORE_BIBLE_V2.md)
+**Priority:** MEDIUM — design track, unblocks future Inkborne work
+**Target:** Off-peak this week when possible. Saturday session: surface first.
+**Estimated time:** ~30–45 minutes on claude.ai (Opus, off-peak 2x)
+**Prompt:** See `docs/LORE_BIBLE_SPRINT_READY.md` — extract from CLAUDE.md, fill five gaps, add tone guide
+**Output format:** Markdown document, save to `docs/LORE_BIBLE_V2.md`
+**Source:** `inkborne-import-full/Inkborne App/CLAUDE.md` (World Lore section)
+**Added:** 2026-03-21
 
 ### 5. Parent Onboarding Copy
 **Priority:** LOW — needed for Phase 4 public launch, not urgent
