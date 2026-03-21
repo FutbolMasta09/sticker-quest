@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>3-Horizon Expansion — Top 5</title></head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent;padding:1rem 0;color:var(--color-text-primary,#111);line-height:1.7}
+
+.page-header{padding:0 0 1.25rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);margin-bottom:1.5rem}
+.page-eyebrow{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary,#999);margin-bottom:.4rem}
+.page-title{font-size:22px;font-weight:500;margin-bottom:.5rem}
+.page-note{font-size:12px;color:var(--color-text-secondary,#666);line-height:1.6;max-width:660px}
+
+/* Idea selector */
+.idea-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
+.idea-btn{background:none;border:0.5px solid var(--color-border-secondary,#ccc);border-radius:var(--border-radius-md,8px);padding:6px 14px;font-size:12px;cursor:pointer;color:var(--color-text-secondary,#666);transition:all .15s;text-align:left}
+.idea-btn:hover{border-color:var(--color-border-primary,#aaa);color:var(--color-text-primary,#111)}
+.idea-btn.active{background:var(--color-text-primary,#111);color:var(--color-background-primary,#fff);border-color:var(--color-text-primary,#111)}
+.idea-btn .btn-rank{font-size:10px;opacity:.65;display:block;margin-bottom:1px}
+.idea-btn .btn-name{font-weight:500;display:block;font-size:13px}
+
+.idea-panel{display:none}.idea-panel.active{display:block}
+
+/* Horizon layout */
+.horizon-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
+@media(max-width:800px){.horizon-grid{grid-template-columns:1fr}}
+
+.h-card{border-radius:var(--border-radius-lg,12px);border:0.5px solid var(--color-border-tertiary,#e0e0e0);background:var(--color-background-primary,#fff);overflow:hidden}
+.h-card-header{padding:.875rem 1rem .75rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.h-horizon-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.h1-label{color:#0F6E56}.h2-label{color:#854F0B}.h3-label{color:#3C3489}
+.h-card-title{font-size:14px;font-weight:500}
+.h-card-sub{font-size:11px;color:var(--color-text-tertiary,#999);margin-top:2px}
+.h-card-body{padding:.875rem 1rem}
+.h1-border{border-top:3px solid #1D9E75}
+.h2-border{border-top:3px solid #EF9F27}
+.h3-border{border-top:3px solid #7F77DD}
+
+/* Sections inside card */
+.h-section{margin-bottom:.875rem}
+.h-section:last-child{margin-bottom:0}
+.h-sec-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:.4rem}
+.h-sec-body{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.65}
+.h-list{list-style:none;padding:0}
+.h-list li{font-size:12px;color:var(--color-text-secondary,#555);padding:3px 0;line-height:1.55;display:flex;gap:6px;align-items:flex-start}
+.h-li-dot{flex-shrink:0;color:var(--color-text-tertiary,#999);padding-top:2px;font-size:10px}
+.h-leave-out li .h-li-dot{color:#A32D2D}
+.h-upgrade li .h-li-dot{color:#1D9E75}
+.h-risk li .h-li-dot{color:#BA7517}
+
+/* Badges inline */
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;letter-spacing:.02em;vertical-align:middle;white-space:nowrap}
+.b-h1{background:#E1F5EE;color:#0F6E56}
+.b-h2{background:#FAEEDA;color:#633806}
+.b-h3{background:#EEEDFE;color:#3C3489}
+.b-warn{background:#FCEBEB;color:#501313}
+.b-game{background:#EEEDFE;color:#3C3489}
+.b-tool{background:#E6F1FB;color:#0C447C}
+.b-flag{background:#FCEBEB;color:#501313}
+
+/* Triggers + connectors row */
+.trigger-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
+@media(max-width:600px){.trigger-row{grid-template-columns:1fr}}
+.trigger-card{background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.75rem 1rem;border:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.trig-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:.4rem}
+.trig-body{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.trig-budget{font-size:11px;color:var(--color-text-secondary,#555);margin-top:.35rem;padding-top:.35rem;border-top:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.trig-budget b{font-weight:500;color:var(--color-text-primary,#111)}
+
+/* Bottom row */
+.bottom-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.5rem}
+@media(max-width:700px){.bottom-row{grid-template-columns:1fr}}
+.bot-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.75rem 1rem}
+.bot-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:.4rem}
+.bot-body{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.bot-warn{background:#FCEBEB;border-left:3px solid #E24B4A}
+.bot-descope{background:#FAEEDA;border-left:3px solid #EF9F27}
+.bot-market{background:#E1F5EE;border-left:3px solid #1D9E75}
+.bot-label-red{color:#993C1D}.bot-label-amber{color:#854F0B}.bot-label-green{color:#0F6E56}
+
+/* Moonshot cap banner */
+.moonshot-banner{background:#EEEDFE;border-radius:var(--border-radius-md,8px);padding:.625rem 1rem;font-size:12px;color:#3C3489;margin-bottom:1.25rem;line-height:1.6}
+.moonshot-banner b{font-weight:500}
+
+/* Idea header strip */
+.idea-strip{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.idea-strip-left{}
+.idea-strip-rank{font-size:11px;color:var(--color-text-tertiary,#999);margin-bottom:2px}
+.idea-strip-name{font-size:20px;font-weight:500}
+.idea-strip-right{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+
+/* Skills pill list */
+.skills-list{display:flex;gap:5px;flex-wrap:wrap;margin-top:.4rem}
+.skill-pill{background:var(--color-background-secondary,#f5f5f5);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:3px;padding:2px 8px;font-size:11px;color:var(--color-text-secondary,#555)}
+
+/* Roles for H3 */
+.roles-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:.4rem}
+.role-pill{background:#EEEDFE;border-radius:3px;padding:2px 8px;font-size:11px;color:#3C3489;font-weight:500}
+</style>
+
+<div class="page-header">
+  <div class="page-eyebrow">3-Horizon Expansion · Post-Market Top 5</div>
+  <div class="page-title">Where each idea can go</div>
+  <div class="page-note">H1 = build now, solo, low budget. H2 = after shipping H1, with expanded skills and moderate spend. H3 = moonshot, small team, better funding. Five moonshots total across the portfolio — one per idea, used deliberately.</div>
+</div>
+
+<div class="idea-nav" id="idea-nav">
+  <button class="idea-btn active" data-idea="0"><span class="btn-rank">Post-market #1 · 4.79</span><span class="btn-name">Prompt Forge</span></button>
+  <button class="idea-btn" data-idea="1"><span class="btn-rank">Post-market #2 · 4.62</span><span class="btn-name">Time Loop Inbox</span></button>
+  <button class="idea-btn" data-idea="2"><span class="btn-rank">Post-market #3 · 4.57</span><span class="btn-name">Inventory Oracle</span></button>
+  <button class="idea-btn" data-idea="3"><span class="btn-rank">Post-market #4 · 4.57</span><span class="btn-name">Mythwright</span></button>
+  <button class="idea-btn" data-idea="4"><span class="btn-rank">Post-market #5 · 4.57 ⚑</span><span class="btn-name">Voice Dungeon Master</span></button>
+</div>
+
+<!-- ─── IDEA 0: PROMPT FORGE ─── -->
+<div class="idea-panel active" id="idea-0">
+  <div class="idea-strip">
+    <div class="idea-strip-left">
+      <div class="idea-strip-rank">Post-market #1 · Final score 4.79 · Tool</div>
+      <div class="idea-strip-name">Prompt Forge</div>
+    </div>
+    <div class="idea-strip-right">
+      <span class="badge b-tool">Tool</span>
+      <span class="badge b-h1">Build Now</span>
+      <span class="badge" style="background:#EAF3DE;color:#3B6D11">No asset deps</span>
+    </div>
+  </div>
+
+  <div class="moonshot-banner"><b>Moonshot 1 of 5:</b> From personal workbench to the default prompt testing layer for indie AI builders — a niche platform that compounds in value the longer you use it.</div>
+
+  <div class="horizon-grid">
+    <div class="h-card h1-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h1-label">H1 — Build Now</div>
+        <div class="h-card-title">Personal Prompt Workbench</div>
+        <div class="h-card-sub">1–2 weeks · solo · $0</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Minimum lovable version</div>
+          <div class="h-sec-body">Prompt input → Claude API call → output display → manual rubric scoring (1–5 per criterion) → one-click save to localStorage → library list with tag filter and score sort. Nothing more.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Leave out</div>
+          <ul class="h-list h-leave-out">
+            <li><span class="h-li-dot">✕</span>Side-by-side variant comparison</li>
+            <li><span class="h-li-dot">✕</span>Prompt versioning or history</li>
+            <li><span class="h-li-dot">✕</span>AI-suggested rewrites</li>
+            <li><span class="h-li-dot">✕</span>Export, sharing, or any cloud sync</li>
+            <li><span class="h-li-dot">✕</span>Any analytics or score charts</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Done when</div>
+          <div class="h-sec-body">You have saved 10 real prompts and loaded at least 3 of them back into the runner to improve them. That behavior is the product — not the code.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h2-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h2-label">H2 — Scale Later</div>
+        <div class="h-card-title">Prompt Lab</div>
+        <div class="h-card-sub">After H1 ships · moderate skills · low budget</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">3 upgrades</div>
+          <ul class="h-list h-upgrade">
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Variant runner.</b> Run 2–3 prompt variations simultaneously, score each, see diffs. The rubric finally earns its weight as a comparison tool.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">AI-suggested rewrite.</b> After scoring, ask Claude to propose a rewrite targeting the lowest-scoring criteria. Meta-layer on top of the base loop.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Supabase sync.</b> Cross-device persistence. Only necessary when the library is large enough to be painful to lose — and you'll know when that is.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">New risks</div>
+          <ul class="h-list h-risk">
+            <li><span class="h-li-dot">!</span>Variant runner adds API cost fast — you're calling Claude 3x per session.</li>
+            <li><span class="h-li-dot">!</span>AI rewrite suggestions may be obvious or circular — test before shipping as a feature.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Skills to gain first</div>
+          <div class="skills-list">
+            <span class="skill-pill">Supabase auth + CRUD</span>
+            <span class="skill-pill">Multi-call state batching</span>
+            <span class="skill-pill">Diff UI rendering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h3-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h3-label">H3 — Moonshot</div>
+        <div class="h-card-title">Forge Platform</div>
+        <div class="h-card-sub">Small team · 6–12 months post-H1</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Vision</div>
+          <div class="h-sec-body">A shared prompt library for indie AI builder teams — with public community rubrics, scored by real users, searchable by use case. Not enterprise. Not a marketplace. The GitHub for prompt iteration.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Roles needed</div>
+          <div class="roles-list">
+            <span class="role-pill">Product designer</span>
+            <span class="role-pill">Backend / Supabase engineer</span>
+            <span class="role-pill">Growth (community)</span>
+          </div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Budget assumption</div>
+          <div class="h-sec-body">$10K–$30K. Primarily API costs, hosting, and part-time design. No marketing budget needed if community seeding works — this audience distributes by word-of-mouth.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Why only later</div>
+          <div class="h-sec-body">The personal tool must prove the rubric mechanic works for one person before it earns the right to serve a community. Build the community on top of a behavior that already exists — not in hope of creating one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trigger-row">
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H1 → H2</div>
+      <div class="trig-body">You have used the tool personally for at least 2 weeks and found yourself wanting to test variants of the same prompt. Not before — H2 is not an upgrade to build speculatively.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> None — H2 is free. <b>People trigger:</b> Still solo.</div>
+    </div>
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H2 → H3</div>
+      <div class="trig-body">At least 2 other people have asked to use the tool after seeing it, and you have evidence they would return after a first use — not just express interest once.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> $5K+ available. <b>People trigger:</b> 1 part-time collaborator committed.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bot-card bot-descope">
+      <div class="bot-label bot-label-amber">De-scope under timeline pressure</div>
+      <div class="bot-body">Cut tag system first — tags are useful but the save + retrieve loop works without them. Cut library sort next. Ship: run → score → save → find.</div>
+    </div>
+    <div class="bot-card bot-warn">
+      <div class="bot-label bot-label-red">Do not start H2 yet if</div>
+      <div class="bot-body">You have not personally used H1 for 10+ sessions. Upgrading a tool you have not validated is building on sand.</div>
+    </div>
+    <div class="bot-card bot-market">
+      <div class="bot-label bot-label-green">Market angle</div>
+      <div class="bot-body">The only personal prompt workbench built around a rubric you define — not a team logger, not a marketplace, not an analytics dashboard.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── IDEA 1: TIME LOOP INBOX ─── -->
+<div class="idea-panel" id="idea-1">
+  <div class="idea-strip">
+    <div class="idea-strip-left">
+      <div class="idea-strip-rank">Post-market #2 · Final score 4.62 · Game · Tier 2</div>
+      <div class="idea-strip-name">Time Loop Inbox</div>
+    </div>
+    <div class="idea-strip-right">
+      <span class="badge b-game">Game</span>
+      <span class="badge b-h1">Build Now</span>
+      <span class="badge" style="background:#EEEDFE;color:#3C3489">Edge 5/5</span>
+    </div>
+  </div>
+
+  <div class="moonshot-banner"><b>Moonshot 2 of 5:</b> A puzzle anthology platform built around the loop-inbox mechanic — curated mystery episodes sold or subscribed to, with a creator mode for writers to build puzzles without code.</div>
+
+  <div class="horizon-grid">
+    <div class="h-card h1-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h1-label">H1 — Build Now</div>
+        <div class="h-card-title">The First Loop</div>
+        <div class="h-card-sub">1–2 weeks · solo · $0</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Minimum lovable version</div>
+          <div class="h-sec-body">One complete 3-loop puzzle. Static deterministic clues hardcoded per loop — AI only generates flavor email threads, not the core clues. Loop counter, reset mechanic, and a single satisfying reveal screen on solve.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Leave out</div>
+          <ul class="h-list h-leave-out">
+            <li><span class="h-li-dot">✕</span>Multiple puzzle scenarios in v1 — one well-crafted puzzle is enough</li>
+            <li><span class="h-li-dot">✕</span>AI-generated core clues — only flavor text via AI; clues must be locked</li>
+            <li><span class="h-li-dot">✕</span>Hint system — validate solvability without crutches first</li>
+            <li><span class="h-li-dot">✕</span>Any account system or cross-device state</li>
+            <li><span class="h-li-dot">✕</span>Timer or scoring system</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Done when</div>
+          <div class="h-sec-body">3 people who did not build it can solve the puzzle without asking you for hints. Not before.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h2-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h2-label">H2 — Scale Later</div>
+        <div class="h-card-title">Loop Archive</div>
+        <div class="h-card-sub">After H1 validated · low-moderate budget</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">3 upgrades</div>
+          <ul class="h-list h-upgrade">
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Puzzle anthology — 5 cases.</b> Each with a different workplace setting and a distinct loop mechanic variation (more loops, branching clue paths, one red herring loop).</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Tiered hint system.</b> 3 hints per puzzle, gated by loop count. Only add after you know players are stuck — not before you know where they get stuck.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Supabase solve tracking.</b> Which puzzles are solved, average loops used, where people give up. This data drives which cases get built next.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">New risks</div>
+          <ul class="h-list h-risk">
+            <li><span class="h-li-dot">!</span>Each new puzzle requires its own clue graph — non-trivial design time, not just writing.</li>
+            <li><span class="h-li-dot">!</span>Players may expect consistent puzzle quality across cases — one weak case damages all of them.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Skills to gain first</div>
+          <div class="skills-list">
+            <span class="skill-pill">Supabase basic tables</span>
+            <span class="skill-pill">Puzzle clue graph design</span>
+            <span class="skill-pill">Playtest methodology</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h3-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h3-label">H3 — Moonshot</div>
+        <div class="h-card-title">Loop Engine Platform</div>
+        <div class="h-card-sub">Small team · 12+ months post-H1</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Vision</div>
+          <div class="h-sec-body">A creator toolkit that lets mystery writers build loop-inbox puzzles without code — a no-code puzzle authoring tool plus a player storefront. Writers publish cases; players subscribe or pay per case.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Roles needed</div>
+          <div class="roles-list">
+            <span class="role-pill">Puzzle designer / writer</span>
+            <span class="role-pill">Platform engineer</span>
+            <span class="role-pill">Creator community lead</span>
+          </div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Budget assumption</div>
+          <div class="h-sec-body">$20K–$50K. Creator tooling is expensive to build right. Revenue potential is real (subscription tiers) but requires a catalog of quality cases first — at least 10 before a storefront is credible.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Why only later</div>
+          <div class="h-sec-body">A creator platform with no proven player audience is a field with no farmers. Prove players exist and return before building tools for writers who serve them.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trigger-row">
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H1 → H2</div>
+      <div class="trig-body">At least 20 players have solved the first puzzle and at least 5 of them asked "is there another one?" That question, unprompted, is the only valid trigger.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> None — H2 is design time, not cash. <b>People trigger:</b> Solo still.</div>
+    </div>
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H2 → H3</div>
+      <div class="trig-body">5-case archive has a measurable return-player rate above 40%, and at least 2 writers have asked how they could submit their own puzzles.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> $10K+ available or a revenue model validated. <b>People trigger:</b> 1 puzzle writer + 1 engineer.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bot-card bot-descope">
+      <div class="bot-label bot-label-amber">De-scope under timeline pressure</div>
+      <div class="bot-body">Cut all AI content generation from H1. Fully static hardcoded puzzle. Ship the mechanic, not the content pipeline. Add AI flavor emails only in H2.</div>
+    </div>
+    <div class="bot-card bot-warn">
+      <div class="bot-label bot-label-red">Do not start H2 yet if</div>
+      <div class="bot-body">The first puzzle has not been solved successfully by someone other than you. An unvalidated clue graph is not a foundation — it's a debt.</div>
+    </div>
+    <div class="bot-card bot-market">
+      <div class="bot-label bot-label-green">Market angle</div>
+      <div class="bot-body">A mystery game where email threads evolve across time loops — no dialogue, no exploration, no NPCs — the mechanic has no named competitor.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── IDEA 2: INVENTORY ORACLE ─── -->
+<div class="idea-panel" id="idea-2">
+  <div class="idea-strip">
+    <div class="idea-strip-left">
+      <div class="idea-strip-rank">Post-market #3 · Final score 4.57 · Game · Tier 1</div>
+      <div class="idea-strip-name">Inventory Oracle</div>
+    </div>
+    <div class="idea-strip-right">
+      <span class="badge b-game">Game</span>
+      <span class="badge b-h1">Build Now</span>
+      <span class="badge" style="background:#EEEDFE;color:#3C3489">Edge 5/5</span>
+    </div>
+  </div>
+
+  <div class="moonshot-banner"><b>Moonshot 3 of 5:</b> A daily object-deduction puzzle in the Wordle format — one inventory published each day, a single global solve count, designed for adult mystery fans who want a 5-minute mental puzzle with no fluff.</div>
+
+  <div class="horizon-grid">
+    <div class="h-card h1-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h1-label">H1 — Build Now</div>
+        <div class="h-card-title">Proof of Deduction</div>
+        <div class="h-card-sub">1 week · solo · $0</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Minimum lovable version</div>
+          <div class="h-sec-body">5 pre-designed inventory puzzles. Each is 6–10 items shown as a clean list. Player submits a free-text answer (what happened / who is this person). AI scores the answer against a locked solution. Single pass — no loops, no hints.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Leave out</div>
+          <ul class="h-list h-leave-out">
+            <li><span class="h-li-dot">✕</span>AI-generated puzzles — hand-craft every puzzle in v1</li>
+            <li><span class="h-li-dot">✕</span>Difficulty tiers or scoring system</li>
+            <li><span class="h-li-dot">✕</span>Reveal animation or polish</li>
+            <li><span class="h-li-dot">✕</span>Any account or session persistence</li>
+            <li><span class="h-li-dot">✕</span>Share results mechanic</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Done when</div>
+          <div class="h-sec-body">5 hand-crafted puzzles are solvable by someone who did not design them, with AI scoring their answer correctly and fairly. Deduction works or it doesn't — this test answers it.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h2-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h2-label">H2 — Scale Later</div>
+        <div class="h-card-title">Puzzle Archive + Daily Format</div>
+        <div class="h-card-sub">After H1 validated · low budget</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">3 upgrades</div>
+          <ul class="h-list h-upgrade">
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Daily puzzle format.</b> One new inventory per day, date-seeded. Share-result card (no spoilers — just "solved in X guesses"). Wordle distribution of the daily format, applied to deduction.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Difficulty calibration tiers.</b> Beginner (obvious item set), intermediate (ambiguous items), expert (misleading items). Tags per puzzle — player chooses on entry.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">AI-assisted puzzle generation.</b> Claude generates candidate inventory sets from a category seed (e.g. "1940s traveler" or "failed heist"). You review and approve each — AI drafts, you curate.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">New risks</div>
+          <ul class="h-list h-risk">
+            <li><span class="h-li-dot">!</span>Daily format creates a content treadmill — you need 30+ puzzles banked before launching daily.</li>
+            <li><span class="h-li-dot">!</span>AI scoring of free-text answers needs calibration — a harsh scorer kills the fun, a lenient one removes challenge.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Skills to gain first</div>
+          <div class="skills-list">
+            <span class="skill-pill">Date-seeded puzzle delivery</span>
+            <span class="skill-pill">Share card generation</span>
+            <span class="skill-pill">AI answer scoring prompt design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h3-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h3-label">H3 — Moonshot</div>
+        <div class="h-card-title">Object Oracle Daily</div>
+        <div class="h-card-sub">Solo-to-small-team · 12+ months post-H1</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Vision</div>
+          <div class="h-sec-body">A daily deduction puzzle that reaches the Wordle / NYT Games audience — adults who want a brief, satisfying mental exercise. One puzzle per day. Global leaderboard of correct solves. Optional paid archive access for subscribers.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Roles needed</div>
+          <div class="roles-list">
+            <span class="role-pill">Puzzle designer (part-time)</span>
+            <span class="role-pill">Backend for daily delivery</span>
+          </div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Budget assumption</div>
+          <div class="h-sec-body">$5K–$15K. Low infrastructure cost — static daily content plus simple Supabase. Main cost is puzzle curation time and potentially a part-time puzzle writer.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Why only later</div>
+          <div class="h-sec-body">Daily games succeed or fail on puzzle quality sustained over months. The treadmill is punishing. You need a puzzle pipeline that works before you need a daily audience.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trigger-row">
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H1 → H2</div>
+      <div class="trig-body">Players are solving the 5 puzzles AND asking for more — specifically requesting a puzzle they can return to daily. That request, unprompted, is the signal to build the daily format.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> None. <b>People trigger:</b> Solo.</div>
+    </div>
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H2 → H3</div>
+      <div class="trig-body">The daily format has 100+ daily active solvers for at least 2 consecutive weeks — not launch-day traffic. Sustained daily return is the only valid moonshot trigger for this format.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> Evidence of willingness to pay (survey or a single $2 "tip"). <b>People trigger:</b> 1 puzzle writer contracted.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bot-card bot-descope">
+      <div class="bot-label bot-label-amber">De-scope under timeline pressure</div>
+      <div class="bot-body">Cut free-text answers. Use multiple-choice in v1 — 3 options, one correct. Removes AI scoring entirely. Reintroduce free text in H2 once the puzzle quality is proven.</div>
+    </div>
+    <div class="bot-card bot-warn">
+      <div class="bot-label bot-label-red">Do not start H2 yet if</div>
+      <div class="bot-body">You have not validated AI answer scoring works fairly on at least 20 test answers per puzzle. Bad scoring is worse than no scoring — it breaks trust on the first solve.</div>
+    </div>
+    <div class="bot-card bot-market">
+      <div class="bot-label bot-label-green">Market angle</div>
+      <div class="bot-body">A mystery game with no dialogue, no NPCs, no exploration — you read only objects, and you deduce everything. The mechanic has no direct named competitor.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── IDEA 3: MYTHWRIGHT ─── -->
+<div class="idea-panel" id="idea-3">
+  <div class="idea-strip">
+    <div class="idea-strip-left">
+      <div class="idea-strip-rank">Post-market #4 · Final score 4.57 · Tool · Tier 3</div>
+      <div class="idea-strip-name">Mythwright</div>
+    </div>
+    <div class="idea-strip-right">
+      <span class="badge b-tool">Tool</span>
+      <span class="badge" style="background:#FAEEDA;color:#633806">Build Later</span>
+      <span class="badge" style="background:#EEEDFE;color:#3C3489">Edge 4/5</span>
+    </div>
+  </div>
+
+  <div class="moonshot-banner"><b>Moonshot 4 of 5:</b> The first AI-powered worldbuilding platform with a live consistency layer — not a wiki, not a note tool, but an active referee that keeps your world honest as it grows.</div>
+
+  <div class="horizon-grid">
+    <div class="h-card h1-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h1-label">H1 — Build Now</div>
+        <div class="h-card-title">Lore Atlas</div>
+        <div class="h-card-sub">2 weeks · solo · $0 · Tier 2 version</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Minimum lovable version</div>
+          <div class="h-sec-body">Entry form with tag system and free-text fields. On each new submission, AI runs a consistency check against existing entries. Flags potential contradictions inline. All stored in localStorage. No graph — flat list view only.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Leave out</div>
+          <ul class="h-list h-leave-out">
+            <li><span class="h-li-dot">✕</span>D3 relationship graph — add only after 20+ entries prove the flat list is insufficient</li>
+            <li><span class="h-li-dot">✕</span>Collaboration or multi-user features</li>
+            <li><span class="h-li-dot">✕</span>Export to game engine formats</li>
+            <li><span class="h-li-dot">✕</span>Semantic search or embeddings</li>
+            <li><span class="h-li-dot">✕</span>Any visual world map</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Done when</div>
+          <div class="h-sec-body">You or another worldbuilder has added 20+ entries and the AI has caught at least 2 genuine contradictions they didn't notice themselves. That's the product working.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h2-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h2-label">H2 — Scale Later</div>
+        <div class="h-card-title">Mythwright Core</div>
+        <div class="h-card-sub">After H1 validated · low-moderate budget</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">3 upgrades</div>
+          <ul class="h-list h-upgrade">
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">D3 relationship graph.</b> Visualize connections between lore entries — factions, locations, characters, events. The graph becomes navigable with enough entries. Do not add before 20+ entries exist.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Connection suggestions.</b> After adding an entry, AI suggests which existing entries it likely relates to — not just contradiction detection but active link-building.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Supabase + export.</b> Cross-device, persistent, and downloadable as Markdown. The output format writers actually use.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">New risks</div>
+          <ul class="h-list h-risk">
+            <li><span class="h-li-dot">!</span>D3 graph becomes unreadable past 50 nodes without significant layout engineering.</li>
+            <li><span class="h-li-dot">!</span>AI connection suggestions may generate false links that feel authoritative — users may trust them without verification.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Skills to gain first</div>
+          <div class="skills-list">
+            <span class="skill-pill">D3 force graph layout</span>
+            <span class="skill-pill">Supabase row-level security</span>
+            <span class="skill-pill">Markdown export</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h3-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h3-label">H3 — Moonshot</div>
+        <div class="h-card-title">Mythwright Platform</div>
+        <div class="h-card-sub">Small team · 12–18 months post-H1</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Vision</div>
+          <div class="h-sec-body">Multi-user collaborative worldbuilding with an AI referee that tracks consistency across contributors. Each writer sees a live conflict log. Campaign groups, novel co-authors, and game designers pay for team plans.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Roles needed</div>
+          <div class="roles-list">
+            <span class="role-pill">Full-stack engineer</span>
+            <span class="role-pill">Graph UX designer</span>
+            <span class="role-pill">Community (writers/TTRPG)</span>
+          </div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Budget assumption</div>
+          <div class="h-sec-body">$25K–$60K. Real-time collaboration on a lore graph is technically non-trivial. The audience (TTRPG groups, writing communities) is willing to pay for team tools if trust is established first through the solo version.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Why only later</div>
+          <div class="h-sec-body">Collaboration on shared creative documents is a hard product problem — permissions, merge conflicts, trust. Solve it for one person first. The single-user version earns the right to become collaborative.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trigger-row">
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H1 → H2</div>
+      <div class="trig-body">You or another user has built a lore atlas with 20+ entries, used it for an active project, and found yourself wanting to visualize the relationships — not just list them. That friction is the graph's call to exist.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> None. <b>People trigger:</b> Solo; or one writer using it for their own project.</div>
+    </div>
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H2 → H3</div>
+      <div class="trig-body">Multiple writers or a TTRPG group ask whether they can use it together — not whether it could theoretically support collaboration, but that they actually want to right now.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> $10K+ or a paying team willing to fund the feature. <b>People trigger:</b> 1 engineer + 1 design collaborator.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bot-card bot-descope">
+      <div class="bot-label bot-label-amber">De-scope under timeline pressure</div>
+      <div class="bot-body">Cut AI connection suggestions — keep only contradiction detection. One AI function is testable; two competing AI functions are confusing. Build the second only after the first is trusted.</div>
+    </div>
+    <div class="bot-card bot-warn">
+      <div class="bot-label bot-label-red">Do not start yet if</div>
+      <div class="bot-body">You have not shipped Prompt Forge or at least one other tool first. Mythwright is Tier 3 difficulty and requires Supabase and D3 fluency you may not have yet. Build skills before building this.</div>
+    </div>
+    <div class="bot-card bot-market">
+      <div class="bot-label bot-label-green">Market angle</div>
+      <div class="bot-body">An AI consistency referee for worldbuilders — actively flags contradictions as you write, not a passive wiki you manually maintain.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── IDEA 4: VOICE DUNGEON MASTER ─── -->
+<div class="idea-panel" id="idea-4">
+  <div class="idea-strip">
+    <div class="idea-strip-left">
+      <div class="idea-strip-rank">Post-market #5 · Final score 4.57 · Game · Tier 3 · Flagged</div>
+      <div class="idea-strip-name">Voice Dungeon Master</div>
+    </div>
+    <div class="idea-strip-right">
+      <span class="badge b-game">Game</span>
+      <span class="badge" style="background:#FAEEDA;color:#633806">Build Later</span>
+      <span class="badge b-flag">Market flagged</span>
+    </div>
+  </div>
+
+  <div class="moonshot-banner"><b>Moonshot 5 of 5:</b> The first voice-narrated solo TTRPG experience with cross-session memory — a specific fantasy world, a persistent cast, narrated by a distinct AI voice — not a generic AI DM but a named, characterful game product.</div>
+
+  <div class="horizon-grid">
+    <div class="h-card h1-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h1-label">H1 — Build Now</div>
+        <div class="h-card-title">The Text DM (No Voice)</div>
+        <div class="h-card-sub">2 weeks · solo · low cost · text only</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Minimum lovable version</div>
+          <div class="h-sec-body">Text-only GM chat loop in a specific locked world (not generic fantasy). One 3-act adventure structure. Session state saved to localStorage — resume next session exactly where you left off. No voice yet. The persistence is the differentiator, not the voice.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Leave out</div>
+          <ul class="h-list h-leave-out">
+            <li><span class="h-li-dot">✕</span>ElevenLabs voice — validate the narrative and persistence first</li>
+            <li><span class="h-li-dot">✕</span>Character sheets, dice UI, or any TTRPG mechanical layer</li>
+            <li><span class="h-li-dot">✕</span>DALL-E scene images</li>
+            <li><span class="h-li-dot">✕</span>Multiple world settings</li>
+            <li><span class="h-li-dot">✕</span>Any account system</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Done when</div>
+          <div class="h-sec-body">You complete a full 3-act session, save it, close the browser, return the next day, and the GM picks up the narrative without any loss of context. That is the entire v1 promise.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h2-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h2-label">H2 — Scale Later</div>
+        <div class="h-card-title">Voice + World</div>
+        <div class="h-card-sub">After H1 validated · moderate budget · ElevenLabs</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">3 upgrades</div>
+          <ul class="h-list h-upgrade">
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">ElevenLabs narration.</b> One specific narrator voice — not player-selectable in v2. The GM has a voice. This is the differentiating feature that no text-only AI DM can match.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Session recap card.</b> At session start, the GM reads a 3-sentence recap of the last session aloud. Solves the re-entry problem that kills long narrative games.</li>
+            <li><span class="h-li-dot">+</span><b style="font-weight:500">Supabase session history.</b> Cross-device persistence. The campaign travels with you — not locked to one browser on one machine.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">New risks</div>
+          <ul class="h-list h-risk">
+            <li><span class="h-li-dot">!</span>ElevenLabs API cost compounds fast at sustained session use — benchmark cost per session before shipping.</li>
+            <li><span class="h-li-dot">!</span>Context window fills before a long campaign resolves — need a summarization layer to compress old sessions.</li>
+            <li><span class="h-li-dot">!</span>Voice latency may break narrative immersion — acceptable threshold is under 3 seconds per narration block.</li>
+          </ul>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Skills to gain first</div>
+          <div class="skills-list">
+            <span class="skill-pill">ElevenLabs streaming API</span>
+            <span class="skill-pill">Context summarization prompts</span>
+            <span class="skill-pill">Supabase session storage</span>
+            <span class="skill-pill">Cost-per-session tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-card h3-border">
+      <div class="h-card-header">
+        <div class="h-horizon-label h3-label">H3 — Moonshot</div>
+        <div class="h-card-title">Named World Game Product</div>
+        <div class="h-card-sub">Small team · 18+ months post-H1</div>
+      </div>
+      <div class="h-card-body">
+        <div class="h-section">
+          <div class="h-sec-label">Vision</div>
+          <div class="h-sec-body">A named solo TTRPG product set in one specific world — with a distinct narrator voice, a persistent cast of NPCs, and a campaign structure that evolves with your decisions. Sold as a premium product ($15–$30 one-time or $8/month), not a tool.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Roles needed</div>
+          <div class="roles-list">
+            <span class="role-pill">Narrative designer</span>
+            <span class="role-pill">Voice director (ElevenLabs tuning)</span>
+            <span class="role-pill">Backend engineer</span>
+          </div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Budget assumption</div>
+          <div class="h-sec-body">$30K–$80K. ElevenLabs at scale is the primary ongoing cost. Revenue must offset API costs — a subscription model is required, not optional. This is a product business, not a solo side project at this horizon.</div>
+        </div>
+        <div class="h-section">
+          <div class="h-sec-label">Why only later — and the flag is real</div>
+          <div class="h-sec-body">The flagged market risk is not resolved by H3 ambition — it is resolved by sharp world-setting specificity in H1 and H2. A generic AI DM is invisible. A named world with a distinct narrator and a persistent cast is a product. Do not start H3 without that identity locked.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trigger-row">
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H1 → H2</div>
+      <div class="trig-body">You have completed at least 3 sessions across different days, confirmed the persistence works flawlessly, and found that the absence of voice is a genuine frustration rather than an acceptable limitation. That specific frustration is the only valid trigger to add ElevenLabs.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> Budget $20–$50/month for ElevenLabs API during testing. <b>People trigger:</b> Solo.</div>
+    </div>
+    <div class="trigger-card">
+      <div class="trig-label">Trigger: H2 → H3</div>
+      <div class="trig-body">The H2 product has paying users (even at $1) who return weekly, AND you can measure that the specific world-setting is the reason they chose this over other AI narrative tools. Identity confirmation is the trigger — not audience size alone.</div>
+      <div class="trig-budget"><b>Budget trigger:</b> Revenue covering API costs, or $15K+ available. <b>People trigger:</b> 1 narrative designer + 1 engineer.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bot-card bot-descope">
+      <div class="bot-label bot-label-amber">De-scope under timeline pressure</div>
+      <div class="bot-body">Cut the 3-act structure. Ship a single open-ended session with no defined end — just persistent chat with GM memory. One act, unbounded, saved. Structure comes in H2.</div>
+    </div>
+    <div class="bot-card bot-warn">
+      <div class="bot-label bot-label-red">Do not start yet if</div>
+      <div class="bot-body">You have not shipped at least one complete project from the Build Now tier. Voice DM is the most technically and creatively complex item in the top 5. It requires skills this portfolio has not yet proven. Start here last, not first.</div>
+    </div>
+    <div class="bot-card bot-market">
+      <div class="bot-label bot-label-green">Market angle</div>
+      <div class="bot-body">Not a generic AI DM — a specific voiced world with persistent campaign memory. The world name and narrator identity are the product, not the AI underneath it.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('idea-nav').addEventListener('click',e=>{
+  const btn=e.target.closest('.idea-btn');
+  if(!btn) return;
+  const idx=btn.dataset.idea;
+  document.querySelectorAll('.idea-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.idea-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('idea-'+idx).classList.add('active');
+});
+</script>
+</body>
+</html>

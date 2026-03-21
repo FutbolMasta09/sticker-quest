@@ -54,7 +54,6 @@ Gate result:
 5. Re-test prep: run a quick Fire HD sanity pass focused on readability and flow confidence.
 
 Reference files for tonight:
-- `docs/TONIGHT_AMBER_TEST_PACKET.md`
+- `docs/AMBER_RECURRING_TEST_PACKET.md`
 - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
 - `docs/POST_TEST_BRANCH_PLAN.md`
-- `docs/AMBER_NEXT_SESSION_TEST_PLAN.md`

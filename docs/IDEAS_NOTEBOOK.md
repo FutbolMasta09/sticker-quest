@@ -26,6 +26,9 @@ A game idea in early planning — no repo, no code, just a concept worth develop
 
 *(Add new ideas below this line as they come to you.)*
 
+**2026-03-20 — The Ashen Compact**
+Dying-empire political RPG as Claude-powered interactive fiction (envoy, three factions, Grey Creep clock) — audit + second-pass supplement in `docs/ASHEN_COMPACT_GAME_BIBLE_AUDIT_2026_03_20.md` and `docs/ASHEN_COMPACT_GAME_BIBLE_SUPPLEMENT.md`.
+
 ---
 
 ## App Ideas

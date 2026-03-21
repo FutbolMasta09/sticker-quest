@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Decision Board</title></head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent;padding:1rem 0;color:var(--color-text-primary,#111)}
+h2{font-size:18px;font-weight:500;margin-bottom:1rem;color:var(--color-text-primary,#111)}
+h3{font-size:15px;font-weight:500;margin-bottom:.75rem;color:var(--color-text-primary,#111)}
+
+/* Nav tabs */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);padding-bottom:0}
+.tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 16px;font-size:13px;cursor:pointer;color:var(--color-text-secondary,#666);font-weight:400;margin-bottom:-1px;transition:all .15s}
+.tab:hover{color:var(--color-text-primary,#111)}
+.tab.active{color:var(--color-text-primary,#111);font-weight:500;border-bottom-color:var(--color-text-primary,#111)}
+.panel{display:none}.panel.active{display:block}
+
+/* Score table */
+.tbl-wrap{overflow-x:auto;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}
+th{font-size:11px;font-weight:500;color:var(--color-text-secondary,#666);text-transform:uppercase;letter-spacing:.05em;padding:6px 8px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);cursor:pointer;white-space:nowrap;user-select:none}
+th:hover{color:var(--color-text-primary,#111)}
+th.sorted{color:var(--color-text-primary,#111)}
+td{padding:7px 8px;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);vertical-align:middle}
+tr:hover td{background:var(--color-background-secondary,#f9f9f9)}
+.rank-num{font-size:11px;color:var(--color-text-tertiary,#999);font-weight:500;min-width:20px}
+.idea-name{font-weight:500;font-size:13px;color:var(--color-text-primary,#111);white-space:nowrap}
+.score-cell{font-size:13px;font-weight:500;color:var(--color-text-primary,#111)}
+.score-bar{height:4px;border-radius:2px;background:var(--color-border-tertiary,#e0e0e0);margin-top:3px;overflow:hidden}
+.score-fill{height:100%;border-radius:2px;transition:width .3s}
+.num-cell{font-size:12px;color:var(--color-text-secondary,#666);text-align:center}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.b-now{background:#E1F5EE;color:#0F6E56}
+.b-later{background:#FAEEDA;color:#854F0B}
+.b-back{background:#F1EFE8;color:#5F5E5A}
+.b-game{background:#EEEDFE;color:#3C3489}
+.b-tool{background:#E6F1FB;color:#0C447C}
+.b-low{background:#EAF3DE;color:#3B6D11}
+.b-med{background:#FAEEDA;color:#854F0B}
+.b-high{background:#FAECE7;color:#993C1D}
+.b-t1{background:#E1F5EE;color:#0F6E56}
+.b-t2{background:#FAEEDA;color:#854F0B}
+.b-t3{background:#FAECE7;color:#993C1D}
+
+/* Phase cards */
+.phase-section{margin-bottom:2rem}
+.phase-header{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary,#999);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.phase-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:12px 14px}
+.phase-card-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.phase-card-score{font-size:20px;font-weight:500;color:var(--color-text-primary,#111);line-height:1}
+.phase-card-sub{font-size:11px;color:var(--color-text-tertiary,#999);margin-top:2px}
+.phase-card-badges{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.pc-border-now{border-left:3px solid #1D9E75}
+.pc-border-later{border-left:3px solid #EF9F27}
+.pc-border-back{border-left:3px solid #B4B2A9}
+
+/* Week sequence */
+.week-row{display:flex;gap:0;margin-bottom:0}
+.week-item{flex:1;border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-right:none;padding:14px;background:var(--color-background-primary,#fff)}
+.week-item:last-child{border-right:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.week-item:first-child{border-radius:var(--border-radius-md,8px) 0 0 var(--border-radius-md,8px)}
+.week-item:last-child{border-radius:0 var(--border-radius-md,8px) var(--border-radius-md,8px) 0}
+.week-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:6px}
+.week-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.week-score{font-size:11px;color:var(--color-text-secondary,#666)}
+.week-why{font-size:11px;color:var(--color-text-secondary,#666);margin-top:6px;line-height:1.5}
+@media(max-width:700px){.week-row{flex-direction:column}.week-item{border-right:0.5px solid var(--color-border-tertiary,#e0e0e0)!important;border-bottom:none}.week-item:last-child{border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}.week-item:first-child{border-radius:var(--border-radius-md,8px) var(--border-radius-md,8px) 0 0}.week-item:last-child{border-radius:0 0 var(--border-radius-md,8px) var(--border-radius-md,8px)}}
+
+/* Risk / highlights */
+.alert-box{border-radius:var(--border-radius-md,8px);padding:1rem 1.25rem;margin-bottom:1.25rem}
+.alert-danger{background:#FCEBEB;border-left:3px solid #E24B4A}
+.alert-warn{background:#FAEEDA;border-left:3px solid #EF9F27}
+.alert-success{background:#EAF3DE;border-left:3px solid #639922}
+.alert-info{background:#E6F1FB;border-left:3px solid #378ADD}
+.alert-title{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.alert-text{font-size:13px;line-height:1.6;color:var(--color-text-secondary,#555)}
+
+/* Top 3 */
+.top3-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:1.5rem}
+.top3-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem}
+.top3-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.top3-name{font-size:16px;font-weight:500;margin-bottom:.5rem}
+.top3-score{font-size:28px;font-weight:500;line-height:1;margin-bottom:.25rem}
+.top3-why{font-size:13px;color:var(--color-text-secondary,#555);line-height:1.6;margin-top:.75rem}
+
+/* Tool gate */
+.gate-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem;margin-bottom:10px}
+.gate-header{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.gate-rank{font-size:11px;color:var(--color-text-tertiary,#999);font-weight:500}
+.gate-name{font-size:15px;font-weight:500}
+.gate-score-pill{font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-secondary,#666);margin-left:auto}
+.stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.75rem}
+@media(max-width:600px){.stack-grid{grid-template-columns:1fr}}
+.stack-box{background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.75rem}
+.stack-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:5px}
+.stack-content{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.dnu-box{background:#FCEBEB;border-radius:var(--border-radius-md,8px);padding:.6rem .85rem;font-size:12px;color:#501313}
+
+/* Reuse map */
+.reuse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.reuse-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem}
+.reuse-title{font-size:13px;font-weight:500;margin-bottom:4px}
+.reuse-count{font-size:11px;color:var(--color-text-tertiary,#999);margin-bottom:8px}
+.reuse-tags{display:flex;flex-wrap:wrap;gap:4px}
+.reuse-tag{font-size:11px;padding:2px 8px;border-radius:3px;background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-secondary,#666)}
+
+/* Sort arrow */
+.sort-arrow{display:inline-block;margin-left:3px;opacity:.4;font-size:9px}
+.sort-arrow.active{opacity:1}
+
+/* Filter row */
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.filt-btn{background:none;border:0.5px solid var(--color-border-secondary,#ccc);border-radius:var(--border-radius-md,8px);padding:4px 12px;font-size:12px;cursor:pointer;color:var(--color-text-secondary,#666)}
+.filt-btn.active{background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-primary,#111);font-weight:500}
+
+/* Score color */
+.s-hi{color:#1D9E75}
+.s-mid{color:#BA7517}
+.s-lo{color:#A32D2D}
+</style>
+
+<div class="tabs">
+  <button class="tab active" data-panel="rank">Ranked Matrix</button>
+  <button class="tab" data-panel="phases">Build / Later / Backlog</button>
+  <button class="tab" data-panel="sequence">6-Week Sequence</button>
+  <button class="tab" data-panel="risks">Portfolio Risks</button>
+  <button class="tab" data-panel="top3">Top 3 Now</button>
+  <button class="tab" data-panel="gates">Tool Gates (Top 10)</button>
+  <button class="tab" data-panel="reuse">Reuse Map</button>
+</div>
+
+<!-- PANEL 1: RANKED MATRIX -->
+<div class="panel active" id="panel-rank">
+  <div class="filter-row" id="rank-filters">
+    <button class="filt-btn active" data-rf="all">All 30</button>
+    <button class="filt-btn" data-rf="now">Build Now</button>
+    <button class="filt-btn" data-rf="later">Build Later</button>
+    <button class="filt-btn" data-rf="backlog">Backlog</button>
+    <button class="filt-btn" data-rf="game">Games</button>
+    <button class="filt-btn" data-rf="tool">Tools</button>
+    <button class="filt-btn" data-rf="low">Low Risk</button>
+    <button class="filt-btn" data-rf="high">High Risk</button>
+  </div>
+  <p style="font-size:12px;color:var(--color-text-tertiary,#999);margin-bottom:.75rem" id="showing-count">Showing all 30 ideas · Click column headers to sort</p>
+  <div class="tbl-wrap">
+  <table id="rank-table">
+    <thead>
+      <tr>
+        <th data-col="rank">Rank <span class="sort-arrow active">↓</span></th>
+        <th data-col="name">Idea</th>
+        <th data-col="type">Type</th>
+        <th data-col="tier">Tier</th>
+        <th data-col="phase">Tag</th>
+        <th data-col="final" style="min-width:90px">Score <span class="sort-arrow active">↓</span></th>
+        <th data-col="sf">Strategy</th>
+        <th data-col="uv">User val.</th>
+        <th data-col="be">Effort ↓</th>
+        <th data-col="r">Reuse</th>
+        <th data-col="sg">Skill</th>
+        <th data-col="ai">AI fit</th>
+        <th data-col="sol">Solo</th>
+        <th data-col="risk">Risk</th>
+        <th data-col="tf">Friction</th>
+      </tr>
+    </thead>
+    <tbody id="rank-tbody"></tbody>
+  </table>
+  </div>
+</div>
+
+<!-- PANEL 2: PHASES -->
+<div class="panel" id="panel-phases">
+  <div class="phase-section">
+    <div class="phase-header">Build Now — Start within 2 weeks · Low–Med risk · S–M complexity</div>
+    <div class="phase-grid" id="phase-now"></div>
+  </div>
+  <div class="phase-section">
+    <div class="phase-header">Build Later — High scores but needs skills, stack, or follow-on from earlier builds</div>
+    <div class="phase-grid" id="phase-later"></div>
+  </div>
+  <div class="phase-section">
+    <div class="phase-header">Backlog — Lower priority · Revisit after shipping two or more complete projects</div>
+    <div class="phase-grid" id="phase-back"></div>
+  </div>
+</div>
+
+<!-- PANEL 3: 6-WEEK SEQUENCE -->
+<div class="panel" id="panel-sequence">
+  <div class="alert-box alert-info" style="margin-bottom:1.5rem">
+    <div class="alert-title">Sequence logic</div>
+    <div class="alert-text">Each week builds a system the next week depends on. Prompt Forge first because it makes every other idea easier to execute. Skill ceiling rises deliberately — no week is a re-run of the previous.</div>
+  </div>
+  <div class="week-row" id="week-row"></div>
+  <div style="margin-top:1.5rem">
+    <h3 style="margin-bottom:.75rem">What this sequence teaches you</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 1</b>Prompt engineering, rubric design, comparison UI, localStorage</div>
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 2</b>AI mystery generation, difficulty calibration, puzzle reveal UX</div>
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 3</b>Verdict UI, branching consequence logic, satire/tone calibration</div>
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 4</b>Tension meter system, free-text AI dialogue, NPC response chaining</div>
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 5</b>Daily seed system, retention loop design, category-tagged content pools</div>
+      <div style="background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem;font-size:13px;color:var(--color-text-secondary,#555)"><b style="display:block;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:4px">Week 6</b>Loop-state persistence, conditional AI generation, clue distribution architecture</div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 4: RISKS -->
+<div class="panel" id="panel-risks">
+  <div class="alert-box alert-danger">
+    <div class="alert-title">Biggest hidden risk: AI monoculture dependency</div>
+    <div class="alert-text">All 30 ideas rely on Claude API for content generation. This is a portfolio-level single point of failure. A pricing change, rate limit tightening, output quality shift, or policy update simultaneously threatens every project. Mitigation: build each game so its core loop is testable with static/hardcoded content first. AI enhances; it does not make the loop run.</div>
+  </div>
+  <div class="alert-box alert-warn">
+    <div class="alert-title">Second risk: difficulty calibration is always underestimated</div>
+    <div class="alert-text">Across puzzle games (Inventory Oracle, Time Loop Inbox, Multiverse Detective, The Alibi, Murder at the Manor), difficulty calibration is flagged as the primary technical risk in every case. This is not a coincidence — it is a solo-builder trap. AI output variance means you cannot playtest a consistent experience without locking the hardest outputs deterministically. Build a seed/lock system before adding AI generation to any puzzle game.</div>
+  </div>
+  <div class="alert-box alert-warn">
+    <div class="alert-title">Third risk: scope creep disguised as "reusability"</div>
+    <div class="alert-text">Several Tier 3 ideas (The Syndicate, Faction Engine, Voice DM) have strong reusability scores because they share systems. The risk is building those shared systems as infrastructure projects before shipping any game. Build the system only when the second game that needs it is already planned and scoped. Not before.</div>
+  </div>
+  <div class="alert-box alert-info">
+    <div class="alert-title">Low-risk observation: tools score better than expected</div>
+    <div class="alert-text">Prompt Forge (#1 overall) and Lore Atlas (#13) both outperform most games because they pass the output-multiplier gate and have zero asset dependencies. If a week feels stuck on a game project, either tool is a productive fallback that also generates skill growth.</div>
+  </div>
+  <div style="margin-top:1.5rem">
+    <h3 style="margin-bottom:.75rem">Risk distribution across the portfolio</h3>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:180px;background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem">
+        <div style="font-size:28px;font-weight:500;color:#1D9E75">10</div>
+        <div style="font-size:12px;color:var(--color-text-secondary,#666)">Low or Low–Med risk</div>
+      </div>
+      <div style="flex:1;min-width:180px;background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem">
+        <div style="font-size:28px;font-weight:500;color:#BA7517">11</div>
+        <div style="font-size:12px;color:var(--color-text-secondary,#666)">Medium or Med–High risk</div>
+      </div>
+      <div style="flex:1;min-width:180px;background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem">
+        <div style="font-size:28px;font-weight:500;color:#A32D2D">9</div>
+        <div style="font-size:12px;color:var(--color-text-secondary,#666)">High risk (Tier 3)</div>
+      </div>
+      <div style="flex:1;min-width:180px;background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem">
+        <div style="font-size:28px;font-weight:500">0</div>
+        <div style="font-size:12px;color:var(--color-text-secondary,#666)">Below 3.2 threshold — none archived</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL 5: TOP 3 -->
+<div class="panel" id="panel-top3">
+  <div class="top3-grid" id="top3-cards"></div>
+  <div class="alert-box alert-success">
+    <div class="alert-title">Why these three and not the higher-scoring ones?</div>
+    <div class="alert-text">Time Loop Inbox (#2), Voice DM (#4), and Mythwright (#5) all score higher than Incident Review Board and The Negotiator — but they carry Medium or High risk and require careful upfront design work before a usable v1 exists. The top 3 here are chosen for start-this-month readiness: low friction, zero asset dependencies, 2-hour first task, and confidence the loop is fun without AI involved.</div>
+  </div>
+</div>
+
+<!-- PANEL 6: TOOL GATES -->
+<div class="panel" id="panel-gates">
+  <p style="font-size:13px;color:var(--color-text-secondary,#555);margin-bottom:1.25rem;line-height:1.6">Tool gate analysis for the top 10 ideas. Adoption rule: a tool is recommended only if it wins 2+ tasks and does not increase legal or trust risk.</p>
+  <div id="gate-cards"></div>
+</div>
+
+<!-- PANEL 7: REUSE MAP -->
+<div class="panel" id="panel-reuse">
+  <div class="alert-box alert-info">
+    <div class="alert-title">Reuse strategy</div>
+    <div class="alert-text">Build these systems once, in this order: (1) AI narrative pipeline — used by all 30. (2) Resource/meter UI component — unlocks 7+ ideas. (3) Card grid UI — unlocks 5+ ideas. (4) Session persistence layer — required by all long-form games. Do not build #3 or #4 before shipping at least one game that uses #1.</div>
+  </div>
+  <div class="reuse-grid" id="reuse-grid"></div>
+</div>
+
+<script>
+const DATA = [
+  {id:1,name:"Heist Briefing Room",type:"game",tier:1,phase:"later",sf:4,uv:3,be:5,r:3,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:3.75,final:4.13},
+  {id:2,name:"The Daily Dispatch",type:"game",tier:1,phase:"now",sf:4,uv:4,be:4,r:4,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:4.00,final:4.40},
+  {id:3,name:"Warrant Board",type:"game",tier:1,phase:"backlog",sf:3,uv:3,be:5,r:3,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:3.50,final:3.85},
+  {id:4,name:"Inventory Oracle",type:"game",tier:1,phase:"now",sf:4,uv:4,be:5,r:3,sg:4,risk:"Low",ai:5,sol:5,tf:1,penalty:0,raw:4.15,final:4.57},
+  {id:5,name:"The Negotiator",type:"game",tier:1,phase:"now",sf:4,uv:4,be:4,r:3,sg:4,risk:"Low-Med",ai:5,sol:5,tf:1,penalty:0,raw:4.05,final:4.46},
+  {id:6,name:"Campfire Stories",type:"game",tier:1,phase:"backlog",sf:3,uv:3,be:5,r:3,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:3.50,final:3.85},
+  {id:7,name:"Faction Standings",type:"game",tier:1,phase:"later",sf:3,uv:3,be:4,r:4,sg:4,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:3.65,final:4.02},
+  {id:8,name:"Prompt Forge",type:"tool",tier:1,phase:"now",sf:5,uv:4,be:5,r:4,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:4.35,final:4.79},
+  {id:9,name:"Tavern Ledger",type:"game",tier:1,phase:"backlog",sf:3,uv:3,be:5,r:3,sg:3,risk:"Low",ai:3,sol:5,tf:1,penalty:0,raw:3.40,final:3.74},
+  {id:10,name:"The Briefing",type:"game",tier:1,phase:"later",sf:4,uv:3,be:5,r:3,sg:3,risk:"Low",ai:4,sol:5,tf:1,penalty:0,raw:3.75,final:4.13},
+  {id:11,name:"The Correspondent",type:"game",tier:2,phase:"later",sf:4,uv:4,be:3,r:3,sg:4,risk:"Med",ai:4,sol:4,tf:2,penalty:0,raw:3.75,final:4.13},
+  {id:12,name:"Cult of One",type:"game",tier:2,phase:"later",sf:4,uv:4,be:3,r:4,sg:4,risk:"Med",ai:4,sol:4,tf:2,penalty:0,raw:3.90,final:4.29},
+  {id:13,name:"The Quartermaster",type:"game",tier:2,phase:"backlog",sf:3,uv:3,be:3,r:3,sg:4,risk:"Med",ai:3,sol:4,tf:2,penalty:0,raw:3.20,final:3.52},
+  {id:14,name:"Time Loop Inbox",type:"game",tier:2,phase:"now",sf:5,uv:5,be:3,r:3,sg:4,risk:"Med",ai:4,sol:4,tf:2,penalty:0,raw:4.20,final:4.62},
+  {id:15,name:"Incident Review Board",type:"game",tier:2,phase:"now",sf:4,uv:4,be:4,r:3,sg:3,risk:"Low-Med",ai:5,sol:5,tf:2,penalty:0,raw:3.95,final:4.35},
+  {id:16,name:"Galactic Dispatch",type:"game",tier:2,phase:"backlog",sf:3,uv:3,be:3,r:3,sg:4,risk:"Med",ai:3,sol:4,tf:3,penalty:0,raw:3.20,final:3.52},
+  {id:17,name:"Lore Atlas",type:"tool",tier:2,phase:"later",sf:4,uv:4,be:3,r:4,sg:4,risk:"Med",ai:4,sol:4,tf:2,penalty:0,raw:3.90,final:4.29},
+  {id:18,name:"Murder at the Manor",type:"game",tier:2,phase:"later",sf:4,uv:4,be:3,r:4,sg:4,risk:"Med",ai:4,sol:4,tf:2,penalty:0,raw:3.90,final:4.29},
+  {id:19,name:"The Long Haul",type:"game",tier:2,phase:"later",sf:3,uv:4,be:4,r:4,sg:3,risk:"Low-Med",ai:4,sol:5,tf:1,penalty:0,raw:3.75,final:4.13},
+  {id:20,name:"The Alibi",type:"game",tier:2,phase:"later",sf:4,uv:4,be:3,r:3,sg:4,risk:"Med-High",ai:5,sol:4,tf:2,penalty:0.15,raw:3.70,final:4.07},
+  {id:21,name:"The Syndicate",type:"game",tier:3,phase:"later",sf:5,uv:5,be:2,r:5,sg:5,risk:"High",ai:4,sol:3,tf:3,penalty:0.30,raw:4.10,final:4.51},
+  {id:22,name:"Faction Engine",type:"game",tier:3,phase:"later",sf:4,uv:4,be:2,r:5,sg:5,risk:"High",ai:4,sol:3,tf:3,penalty:0.25,raw:3.70,final:4.07},
+  {id:23,name:"Voice Dungeon Master",type:"game",tier:3,phase:"later",sf:5,uv:5,be:2,r:5,sg:5,risk:"High",ai:5,sol:3,tf:4,penalty:0.35,raw:4.15,final:4.57},
+  {id:24,name:"The Living Gazette",type:"game",tier:3,phase:"backlog",sf:4,uv:4,be:2,r:4,sg:4,risk:"High",ai:4,sol:3,tf:3,penalty:0.20,raw:3.50,final:3.85},
+  {id:25,name:"Echo Chamber",type:"game",tier:3,phase:"later",sf:5,uv:5,be:2,r:4,sg:5,risk:"High",ai:5,sol:3,tf:3,penalty:0.30,raw:4.05,final:4.46},
+  {id:26,name:"Mythwright",type:"tool",tier:3,phase:"later",sf:5,uv:5,be:2,r:5,sg:5,risk:"High",ai:4,sol:3,tf:4,penalty:0.25,raw:4.15,final:4.57},
+  {id:27,name:"The Long Con",type:"game",tier:3,phase:"backlog",sf:4,uv:4,be:2,r:4,sg:4,risk:"High",ai:4,sol:3,tf:3,penalty:0.25,raw:3.45,final:3.80},
+  {id:28,name:"City Watch",type:"game",tier:3,phase:"later",sf:4,uv:4,be:2,r:4,sg:4,risk:"Med-High",ai:4,sol:4,tf:2,penalty:0.15,raw:3.65,final:4.02},
+  {id:29,name:"Multiverse Detective",type:"game",tier:3,phase:"later",sf:5,uv:5,be:2,r:4,sg:5,risk:"High",ai:4,sol:3,tf:3,penalty:0.30,raw:3.95,final:4.35},
+  {id:30,name:"The Archivist's Burden",type:"game",tier:3,phase:"backlog",sf:4,uv:4,be:2,r:3,sg:4,risk:"High",ai:5,sol:3,tf:3,penalty:0.20,raw:3.45,final:3.80}
+];
+
+const sorted = [...DATA].sort((a,b)=>b.final-a.final).map((d,i)=>({...d,rank:i+1}));
+
+const phaseLabel={now:'Build Now',later:'Build Later',backlog:'Backlog'};
+const riskClass={Low:'b-low','Low-Med':'b-low',Med:'b-med','Med-High':'b-med',High:'b-high'};
+const phaseClass={now:'b-now',later:'b-later',backlog:'b-back'};
+const pcBorder={now:'pc-border-now',later:'pc-border-later',backlog:'pc-border-back'};
+
+function scoreColor(v){return v>=4.4?'s-hi':v>=3.9?'s-mid':'s-lo'}
+function mini(v){return`<div class="score-bar"><div class="score-fill" style="width:${v/5*100}%;background:${v>=4?'#1D9E75':v>=3.5?'#EF9F27':'#E24B4A'}"></div></div>`}
+
+/* RANK TABLE */
+let sortCol='final',sortDir=-1,filterF='all';
+function buildTable(){
+  let rows=[...sorted];
+  if(filterF==='now') rows=rows.filter(r=>r.phase==='now');
+  else if(filterF==='later') rows=rows.filter(r=>r.phase==='later');
+  else if(filterF==='backlog') rows=rows.filter(r=>r.phase==='backlog');
+  else if(filterF==='game') rows=rows.filter(r=>r.type==='game');
+  else if(filterF==='tool') rows=rows.filter(r=>r.type==='tool');
+  else if(filterF==='low') rows=rows.filter(r=>r.risk==='Low'||r.risk==='Low-Med');
+  else if(filterF==='high') rows=rows.filter(r=>r.risk==='High');
+  rows.sort((a,b)=>{
+    let av=a[sortCol],bv=b[sortCol];
+    if(typeof av==='string') return sortDir*av.localeCompare(bv);
+    return sortDir*(av-bv);
+  });
+  document.getElementById('showing-count').textContent=`Showing ${rows.length} of 30 ideas · Click column headers to sort`;
+  const tbody=document.getElementById('rank-tbody');
+  tbody.innerHTML=rows.map(r=>`
+<tr>
+  <td><span class="rank-num">#${r.rank}</span></td>
+  <td><div class="idea-name">${r.name}</div></td>
+  <td><span class="badge ${r.type==='game'?'b-game':'b-tool'}">${r.type}</span></td>
+  <td><span class="badge b-t${r.tier}">T${r.tier}</span></td>
+  <td><span class="badge ${phaseClass[r.phase]}">${phaseLabel[r.phase]}</span></td>
+  <td>
+    <span class="score-cell ${scoreColor(r.final)}">${r.final.toFixed(2)}</span>
+    ${mini(r.final)}
+  </td>
+  <td class="num-cell">${r.sf}/5${mini(r.sf)}</td>
+  <td class="num-cell">${r.uv}/5${mini(r.uv)}</td>
+  <td class="num-cell">${r.be}/5${mini(r.be)}</td>
+  <td class="num-cell">${r.r}/5${mini(r.r)}</td>
+  <td class="num-cell">${r.sg}/5${mini(r.sg)}</td>
+  <td class="num-cell">${r.ai}/5${mini(r.ai)}</td>
+  <td class="num-cell">${r.sol}/5${mini(r.sol)}</td>
+  <td><span class="badge ${riskClass[r.risk]}">${r.risk}</span></td>
+  <td class="num-cell">${r.tf}/5</td>
+</tr>`).join('');
+}
+buildTable();
+
+document.getElementById('rank-table').querySelector('thead').addEventListener('click',e=>{
+  const th=e.target.closest('th');if(!th||!th.dataset.col)return;
+  if(sortCol===th.dataset.col) sortDir*=-1; else{sortCol=th.dataset.col;sortDir=-1;}
+  buildTable();
+});
+document.getElementById('rank-filters').addEventListener('click',e=>{
+  const btn=e.target.closest('.filt-btn');if(!btn)return;
+  document.querySelectorAll('.filt-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');filterF=btn.dataset.rf;buildTable();
+});
+
+/* PHASES */
+['now','later','backlog'].forEach(p=>{
+  const container=document.getElementById('phase-'+p);
+  const items=sorted.filter(r=>r.phase===p);
+  container.innerHTML=items.map(r=>`
+<div class="phase-card ${pcBorder[r.phase]}">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+    <div>
+      <div class="phase-card-name">${r.name}</div>
+      <div class="phase-card-badges">
+        <span class="badge ${r.type==='game'?'b-game':'b-tool'}">${r.type}</span>
+        <span class="badge b-t${r.tier}">Tier ${r.tier}</span>
+        <span class="badge ${riskClass[r.risk]}">${r.risk} risk</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0">
+      <div class="phase-card-score ${scoreColor(r.final)}">${r.final.toFixed(2)}</div>
+      <div class="phase-card-sub">#${r.rank} overall</div>
+    </div>
+  </div>
+</div>`).join('');
+});
+
+/* 6-WEEK SEQUENCE */
+const weeks=[
+  {week:'Week 1',name:'Prompt Forge',score:'4.79',why:'Meta-tool first. Improves every AI-assisted build that follows. Zero risk. First test in 2 hours.'},
+  {week:'Week 2',name:'Inventory Oracle',score:'4.57',why:'First real game. Zero assets. Highest score-to-effort ratio in the portfolio. Pure puzzle UX.'},
+  {week:'Week 3',name:'Incident Review Board',score:'4.35',why:'From your saved list. Adds verdict/consequence logic and AI content pipeline you\'ll reuse.'},
+  {week:'Week 4',name:'The Negotiator',score:'4.46',why:'Introduces free-text AI dialogue and the tension meter system — both reusable across 5+ ideas.'},
+  {week:'Week 5',name:'The Daily Dispatch',score:'4.40',why:'Adds the daily seed/retention loop. First project testing repeat-visit behavior.'},
+  {week:'Week 6',name:'Time Loop Inbox',score:'4.62',why:'Capstone. Loop state + conditional AI + clue architecture. Hardest of the Build Now group.'}
+];
+document.getElementById('week-row').innerHTML=weeks.map(w=>`
+<div class="week-item">
+  <div class="week-label">${w.week}</div>
+  <div class="week-name">${w.name}</div>
+  <div class="week-score">Score: ${w.score}</div>
+  <div class="week-why">${w.why}</div>
+</div>`).join('');
+
+/* TOP 3 */
+const top3=[
+  {num:'01',name:'Prompt Forge',score:'4.79',why:'It\'s not a game — but it\'s the first thing you should build. Every idea in this catalog benefits from a personal prompt library. Build effort is trivially small. Risk is zero. It pays dividends on literally every other project from week 2 forward.'},
+  {num:'02',name:'Inventory Oracle',score:'4.57',why:'Highest score-to-effort ratio of all 30 games. Zero assets, zero dependencies, playable in 2 hours with static content. Novel mechanic with no obvious competitor. The difficulty calibration risk is the only real concern — and it\'s manageable with a simple lock system.'},
+  {num:'03',name:'Incident Review Board',score:'4.35',why:'Already on your saved concept list, which means it survived one ideation filter before this one. High AI leverage, professional adult resonance, and the verdict → consequence logic it teaches you is reusable across at least 4 other games in this catalog.'}
+];
+document.getElementById('top3-cards').innerHTML=top3.map(t=>`
+<div class="top3-card">
+  <div class="top3-num">Start this month · ${t.num}</div>
+  <div class="top3-name">${t.name}</div>
+  <div class="top3-score ${scoreColor(parseFloat(t.score))}">${t.score}</div>
+  <div class="top3-why">${t.why}</div>
+</div>`).join('');
+
+/* TOOL GATES */
+const gates=[
+  {rank:1,name:'Prompt Forge',score:'4.79',stackA:{label:'Use now',content:'React + Vite · Claude API · localStorage · No additional tools'},stackB:{label:'Scale later',content:'Supabase (multi-session) · Export to JSON · Version diff view'},dnu:'No design tool yet — pure function before form. No Supabase until v1 shipped.'},
+  {rank:2,name:'Time Loop Inbox',score:'4.62',stackA:{label:'Use now',content:'React + Vite · Claude API · localStorage · Deterministic seed keys'},stackB:{label:'Scale later',content:'Supabase for cross-device state · Hint system API layer'},dnu:'No multiplayer, no real-time DB until puzzle logic is proven solvable.'},
+  {rank:3,name:'Inventory Oracle',score:'4.57',stackA:{label:'Use now',content:'React + Vite · Claude API · No persistence needed'},stackB:{label:'Scale later',content:'Supabase for leaderboard · Community puzzle submissions UI'},dnu:'No DALL-E for item images. No scoring backend. Text-only until solvability is validated.'},
+  {rank:4,name:'Voice Dungeon Master',score:'4.57',stackA:{label:'Use now',content:'React + Vite · Claude API · localStorage · ElevenLabs (built-in voices only)'},stackB:{label:'Scale later',content:'Supabase for session history · DALL-E 3 scene images · Custom ElevenLabs voice profiles'},dnu:'No custom voice cloning. No DALL-E until session cost is benchmarked. No Supabase until text-only version ships.'},
+  {rank:5,name:'Mythwright',score:'4.57',stackA:{label:'Use now',content:'React + Vite · Claude API · D3.js force graph · localStorage'},stackB:{label:'Scale later',content:'Supabase multi-user · Export to Markdown/Notion · Version history diff'},dnu:'No backend before D3 graph is working with 20+ entries. No collaboration features in v1.'},
+  {rank:6,name:'The Syndicate',score:'4.51',stackA:{label:'Use now',content:'React + Vite · Claude API · localStorage (start here)'},stackB:{label:'Scale later',content:'Supabase for cross-session persistence · Operative relationship graph · Run timeline'},dnu:'No Supabase until text-only v1 is fun. No org graph visualization until core loop validated.'},
+  {rank:7,name:'The Negotiator',score:'4.46',stackA:{label:'Use now',content:'React + Vite · Claude API · No persistence needed for v1'},stackB:{label:'Scale later',content:'ElevenLabs for NPC voice · Scenario library with Supabase · Difficulty presets'},dnu:'No voice, no image assets, no multiplayer. Claude API tension calibration only.'},
+  {rank:8,name:'Echo Chamber',score:'4.46',stackA:{label:'Use now',content:'React + Vite · Claude API · Pre-written persona fact sheets (JSON)'},stackB:{label:'Scale later',content:'Supabase for run history · Leaderboard · Real multiplayer lobby'},dnu:'No multiplayer in v1. No generated portrait art — use initials/text avatars. Persona fact sheets must be locked before AI generation layer is added.'},
+  {rank:9,name:'The Daily Dispatch',score:'4.40',stackA:{label:'Use now',content:'React + Vite · Claude API · localStorage · Date-keyed seed system'},stackB:{label:'Scale later',content:'Supabase for cross-device daily state · Push notifications · Signal history log'},dnu:'No push notifications until retention loop proves daily return behavior in testing.'},
+  {rank:10,name:'Incident Review Board',score:'4.35',stackA:{label:'Use now',content:'React + Vite · Claude API · No persistence needed for v1'},stackB:{label:'Scale later',content:'AI boardmember personas · Multi-case career mode · Consequence history log'},dnu:'No additional AI personas for boardmembers in v1. No Supabase until first 5-case run is fun.'}
+];
+document.getElementById('gate-cards').innerHTML=gates.map(g=>`
+<div class="gate-card">
+  <div class="gate-header">
+    <span class="gate-rank">#${g.rank}</span>
+    <span class="gate-name">${g.name}</span>
+    <span class="gate-score-pill">${g.score} / 5</span>
+  </div>
+  <div class="stack-grid">
+    <div class="stack-box">
+      <div class="stack-label">${g.stackA.label}</div>
+      <div class="stack-content">${g.stackA.content}</div>
+    </div>
+    <div class="stack-box">
+      <div class="stack-label">${g.stackB.label}</div>
+      <div class="stack-content">${g.stackB.content}</div>
+    </div>
+  </div>
+  <div class="dnu-box"><b style="font-weight:500">Do not use yet:</b> ${g.dnu}</div>
+</div>`).join('');
+
+/* REUSE MAP */
+const reuseSystems=[
+  {title:'AI Narrative Pipeline',desc:'Claude API prompt → content output pattern',count:'All 30 ideas',ideas:['Every game and tool in the catalog'],note:'Build once: a prompt template + category seed system. This is the foundation.'},
+  {title:'Resource / Meter UI',desc:'Animated bars, percentage displays, resource counters',count:'7 ideas share this',ideas:['The Negotiator','Faction Standings','Cult of One','City Watch','Tavern Ledger','Daily Dispatch','Time Loop Inbox']},
+  {title:'Card Grid UI',desc:'Selectable cards with badges, accept/reject actions',count:'6 ideas share this',ideas:['Warrant Board','Heist Briefing Room','Quartermaster','The Syndicate','Echo Chamber','Incident Review Board']},
+  {title:'Day / Cycle Loop',desc:'End-of-day summary, next-day initialization, event pool draw',count:'4 ideas share this',ideas:['Daily Dispatch','Tavern Ledger','The Long Haul','Faction Standings']},
+  {title:'Verdict → Consequence',desc:'Decision point → branching outcome → downstream state change',count:'5 ideas share this',ideas:['Incident Review Board','The Alibi','The Correspondent','The Briefing','The Long Con']},
+  {title:'Multi-NPC State',desc:'Multiple agent objects with independent attributes, opinions, and state',count:'4 ideas share this',ideas:['Murder at the Manor','Echo Chamber','The Syndicate','Cult of One']},
+  {title:'Session Persistence',desc:'Save/resume state across browser sessions (localStorage → Supabase)',count:'6 ideas share this',ideas:['Time Loop Inbox','Voice DM','The Syndicate','The Long Con','Daily Dispatch','Multiverse Detective']},
+  {title:'Score / Reputation Tracker',desc:'Running numeric score that carries cross-session consequence',count:'4 ideas share this',ideas:['The Correspondent','Murder at the Manor','City Watch','The Long Con']}
+];
+document.getElementById('reuse-grid').innerHTML=reuseSystems.map(s=>`
+<div class="reuse-card">
+  <div class="reuse-title">${s.title}</div>
+  <div class="reuse-count">${s.count}</div>
+  <div style="font-size:12px;color:var(--color-text-secondary,#555);margin-bottom:8px;line-height:1.5">${s.desc}</div>
+  <div class="reuse-tags">${s.ideas.slice(0,6).map(i=>`<span class="reuse-tag">${i}</span>`).join('')}</div>
+</div>`).join('');
+
+/* TABS */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.panel).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

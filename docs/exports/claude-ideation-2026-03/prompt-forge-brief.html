@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Prompt Forge — Build-Ready Brief</title></head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent;padding:1rem 0;color:var(--color-text-primary,#111);line-height:1.7}
+
+/* Header */
+.brief-header{padding:1.5rem 0 1.25rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);margin-bottom:1.5rem}
+.brief-eyebrow{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary,#999);margin-bottom:.5rem}
+.brief-title{font-size:24px;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:.5rem}
+.brief-why{font-size:13px;color:var(--color-text-secondary,#666);line-height:1.6;max-width:680px}
+.brief-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:.875rem}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.tab{background:none;border:none;border-bottom:2px solid transparent;padding:7px 14px;font-size:13px;cursor:pointer;color:var(--color-text-secondary,#666);font-weight:400;margin-bottom:-1px;transition:all .15s;white-space:nowrap}
+.tab:hover{color:var(--color-text-primary,#111)}
+.tab.active{color:var(--color-text-primary,#111);font-weight:500;border-bottom-color:var(--color-text-primary,#111)}
+.panel{display:none}.panel.active{display:block}
+
+/* Section anatomy */
+.section{margin-bottom:2rem}
+.sec-title{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary,#999);margin-bottom:.875rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.sec-body{font-size:13px;color:var(--color-text-secondary,#555);line-height:1.75}
+
+/* Cards */
+.card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem;margin-bottom:8px}
+.card-title{font-size:13px;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:.35rem}
+.card-body{font-size:13px;color:var(--color-text-secondary,#555);line-height:1.65}
+.card-sub{font-size:11px;color:var(--color-text-tertiary,#999);margin-top:.35rem}
+
+/* Feature list */
+.feat-list{list-style:none;padding:0}
+.feat-list li{display:flex;gap:10px;padding:.625rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);align-items:flex-start;font-size:13px;color:var(--color-text-secondary,#555);line-height:1.6}
+.feat-list li:last-child{border-bottom:none}
+.feat-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);min-width:20px;padding-top:2px}
+.feat-name{font-weight:500;color:var(--color-text-primary,#111);margin-right:6px}
+
+/* Out of scope */
+.oos-list{list-style:none}
+.oos-list li{display:flex;gap:8px;padding:.5rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);font-size:13px;color:var(--color-text-secondary,#555);align-items:flex-start}
+.oos-list li:last-child{border-bottom:none}
+.oos-x{color:#A32D2D;font-weight:500;flex-shrink:0;padding-top:1px}
+
+/* Flow steps */
+.flow-steps{counter-reset:flow}
+.flow-step{display:flex;gap:12px;margin-bottom:0;align-items:flex-start}
+.flow-step+.flow-step{margin-top:0}
+.flow-connector{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:28px}
+.flow-dot{width:8px;height:8px;border-radius:50%;background:var(--color-text-primary,#111);margin-top:6px;flex-shrink:0}
+.flow-line{flex:1;width:1px;background:var(--color-border-tertiary,#e0e0e0);min-height:20px;margin:2px 0}
+.flow-content{padding:.5rem 0 .875rem;flex:1}
+.flow-label{font-size:13px;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:2px}
+.flow-desc{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+
+/* Data model */
+.model-obj{background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;margin-bottom:8px}
+.model-name{font-size:13px;font-weight:500;color:var(--color-text-primary,#111);margin-bottom:.5rem;font-family:var(--font-mono,monospace)}
+.model-fields{list-style:none}
+.model-fields li{font-size:12px;color:var(--color-text-secondary,#555);padding:3px 0;display:flex;gap:8px}
+.field-key{font-family:var(--font-mono,monospace);color:var(--color-text-primary,#111);min-width:140px;flex-shrink:0}
+.field-desc{color:var(--color-text-secondary,#555)}
+
+/* Screens */
+.screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.screen-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.75rem 1rem}
+.screen-name{font-size:13px;font-weight:500;margin-bottom:.3rem}
+.screen-desc{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.5}
+
+/* Arch */
+.arch-layers{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.arch-layer{display:flex;gap:10px;align-items:flex-start}
+.arch-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);text-transform:uppercase;letter-spacing:.06em;min-width:90px;padding-top:3px;flex-shrink:0}
+.arch-items{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.arch-pill{background:var(--color-background-secondary,#f5f5f5);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:4px;padding:4px 10px;font-size:12px;color:var(--color-text-secondary,#555)}
+
+/* Test plan */
+.test-block{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;margin-bottom:8px}
+.test-path{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.test-happy{color:#0F6E56}.test-fail{color:#993C1D}
+.test-items{list-style:none}
+.test-items li{font-size:12px;color:var(--color-text-secondary,#555);padding:3px 0;line-height:1.5;display:flex;gap:6px}
+.test-dot{flex-shrink:0;color:var(--color-text-tertiary,#999);padding-top:1px}
+
+/* Tasks */
+.task-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start}
+.task-num{font-size:22px;font-weight:500;color:var(--color-text-primary,#111);line-height:1;min-width:28px;padding-top:2px}
+.task-body{}
+.task-name{font-size:13px;font-weight:500;margin-bottom:.25rem}
+.task-desc{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.task-time{font-size:11px;font-weight:500;margin-top:.35rem;display:inline-block;padding:2px 8px;border-radius:3px;background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-tertiary,#999)}
+
+/* Unknowns */
+.unknown-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;margin-bottom:8px}
+.unk-q{font-size:13px;font-weight:500;margin-bottom:.4rem;color:var(--color-text-primary,#111)}
+.unk-risk{font-size:12px;color:var(--color-text-secondary,#555);margin-bottom:.4rem;line-height:1.6}
+.unk-derisked{font-size:12px;line-height:1.6;padding:.5rem .75rem;border-radius:4px;background:#EAF3DE;color:#3B6D11;margin-top:.35rem}
+
+/* Governance */
+.gov-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:1rem}
+.gov-table th{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary,#666);padding:6px 10px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.gov-table td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);vertical-align:top;color:var(--color-text-secondary,#555);line-height:1.5}
+.gov-table tr:last-child td{border-bottom:none}
+.gov-table tr:hover td{background:var(--color-background-secondary,#f9f9f9)}
+.gov-owner{font-size:11px;font-weight:500;padding:2px 8px;border-radius:3px;display:inline-block;white-space:nowrap}
+.gov-human{background:#FAEEDA;color:#633806}
+.gov-ai{background:#E1F5EE;color:#085041}
+.gov-both{background:#EEEDFE;color:#3C3489}
+
+/* Milestone boxes */
+.milestone-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+@media(max-width:540px){.milestone-row{grid-template-columns:1fr}}
+.milestone-box{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem}
+.ms-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary,#999);margin-bottom:.4rem}
+.ms-title{font-size:14px;font-weight:500;margin-bottom:.4rem}
+.ms-desc{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+
+/* Checklist */
+.check-list{list-style:none}
+.check-list li{display:flex;gap:8px;padding:.5rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);font-size:13px;color:var(--color-text-secondary,#555);align-items:flex-start;line-height:1.6}
+.check-list li:last-child{border-bottom:none}
+.check-box{width:14px;height:14px;border:1.5px solid var(--color-border-primary,#aaa);border-radius:3px;flex-shrink:0;margin-top:2px;cursor:pointer;background:var(--color-background-primary,#fff);display:flex;align-items:center;justify-content:center;font-size:9px;color:transparent;transition:all .1s}
+.check-box.checked{background:var(--color-text-primary,#111);border-color:var(--color-text-primary,#111);color:#fff}
+
+/* Kill switch */
+.kill-list{list-style:none}
+.kill-list li{display:flex;gap:8px;padding:.5rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);font-size:13px;color:var(--color-text-secondary,#555);align-items:flex-start;line-height:1.6}
+.kill-list li:last-child{border-bottom:none}
+.kill-dot{width:6px;height:6px;border-radius:50%;background:#E24B4A;flex-shrink:0;margin-top:7px}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;font-weight:500}
+.b-score{background:#E1F5EE;color:#0F6E56}
+.b-type{background:#E6F1FB;color:#0C447C}
+.b-tier{background:#F1EFE8;color:#5F5E5A}
+.b-phase{background:#EEEDFE;color:#3C3489}
+</style>
+
+<div class="brief-header">
+  <div class="brief-eyebrow">Build-Ready Brief · Post-Market #1</div>
+  <div class="brief-title">Prompt Forge</div>
+  <div class="brief-why">Selected over all tied ideas because it is the only idea in the top 15 that simultaneously scores in the top tier on final score (4.79), crowding edge (4/5), and solo reachability (5/5) — and it multiplies output for every other idea in the catalog.</div>
+  <div class="brief-meta">
+    <span class="badge b-score">Score 4.79</span>
+    <span class="badge b-type">Tool</span>
+    <span class="badge b-tier">Tier 1</span>
+    <span class="badge b-phase">Build Now</span>
+    <span class="badge" style="background:#F1EFE8;color:#5F5E5A">Solo</span>
+    <span class="badge" style="background:#EAF3DE;color:#3B6D11">Low Risk</span>
+    <span class="badge" style="background:#F1EFE8;color:#5F5E5A">No asset deps</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-panel="vision">Vision</button>
+  <button class="tab" data-panel="flow">User Flow</button>
+  <button class="tab" data-panel="data">Data Model</button>
+  <button class="tab" data-panel="screens">Screens</button>
+  <button class="tab" data-panel="arch">Architecture</button>
+  <button class="tab" data-panel="tests">Tests</button>
+  <button class="tab" data-panel="unknowns">Unknowns</button>
+  <button class="tab" data-panel="gov">Governance</button>
+</div>
+
+<!-- VISION -->
+<div class="panel active" id="panel-vision">
+  <div class="section">
+    <div class="sec-title">Product vision</div>
+    <div class="sec-body">
+      A personal prompt testing workbench for solo AI builders. You write a prompt, define a rubric, run it against Claude, rate the output, and save the winners. Over time it becomes your reusable prompt library — the difference between iterating randomly in chat and actually improving systematically.
+      <br><br>
+      It does not try to be a team tool, a marketplace, or an analytics dashboard. It is a single-player instrument for one job: knowing which of your prompts actually works and being able to find it again.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Must-have v1 features</div>
+    <ul class="feat-list">
+      <li><span class="feat-num">1</span><div><span class="feat-name">Prompt runner.</span>Text input area, send to Claude API, display raw output. The whole tool lives or dies on this working cleanly.</div></li>
+      <li><span class="feat-num">2</span><div><span class="feat-name">Rubric scorecard.</span>User defines 3–5 criteria before running (e.g. clarity, tone, specificity). After output appears, rate each criterion 1–5. This is what separates it from just using Claude chat.</div></li>
+      <li><span class="feat-num">3</span><div><span class="feat-name">Save to library.</span>One-click save of the prompt + output + rubric scores + optional notes. Persisted to localStorage. Without this, every session is throwaway.</div></li>
+      <li><span class="feat-num">4</span><div><span class="feat-name">Library browse + search.</span>List of saved prompts filterable by tag and sortable by score. The library is the compounding value — it must be findable.</div></li>
+      <li><span class="feat-num">5</span><div><span class="feat-name">Tag system.</span>Free-text tags per prompt (e.g. "game", "narrative", "system"). Minimum viable taxonomy. No categories, no hierarchy — just tags.</div></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Nice-to-have later</div>
+    <ul class="feat-list">
+      <li><span class="feat-num">A</span><div><span class="feat-name">Side-by-side variant comparison.</span>Run 2–3 variants of a prompt, score all of them, see diffs. Useful after v1 proves the rubric idea has value.</div></li>
+      <li><span class="feat-num">B</span><div><span class="feat-name">Prompt versioning.</span>Track edits to a saved prompt over time. Only worth building after the library has enough entries to make version history meaningful.</div></li>
+      <li><span class="feat-num">C</span><div><span class="feat-name">Export to JSON.</span>Download your full library. Useful for backup or sharing — add after the library is worth exporting.</div></li>
+      <li><span class="feat-num">D</span><div><span class="feat-name">AI-suggested improvements.</span>After rating, ask Claude to suggest a rewrite of the prompt based on the rubric gaps. Meta-layer — do not add before the base loop is stable.</div></li>
+      <li><span class="feat-num">E</span><div><span class="feat-name">Supabase sync.</span>Cross-device persistence. Only needed when the library is large enough to be painful to lose.</div></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Out-of-scope guardrails</div>
+    <ul class="oos-list">
+      <li><span class="oos-x">✕</span>No team sharing, collaboration, or shared prompt libraries in v1.</li>
+      <li><span class="oos-x">✕</span>No automated scoring — all rubric ratings are manual, always.</li>
+      <li><span class="oos-x">✕</span>No analytics dashboard, charts, or score trends.</li>
+      <li><span class="oos-x">✕</span>No prompt marketplace, public sharing, or discovery features.</li>
+      <li><span class="oos-x">✕</span>No model selection UI — Claude only, hardcoded.</li>
+      <li><span class="oos-x">✕</span>No authentication, accounts, or cloud sync in v1.</li>
+      <li><span class="oos-x">✕</span>No bulk import, CSV upload, or external integrations.</li>
+      <li><span class="oos-x">✕</span>No system prompt builder — that is a different tool entirely.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Market reality check</div>
+    <div class="sec-body">
+      This is for solo AI builders — developers, indie creators, and content professionals who already use Claude regularly and are frustrated that their prompt iterations live scattered across chat sessions with no way to compare or retrieve them. The audience is small but highly self-aware about the pain: they know they are losing good prompts and making the same mistakes repeatedly. The tool wins by being personal and frictionless rather than team-oriented and feature-heavy — most prompt management tools aim at teams or enterprises (PromptLayer, LangSmith, Helicone) and bring significant setup overhead. The honest uncertainty: the audience may decide that a well-organized Notion doc solves this adequately, and there is no strong evidence yet that they will use a dedicated tool over their existing workflow. The v1 test is whether using the rubric + save loop produces a measurably better prompt within a single session. If it does not, the tool has no argument.
+    </div>
+  </div>
+</div>
+
+<!-- FLOW -->
+<div class="panel" id="panel-flow">
+  <div class="section">
+    <div class="sec-title">Core user flow</div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">1 · Open the tool</div><div class="flow-desc">User lands on the runner screen. Sees the prompt input, their rubric (pre-filled from last session or blank), and a library count badge in the corner. No login, no onboarding — immediate.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">2 · Define or load rubric criteria</div><div class="flow-desc">User sets 3–5 criteria before running. These can be free-text (e.g. "stays in voice", "gives a concrete example") or chosen from a preset list. Rubric is persistent across sessions.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">3 · Write prompt and run</div><div class="flow-desc">User types or pastes a prompt. Hits run. The output streams in. The UI does not disable or lock during generation — user can start writing notes immediately.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">4 · Score the output against rubric</div><div class="flow-desc">Once output is complete, the rubric scorecard activates. User rates each criterion 1–5. An overall composite score calculates automatically. User can add a short note.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">5 · Save or discard</div><div class="flow-desc">User saves to library with tags, or discards and iterates. If they save, the entry appears immediately in the library list. If they discard, the runner resets to empty — prompt text is not cleared until they choose to.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div><div class="flow-line"></div></div>
+        <div class="flow-content"><div class="flow-label">6 · Browse library</div><div class="flow-desc">User switches to library view. Sees saved prompts sorted by score (default) with tag filters and a search box. Each entry is expandable to show full prompt, full output, and rubric breakdown. No pagination in v1.</div></div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-connector"><div class="flow-dot"></div></div>
+        <div class="flow-content" style="padding-bottom:0"><div class="flow-label">7 · Reload and reuse</div><div class="flow-desc">User clicks a saved prompt to load it back into the runner. From there they can edit, re-run with a modified version, or just copy the text. This is the core payoff — the library feeds the runner.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DATA MODEL -->
+<div class="panel" id="panel-data">
+  <div class="section">
+    <div class="sec-title">Data / state model — plain English</div>
+    <div class="sec-body" style="margin-bottom:1rem">Everything stored in localStorage as JSON. No server, no auth. These are the four objects the app needs to function.</div>
+    <div class="model-obj">
+      <div class="model-name">Prompt Entry  <span style="font-size:11px;font-weight:400;color:var(--color-text-tertiary,#999);font-family:var(--font-sans,system-ui)">— one saved item in the library</span></div>
+      <ul class="model-fields">
+        <li><span class="field-key">id</span><span class="field-desc">auto-generated timestamp string — unique key, used for lookup and deletion</span></li>
+        <li><span class="field-key">promptText</span><span class="field-desc">the full prompt string the user wrote</span></li>
+        <li><span class="field-key">outputText</span><span class="field-desc">the full raw response from Claude</span></li>
+        <li><span class="field-key">rubricScores</span><span class="field-desc">array of {criterionLabel, score} objects — one per rubric criterion</span></li>
+        <li><span class="field-key">compositeScore</span><span class="field-desc">average of all rubric scores, calculated at save time, stored as a float</span></li>
+        <li><span class="field-key">tags</span><span class="field-desc">array of strings — free text, lowercase, trimmed</span></li>
+        <li><span class="field-key">notes</span><span class="field-desc">optional short string the user added — can be empty</span></li>
+        <li><span class="field-key">savedAt</span><span class="field-desc">ISO timestamp — used for sort by recency</span></li>
+      </ul>
+    </div>
+    <div class="model-obj">
+      <div class="model-name">Rubric Template  <span style="font-size:11px;font-weight:400;color:var(--color-text-tertiary,#999);font-family:var(--font-sans,system-ui)">— persists across sessions</span></div>
+      <ul class="model-fields">
+        <li><span class="field-key">criteria</span><span class="field-desc">array of strings — the user's current active rubric criterion labels</span></li>
+        <li><span class="field-key">updatedAt</span><span class="field-desc">timestamp — so the app can warn if the user changed the rubric after saving older entries</span></li>
+      </ul>
+    </div>
+    <div class="model-obj">
+      <div class="model-name">Session State  <span style="font-size:11px;font-weight:400;color:var(--color-text-tertiary,#999);font-family:var(--font-sans,system-ui)">— in-memory, not persisted</span></div>
+      <ul class="model-fields">
+        <li><span class="field-key">currentPrompt</span><span class="field-desc">what is currently typed in the runner input</span></li>
+        <li><span class="field-key">currentOutput</span><span class="field-desc">the last response from Claude — cleared on new run</span></li>
+        <li><span class="field-key">isRunning</span><span class="field-desc">boolean — true while Claude API call is in flight</span></li>
+        <li><span class="field-key">currentScores</span><span class="field-desc">partial rubric scores entered so far this session — cleared on save or discard</span></li>
+        <li><span class="field-key">activeView</span><span class="field-desc">'runner' or 'library' — drives which screen is visible</span></li>
+      </ul>
+    </div>
+    <div class="model-obj">
+      <div class="model-name">Library Index  <span style="font-size:11px;font-weight:400;color:var(--color-text-tertiary,#999);font-family:var(--font-sans,system-ui)">— persisted, drives search and filter</span></div>
+      <ul class="model-fields">
+        <li><span class="field-key">entries</span><span class="field-desc">array of all saved Prompt Entry objects — source of truth</span></li>
+        <li><span class="field-key">allTags</span><span class="field-desc">derived set of all unique tags across entries — rebuilt on each save, used for filter UI</span></li>
+        <li><span class="field-key">sortMode</span><span class="field-desc">'score' | 'recency' — user's last chosen library sort order, persisted</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SCREENS -->
+<div class="panel" id="panel-screens">
+  <div class="section">
+    <div class="sec-title">UI screen list</div>
+    <div class="screen-grid">
+      <div class="screen-card" style="border-left:3px solid #1D9E75">
+        <div class="screen-name">Runner</div>
+        <div class="screen-desc">Primary screen. Prompt input, run button, output display, rubric scorecard (activates post-output), save/discard buttons. Lives at the top of the single-page layout.</div>
+      </div>
+      <div class="screen-card" style="border-left:3px solid #378ADD">
+        <div class="screen-name">Rubric editor</div>
+        <div class="screen-desc">Inline panel on the runner screen — not a separate page. Expandable. User adds, edits, or removes criteria. Criteria persist immediately on change.</div>
+      </div>
+      <div class="screen-card" style="border-left:3px solid #7F77DD">
+        <div class="screen-name">Library list</div>
+        <div class="screen-desc">Second primary view. Sorted list of saved entries with composite score, preview snippet, and tag pills. Tag filter row at top. Search box. Sort toggle (score / recency).</div>
+      </div>
+      <div class="screen-card" style="border-left:3px solid #EF9F27">
+        <div class="screen-name">Entry detail</div>
+        <div class="screen-desc">Expanded view of a single saved entry — full prompt, full output, rubric breakdown table, notes, tags. Inline on the library list (accordion) or a panel — decide after seeing how long outputs render.</div>
+      </div>
+      <div class="screen-card" style="border-left:3px solid #B4B2A9">
+        <div class="screen-name">Empty states</div>
+        <div class="screen-desc">Two: empty library (first use prompt) and empty rubric (nudge to add at least one criterion before running). Both are single-sentence nudges, not wizards.</div>
+      </div>
+      <div class="screen-card" style="border-left:3px solid #E24B4A">
+        <div class="screen-name">Error states</div>
+        <div class="screen-desc">API error (inline, non-modal), empty prompt submit (field highlight only), localStorage full (rare — warn and suggest export). No full-screen error states.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARCHITECTURE -->
+<div class="panel" id="panel-arch">
+  <div class="section">
+    <div class="sec-title">Technical architecture sketch</div>
+    <div class="arch-layers">
+      <div class="arch-layer">
+        <div class="arch-label">Rendering</div>
+        <div class="arch-items">
+          <span class="arch-pill">React + Vite</span>
+          <span class="arch-pill">Single HTML file in dev</span>
+          <span class="arch-pill">No routing library — view state is a single boolean</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">State</div>
+        <div class="arch-items">
+          <span class="arch-pill">useState for session state</span>
+          <span class="arch-pill">useEffect for localStorage sync</span>
+          <span class="arch-pill">No Redux, no Zustand — too small to need it</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">Persistence</div>
+        <div class="arch-items">
+          <span class="arch-pill">localStorage only</span>
+          <span class="arch-pill">Serialized JSON per key: pf_library, pf_rubric, pf_prefs</span>
+          <span class="arch-pill">Read on mount, write on save actions</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">API</div>
+        <div class="arch-items">
+          <span class="arch-pill">Anthropic /v1/messages — POST from client</span>
+          <span class="arch-pill">claude-sonnet-4-6 model</span>
+          <span class="arch-pill">max_tokens: 1000</span>
+          <span class="arch-pill">API key in .env — never in source</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">Styling</div>
+        <div class="arch-items">
+          <span class="arch-pill">Tailwind utility classes</span>
+          <span class="arch-pill">No component library — custom only</span>
+          <span class="arch-pill">CSS variables for color consistency</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">Deployment</div>
+        <div class="arch-items">
+          <span class="arch-pill">Vercel or Netlify — static deploy, zero config</span>
+          <span class="arch-pill">Environment variable for API key via platform dashboard</span>
+          <span class="arch-pill">No backend, no server, no database</span>
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-label">Not used v1</div>
+        <div class="arch-items">
+          <span class="arch-pill" style="color:var(--color-text-tertiary,#999)">Supabase</span>
+          <span class="arch-pill" style="color:var(--color-text-tertiary,#999)">Auth</span>
+          <span class="arch-pill" style="color:var(--color-text-tertiary,#999)">Streaming responses</span>
+          <span class="arch-pill" style="color:var(--color-text-tertiary,#999)">Server-side proxy</span>
+          <span class="arch-pill" style="color:var(--color-text-tertiary,#999)">Any third-party service</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;font-size:12px;color:var(--color-text-secondary,#555);line-height:1.7;margin-top:.5rem">
+      <b style="font-weight:500;color:var(--color-text-primary,#111)">One security note:</b> calling the Anthropic API directly from the client means the API key is exposed in the browser. For a personal-use-only tool this is acceptable. If you ever share the deployed URL publicly, add a lightweight server-side proxy (a single Vercel Edge Function or Netlify Function) that holds the key and forwards requests. Do not add this in v1 — solve it only when the sharing use case exists.
+    </div>
+  </div>
+</div>
+
+<!-- TESTS -->
+<div class="panel" id="panel-tests">
+  <div class="section">
+    <div class="sec-title">Test plan</div>
+    <div class="test-block">
+      <div class="test-path test-happy">Happy path — what must work for v1 to be shippable</div>
+      <ul class="test-items">
+        <li><span class="test-dot">·</span>User opens app fresh — runner screen loads with empty prompt field and rubric editor visible.</li>
+        <li><span class="test-dot">·</span>User adds three rubric criteria — they persist after page refresh.</li>
+        <li><span class="test-dot">·</span>User types a prompt, clicks run — output appears without error and the run button disables during generation.</li>
+        <li><span class="test-dot">·</span>User rates all rubric criteria 1–5 — composite score calculates and displays correctly.</li>
+        <li><span class="test-dot">·</span>User adds tags and clicks save — entry appears immediately in library list with correct score and tags.</li>
+        <li><span class="test-dot">·</span>User switches to library view — saved entry is visible, tag filter narrows results correctly.</li>
+        <li><span class="test-dot">·</span>User clicks saved entry — full prompt and output expand correctly.</li>
+        <li><span class="test-dot">·</span>User clicks "load into runner" — prompt text populates the runner input field.</li>
+        <li><span class="test-dot">·</span>User refreshes page — library and rubric persist; session state (current output) does not.</li>
+      </ul>
+    </div>
+    <div class="test-block">
+      <div class="test-path test-fail">Failure path — what the app must handle without breaking</div>
+      <ul class="test-items">
+        <li><span class="test-dot">·</span>User submits empty prompt — field highlights red, no API call fires, no error toast.</li>
+        <li><span class="test-dot">·</span>API returns error (bad key, rate limit, network) — inline error message appears below output area; app does not crash; run button re-enables.</li>
+        <li><span class="test-dot">·</span>User tries to save before rating all criteria — block the save and highlight unrated criteria; do not silently save with 0 scores.</li>
+        <li><span class="test-dot">·</span>User adds duplicate tag — silently deduplicate; do not show duplicate pill.</li>
+        <li><span class="test-dot">·</span>User deletes an entry — it disappears from the list immediately; if it was the only entry with a given tag, that tag disappears from the filter.</li>
+        <li><span class="test-dot">·</span>Library has 50+ entries — search and filter still perform without lag; no pagination required but no jank either.</li>
+        <li><span class="test-dot">·</span>User clears localStorage manually — app initializes to empty state without error; no stale references crash the UI.</li>
+      </ul>
+    </div>
+    <div class="test-block">
+      <div class="test-path" style="color:var(--color-text-secondary,#555)">Edge cases to check but not block launch</div>
+      <ul class="test-items">
+        <li><span class="test-dot">·</span>Very long output (4000+ chars) — text wraps correctly, scroll works, expand/collapse does not jank.</li>
+        <li><span class="test-dot">·</span>Rubric criteria with long label text — pill wraps or truncates without breaking the layout.</li>
+        <li><span class="test-dot">·</span>Mobile-width viewport — runner and library must be usable; not required to be beautiful.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- UNKNOWNS -->
+<div class="panel" id="panel-unknowns">
+  <div class="section">
+    <div class="sec-title">What I might not know yet</div>
+    <div class="unknown-card">
+      <div class="unk-q">Will manual rubric scoring actually feel worth doing, or will it feel like extra work?</div>
+      <div class="unk-risk">This is the core value assumption. If scoring feels like a tax rather than a clarifier, the tool has no argument over a Notion doc.</div>
+      <div class="unk-derisked">De-risk first: before building the save system, build only the rubric scorecard in isolation and score 5 real prompts by hand in one sitting. If you find yourself writing more specific prompts to get better scores, the mechanic works.</div>
+    </div>
+    <div class="unknown-card">
+      <div class="unk-q">How fast does the library become useful vs just being a graveyard of old attempts?</div>
+      <div class="unk-risk">Libraries are only valuable if you return to them. If after 20 saved prompts you never load one back into the runner, the whole product is a logging tool, not a workbench.</div>
+      <div class="unk-derisked">De-risk: track personally how many times you load a saved prompt into the runner vs writing from scratch after 2 weeks of use. If the ratio is low, the library UX needs work — not more features.</div>
+    </div>
+    <div class="unknown-card">
+      <div class="unk-q">Is localStorage enough, or will it hit size limits with large outputs?</div>
+      <div class="unk-risk">localStorage is capped at ~5MB per origin. A long Claude response is ~2–4KB. You could realistically store 500–1000 entries before hitting the limit, but text can compound fast.</div>
+      <div class="unk-derisked">De-risk: add a storage usage indicator in the library header showing bytes used vs the ~5MB cap. If you ever exceed 60%, add output truncation (store first 1000 chars + a "view full" flag) or start building the Supabase path.</div>
+    </div>
+    <div class="unknown-card">
+      <div class="unk-q">What rubric criteria are actually useful vs noise?</div>
+      <div class="unk-risk">If you ship with bad default criteria, every user starts with a broken rubric and has to figure out the right one themselves. That's a cold-start problem that kills habit formation.</div>
+      <div class="unk-derisked">De-risk: before coding the rubric editor, manually score 10 of your real prompts using 3–4 different criterion sets. Whichever set produces the most useful signal becomes the default. Ship one good default, not a blank slate.</div>
+    </div>
+    <div class="unknown-card">
+      <div class="unk-q">Will the API key exposure risk become a real problem?</div>
+      <div class="unk-risk">For personal use, calling the API from the client is fine. The key is exposed in network requests but the tool is not shared with strangers. If you post a live demo link publicly, anyone who inspects the requests can extract the key.</div>
+      <div class="unk-derisked">De-risk: decide upfront whether this ships as personal-only or as a public demo. If public, add a Vercel Edge Function as a proxy before launch — it's one file and one hour of work. Do not skip this if sharing publicly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GOVERNANCE -->
+<div class="panel" id="panel-gov">
+  <div class="section">
+    <div class="sec-title">Human vs AI task split</div>
+    <div style="overflow-x:auto">
+    <table class="gov-table">
+      <thead>
+        <tr>
+          <th style="min-width:240px">Task</th>
+          <th>Owner</th>
+          <th style="min-width:300px">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Rubric criteria design — what to score</td><td><span class="gov-owner gov-human">Human</span></td><td>You must decide what "good" looks like for your use case. AI can suggest but you must commit.</td></tr>
+        <tr><td>Decide what counts as a saveable prompt</td><td><span class="gov-owner gov-human">Human</span></td><td>No heuristic for this. Personal judgment call made by actually using the tool.</td></tr>
+        <tr><td>Tag taxonomy initial seed</td><td><span class="gov-owner gov-human">Human</span></td><td>Build the first 8–10 tags from your actual project types before the tool launches.</td></tr>
+        <tr><td>API integration + localStorage CRUD</td><td><span class="gov-owner gov-ai">AI</span></td><td>Straightforward. Claude Code can scaffold the full data layer in one session.</td></tr>
+        <tr><td>React component structure</td><td><span class="gov-owner gov-ai">AI</span></td><td>Component tree, state wiring, and prop flows are all generatable from a clear brief.</td></tr>
+        <tr><td>Rubric scorecard UI</td><td><span class="gov-owner gov-ai">AI</span></td><td>Given the data model, AI can produce the rating component cleanly.</td></tr>
+        <tr><td>Library search + filter logic</td><td><span class="gov-owner gov-ai">AI</span></td><td>Standard array filter + string match. Low risk of AI error here.</td></tr>
+        <tr><td>Error state handling</td><td><span class="gov-owner gov-both">Both</span></td><td>AI builds the error display components; you decide which errors need UI treatment vs console only.</td></tr>
+        <tr><td>Empty state copy and UX</td><td><span class="gov-owner gov-both">Both</span></td><td>AI drafts the copy; you rewrite anything that sounds generic.</td></tr>
+        <tr><td>Deciding when the rubric is "good enough"</td><td><span class="gov-owner gov-human">Human</span></td><td>This is a feel call after using the tool. No metric will tell you.</td></tr>
+        <tr><td>Default rubric criteria copy</td><td><span class="gov-owner gov-ai">AI</span></td><td>AI can generate 10 candidate criterion sets; you pick and edit.</td></tr>
+        <tr><td>First real-use test (scoring 5 prompts)</td><td><span class="gov-owner gov-human">Human</span></td><td>AI cannot validate product feel. You have to sit down and use it for 30 minutes.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">First 3 implementation tasks</div>
+    <div class="task-card">
+      <div class="task-num">1</div>
+      <div class="task-body">
+        <div class="task-name">Rubric scorecard — standalone, no API</div>
+        <div class="task-desc">Build only the rubric component: add criteria, display them, rate each 1–5, show composite score. Use hardcoded criteria and a hardcoded "output" text block. Test that the scoring math is correct and the UI feels right before connecting anything else. This validates the core value mechanic without building any infrastructure.</div>
+        <span class="task-time">First 2-hour task</span>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">2</div>
+      <div class="task-body">
+        <div class="task-name">Prompt runner + API call</div>
+        <div class="task-desc">Add the prompt input, wire the Anthropic API call, display the raw output. No save, no library yet. Just: write prompt → get response → see it. Confirm the API connection works, error states surface correctly, and the output renders cleanly for both short and long responses.</div>
+        <span class="task-time">Hours 2–4</span>
+      </div>
+    </div>
+    <div class="task-card">
+      <div class="task-num">3</div>
+      <div class="task-body">
+        <div class="task-name">Save + localStorage library</div>
+        <div class="task-desc">Wire the save action: prompt + output + rubric scores → localStorage. Build the library list view to display saved entries. Add tag input and basic search. Confirm that data persists across refresh. At the end of this task, the full happy path should be walkable end-to-end.</div>
+        <span class="task-time">First weekend milestone</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Assumption checklist — validate before coding</div>
+    <ul class="check-list" id="check-list">
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You have an active Anthropic API key with available credits and have confirmed it works in a basic fetch call.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You have personally scored at least 5 real prompts with a rubric by hand — before building — and found the scores useful rather than arbitrary.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You know what your first 3–4 rubric criteria will be. They are written down, not vague.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You have decided whether this is personal-only or a public demo — and if public, you know you need to add a proxy before sharing the URL.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>Your Vite + React setup is already working locally and you can run a dev server today without setup friction.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You have confirmed localStorage works in your target browser and is not blocked by any extension or privacy setting.</span></li>
+      <li><div class="check-box" onclick="this.classList.toggle('checked');this.textContent=this.classList.contains('checked')?'✓':''"></div><span>You accept that the v1 scope stops at 5 features and are willing to close the "that would be useful" impulse until v1 ships.</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Kill-switch criteria</div>
+    <div class="sec-body" style="margin-bottom:.875rem">Archive this project quickly if any of the following are true after 2 weeks of real use:</div>
+    <ul class="kill-list">
+      <li><span class="kill-dot"></span>You have saved 20+ prompts and never loaded a single one back into the runner. The library is a graveyard, not a workbench — the core loop is broken.</li>
+      <li><span class="kill-dot"></span>Scoring prompts against the rubric takes more than 90 seconds and consistently feels like overhead rather than insight. The friction exceeds the value.</li>
+      <li><span class="kill-dot"></span>You find yourself opening a Notion doc or a plain text file instead of the tool when you want to track a good prompt. The tool has lost the job.</li>
+      <li><span class="kill-dot"></span>The rubric criteria you defined produce identical scores across prompts with meaningfully different quality. The scoring system has no signal — it is theater.</li>
+      <li><span class="kill-dot"></span>After two weeks, the tool has not changed a single prompt you would have written without it. Zero behavior change = zero value delivered.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.panel).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

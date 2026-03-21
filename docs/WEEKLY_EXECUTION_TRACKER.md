@@ -82,9 +82,9 @@ Use one section per week. Keep entries short and consistent.
   - Variance hours:
   - Variance percent:
   - Tasks planned: Community/Business block (deferred); planning/docs
-  - Tasks done: Cursor model & mode reference (full build: routing modes, pools, billing, backup plans); model-doc propagation to starter pack + rollout checklist; doc verification; exit protocol
+  - Tasks done: Cursor model & mode reference (full build: routing modes, pools, billing, backup plans); model-doc propagation to starter pack + rollout checklist; doc verification; exit protocol; evening — adult ideation export pipeline analysis + post–SQ lock order advisory (keep Anchor next; Ashen pool-only); session exit log
   - Drift reason: Community/Business deferred per Ryan; focused on Cursor doc completion
-  - Carry-forward: Amber Fire HD test (next session with tablet); Community/Business planning next Friday
+  - Carry-forward: Amber Fire HD test (next session with tablet); Community/Business planning next Friday; optional Future Pool Intake paste from ideation exports when approved
 - Saturday:
   - Planned hours:
   - Actual hours:

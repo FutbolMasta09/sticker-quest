@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Portfolio Master — Final Synthesis</title></head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent;padding:1rem 0;color:var(--color-text-primary,#111);line-height:1.6}
+
+.page-header{padding:0 0 1.25rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);margin-bottom:1.5rem}
+.page-eyebrow{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary,#999);margin-bottom:.35rem}
+.page-title{font-size:22px;font-weight:500;margin-bottom:.4rem}
+.page-sub{font-size:12px;color:var(--color-text-secondary,#666);line-height:1.6;max-width:680px}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.tab{background:none;border:none;border-bottom:2px solid transparent;padding:7px 14px;font-size:13px;cursor:pointer;color:var(--color-text-secondary,#666);font-weight:400;margin-bottom:-1px;transition:all .15s;white-space:nowrap}
+.tab:hover{color:var(--color-text-primary,#111)}
+.tab.active{color:var(--color-text-primary,#111);font-weight:500;border-bottom-color:var(--color-text-primary,#111)}
+.panel{display:none}.panel.active{display:block}
+
+/* Table */
+.tbl-scroll{overflow-x:auto;margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;font-size:11.5px;min-width:1080px}
+th{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary,#666);padding:7px 8px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);white-space:nowrap;cursor:pointer;user-select:none;background:var(--color-background-primary,#fff);position:sticky;top:0}
+th:hover{color:var(--color-text-primary,#111)}
+td{padding:7px 8px;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);vertical-align:middle;font-size:12px}
+tr:hover td{background:var(--color-background-secondary,#f9f9f9)}
+tr.row-flag td{background:#FEF8F8}
+tr.row-flag:hover td{background:#FDEAEA}
+.idea-name{font-weight:500;font-size:12px;color:var(--color-text-primary,#111);white-space:nowrap}
+.rank-shift{white-space:nowrap;font-size:11px}
+.rank-up{color:#1D9E75;font-weight:500}
+.rank-dn{color:#A32D2D;font-weight:500}
+.rank-nc{color:var(--color-text-tertiary,#999)}
+.first-action{font-size:11px;color:var(--color-text-secondary,#555);max-width:160px;line-height:1.4}
+.risk-text{font-size:11px;color:var(--color-text-secondary,#555);max-width:160px;line-height:1.4}
+.review-date{font-size:11px;color:var(--color-text-tertiary,#999);white-space:nowrap}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.b-game{background:#EEEDFE;color:#3C3489}
+.b-tool{background:#E6F1FB;color:#0C447C}
+.b-now{background:#E1F5EE;color:#0F6E56}
+.b-later{background:#FAEEDA;color:#633806}
+.b-back{background:#F1EFE8;color:#5F5E5A}
+.b-h1{background:#E1F5EE;color:#085041;font-size:9px}
+.b-h2{background:#FAEEDA;color:#633806;font-size:9px}
+.b-h3{background:#EEEDFE;color:#3C3489;font-size:9px}
+.b-flag{background:#FCEBEB;color:#501313}
+.b-low{background:#EAF3DE;color:#3B6D11}
+.b-med{background:#FAEEDA;color:#854F0B}
+.b-high{background:#FAECE7;color:#993C1D}
+.b-keep{background:#E1F5EE;color:#0F6E56}
+.b-trial{background:#FAEEDA;color:#854F0B}
+.b-avoid{background:#FAECE7;color:#993C1D}
+
+/* Stars */
+.stars{display:inline-flex;gap:2px;vertical-align:middle}
+.star{width:7px;height:7px;border-radius:1px;background:var(--color-border-tertiary,#e0e0e0)}
+.star.hi{background:#1D9E75}.star.mid{background:#EF9F27}.star.lo{background:#E24B4A}
+
+/* Filter bar */
+.filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.875rem}
+.filt{background:none;border:0.5px solid var(--color-border-secondary,#ccc);border-radius:var(--border-radius-md,8px);padding:4px 11px;font-size:11px;cursor:pointer;color:var(--color-text-secondary,#666);transition:all .1s}
+.filt:hover{color:var(--color-text-primary,#111)}
+.filt.active{background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-primary,#111);font-weight:500;border-color:var(--color-border-primary,#aaa)}
+
+/* Tool watchlist */
+.watch-section{margin-bottom:1.75rem}
+.watch-header{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary,#999);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.watch-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem}
+.watch-card.keep{border-left:3px solid #1D9E75}
+.watch-card.trial{border-left:3px solid #EF9F27}
+.watch-card.avoid{border-left:3px solid #E24B4A}
+.wc-name{font-size:13px;font-weight:500;margin-bottom:.25rem}
+.wc-tag{display:inline-block;margin-bottom:.5rem}
+.wc-body{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.wc-test{margin-top:.5rem;padding:.5rem .75rem;background:var(--color-background-secondary,#f5f5f5);border-radius:4px;font-size:11px;color:var(--color-text-secondary,#555);line-height:1.5}
+.wc-test b{font-weight:500;color:var(--color-text-primary,#111)}
+
+/* Governance */
+.gov-block{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem;margin-bottom:10px}
+.gov-title{font-size:13px;font-weight:500;margin-bottom:.5rem}
+.gov-body{font-size:13px;color:var(--color-text-secondary,#555);line-height:1.7}
+.gov-rule{display:flex;gap:10px;padding:.5rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);align-items:flex-start}
+.gov-rule:last-child{border-bottom:none}
+.gov-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-tertiary,#999);min-width:160px;flex-shrink:0;padding-top:2px}
+.gov-text{font-size:13px;color:var(--color-text-secondary,#555);line-height:1.6;flex:1}
+.gov-accent{background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:0 var(--border-radius-md,8px) var(--border-radius-md,8px) 0;padding:.625rem 1rem;font-size:13px;color:#085041;margin-top:.75rem;line-height:1.6}
+.gov-warn{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 var(--border-radius-md,8px) var(--border-radius-md,8px) 0;padding:.625rem 1rem;font-size:13px;color:#633806;margin-top:.75rem;line-height:1.6}
+.gov-danger{background:#FCEBEB;border-left:3px solid #E24B4A;border-radius:0 var(--border-radius-md,8px) var(--border-radius-md,8px) 0;padding:.625rem 1rem;font-size:12px;color:#501313;margin-top:.75rem;line-height:1.6}
+.kill-list{list-style:none;margin-top:.5rem}
+.kill-list li{font-size:12px;color:var(--color-text-secondary,#555);padding:3px 0;display:flex;gap:6px;line-height:1.5}
+.kill-dot{width:5px;height:5px;border-radius:50%;background:#E24B4A;flex-shrink:0;margin-top:6px}
+
+/* Final picks */
+.picks-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:1.5rem}
+@media(max-width:700px){.picks-grid{grid-template-columns:1fr}}
+.pick-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1.25rem}
+.pick-do-next{border-top:3px solid #1D9E75}
+.pick-backup{border-top:3px solid #EF9F27}
+.pick-avoid{border-top:3px solid #888780}
+.pick-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem}
+.pick-do-next .pick-label{color:#0F6E56}
+.pick-backup .pick-label{color:#854F0B}
+.pick-avoid .pick-label{color:#5F5E5A}
+.pick-name{font-size:18px;font-weight:500;margin-bottom:.35rem}
+.pick-score{font-size:13px;color:var(--color-text-tertiary,#999);margin-bottom:.75rem}
+.pick-why{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.65}
+.pick-action{margin-top:.875rem;padding:.625rem .875rem;border-radius:var(--border-radius-md,8px);font-size:12px;line-height:1.5}
+.pick-action-do{background:#E1F5EE;color:#085041}
+.pick-action-bu{background:#FAEEDA;color:#633806}
+.pick-action-av{background:#F1EFE8;color:#444441}
+.pick-action b{font-weight:500;display:block;margin-bottom:2px}
+
+/* Score mini-bar */
+.sbar{height:3px;border-radius:2px;background:var(--color-border-tertiary,#e0e0e0);margin-top:2px;overflow:hidden;width:60px;display:inline-block;vertical-align:middle}
+.sbar-fill{height:100%;border-radius:2px}
+.sbar-hi{background:#1D9E75}.sbar-mid{background:#EF9F27}.sbar-lo{background:#E24B4A}
+
+@media(max-width:600px){.gov-rule{flex-direction:column}.gov-label{min-width:auto}}
+</style>
+
+<div class="page-header">
+  <div class="page-eyebrow">Final Synthesis · All sessions consolidated</div>
+  <div class="page-title">Portfolio Master</div>
+  <div class="page-sub">Everything from the decision board, market re-rank, build brief, and horizon expansion — in one place. Four tabs: full portfolio table, tool watchlist, governance rules, and final picks.</div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-panel="table">Portfolio Table</button>
+  <button class="tab" data-panel="tools">Tool Watchlist</button>
+  <button class="tab" data-panel="gov">Governance</button>
+  <button class="tab" data-panel="picks">Final Picks</button>
+</div>
+
+<!-- ═══ PANEL 1: TABLE ═══ -->
+<div class="panel active" id="panel-table">
+  <div class="filter-bar" id="tbl-filters">
+    <button class="filt active" data-f="all">All 30</button>
+    <button class="filt" data-f="now">Build Now</button>
+    <button class="filt" data-f="later">Build Later</button>
+    <button class="filt" data-f="backlog">Backlog</button>
+    <button class="filt" data-f="game">Games</button>
+    <button class="filt" data-f="tool">Tools</button>
+    <button class="filt" data-f="flagged">Flagged</button>
+    <button class="filt" data-f="top5">Top 5 only</button>
+  </div>
+  <p style="font-size:11px;color:var(--color-text-tertiary,#999);margin-bottom:.75rem" id="tbl-count">Showing all 30 · Post-market rank used where available; pre-market rank used for ideas 16–30</p>
+  <div class="tbl-scroll">
+  <table id="ptable">
+    <thead>
+      <tr>
+        <th>PM Rank</th>
+        <th style="min-width:150px">Idea</th>
+        <th>Category</th>
+        <th>Pre-mkt</th>
+        <th>Post-mkt</th>
+        <th>Build tag</th>
+        <th>Horizon</th>
+        <th>Edge</th>
+        <th>S.Reach</th>
+        <th style="min-width:150px">First action</th>
+        <th style="min-width:150px">Biggest risk</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody id="ptbody"></tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ═══ PANEL 2: TOOL WATCHLIST ═══ -->
+<div class="panel" id="panel-tools">
+  <div class="watch-section">
+    <div class="watch-header">Keep — already justified, use immediately</div>
+    <div class="watch-grid" id="tools-keep"></div>
+  </div>
+  <div class="watch-section">
+    <div class="watch-header">Trial — 30-minute test with clear pass/fail before committing</div>
+    <div class="watch-grid" id="tools-trial"></div>
+  </div>
+  <div class="watch-section">
+    <div class="watch-header">Avoid — wrong fit, too early, or adds dependency risk</div>
+    <div class="watch-grid" id="tools-avoid"></div>
+  </div>
+</div>
+
+<!-- ═══ PANEL 3: GOVERNANCE ═══ -->
+<div class="panel" id="panel-gov">
+  <div class="gov-block">
+    <div class="gov-title">Idea debt cap</div>
+    <div class="gov-body">Maximum 3 ideas in active status at any moment — where "active" means you have written code or shipped any output in the last 14 days. If a 4th idea becomes active, one of the existing three must move to Backlog or be archived before the new one starts. No exceptions for "I'll just prototype it quickly."</div>
+    <div class="gov-accent">Current active slot recommendation: Prompt Forge only. Time Loop Inbox enters active only after Prompt Forge is in daily personal use.</div>
+  </div>
+
+  <div class="gov-block">
+    <div class="gov-title">Monthly promote / archive rule</div>
+    <div class="gov-body">On the last Friday of each month, spend 20 minutes reviewing every idea tagged Build Now or Build Later against one question: <b style="font-weight:500;color:var(--color-text-primary,#111)">has my reason for not starting this changed?</b> If yes, promote. If an idea has been in Build Now for 60+ days with no first task started, it auto-moves to Backlog — the intent was there but the will wasn't. A Backlog entry is not a failure; it is honest inventory.
+    </div>
+    <div class="gov-warn">An idea in Build Now that never gets a first 2-hour task in 60 days is a wish, not a plan. Move it to Backlog on day 61 — no negotiation.</div>
+  </div>
+
+  <div class="gov-block">
+    <div class="gov-title">Validation-first rule</div>
+    <div class="gov-body">Every idea must pass a core mechanic test before any infrastructure is built. Specifically:</div>
+    <div style="margin-top:.75rem">
+      <div class="gov-rule"><div class="gov-label">Prompt Forge</div><div class="gov-text">Score 5 real prompts with a hand-written rubric before writing a single line of code. If scoring feels useful, build. If it feels like a tax, the product has no argument.</div></div>
+      <div class="gov-rule"><div class="gov-label">Time Loop Inbox</div><div class="gov-text">Design the full 3-loop clue graph on paper and have one person attempt to solve it from the written description. If they can, build. If they can't, redesign before coding.</div></div>
+      <div class="gov-rule"><div class="gov-label">Inventory Oracle</div><div class="gov-text">Hand-write 3 inventory puzzles and have one person try to solve them verbally. If the deduction mechanic produces a satisfying reveal in all 3, build.</div></div>
+      <div class="gov-rule"><div class="gov-label">Mythwright</div><div class="gov-text">Build and use Lore Atlas (H1) in a real worldbuilding session with 20+ entries before touching D3 or Supabase. The flat list version must earn the graph.</div></div>
+      <div class="gov-rule"><div class="gov-label">Voice DM</div><div class="gov-text">Complete 3 text-only sessions with localStorage persistence across different days before adding ElevenLabs. Voice without persistence is a demo, not a product.</div></div>
+    </div>
+  </div>
+
+  <div class="gov-block">
+    <div class="gov-title">Exit criteria — universal reminder</div>
+    <div class="gov-body">These apply to every active idea in the portfolio, regardless of score or prior investment:</div>
+    <ul class="kill-list" style="margin-top:.75rem">
+      <li><span class="kill-dot"></span>If the core mechanic is not fun or useful with static/hardcoded content, adding AI will not fix it. Stop at the hardcoded version and redesign or archive.</li>
+      <li><span class="kill-dot"></span>If you have not shown the v1 to one person outside your own head within 2 weeks of first code, the project is in a bubble. Show it or question whether you believe in it.</li>
+      <li><span class="kill-dot"></span>If any idea requires a system (auth, graph, real-time DB) before a single core loop is playable or usable, you are building infrastructure before product. Stop. Reduce scope until the core loop works with zero infrastructure.</li>
+      <li><span class="kill-dot"></span>If the AI output for an idea is inconsistent in a way that breaks the core promise on more than 30% of runs, that idea is not ready for users. Fix the prompt engineering or move to Backlog.</li>
+      <li><span class="kill-dot"></span>If after 3 weeks you are not using the tool yourself (for tools) or replaying the game yourself (for games), the product has no internal advocate. Archive it honestly.</li>
+    </ul>
+    <div class="gov-danger"><b style="font-weight:500">The one exit criteria that never gets enforced but should:</b> if the idea has been in your head longer than it has been in any user's hands, the psychological investment in the idea exceeds its actual value. This is the most common solo builder trap in this catalog. The cure is shipping the worst possible version as fast as possible — not planning a better one.</div>
+  </div>
+</div>
+
+<!-- ═══ PANEL 4: FINAL PICKS ═══ -->
+<div class="panel" id="panel-picks">
+  <div class="picks-grid">
+    <div class="pick-card pick-do-next">
+      <div class="pick-label">Do next — primary</div>
+      <div class="pick-name">Prompt Forge</div>
+      <div class="pick-score">Post-market #1 · 4.79 · Tool · Low risk</div>
+      <div class="pick-why">The only idea in the top 15 that simultaneously holds the top score, lowest build friction, zero asset dependencies, and a 2-hour path to a first testable version. It also makes every other idea in this catalog easier to execute — better prompts upstream means better game content, better test plans, and faster iteration. It earns its slot not just on merit but on leverage. The core value mechanic (rubric-scored prompt testing) can be validated in 30 minutes with paper before writing a line of code.</div>
+      <div class="pick-action pick-action-do"><b>This week's action</b>Write 3–4 rubric criteria on paper. Score 5 real prompts you've used recently. If the scores produce any useful signal — start building. If they feel arbitrary — redesign the criteria before touching code.</div>
+    </div>
+    <div class="pick-card pick-backup">
+      <div class="pick-label">Backup — if Prompt Forge stalls</div>
+      <div class="pick-name">Inventory Oracle</div>
+      <div class="pick-score">Post-market #3 · 4.57 · Game · Low risk · Edge 5/5</div>
+      <div class="pick-why">The clearest mechanic edge in the entire top 15 — object-only deduction with no named competitor. Build complexity is S. Asset dependencies are zero. The v1 validation test (3 hand-crafted puzzles, one external solver) takes an afternoon and produces a binary answer: the mechanic works or it doesn't. If Prompt Forge stalls because the rubric mechanic doesn't feel useful in paper testing, this is the same-day pivot. They share zero systems, so switching costs nothing.</div>
+      <div class="pick-action pick-action-bu"><b>Backup trigger</b>If rubric paper testing produces no useful signal after two honest attempts, close Prompt Forge and design 3 inventory puzzles this weekend instead.</div>
+    </div>
+    <div class="pick-card pick-avoid">
+      <div class="pick-label">Do not touch yet</div>
+      <div class="pick-name">Voice Dungeon Master</div>
+      <div class="pick-score">Post-market #5 · 4.57 · Game · Flagged · High risk</div>
+      <div class="pick-why">Flagged for market crowding. Requires ElevenLabs integration, context summarization architecture, Supabase session management, and a named world-setting identity — all before a first usable session. The skills it depends on (streaming audio APIs, multi-session context management) are not yet in the tested stack. Most critically: its market differentiation is not built into the mechanic — it is entirely dependent on the world-setting and narrator identity decisions made in H1. Make the wrong identity choice and the H3 moonshot is permanently unreachable. Every other idea in the top 5 teaches you something Voice DM needs. Build those first.</div>
+      <div class="pick-action pick-action-av"><b>Revisit condition</b>After shipping 2 complete projects from the Build Now tier and after gaining tested Supabase experience. Not before both conditions are met.</div>
+    </div>
+  </div>
+
+  <div style="background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-lg,12px);padding:1.25rem;margin-bottom:1.25rem">
+    <div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:.875rem">Recommended order — this month through month 3</div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:.625rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)">
+        <span style="font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);min-width:70px;flex-shrink:0;padding-top:2px">Week 1–2</span>
+        <div><span style="font-size:13px;font-weight:500">Prompt Forge v1</span><span style="font-size:12px;color:var(--color-text-secondary,#555);margin-left:8px">Paper rubric validation → build runner + scorecard → save to localStorage. Ship when 10 prompts saved and 3 retrieved.</span></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:.625rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)">
+        <span style="font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);min-width:70px;flex-shrink:0;padding-top:2px">Week 3–4</span>
+        <div><span style="font-size:13px;font-weight:500">Inventory Oracle v1</span><span style="font-size:12px;color:var(--color-text-secondary,#555);margin-left:8px">Design 5 puzzles on paper → validate with one external solver → build static puzzle UI → add AI answer scoring. Ship when 5 puzzles solvable without hints.</span></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:.625rem 0;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)">
+        <span style="font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);min-width:70px;flex-shrink:0;padding-top:2px">Month 2</span>
+        <div><span style="font-size:13px;font-weight:500">Incident Review Board v1</span><span style="font-size:12px;color:var(--color-text-secondary,#555);margin-left:8px">Already on saved concept list. AI incident generation + verdict UI + consequence branching. Teaches systems needed for Time Loop Inbox.</span></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;padding:.625rem 0">
+        <span style="font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);min-width:70px;flex-shrink:0;padding-top:2px">Month 3</span>
+        <div><span style="font-size:13px;font-weight:500">Time Loop Inbox v1</span><span style="font-size:12px;color:var(--color-text-secondary,#555);margin-left:8px">Clue graph designed first — 3-loop puzzle on paper. Build loop state persistence, conditional AI flavor, reveal screen. Hardest of the Build Now group; earn it by shipping the first three.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#FCEBEB;border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;font-size:12px;color:#501313;line-height:1.65">
+    <b style="font-weight:500;display:block;margin-bottom:4px">The one thing this whole process can't do for you</b>
+    Every session here — 30 ideas, decision board, market re-rank, build brief, horizons — has been a planning exercise. Planning has zero shipping value on its own. The only thing that matters now is the rubric paper test this week. Everything else waits for that result.
+  </div>
+</div>
+
+<script>
+const ROWS=[
+  {pm:1,name:"Prompt Forge",cat:"tool",pre:1,post:1,tag:"now",h:"H1→H2→H3",ce:4,sr:5,action:"Write rubric criteria on paper; score 5 real prompts before any code",risk:"Rubric scoring feels arbitrary rather than useful — kills value prop before build starts",review:"2025-04-20",flag:false},
+  {pm:2,name:"Time Loop Inbox",cat:"game",pre:2,post:3,tag:"now",h:"H1→H2→H3",ce:5,sr:4,action:"Design full 3-loop clue graph on paper; validate solvability with one external tester",risk:"Clue graph unsolvable without hints — must be locked deterministically before adding AI",review:"2025-04-20",flag:false},
+  {pm:3,name:"Inventory Oracle",cat:"game",pre:3,post:2,tag:"now",h:"H1→H2→H3",ce:5,sr:4,action:"Hand-write 3 inventory puzzles; have one person attempt verbal solve before coding",risk:"AI answer scoring calibration — too harsh or too lenient both break the experience",review:"2025-04-20",flag:false},
+  {pm:4,name:"Mythwright",cat:"tool",pre:3,post:4,tag:"later",h:"H1→H2→H3",ce:4,sr:3,action:"Ship Prompt Forge first; then build Lore Atlas (H1 flat version) before any graph work",risk:"D3 graph unreadable past 30–50 nodes — structural limit requiring upfront layout planning",review:"2025-05-18",flag:false},
+  {pm:5,name:"Voice Dungeon Master",cat:"game",pre:3,post:5,tag:"later",h:"H1→H2→H3",ce:2,sr:3,action:"Do not start. Revisit after 2 shipped projects + tested Supabase experience",risk:"Market flagged — crowded AI DM space; differentiation entirely dependent on world identity decision",review:"2025-06-01",flag:true},
+  {pm:6,name:"Echo Chamber",cat:"game",pre:7,post:6,tag:"later",h:"H1→H2",ce:5,sr:3,action:"Design persona fact sheets (JSON) before any code — AI personas must be locked first",risk:"AI personas indistinguishable at all difficulty settings — no deduction layer works",review:"2025-05-18",flag:false},
+  {pm:7,name:"The Negotiator",cat:"game",pre:7,post:7,tag:"now",h:"H1→H2",ce:4,sr:4,action:"Build one static scenario with 3 choice points — validate tension meter feel before AI NPC",risk:"NPC AI capitulates too easily — no player skill expression, game loses tension",review:"2025-04-20",flag:false},
+  {pm:8,name:"Incident Review Board",cat:"game",pre:10,post:8,tag:"now",h:"H1→H2",ce:4,sr:4,action:"Write 1 static incident with 3 verdicts; playtest consequence weight before AI generation",risk:"Outcomes feel arbitrary regardless of verdict — no consequential logic visible to players",review:"2025-04-20",flag:false},
+  {pm:9,name:"The Daily Dispatch",cat:"game",pre:9,post:9,tag:"now",h:"H1→H2",ce:4,sr:4,action:"Build day-loop UI with 3 static events; validate daily reset mechanic before AI content",risk:"Signal category repetition — players see same signal types daily without variation system",review:"2025-04-20",flag:false},
+  {pm:10,name:"Multiverse Detective",cat:"game",pre:10,post:10,tag:"later",h:"H1→H2→H3",ce:5,sr:3,action:"Design 2-timeline contradiction set on paper; validate reconciliation clarity before build",risk:"Reconciliation mechanic requires extended tutorial — players can't engage cold",review:"2025-05-18",flag:false},
+  {pm:11,name:"The Syndicate",cat:"game",pre:6,post:11,tag:"later",h:"H1→H2→H3",ce:3,sr:3,action:"Design operative loyalty system on paper with 3 failure modes before any code",risk:"Loyalty system produces no interesting dilemmas — becomes a maintenance tax",review:"2025-05-18",flag:false},
+  {pm:12,name:"Lore Atlas",cat:"tool",pre:12,post:12,tag:"later",h:"H1→H2",ce:4,sr:3,action:"Build entry form + AI contradiction check on 10 hand-written entries before localStorage layer",risk:"AI generates false-positive contradictions — workflow slower than a Google Doc",review:"2025-05-18",flag:false},
+  {pm:13,name:"Cult of One",cat:"game",pre:12,post:13,tag:"later",h:"H1→H2",ce:2,sr:3,action:"Define member defection formula on paper; test 3 failure paths before any UI",risk:"Member AI personas drift across sessions — behavioral inconsistency breaks immersion",review:"2025-05-18",flag:false},
+  {pm:14,name:"The Correspondent",cat:"game",pre:11,post:14,tag:"later",h:"H1→H2",ce:4,sr:3,action:"Build 3 static tips with verify/publish mechanic — validate epistemic weight before AI",risk:"Verification mechanic feels arbitrary — no real deduction, just guessing",review:"2025-05-18",flag:false},
+  {pm:15,name:"Murder at the Manor",cat:"game",pre:12,post:15,tag:"later",h:"H1",ce:1,sr:3,action:"Define hard mechanic angle that breaks genre before touching code — no angle = no build",risk:"Red ocean confirmed — needs a sharp differentiating mechanic or should be archived",review:"2025-05-18",flag:true},
+  {pm:16,name:"The Alibi",cat:"game",pre:20,post:16,tag:"later",h:"H1→H2",ce:3,sr:3,action:"Build 1 static case with 5 evidence cards; test adversarial prompt calibration",risk:"Prosecutor AI unpredictable difficulty — no consistent skill signal across cases",review:"2025-06-01",flag:false},
+  {pm:17,name:"Faction Engine",cat:"game",pre:22,post:17,tag:"later",h:"H1→H2→H3",ce:3,sr:2,action:"Define faction personality specs and balance formula before any code",risk:"World collapses in 3 turns regardless of player choices — balance unsolvable",review:"2025-06-01",flag:false},
+  {pm:18,name:"City Watch",cat:"game",pre:28,post:18,tag:"later",h:"H1→H2",ce:3,sr:3,action:"Design call-type taxonomy and triage mechanic on paper with 10 test calls",risk:"Dispatch decisions feel low-stakes — no visible consequence for missed calls",review:"2025-06-01",flag:false},
+  {pm:19,name:"Heist Briefing Room",cat:"game",pre:1,post:19,tag:"later",h:"H1",ce:3,sr:3,action:"Define 5 roles and 3 outcome categories; test combo variance with hardcoded outputs",risk:"All outcomes feel identical regardless of role combination — no strategic variance",review:"2025-06-01",flag:false},
+  {pm:20,name:"Faction Standings",cat:"game",pre:7,post:20,tag:"later",h:"H1",ce:3,sr:2,action:"Build 3-faction meter UI with static decisions; validate meter shift legibility",risk:"Meter shifts feel arbitrary — no legible connection between decision and outcome",review:"2025-06-01",flag:false},
+  {pm:21,name:"The Briefing",cat:"game",pre:10,post:21,tag:"later",h:"H1",ce:3,sr:3,action:"Build static mission card + 3 question slots + hardcoded outcome before AI handler",risk:"Handler intel makes every mission trivially obvious — no planning required",review:"2025-06-01",flag:false},
+  {pm:22,name:"The Long Haul",cat:"game",pre:19,post:22,tag:"later",h:"H1→H2",ce:3,sr:4,action:"Build day-1 loop with 3 events and resource display; validate tension formula",risk:"Decisions feel cosmetic — resource outcomes identical regardless of choice",review:"2025-06-01",flag:false},
+  {pm:23,name:"The Living Gazette",cat:"game",pre:24,post:23,tag:"backlog",h:"H1→H2",ce:3,sr:2,action:"Write world lore seed (1–2 hrs) before any code; faction design must precede build",risk:"Publishing choices produce no distinguishable faction outcome differences",review:"2025-07-01",flag:false},
+  {pm:24,name:"Warrant Board",cat:"game",pre:3,post:24,tag:"backlog",h:"H1",ce:2,sr:3,action:"Design risk/reward economy formula on paper with 3 bounty tiers before any UI",risk:"Feels like a lottery — no player agency in selection distinguishable from RNG",review:"2025-07-01",flag:false},
+  {pm:25,name:"Campfire Stories",cat:"game",pre:6,post:25,tag:"backlog",h:"H1",ce:2,sr:3,action:"Test turn-taking loop verbally with one person before coding; validate genre controls",risk:"AI dominates the story and ignores player direction — player feels irrelevant",review:"2025-07-01",flag:false},
+  {pm:26,name:"Tavern Ledger",cat:"game",pre:9,post:26,tag:"backlog",h:"H1",ce:2,sr:2,action:"Solve economy formula in a spreadsheet first; must find fun range before coding",risk:"Economy untunable — game finds no tension range between death spiral and trivial",review:"2025-07-01",flag:false},
+  {pm:27,name:"The Quartermaster",cat:"game",pre:13,post:27,tag:"backlog",h:"H1",ce:2,sr:2,action:"Design allocation formula and test 3 campaign scenarios on paper before build",risk:"No strategic depth — optimal allocation strategy immediately obvious to all players",review:"2025-07-01",flag:false},
+  {pm:28,name:"Galactic Dispatch",cat:"game",pre:16,post:28,tag:"backlog",h:"H1→H2",ce:2,sr:2,action:"Build 5-node static SVG map with click-to-travel before any AI event layer",risk:"Events feel punishing with no mitigation — pure luck with no player agency",review:"2025-07-01",flag:false},
+  {pm:29,name:"The Long Con",cat:"game",pre:27,post:29,tag:"backlog",h:"H1→H2→H3",ce:3,sr:2,action:"Scope to one heist type only; design Act 1 consequence map before any code",risk:"Consequence graph creates untestable edge cases — solo QA capacity exceeded",review:"2025-07-01",flag:false},
+  {pm:30,name:"The Archivist's Burden",cat:"game",pre:30,post:30,tag:"backlog",h:"H1→H2",ce:3,sr:2,action:"Write civilization seed lore first (1–2 hrs); no build without this foundation",risk:"Oracle interpretations too vague — no satisfying discoverable truth exists",review:"2025-07-01",flag:false}
+];
+
+const phaseClass={now:'b-now',later:'b-later',backlog:'b-back'};
+const phaseLabel={now:'Build Now',later:'Build Later',backlog:'Backlog'};
+
+function starHtml(v){
+  const cls=v>=4?'hi':v>=3?'mid':'lo';
+  return `<span class="stars">${Array.from({length:5},(_,i)=>`<span class="star ${i<v?cls:''}"></span>`).join('')}</span> <span style="font-size:10px;color:var(--color-text-tertiary,#999)">${v}</span>`;
+}
+function shiftHtml(pre,post){
+  if(pre===post||!post) return `<span class="rank-shift rank-nc">#${pre}</span>`;
+  if(post<pre) return `<span class="rank-shift rank-up">#${pre}→#${post}↑</span>`;
+  return `<span class="rank-shift rank-dn">#${pre}→#${post}↓</span>`;
+}
+
+let tfilt='all';
+function buildTable(){
+  let rows=[...ROWS];
+  if(tfilt==='now') rows=rows.filter(r=>r.tag==='now');
+  else if(tfilt==='later') rows=rows.filter(r=>r.tag==='later');
+  else if(tfilt==='backlog') rows=rows.filter(r=>r.tag==='backlog');
+  else if(tfilt==='game') rows=rows.filter(r=>r.cat==='game');
+  else if(tfilt==='tool') rows=rows.filter(r=>r.cat==='tool');
+  else if(tfilt==='flagged') rows=rows.filter(r=>r.flag);
+  else if(tfilt==='top5') rows=rows.filter(r=>r.pm<=5);
+  document.getElementById('tbl-count').textContent=`Showing ${rows.length} of 30`;
+  document.getElementById('ptbody').innerHTML=rows.map(r=>`
+<tr class="${r.flag?'row-flag':''}">
+  <td style="font-weight:500">#${r.pm}</td>
+  <td><span class="idea-name">${r.name}</span>${r.flag?'<br><span class="badge b-flag" style="margin-top:3px">Flagged</span>':''}</td>
+  <td><span class="badge ${r.cat==='game'?'b-game':'b-tool'}">${r.cat}</span></td>
+  <td><span style="font-size:11px;color:var(--color-text-tertiary,#999)">#${r.pre}</span></td>
+  <td>${shiftHtml(r.pre,r.post)}</td>
+  <td><span class="badge ${phaseClass[r.tag]}">${phaseLabel[r.tag]}</span></td>
+  <td><span class="badge ${r.h.includes('H3')?'b-h3':r.h.includes('H2')?'b-h2':'b-h1'}">${r.h}</span></td>
+  <td>${starHtml(r.ce)}</td>
+  <td>${starHtml(r.sr)}</td>
+  <td class="first-action">${r.action}</td>
+  <td class="risk-text">${r.risk}</td>
+  <td class="review-date">${r.review}</td>
+</tr>`).join('');
+}
+buildTable();
+document.getElementById('tbl-filters').addEventListener('click',e=>{
+  const b=e.target.closest('.filt');if(!b)return;
+  document.querySelectorAll('.filt').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');tfilt=b.dataset.f;buildTable();
+});
+
+/* TOOL WATCHLIST */
+const toolData={
+  keep:[
+    {name:'React + Vite',why:'Already in your stack. Fastest path to a working UI for every idea in this catalog. No evaluation needed — keep using it.',test:null},
+    {name:'Claude API (claude-sonnet-4-6)',why:'Core AI layer for all 30 ideas. Proven, predictable, already understood. The monoculture risk is real but the switch cost to an alternative is higher than the risk.',test:null},
+    {name:'localStorage',why:'Zero setup, zero cost, zero friction for persistence up to ~5MB. Right tool for all H1 builds. Replace only when library size demands Supabase.',test:null},
+    {name:'Tailwind CSS',why:'Utility-first styling with no custom CSS overhead. Good fit for your solo build pace. No setup cost if already configured in Vite.',test:null}
+  ],
+  trial:[
+    {name:'Supabase',why:'Required for H2+ on Time Loop Inbox, Voice DM, Mythwright, and The Syndicate. Not needed until localStorage is genuinely painful.',test:{task:'Create a table, write 5 rows, read them back, and delete one — in under 30 minutes from a blank project.',pass:'All 4 operations work with no documentation lookup.',fail:'If you spend more than 20 minutes on auth setup before touching data, defer Supabase to H2 planning only.'}},
+    {name:'ElevenLabs API',why:'Required for Voice DM H2. Good fit for other narration-first ideas. Cost compounds fast — must benchmark before committing.',test:{task:'Generate 3 sentences of narration with a built-in voice and measure latency + cost per 1000 characters.',pass:'Latency under 3 seconds, cost under $0.10 per average session narration block.',fail:'If latency exceeds 3s on built-in voices, custom voice cloning will be worse. Park ElevenLabs until Voice DM H1 text version is live.'}},
+    {name:'D3.js (force graph)',why:'Required for Mythwright H2. Non-trivial API — do not learn D3 and build Mythwright simultaneously.',test:{task:'Render a force-directed graph with 10 nodes and 8 edges with click-to-highlight — from scratch.',pass:'Working interactive graph in under 45 minutes using D3 docs only.',fail:'If the graph is broken or non-interactive at 45 minutes, budget 4 additional hours for D3 basics before Mythwright H2 starts.'}},
+    {name:'Vercel (deployment)',why:'Static deploy for React + Vite apps. Near-zero config, free tier covers all H1 builds. Environment variable support solves the API key exposure issue for public-facing builds.',test:{task:'Deploy a React + Vite app with a .env API key to a live URL in under 20 minutes.',pass:'Live URL, API key hidden from source, env variable accessible in build.',fail:'Not a hard fail — Netlify is the direct equivalent fallback if Vercel has friction.'}}
+  ],
+  avoid:[
+    {name:'LangChain / LangGraph',why:'Abstracts the Claude API behind a framework you don\'t need. Adds dependency weight and debugging complexity for problems the raw API already solves simply. Avoid for all 30 ideas.'},
+    {name:'OpenAI (as replacement)',why:'No reason to switch stacks mid-portfolio. Your prompts are tuned for Claude\'s behavior. Switching to validate "what if" is a distraction.'},
+    {name:'Custom voice cloning (ElevenLabs)',why:'Premium tier required, high cost per minute, and the default voices are sufficient for H2 validation of Voice DM. Custom voices are H3 territory only.'},
+    {name:'Next.js (vs Vite)',why:'Server-side rendering overhead is unnecessary for single-player local-first tools. Vite is faster to build with, easier to deploy statically. Adopt Next.js only if a project explicitly needs SSR (none of these 30 do in H1).'},
+    {name:'Any real-time DB (Firebase, Pusher)',why:'No idea in this portfolio requires real-time multi-user updates in H1 or H2. Supabase with row reads on page load is sufficient. Real-time adds complexity before any audience exists to need it.'},
+    {name:'Prisma / complex ORM',why:'Supabase\'s JS client handles all data operations in this portfolio. Adding an ORM before schemas are stable creates migration overhead with no benefit.'}
+  ]
+};
+
+document.getElementById('tools-keep').innerHTML=toolData.keep.map(t=>`
+<div class="watch-card keep">
+  <div class="wc-name">${t.name}</div>
+  <div class="wc-tag"><span class="badge b-keep">Keep</span></div>
+  <div class="wc-body">${t.why}</div>
+</div>`).join('');
+
+document.getElementById('tools-trial').innerHTML=toolData.trial.map(t=>`
+<div class="watch-card trial">
+  <div class="wc-name">${t.name}</div>
+  <div class="wc-tag"><span class="badge b-trial">Trial first</span></div>
+  <div class="wc-body">${t.why}</div>
+  ${t.test?`<div class="wc-test"><b>30-min test:</b> ${t.test.task}<br><b>Pass:</b> ${t.test.pass}<br><b>Fail:</b> ${t.test.fail}</div>`:''}
+</div>`).join('');
+
+document.getElementById('tools-avoid').innerHTML=toolData.avoid.map(t=>`
+<div class="watch-card avoid">
+  <div class="wc-name">${t.name}</div>
+  <div class="wc-tag"><span class="badge b-avoid">Avoid</span></div>
+  <div class="wc-body">${t.why}</div>
+</div>`).join('');
+
+/* TABS */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.panel).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

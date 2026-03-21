@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Market Layer — Top 15</title></head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent;padding:1rem 0;color:var(--color-text-primary,#111)}
+
+.disclaimer{background:var(--color-background-secondary,#f5f5f5);border-radius:var(--border-radius-md,8px);padding:.75rem 1rem;font-size:12px;color:var(--color-text-secondary,#666);margin-bottom:1.5rem;line-height:1.6;border-left:3px solid var(--color-border-secondary,#ccc)}
+
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0)}
+.tab{background:none;border:none;border-bottom:2px solid transparent;padding:8px 16px;font-size:13px;cursor:pointer;color:var(--color-text-secondary,#666);font-weight:400;margin-bottom:-1px;transition:all .15s}
+.tab:hover{color:var(--color-text-primary,#111)}
+.tab.active{color:var(--color-text-primary,#111);font-weight:500;border-bottom-color:var(--color-text-primary,#111)}
+.panel{display:none}.panel.active{display:block}
+
+/* Table */
+.tbl-wrap{overflow-x:auto;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:860px}
+th{font-size:11px;font-weight:500;color:var(--color-text-secondary,#666);text-transform:uppercase;letter-spacing:.05em;padding:7px 8px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:var(--color-text-primary,#111)}
+td{padding:8px 8px;border-bottom:0.5px solid var(--color-border-tertiary,#e0e0e0);vertical-align:middle}
+tr:hover td{background:var(--color-background-secondary,#f9f9f9)}
+.idea-name{font-size:13px;font-weight:500;color:var(--color-text-primary,#111);white-space:nowrap}
+.rank-shift{font-size:11px;white-space:nowrap}
+.rank-up{color:#1D9E75;font-weight:500}
+.rank-dn{color:#A32D2D;font-weight:500}
+.rank-nc{color:var(--color-text-tertiary,#999)}
+.score-big{font-size:14px;font-weight:500}
+.s-hi{color:#1D9E75}.s-mid{color:#BA7517}.s-lo{color:#A32D2D}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.b-niche{background:#E1F5EE;color:#085041}
+.b-mid{background:#FAEEDA;color:#633806}
+.b-red{background:#FAECE7;color:#4A1B0C}
+.b-warn{background:#FCEBEB;color:#501313}
+.b-game{background:#EEEDFE;color:#3C3489}
+.b-tool{background:#E6F1FB;color:#0C447C}
+
+/* Stars */
+.stars{display:inline-flex;gap:2px}
+.star{width:8px;height:8px;border-radius:1px;background:var(--color-border-tertiary,#e0e0e0)}
+.star.on{background:#1D9E75}
+.star.on-mid{background:#EF9F27}
+.star.on-lo{background:#E24B4A}
+
+/* Detail cards */
+.detail-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem;margin-bottom:10px}
+.detail-card.flagged{border-left:3px solid #E24B4A}
+.dc-header{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:.875rem}
+.dc-ranks{display:flex;flex-direction:column;gap:2px;min-width:70px}
+.dc-rank-old{font-size:11px;color:var(--color-text-tertiary,#999)}
+.dc-rank-new{font-size:16px;font-weight:500;color:var(--color-text-primary,#111)}
+.dc-name{font-size:15px;font-weight:500;flex:1}
+.dc-scores{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.dc-score-pill{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--color-background-secondary,#f5f5f5);color:var(--color-text-secondary,#666)}
+.dc-body{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.dc-body{grid-template-columns:1fr}}
+.dc-field{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6}
+.dc-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:3px}
+.flag-box{background:#FCEBEB;border-radius:var(--border-radius-md,8px);padding:.6rem .875rem;font-size:12px;color:#501313;margin-top:.75rem;line-height:1.5}
+.flag-title{font-weight:500;margin-bottom:2px}
+
+/* Top 3 */
+.top3-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:1.5rem}
+.t3-card{background:var(--color-background-primary,#fff);border:0.5px solid var(--color-border-tertiary,#e0e0e0);border-radius:var(--border-radius-lg,12px);padding:1rem 1.25rem}
+.t3-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary,#999);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.t3-name{font-size:16px;font-weight:500;margin-bottom:.25rem}
+.t3-score{font-size:26px;font-weight:500;line-height:1;margin-bottom:.5rem}
+.t3-why{font-size:12px;color:var(--color-text-secondary,#555);line-height:1.6;margin-top:.5rem}
+.t3-changed{font-size:11px;font-weight:500;padding:4px 9px;border-radius:3px;display:inline-block;margin-top:.75rem}
+.t3-same{background:#EAF3DE;color:#3B6D11}
+.t3-moved{background:#FAEEDA;color:#854F0B}
+.t3-new{background:#E1F5EE;color:#085041}
+
+/* Re-rank explainer */
+.explainer{background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:.875rem 1rem;font-size:13px;color:var(--color-text-secondary,#555);line-height:1.7;margin-bottom:1.25rem}
+.explainer b{font-weight:500;color:var(--color-text-primary,#111)}
+</style>
+
+<div class="disclaimer">
+  Market shape, crowding, and solo reachability ratings below are judgment from observed patterns in the AI tools and indie game space — not live market data, competitor analysis, or validated audience research. Treat these as directional signal, not fact.
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-panel="matrix">Re-ranked Matrix</button>
+  <button class="tab" data-panel="detail">Full Detail Cards</button>
+  <button class="tab" data-panel="top3">New Top 3</button>
+</div>
+
+<!-- MATRIX -->
+<div class="panel active" id="panel-matrix">
+  <div class="explainer">
+    Primary sort: existing final score (unchanged). <b>Tie-breaker: Crowding vs edge + Solo reachability sum.</b> On equal sums, Crowding vs edge wins (market defensibility outranks reach). Rank movement column shows original decision-board rank → new rank.
+  </div>
+  <div class="tbl-wrap">
+  <table id="mtx-table">
+    <thead>
+      <tr>
+        <th>New rank</th>
+        <th>Idea</th>
+        <th>Type</th>
+        <th>Final score</th>
+        <th>Rank shift</th>
+        <th>Market shape</th>
+        <th>Crowding edge</th>
+        <th>Solo reach</th>
+        <th>Mkt combined</th>
+        <th>Flag</th>
+      </tr>
+    </thead>
+    <tbody id="mtx-body"></tbody>
+  </table>
+  </div>
+</div>
+
+<!-- DETAIL CARDS -->
+<div class="panel" id="panel-detail">
+  <div id="detail-cards"></div>
+</div>
+
+<!-- TOP 3 -->
+<div class="panel" id="panel-top3">
+  <div class="top3-row" id="top3-row"></div>
+  <div style="background:var(--color-background-secondary,#f9f9f9);border-radius:var(--border-radius-md,8px);padding:1rem 1.25rem">
+    <div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-tertiary,#999);margin-bottom:.75rem">What the market pass changed overall</div>
+    <div style="font-size:13px;color:var(--color-text-secondary,#555);line-height:1.8">
+      <b style="font-weight:500;color:var(--color-text-primary,#111)">Voice DM dropped from consideration</b> despite a 4.57 score. The AI dungeon-master space has visible competitors — the differentiation (voice + persistence) is a feature bundle, not a mechanic edge. It needs a sharper positioning angle before it earns a "start now" slot.<br><br>
+      <b style="font-weight:500;color:var(--color-text-primary,#111)">Murder at the Manor is now flagged</b> for red ocean risk. AI murder mystery generators are genuinely crowded. The idea stays in the catalog because the execution has merit, but it needs a hard mechanic angle to avoid being invisible at launch.<br><br>
+      <b style="font-weight:500;color:var(--color-text-primary,#111)">Inventory Oracle gained relative strength</b> — it was already top-5 by score, and the market pass confirms the mechanic is genuinely novel with no clear competitor using object-only deduction. Solo reachability is high because the format screenshots well and travels without context.
+    </div>
+  </div>
+</div>
+
+<script>
+const ideas15 = [
+  {oldRank:1, name:"Prompt Forge", type:"tool", finalScore:4.79,
+   market:"niche", marketClass:"b-niche",
+   diff:"A personal rubric-based prompt testing library for solo builders — not a team workflow tool or prompt marketplace.",
+   soloReach:"Post build-in-public threads on Twitter/X and Indie Hackers; direct appeal to the AI-builder audience that already uses Claude daily.",
+   ce:4, sr:5, flag:false},
+  {oldRank:2, name:"Time Loop Inbox", type:"game", finalScore:4.62,
+   market:"niche", marketClass:"b-niche",
+   diff:"Email as a puzzle board with loop-state that evolves across replays — no other web game uses this specific mechanic.",
+   soloReach:"Post a playable itch.io demo with a single loop; the mechanic explains itself in screenshots and short clips.",
+   ce:5, sr:4, flag:false},
+  {oldRank:3, name:"Inventory Oracle", type:"game", finalScore:4.57,
+   market:"niche", marketClass:"b-niche",
+   diff:"Mystery told entirely through object deduction — no dialogue, no exploration, no NPCs — a format with no direct competitor.",
+   soloReach:"Still image of an inventory with a 'can you solve this?' caption is inherently shareable; no demo required to generate curiosity.",
+   ce:5, sr:4, flag:false},
+  {oldRank:3, name:"Mythwright", type:"tool", finalScore:4.57,
+   market:"niche", marketClass:"b-niche",
+   diff:"An AI referee that actively flags contradictions across your lore — not passive note-taking like World Anvil or Campfire.",
+   soloReach:"Post in r/worldbuilding, TTRPG Discord servers, and NaNoWriMo communities; the consistency-checker angle is a solved pain point.",
+   ce:4, sr:3, flag:false},
+  {oldRank:3, name:"Voice Dungeon Master", type:"game", finalScore:4.57,
+   market:"mid", marketClass:"b-mid",
+   diff:"Persistent cross-session narrative with voice narration via ElevenLabs — most AI DMs reset on refresh and have no voice layer.",
+   soloReach:"Short TikTok clips of a live session narration; the voice element differentiates in a 15-second preview.",
+   ce:2, sr:3, flag:true, flagText:"The AI dungeon-master space is visibly crowded (AI Dungeon, NovelAI, Wanderhome, dozens of web apps). Persistence + voice is a feature bundle, not a mechanic edge. Needs a sharper positioning angle — a specific world setting, a hard rule constraint, or a genre no competitor owns — before it earns a 'start now' slot."},
+  {oldRank:6, name:"The Syndicate", type:"game", finalScore:4.51,
+   market:"mid", marketClass:"b-mid",
+   diff:"AI-generated operative consequences that persist cross-session — most crime org sims reset on refresh with no narrative memory.",
+   soloReach:"Post a 'manage your crew' teaser card on itch.io; crime org sim has visible search intent from tabletop and strategy communities.",
+   ce:3, sr:3, flag:false},
+  {oldRank:7, name:"Echo Chamber", type:"game", finalScore:4.46,
+   market:"niche", marketClass:"b-niche",
+   diff:"Social deduction where the suspects are live AI agents with hidden agendas — not scripted behavior, actual conversational ambiguity.",
+   soloReach:"Demo video showing a player interrogating an AI suspect with a genuine wrong accusation; the moment plays as a clip.",
+   ce:5, sr:3, flag:false},
+  {oldRank:7, name:"The Negotiator", type:"game", finalScore:4.46,
+   market:"niche", marketClass:"b-niche",
+   diff:"Free-text negotiation against a live AI NPC with a tension meter — not a scripted dialogue tree or a multiple-choice quiz.",
+   soloReach:"Post a one-scene demo directly to LinkedIn and professional communities; negotiation skills framing gives it a non-game audience.",
+   ce:4, sr:4, flag:false},
+  {oldRank:9, name:"The Daily Dispatch", type:"game", finalScore:4.40,
+   market:"niche", marketClass:"b-niche",
+   diff:"Daily sci-fi base operator loop with AI-generated distress signals — no Wordle-adjacent daily game occupies this exact genre slot.",
+   soloReach:"Daily-game communities (r/dailygames, itch.io) are already primed for this format; a single tweet with 'today's dispatch' format builds habit.",
+   ce:4, sr:4, flag:false},
+  {oldRank:10, name:"Multiverse Detective", type:"game", finalScore:4.35,
+   market:"niche", marketClass:"b-niche",
+   diff:"Three-timeline mystery where contradictions between timelines are the puzzle — no existing mystery game uses parallel-state deduction.",
+   soloReach:"The mechanic visual (three parallel evidence boards) screenshots strikingly; itch.io demo + puzzle game subreddits.",
+   ce:5, sr:3, flag:false},
+  {oldRank:10, name:"Incident Review Board", type:"game", finalScore:4.35,
+   market:"niche", marketClass:"b-niche",
+   diff:"Bureaucratic verdict game where ambiguous AI-generated incidents satirize institutional decision-making — no direct genre competitor.",
+   soloReach:"Professional humor communities (Reddit, LinkedIn) respond to satirical workplace content; a single incident screenshot with 'how would you vote?' lands as organic content.",
+   ce:4, sr:4, flag:false},
+  {oldRank:12, name:"Lore Atlas", type:"tool", finalScore:4.29,
+   market:"niche", marketClass:"b-niche",
+   diff:"AI consistency referee actively surfacing contradictions, not a passive wiki — the pain point it solves is unfilled by World Anvil or Campfire.",
+   soloReach:"Post a lore-contradiction example in worldbuilding communities with a 'I built a tool that catches these' framing.",
+   ce:4, sr:3, flag:false},
+  {oldRank:12, name:"Cult of One", type:"game", finalScore:4.29,
+   market:"mid", marketClass:"b-mid",
+   diff:"AI-generated member defection events with behavioral differentiation between personas — Cultist Simulator is text-heavy and not AI-driven.",
+   soloReach:"Dark strategy niche on itch.io and r/roguelikes; 'manage a cult with AI members' is a self-describing pitch.",
+   ce:2, sr:3, flag:false},
+  {oldRank:12, name:"Murder at the Manor", type:"game", finalScore:4.29,
+   market:"red", marketClass:"b-red",
+   diff:"Procedurally generated mysteries with AI suspects — but so does nearly every AI narrative game released in the last 24 months.",
+   soloReach:"Discovery is difficult — the name and premise are immediately generic in search results and itch.io listings.",
+   ce:1, sr:3, flag:true, flagText:"Red ocean confirmed. AI murder mystery generators are crowded and generic at the category level. Without a hard mechanical angle that breaks the format (no dialogue, a hard deduction constraint, a non-manor setting with cultural specificity), this is invisible at launch. Needs a sharp angle or drop from active planning."},
+  {oldRank:11, name:"The Correspondent", type:"game", finalScore:4.13,
+   market:"niche", marketClass:"b-niche",
+   diff:"Epistemic responsibility as a mechanic — you live with accuracy vs speed tradeoffs across stories — no existing web game explores journalism this way.",
+   soloReach:"Journalism and media-literacy communities are underserved by games; a pitch framing it as 'a game about what to publish' reaches professional audiences outside gaming.",
+   ce:4, sr:3, flag:false},
+];
+
+function buildNewRank(data){
+  const sorted=[...data].sort((a,b)=>{
+    if(b.finalScore!==a.finalScore) return b.finalScore-a.finalScore;
+    const bSum=b.ce+b.sr, aSum=a.ce+a.sr;
+    if(bSum!==aSum) return bSum-aSum;
+    return b.ce-a.ce;
+  });
+  return sorted.map((d,i)=>({...d,newRank:i+1}));
+}
+
+const ranked=buildNewRank(ideas15);
+
+function stars(v,max=5){
+  const cls=v>=4?'on':v>=3?'on-mid':'on-lo';
+  return `<span class="stars">${Array.from({length:max},(_,i)=>`<span class="star ${i<v?cls:''}"></span>`).join('')}</span>`;
+}
+function shiftHtml(o,n){
+  if(o===n) return `<span class="rank-shift rank-nc">#${o} → #${n}</span>`;
+  if(n<o) return `<span class="rank-shift rank-up">#${o} → #${n} ↑</span>`;
+  return `<span class="rank-shift rank-dn">#${o} → #${n} ↓</span>`;
+}
+function scoreColor(v){return v>=4.4?'s-hi':v>=3.9?'s-mid':'s-lo'}
+
+/* MATRIX */
+document.getElementById('mtx-body').innerHTML=ranked.map(r=>`
+<tr>
+  <td><b style="font-weight:500">#${r.newRank}</b></td>
+  <td><span class="idea-name">${r.name}</span></td>
+  <td><span class="badge ${r.type==='game'?'b-game':'b-tool'}">${r.type}</span></td>
+  <td><span class="score-big ${scoreColor(r.finalScore)}">${r.finalScore.toFixed(2)}</span></td>
+  <td>${shiftHtml(r.oldRank,r.newRank)}</td>
+  <td><span class="badge ${r.marketClass}">${r.market}</span></td>
+  <td>${stars(r.ce)}&nbsp;<span style="font-size:11px;color:var(--color-text-tertiary,#999)">${r.ce}/5</span></td>
+  <td>${stars(r.sr)}&nbsp;<span style="font-size:11px;color:var(--color-text-tertiary,#999)">${r.sr}/5</span></td>
+  <td><b style="font-weight:500">${r.ce+r.sr}</b><span style="font-size:11px;color:var(--color-text-tertiary,#999)">/10</span></td>
+  <td>${r.flag?'<span class="badge b-warn">Flagged</span>':'—'}</td>
+</tr>`).join('');
+
+/* DETAIL CARDS */
+document.getElementById('detail-cards').innerHTML=ranked.map(r=>`
+<div class="detail-card ${r.flag?'flagged':''}">
+  <div class="dc-header">
+    <div class="dc-ranks">
+      <div class="dc-rank-old">Was #${r.oldRank}</div>
+      <div class="dc-rank-new">#${r.newRank}</div>
+    </div>
+    <div>
+      <div class="dc-name">${r.name}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:5px">
+        <span class="badge ${r.type==='game'?'b-game':'b-tool'}">${r.type}</span>
+        <span class="badge ${r.marketClass}">${r.market}</span>
+        ${r.flag?'<span class="badge b-warn">Flagged</span>':''}
+      </div>
+    </div>
+    <div class="dc-scores" style="margin-left:auto">
+      <div class="dc-score-pill">Score ${r.finalScore.toFixed(2)}</div>
+      <div class="dc-score-pill">Edge ${r.ce}/5</div>
+      <div class="dc-score-pill">Reach ${r.sr}/5</div>
+    </div>
+  </div>
+  <div class="dc-body">
+    <div>
+      <div class="dc-label">Differentiation</div>
+      <div class="dc-field">${r.diff}</div>
+    </div>
+    <div>
+      <div class="dc-label">Solo reach path</div>
+      <div class="dc-field">${r.soloReach}</div>
+    </div>
+  </div>
+  ${r.flag?`<div class="flag-box"><div class="flag-title">High risk — needs sharp angle or drop</div>${r.flagText}</div>`:''}
+</div>`).join('');
+
+/* TOP 3 */
+const top3=[
+  {num:'01',name:'Prompt Forge',score:'4.79',tag:'same',tagLabel:'Unchanged',
+   why:'Market pass strengthened the case. Niche with clear edge (4/5), highest solo reachability in the portfolio (5/5). The AI-builder audience is reachable without marketing budget. Zero competitors in the personal-rubric-testing lane.',
+   change:'Pre-market #1, post-market #1. Nothing changed. If anything, the market lens makes this more urgent — it earns its position by multiplying output for everything else and has no competitive pressure.'},
+  {num:'02',name:'Inventory Oracle',score:'4.57',tag:'new',tagLabel:'Climbed from #3',
+   why:'Highest crowding edge in the catalog (5/5) tied with Time Loop Inbox and Echo Chamber, but better solo reachability (4 vs 3). The mechanic screenshots without explanation. No direct competitor using object-only deduction. Niche with no squatters.',
+   change:'Pre-market it shared #3 with Voice DM and Mythwright. Post-market it separates cleanly — Voice DM drops due to competitive crowding, Mythwright has lower solo reachability. Inventory Oracle becomes the clearest game to start this month.'},
+  {num:'03',name:'Incident Review Board',score:'4.35',tag:'same',tagLabel:'Confirmed',
+   why:'Market pass confirms niche positioning (bureaucracy satire is nearly empty), and solo reachability is 4/5 — the format generates organic content without a demo. The \'how would you vote?\' framing works as both the game and the marketing.',
+   change:'Pre-market #3 was also IRB. This pass didn\'t change the call — it validated it. The differentiation is clear, the path to users is concrete, and it\'s already on your saved concept list for a reason.'}
+];
+document.getElementById('top3-row').innerHTML=top3.map(t=>`
+<div class="t3-card">
+  <div class="t3-num">Start this month · ${t.num}</div>
+  <div class="t3-name">${t.name}</div>
+  <div class="t3-score ${scoreColor(parseFloat(t.score))}">${t.score}</div>
+  <div class="t3-why">${t.why}</div>
+  <span class="t3-changed ${t.tag==='same'?'t3-same':t.tag==='new'?'t3-new':'t3-moved'}">${t.tagLabel}</span>
+  <div style="font-size:11px;color:var(--color-text-secondary,#666);margin-top:.5rem;line-height:1.5;padding-top:.5rem;border-top:0.5px solid var(--color-border-tertiary,#e0e0e0)">${t.change}</div>
+</div>`).join('');
+
+/* TABS */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.panel).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

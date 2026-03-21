@@ -18,6 +18,18 @@ Fill this during the call.
 
 ---
 
+## Focus checks (current cycle)
+
+1. Tutorial guidance appears and is usable
+- Pass/Fail: Pass
+- Notes: Tutorial flow was understandable; no blocker reported.
+
+2. Decoration/readability looks colorful and clear
+- Pass/Fail: Pass
+- Notes: Baseline passed, but Amber requested even more color/cartoon styling.
+
+---
+
 ## Smoke path results
 
 1. Home opens

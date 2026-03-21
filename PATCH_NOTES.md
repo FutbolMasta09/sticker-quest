@@ -1,3 +1,77 @@
+## [2026-03-21e] Session: Adult ideation pipeline + post–SQ lock advisory (chat; exit)
+**Status:** Completed — advisory only until this log entry.
+
+### WHAT CHANGED
+1. **Advisory** — End-to-end analysis of `docs/exports/claude-ideation-2026-03/` (executive summary, conflict resolution rule, primary/backup next build after SQ, kill/park list, merge note for future pool Intake).
+2. **Advisory** — Full pass on post–Sticker Quest sequence vs lock + design docs: **recommend keep locked order** (SQ → Anchor's Desk → Inkborne native when all gates pass → three-way Native / Field Guide / pause); **The Ashen Compact** stays **pool-only**, not inserted as next flagship.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** If Saturday — run weekly quick audit + Saturday review block in `docs/WEEKLY_EXECUTION_TRACKER.md` before deep build; else next Sticker Quest / test priority per tracker.
+- **Carry-forward:** Optional — paste ideation Intake lines into `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md` when ready; Fire HD readability pass when tablet is available (prior Thursday carry-forward).
+- **Work-ahead status:** On-plan (no app code this session).
+
+---
+
+## [2026-03-21] Session: Claude adult ideation — HTML exports archived in repo
+**Status:** Completed — docs only (no app code).
+
+### WHAT CHANGED
+1. **`docs/exports/claude-ideation-2026-03/`** — New folder with six Claude-generated HTML snapshots: `ideation-catalog.html`, `decision-board.html`, `market-layer-top15.html`, `prompt-forge-brief.html`, `3-horizon-top5.html`, `portfolio-master.html`, plus `README.md` index.
+2. **`docs/REPO_INDEX.md`** — Pointer row to the ideation exports folder; last-updated date bumped.
+3. Source files copied from Ryan’s Downloads into the repo for long-term reference and Cursor analysis.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per weekly tracker / Sticker Quest priorities.
+- **Carry-forward from today:** Optional — merge approved items from external masterlist into `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md` Intake section when ready; use exports for post–SQ planning analysis in Cursor or Claude.
+- **Work-ahead status:** N/A (archive only).
+
+---
+
+## [2026-03-20g] Session: Future projects pool masterlist (locked order preserved)
+**Status:** Completed — docs only.
+
+### WHAT CHANGED
+1. **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`** — New carry-forward masterlist with four projects: The Anchor's Desk, Inkborne native, Inkborne: Field Guide (monster collecting), and The Ashen Compact.
+2. **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`** — Added explicit **Locked Build Order (Unchanged)** section pointing to `docs/POST_STICKER_QUEST_PROJECT_LOCK.md` as source of truth.
+3. **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`** — Added an **Intake Section** so Ryan can paste approved items from the separate future-projects masterlist later.
+4. **`docs/REPO_INDEX.md`** — Added pointer row for the new future projects pool document.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per weekly tracker / prior exit plan.
+- **Carry-forward from today:** Paste items from your separate masterlist into the new Intake Section when that doc is ready.
+- **Work-ahead status:** N/A (documentation only).
+
+---
+
+## [2026-03-20f] Session: The Ashen Compact — second pass (design supplement)
+**Status:** Completed — docs only.
+
+### WHAT CHANGED
+1. **`docs/ASHEN_COMPACT_GAME_BIBLE_SUPPLEMENT.md`** — Second pass: clock discipline, named locations + travel, **compact** negotiation loop, standing ± triggers, optional CivilStress/Supply, Emperor beat table, archives contradiction hook, NPC scene goals, straight-quote CHOICES, extra flags.
+2. **`docs/ASHEN_COMPACT_GAME_BIBLE_AUDIT_2026_03_20.md`** — Links supplement; PASS 3 summary table; **updated playability estimate** 8.5/10 with supplement.
+3. **`docs/IDEAS_NOTEBOOK.md`** — Ashen entry points to audit + supplement.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per weekly tracker / prior exit plan.
+- **Carry-forward from today:** None unless merging PDF + supplement into one master prompt for Claude.
+- **Work-ahead status:** N/A (documentation only).
+
+---
+
+## [2026-03-20e] Session: The Ashen Compact game bible audit + ideas notebook
+**Status:** Completed — docs only (future adult IF project; not Sticker Quest scope).
+
+### WHAT CHANGED
+1. **`docs/ASHEN_COMPACT_GAME_BIBLE_AUDIT_2026_03_20.md`** — Full audit (Inkborne-style pass: strengths, gaps, LLM risks, lightweight build notes, scorecard).
+2. **`docs/IDEAS_NOTEBOOK.md`** — One-line Game Ideas entry pointing to the audit.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per weekly tracker / prior exit plan.
+- **Carry-forward from today:** None for Ashen Compact unless Ryan wants a second draft pass on the bible.
+- **Work-ahead status:** N/A (documentation only).
+
+---
+
 ## [2026-03-21d] Session: Model-doc propagation to future projects + rollout checklist
 **Status:** Completed — docs/scripts only.
 
@@ -351,7 +425,7 @@ Amber feedback implementation (tutorial, color/cartoon pass, star emphasis, onbo
 3. **Feedback + AI transparency language documented** — reusable parent and indie copy blocks added, with single-channel feedback intake policy.
 4. **Amber remote test packet created** — added:
    - `docs/AMBER_REMOTE_TEST_RUNBOOK.md`
-   - `docs/TONIGHT_AMBER_TEST_PACKET.md`
+   - `docs/AMBER_RECURRING_TEST_PACKET.md`
    - `docs/TONIGHT_AMBER_TEST_RESULTS.md`
    - `docs/POST_TEST_BRANCH_PLAN.md`
    - `docs/AMBER_TEST_HISTORY.md`

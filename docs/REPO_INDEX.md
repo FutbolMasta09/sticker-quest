@@ -14,6 +14,8 @@ Update when a new repo is created or renamed.
 | **Solo weekly discipline** | — | `docs/SOLO_PRO_OPERATING_SYSTEM.md` |
 | **Cursor models & modes** | — | `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` |
 | **Model doc rollout checklist** | — | `docs/MODEL_DOC_ROLLOUT_CHECKLIST.md` |
+| **Future projects pool masterlist** | — | `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md` |
+| **Adult ideation exports (HTML)** | — | `docs/exports/claude-ideation-2026-03/` (`README.md` + 6 snapshots) |
 
 **Code map:** `docs/CODEBASE_MAP.md` (update after architecture changes — see `session-protocol.mdc`).
 
