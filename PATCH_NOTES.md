@@ -1,3 +1,22 @@
+## [2026-03-22j] Session: Take the Detour added (tentative)
+**Status:** Documentation only.
+
+**One-line summary:** Added Take the Detour (Kira + Alicia's travel business) to plan on tentative basis — early interest in app and/or website; Ryan video editor confirmed; low priority until proper discussion; special planning session when active; learning modules (m10) expanded for app + website tracks.
+
+### WHAT CHANGED
+1. **PROJECT_CONTEXT.md** — Alicia in People; new "Ryan's other work (tentative)" note: Take the Detour (same as Kira travel business), video editing confirmed, app/website low priority until discussion; priority revisited after; special Cursor session to gather info when time comes.
+2. **docs/developer-blueprint/modules/m10-travel-business.md** — Renamed to Take the Detour; tentative status; merged Kira travel business = Take the Detour; app + website tracks; priority rule (until discussion, then revisit); special planning session gate; video editing note.
+3. **docs/developer-blueprint/INDEX.md** — m10 row updated.
+4. **docs/developer-blueprint/integration/PRODUCT_ROADMAP_SYNC.md** — Travel row → Take the Detour.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan (Sticker Quest build — wire math stickers, lint fix, or Phase 1 task).
+- **Carry-forward from today:** Commit/push blueprint submodule in GitHub Desktop first (m10, INDEX, integration updates); then commit submodule pointer in sticker-quest if not yet done.
+- **Work-ahead status:** On-plan. Blueprint built and live; Take the Detour documented tentatively.
+- **Tomorrow sync tasks:** Entry checklist; first Blueprint monthly review Wed 2026-03-25.
+
+---
+
 ## [2026-03-22i] Session: Blueprint repo + submodule setup (complete)
 **Status:** Completed.
 

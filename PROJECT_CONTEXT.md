@@ -13,10 +13,15 @@ Ryan built this for his niece Libby. That story is authentic, emotional, and the
 - **Kira** — Ryan's wife (Aunt). Co-dedicatee. Included in Libby's private version alongside Ryan. Based in Florida.
 - **Libby** — The child this is built for. Kindergarten age, Fall 2026. Based in Tennessee.
 - **Lead Developer** — Cursor AI (this tool).
+- **Alicia** — Kira's business partner for Take the Detour (luxury travel).
 
 **Note on Ryan & Kira in content:** In Libby's private version, the third hint on stickers alternates between "Uncle Ryan says:" and "Aunt Kira says:" so both are part of Libby's experience. This personal detail does NOT appear in the public version — the public version uses generic "Coach says:" or a configurable name. All content files for Libby's private build use the Ryan/Kira alternation.
 
 **Libby Launch personalization:** Add first-time-open message ("This app is a gift from Aunt Kira and Uncle Ryan") closer to Sept 2026. See `docs/LIBBY_LAUNCH_PERSONALIZATION.md`.
+
+**Ryan's other work (tentative — no official discussion yet):**
+- **Take the Detour** — Kira + Alicia's luxury travel business (same entity). Early interest in possibly an app and/or website. Ryan will be their video editor (confirmed). App and website exploration is **low priority until Ryan has a proper discussion with Kira and Alicia**; after that discussion, priority is revisited. When the time comes, plan a special session with Cursor to gather all info needed for the app and website before any build.
+- **Video editing** — Confirmed; separate from app/website dev.
 
 ---
 
