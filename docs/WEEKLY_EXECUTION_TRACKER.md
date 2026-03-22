@@ -240,10 +240,10 @@ Score each signal: `0` good, `1` watch, `2` problem.
 - Must-ship: Floor vs carpet fix (Mon); Amber feedback implementation
 - Monday (Deep Build): Floor vs carpet fix — k_grade_content.json + k_phonics_audio_scripts.json; mark done in AMBER_FEEDBACK_BACKLOG. If time: plan tutorial read-aloud.
 - Tuesday (Deep Build): More colors/decorations pass — quest cards or home headers. If time: wire math stickers.
-- Wednesday (Design/Planning): Libby personalization discussion — graduation message, Star Mail from family, EAS Update. Off-peak: Lore Bible sprint.
+- Wednesday (Design/Planning): Libby personalization discussion — graduation message, Star Mail from family, EAS Update. First Blueprint monthly review (docs/developer-blueprint/rubrics/monthly-review-rubric.md).
 - Thursday (Deep Build): Math stickers wire OR lint fix OR Phase 1 dead code audit. One verified increment.
 - Friday (Community/Business): KPI update + one community post + monetization check (deferred from last week).
-- Saturday: Weekly audit, lock next week plan. Optional: Lore Bible if not done Wed.
+- Saturday: Weekly audit, lock next week plan. Optional: catch-up if Wed tasks slip.
 
 ---
 
@@ -268,7 +268,7 @@ Score each signal: `0` good, `1` watch, `2` problem.
 ### Daily Plan (Before Week Starts)
 - Monday (Deep Build): Floor vs carpet fix — k_grade_content.json, k_phonics_audio_scripts.json; mark done in AMBER_FEEDBACK_BACKLOG. If time: plan tutorial read-aloud.
 - Tuesday (Deep Build): More colors/decorations pass. If time: wire math stickers.
-- Wednesday (Design/Planning): Libby personalization discussion; Lore Bible sprint (off-peak option).
+- Wednesday (Design/Planning): Libby personalization discussion; First Blueprint monthly review.
 - Thursday (Deep Build): Math stickers OR lint fix OR dead code audit — one verified increment.
 - Friday (Community/Business): KPI + community post + monetization check.
 - Saturday (Review/Planning + Flex): Weekly audit, next week lock.
@@ -290,7 +290,7 @@ Score each signal: `0` good, `1` watch, `2` problem.
 - Wednesday:
   - Planned hours: 4-5
   - Actual hours:
-  - Tasks planned: Libby personalization; Lore Bible option
+  - Tasks planned: Libby personalization; First Blueprint monthly review
   - Tasks done:
   - Carry-forward:
 - Thursday:
