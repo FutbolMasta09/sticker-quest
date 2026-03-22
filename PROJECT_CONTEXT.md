@@ -189,6 +189,8 @@ All core learning is 100% offline. App never stops due to lost WiFi.
 | `.cursor/rules/non-coder-comms.mdc` | Instruction style rules for Ryan |
 | `.cursorrules` | Librarian protocol (check docs, enforce RAM rules, update status) |
 | `PATCH_NOTES.md` | Session-by-session changelog |
+| `docs/DEVELOPER_BLUEPRINT_POINTER.md` | Pointer to Developer Career Blueprint (learning, rubrics, milestones) |
+| `docs/developer-blueprint/` | Full blueprint: modules m01–m10, monthly/milestone rubrics, quarterly templates (portable; optional future git submodule) |
 
 ---
 

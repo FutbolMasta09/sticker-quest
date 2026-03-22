@@ -1,7 +1,7 @@
 ---
 title: Sticker Quest codebase map (living)
 purpose: Entry points, state, routing, integrations — update when architecture changes
-last_verified: 2026-03-20
+last_verified: 2026-03-22
 verified_by: Cursor agent (baseline pass)
 ---
 
@@ -74,6 +74,15 @@ verified_by: Cursor agent (baseline pass)
 
 ---
 
+## Developer Career Blueprint (cross-cutting)
+
+| Path | Role |
+|------|------|
+| `docs/DEVELOPER_BLUEPRINT_POINTER.md` | Short pointer into the blueprint |
+| `docs/developer-blueprint/` | Learning modules (m01–m10), rubrics, milestones, quarterly templates — **not** app runtime code |
+
+---
+
 ## Config & backend
 
 | Item | Location |
@@ -99,4 +108,4 @@ Or when Ryan says: **"Run code-doc sync."** (see `session-protocol.mdc`).
 
 ---
 
-*Baseline created 2026-03-20. Next review: after next major navigation/store change.*
+*Baseline created 2026-03-20. Developer blueprint section 2026-03-22. Next review: after next major navigation/store change.*

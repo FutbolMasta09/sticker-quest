@@ -36,6 +36,10 @@ Use one section per week. Keep entries short and consistent.
 - Sunday (Optional/Rest): top objective or rest
 - Saturday flex intent after planning: catch-up / work-ahead / rest
 
+### Blueprint (monthly skill review)
+- Blueprint monthly review done this week (Y/N):
+- If Y, note or link to rubric output (`docs/developer-blueprint/rubrics/monthly-review-rubric.md`):
+
 ### Daily Actuals (Fill After Each Day)
 - Monday:
   - Planned hours:

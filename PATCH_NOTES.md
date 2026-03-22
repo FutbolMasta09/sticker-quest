@@ -1,3 +1,35 @@
+## [2026-03-22i] Session: Blueprint repo + submodule setup (complete)
+**Status:** Completed.
+
+**One-line summary:** `docs/developer-blueprint/` is now a git submodule pointing at `https://github.com/FutbolMasta09/ryan-developer-blueprint.git`. Blueprint travels with sticker-quest and can be added to future projects at the same path.
+
+### WHAT CHANGED
+- Removed vendored blueprint folder; added as submodule at `docs/developer-blueprint/`.
+- `.gitmodules` created; submodule tracks remote main.
+
+---
+
+## [2026-03-22h] Session: Developer Career Blueprint implemented (docs tree)
+**Status:** Completed — documentation + integration only.
+
+**One-line summary:** Added full `docs/developer-blueprint/` hub (modules m01–m10 stubs, rubrics, milestones, quarterly template), integration with Solo Dev plan + product roadmaps, pointer file, PROJECT_CONTEXT/CODEBASE_MAP/WEEKLY tracker updates; optional submodule promotion documented in CANONICAL_REPO_SETUP.md.
+
+### WHAT CHANGED
+1. **`docs/developer-blueprint/`** — README, INDEX, principles, GLOSSARY, CANONICAL_REPO_SETUP; `integration/SOLO_DEV_CAREER_LINK.md`, `PRODUCT_ROADMAP_SYNC.md`; modules m01–m10; rubrics (monthly, Sticker Quest, public launch, Anchor’s Desk VS); `milestones/README.md` + ADDENDUM_TEMPLATE; `quarterly/2026-Q1-review-template.md`.
+2. **`docs/DEVELOPER_BLUEPRINT_POINTER.md`** — Entry point from `docs/`.
+3. **`PROJECT_CONTEXT.md`** — Key Files rows for blueprint pointer + folder.
+4. **`docs/CODEBASE_MAP.md`** — Developer Career Blueprint section; last_verified bump.
+5. **`docs/WEEKLY_EXECUTION_TRACKER.md`** — Blueprint monthly review lines in weekly template.
+6. **Developer Career Blueprint plan** (Cursor user plans: `developer_career_blueprint_2497de1f.plan.md`) — todos marked completed except optional submodule + first monthly review (Ryan action).
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan (Sticker Quest build priority).
+- **Carry-forward from today:** Optional — create private GitHub `ryan-developer-blueprint` and submodule per `CANONICAL_REPO_SETUP.md`; schedule first monthly review with `rubrics/monthly-review-rubric.md`.
+- **Work-ahead status:** On-plan for blueprint docs.
+- **Tomorrow sync tasks:** Entry checklist; first blueprint monthly review when ready.
+
+---
+
 ## [2026-03-22g] Session: Lore Bible early completion documented + rule for future
 **Status:** Completed — docs + rules only.
 
