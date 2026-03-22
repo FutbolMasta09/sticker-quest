@@ -58,6 +58,35 @@ Tracks where the project started, where it is now, and the full schedule to laun
 
 ---
 
+## SECTION B2 — Planning deadlines (monthly & weekly alignment)
+
+**Purpose:** Fixed **planning targets** so monthly reviews and Saturday weekly finalization can work backward from launch and beyond. These are **targets** — the **Pace Check** table (top of file) records what actually happened.
+
+**How to use**
+
+| Cadence | What to do |
+|--------|------------|
+| **Saturday (weekly)** | Pick tasks that protect the **next upcoming** planning deadline below. Carry-forward from `WEEKLY_EXECUTION_TRACKER` / session notes. |
+| **Monthly review** | Compare progress to the next 1–2 deadlines; slide **tentative** calendar blocks if the roadmap slips. See `docs/developer-blueprint/CADENCE_SCHEDULE.md`. |
+| **Big-picture calendar** | Block **tentative** week-of / end-of-month markers using these dates (soft, not shame). |
+
+| Milestone | Planning deadline (target) | Notes |
+|-----------|---------------------------|--------|
+| **Phase 1 — Universal Engine** | **2026-05-31** | End of May — engine + Phase 1 checklist complete |
+| **Phase 2 — Content Layer** | **2026-06-30** | End of June |
+| **Phase 3 — Motion Verification** | **2026-07-31** | End of July |
+| **Libby private launch (K complete)** | **2026-09-30** | End of September — Libby has the app |
+| **Phase 4 — Public launch prep** | **2026-11-30** | End of Nov — submission-ready (store copy, privacy, COPPA path) |
+| **App Store submission (target)** | **2026-12-31** | End of Dec — submit for review (fits Dec/Jan public window) |
+| **Public launch (live)** | **2027-01-31** | End of Jan — app live (aligns with Dec 2026 / Jan 2027 window) |
+| **Phase 5 — Grade 1 sprint** | **2027-05-31** | Spring 2027 planning anchor |
+| **Phase 6 — Grade 2 sprint** | **2027-12-31** | Year-end planning anchor (adjust when scope firms up) |
+| **Phase 7 — Grade 3 sprint** | **2028-12-31** | Long-range anchor (adjust when scope firms up) |
+
+**Rule:** If a deadline becomes unrealistic, **update the plan and the Pace Check** — don’t hide slippage. Scope guardrails in PROJECT_CONTEXT still apply.
+
+---
+
 ## SECTION C — Progress Tracker
 
 ---

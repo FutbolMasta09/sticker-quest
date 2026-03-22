@@ -146,6 +146,7 @@ All core learning is 100% offline. App never stops due to lost WiFi.
 ---
 
 ## Phase Status
+- **Planning deadlines (monthly & weekly):** End-of-month targets for each phase and launch — `docs/ROADMAP_TIMELINE.md` **Section B2** (work backward from these on Saturdays; reconcile at monthly review).
 - **Current Phase:** Phase 1 — Universal Engine
 - **Phase 1 Goal:** Mastery store, quest grid wired to content, progressive unlock system, Fire HD 10 scaling.
 - **Content JSON:** COMPLETE — 25 stickers, all K phonemes covered (v2026.3)
