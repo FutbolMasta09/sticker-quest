@@ -106,7 +106,7 @@ Use one section per week. Keep entries short and consistent.
   - Variance hours:
   - Variance percent:
   - Tasks planned: optional / rest
-  - Tasks done: Lore Bible sprint (Claude Code Desktop); governance + registry + editorial + lock; early completion documented + rule added for future
+  - Tasks done: Lore Bible sprint (Claude Code Desktop); governance + registry + editorial + lock; early completion documented + rule added for future; Blueprint: collaborator protocol, informed decisions (pros/cons), ROADMAP B2 planning deadlines, rubric expansion (phase check, standing prompts)
   - Drift reason:
   - Carry-forward: none
 

@@ -1,3 +1,25 @@
+## [2026-03-22k] Session: Blueprint collaborator protocol, informed decisions, planning deadlines
+**Status:** Completed — docs + rules only.
+
+**One-line summary:** Added collaborator stance, new initiative protocol, informed decisions (pros + cons), big picture calendar, ROADMAP B2 planning deadlines, phase/deadline check in monthly rubric, full standing prompts baked in.
+
+### WHAT CHANGED
+1. **Blueprint principles** — Collaboration (not order-taker); New initiative protocol (plan review before first run, debrief after first cycle); Informed decisions (pros + cons when presenting or locking a decision).
+2. **planning-protocol.mdc** — Collaborator + informed decisions + new initiative rules.
+3. **ROADMAP_TIMELINE.md** — Section B2: Planning deadlines table (Phase 1 → public launch → G1–G3 end-of-month targets); how to use with Saturday weekly and monthly review.
+4. **PROJECT_CONTEXT.md** — Phase Status: pointer to ROADMAP B2 for planning deadlines.
+5. **CADENCE_SCHEDULE.md** — Big picture vs weekly table; link to B2.
+6. **monthly-review-rubric.md** — Phase/deadline check; big picture calendar (2b); standing prompts (energy, tool drift, learning debt, portfolio, win, blockers, recovery) as required; quarterly template tool/portfolio deep pass.
+7. **Blueprint submodule** — All above committed and pushed.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan (likely Monday Deep Build — Sticker Quest Phase 1 task).
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan. Blueprint protocol and planning structure complete; first monthly review Wed 2026-03-25.
+- **Tomorrow sync tasks:** Entry checklist; Sticker Quest build (wire math stickers, lint, Phase 1 audit) or first monthly review prep.
+
+---
+
 ## [2026-03-22j] Session: Take the Detour added (tentative)
 **Status:** Documentation only.
 
