@@ -29,6 +29,8 @@ The execution order is locked to `docs/POST_STICKER_QUEST_PROJECT_LOCK.md`.
 
 **Trigger checklist:** Current flagship has (a) playable core loop, (b) at least one external playtest or demo. Then: schedule a pool comparison session.
 
+**Before creating any new game repo:** In Sticker Quest, run `npm run rules:pack:build` first so the pack has the latest research doc and AI strategy. Then `npm run rules:pack:install` will carry them over.
+
 ---
 
 ## Future Project Pool

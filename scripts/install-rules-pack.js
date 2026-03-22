@@ -96,6 +96,8 @@ function run() {
     "SOLO_DEV_CAREER_MASTER_PLAN_TEMPLATE.md",
     "SOLO_DEV_CAREER_MASTER_PLAN.md"
   );
+  installDoc("RESEARCH_ZERO_RUNTIME_GAMES_2026.md", "RESEARCH_ZERO_RUNTIME_GAMES_2026.md");
+  installDoc("AI_FIRST_BUILD_STRATEGY.md", "AI_FIRST_BUILD_STRATEGY.md");
 
   console.log("Rules pack install complete.");
 }

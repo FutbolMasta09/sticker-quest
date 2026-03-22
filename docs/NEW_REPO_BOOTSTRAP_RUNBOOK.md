@@ -13,6 +13,7 @@ This assumes `sticker-quest` is open in Cursor and contains the rules-pack scrip
 - Reusable rules into `.cursor/rules`
 - Planning/accountability docs into `docs/`
 - Week-one tracker/audit scaffolding
+- **Game project reference:** `docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md` and `docs/AI_FIRST_BUILD_STRATEGY.md` (for Anchor's Desk, Inkborne, etc.)
 
 ## One-time prep in Sticker Quest
 Run this first to refresh the starter pack from current rules/templates:
@@ -43,7 +44,11 @@ Confirm these files exist:
 - `docs/WEEKLY_EXECUTION_TRACKER.md`
 - `docs/ACCOUNTABILITY_AUDIT_LOG.md`
 - `docs/SOLO_DEV_CAREER_MASTER_PLAN.md`
+- `docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md` (game projects)
+- `docs/AI_FIRST_BUILD_STRATEGY.md` (game projects)
 - `.cursor/rules/` (rules copied)
+
+**For Anchor's Desk specifically:** See `PROJECT_CONTEXT.md` one-time kickoff checklist — also copy `GAME_DESIGN.md` to the new repo root.
 
 ## Fast start checklist
 1. Set this week's planned hours in `docs/WEEKLY_EXECUTION_TRACKER.md`

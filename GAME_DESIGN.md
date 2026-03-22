@@ -147,6 +147,11 @@ One run = 8–10 documents drawn from this pool in randomized order, ending with
 - [x] Starting vocabulary named — 10 words above
 - [ ] 3–5 sample document templates written in the game's voice
 - [ ] Unlockable word list (words 11–15) named and lore snippets drafted
+- [ ] Steam AI disclosure copy drafted (required for Steam — player-facing AI content)
+
+### Build Discipline (during core build)
+
+- **200–300 line max per Godot script** — Keeps codebase AI-manageable; from zero-runtime games research (see `docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md`).
 
 ---
 

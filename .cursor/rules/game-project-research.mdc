@@ -1,0 +1,22 @@
+---
+description: Consult zero-runtime games research and AI build strategy when working on game projects.
+globs: **/*
+alwaysApply: true
+---
+# GAME PROJECT RESEARCH REFERENCE
+
+When working on **game projects** (Anchor's Desk, Inkborne, Field Guide, Chronicle Rift, deckbuilders, roguelikes, Godot games, narrative games):
+
+1. **Consult `docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md`** when making decisions about:
+   - Architecture (data-driven design, ECS, file size limits)
+   - Build discipline (200–300 line max per Godot script)
+   - Asset pipeline (LoRA, Suno, ElevenLabs)
+   - Procedural generation patterns
+   - Steam AI disclosure and legal
+
+2. **Consult `docs/AI_FIRST_BUILD_STRATEGY.md`** when making decisions about:
+   - AI use by phase
+   - Quality gates and human review
+   - Project-specific AI focus (Anchor's Desk, Field Guide)
+
+These docs are installed via the rules pack. If they exist in the repo, read them before proposing architecture or build-discipline changes for game projects.

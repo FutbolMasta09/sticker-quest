@@ -24,6 +24,7 @@ const filesToCopy = [
   "forecasting-loop.mdc",
   "question-translator.mdc",
   "beginner-assist-mode.mdc",
+  "game-project-research.mdc",
 ];
 
 const docsToCopy = [
@@ -85,6 +86,14 @@ const docsToCopy = [
       packDocsDir,
       "CURSOR_MODEL_AND_MODE_REFERENCE_TEMPLATE.md"
     ),
+  },
+  {
+    from: path.join(repoRoot, "docs", "RESEARCH_ZERO_RUNTIME_GAMES_2026.md"),
+    to: path.join(packDocsDir, "RESEARCH_ZERO_RUNTIME_GAMES_2026.md"),
+  },
+  {
+    from: path.join(repoRoot, "docs", "AI_FIRST_BUILD_STRATEGY.md"),
+    to: path.join(packDocsDir, "AI_FIRST_BUILD_STRATEGY.md"),
   },
 ];
 

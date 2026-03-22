@@ -1,3 +1,24 @@
+## [2026-03-22] Session: Zero-runtime games research digest + Anchor's Desk checklist + rules pack carry-over
+**Status:** Completed — docs + scripts + bootstrap.
+
+**One-line summary:** Created research digest from "Building deep games with AI tools and zero runtime costs" report; added Steam AI disclosure + file-size discipline to Anchor's Desk checklists; wired research doc + AI strategy into rules pack so they carry over to new game repos.
+
+### WHAT CHANGED
+1. **`docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md`** — New. Captures report accuracy verdict, project-specific takeaways (Sticker Quest, Anchor's Desk, Inkborne native, Ashen Compact, Field Guide, Chronicle Rift), universal patterns, asset pipeline, legal notes. Explicit: does not veto API-driven projects.
+2. **`GAME_DESIGN.md`** — Tier 2: added Steam AI disclosure draft item; new "Build Discipline" subsection with 200–300 line max per Godot script.
+3. **`docs/AI_FIRST_BUILD_STRATEGY.md`** — Anchor's Desk section: added build discipline (200–300 line max) with pointer to research doc.
+4. **Rules pack carry-over** — `scripts/build-rules-pack.js`: added RESEARCH_ZERO_RUNTIME_GAMES_2026.md and AI_FIRST_BUILD_STRATEGY.md to docsToCopy. `scripts/install-rules-pack.js`: added installDoc calls for both. New game repos now receive these docs automatically via `npm run rules:pack:install`.
+5. **`PROJECT_CONTEXT.md`** — One-time kickoff checklist: added step to copy GAME_DESIGN.md to new Anchor's Desk repo root; noted that research doc + AI strategy now install via rules pack.
+6. **`docs/NEW_REPO_BOOTSTRAP_RUNBOOK.md`** — Added research doc + AI strategy to "What this installs" and Verify list; added Anchor's Desk note for GAME_DESIGN.md.
+7. **Reminder + AI implementation** — `PROJECT_CONTEXT.md` kickoff checklist: added "Before you begin: run npm run rules:pack:build" so Ryan is reminded when creating Anchor's Desk repo. `docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`: added same reminder for any new game repo from the pool. **`game-project-research.mdc`** — New rule (in rules pack) instructs AI to consult RESEARCH_ZERO_RUNTIME_GAMES_2026.md and AI_FIRST_BUILD_STRATEGY.md when making architecture, build-discipline, or asset-pipeline decisions for game projects. Ensures these docs are read and applied when appropriate.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan.
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan.
+
+---
+
 ## [2026-03-21k] Session: Session protocol work-status bones + rules-pack template
 **Status:** Completed — rules only.
 

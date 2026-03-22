@@ -16,6 +16,8 @@ Ryan built this for his niece Libby. That story is authentic, emotional, and the
 
 **Note on Ryan & Kira in content:** In Libby's private version, the third hint on stickers alternates between "Uncle Ryan says:" and "Aunt Kira says:" so both are part of Libby's experience. This personal detail does NOT appear in the public version — the public version uses generic "Coach says:" or a configurable name. All content files for Libby's private build use the Ryan/Kira alternation.
 
+**Libby Launch personalization:** Add first-time-open message ("This app is a gift from Aunt Kira and Uncle Ryan") closer to Sept 2026. See `docs/LIBBY_LAUNCH_PERSONALIZATION.md`.
+
 ---
 
 ## Hardware Target
@@ -508,10 +510,13 @@ Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypot
 
 When Sticker Quest is ready and the Anchor's Desk repo is created, run this in order:
 
+**Before you begin:** In Sticker Quest, run `npm run rules:pack:build` to refresh the pack with the latest docs (research, AI strategy, rules). Do this first so the new repo gets current copies.
+
 1. Open the new repo as a separate project in Cursor (not inside Sticker Quest).
-2. Install the rules pack into the new repo.
-3. Copy the Anchor's Desk strategy section from `docs/MARKETING_STRATEGY.md` in Sticker Quest into the new repo's marketing strategy file.
-4. Confirm alignment across the new repo's game design, roadmap, and marketing docs before coding starts.
+2. Install the rules pack into the new repo. (This now includes `docs/RESEARCH_ZERO_RUNTIME_GAMES_2026.md` and `docs/AI_FIRST_BUILD_STRATEGY.md` — both carry over automatically.)
+3. Copy `GAME_DESIGN.md` from Sticker Quest root to the new repo root.
+4. Copy the Anchor's Desk strategy section from `docs/MARKETING_STRATEGY.md` in Sticker Quest into the new repo's marketing strategy file.
+5. Confirm alignment across the new repo's game design, roadmap, and marketing docs before coding starts.
 
 ---
 
