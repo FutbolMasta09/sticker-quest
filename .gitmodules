@@ -1,0 +1,3 @@
+[submodule "docs/developer-blueprint"]
+	path = docs/developer-blueprint
+	url = https://github.com/FutbolMasta09/ryan-developer-blueprint.git
