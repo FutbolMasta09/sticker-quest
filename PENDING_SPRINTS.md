@@ -29,7 +29,7 @@ Checked automatically at the start of every off-peak session.
 ## COMPLETED SPRINTS
 
 ### Inkborne Lore Bible (LORE_BIBLE_V2.md)
-**Completed:** 2026-03-22
+**Completed:** 2026-03-22 *(3 days early — was scheduled Wednesday 2026-03-25 Design/Planning)*
 **Result:** Committed to `docs/LORE_BIBLE_V2.md` — 27 registry entries. Locked T1 (Palimpsest, Authors, Calendar, Story Outcome). Filled five gaps: 5 factions, 5 places, Accord (3 contradicting fragments), Previous Cycle (5 fragments), 4 mythic characters. Tone guide. Registry appendix. All T2 marked pending for human editorial pass. LORE_REGISTRY.md updated.
 
 ### Lore Copy (60 messages)

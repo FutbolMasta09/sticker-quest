@@ -1,3 +1,22 @@
+## [2026-03-22g] Session: Lore Bible early completion documented + rule for future
+**Status:** Completed — docs + rules only.
+
+**One-line summary:** Logged Lore Bible sprint as 3 days early (scheduled Wed, ran Sun); added rule so future early completions are documented in ESTIMATION_RETROSPECTIVE and PENDING_SPRINTS.
+
+### WHAT CHANGED
+1. **`docs/ESTIMATION_RETROSPECTIVE.md`** — New Sprint Completion Log section; Lore Bible row (scheduled Wed 2026-03-25, actual Sun 2026-03-22, 3 days early).
+2. **`PENDING_SPRINTS.md`** — Lore Bible COMPLETED entry now notes "(3 days early — was scheduled Wednesday 2026-03-25 Design/Planning)".
+3. **`.cursor/rules/forecasting-loop.mdc`** — Early Completion Trigger: when a task/sprint completes before its scheduled day, add to Sprint Completion Log and PENDING_SPRINTS note.
+4. **`.cursor/rules/session-protocol.mdc`** — Early completion logging added to DAILY EXECUTION CLOSEOUT; 4d.1 now conditional (only surface sprints still in queue, not completed).
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Floor vs carpet fix (Amber feedback) — k_grade_content.json, k_phonics_audio_scripts.json.
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan. Lore Bible complete; early-completion rule in place; Sticker Quest build next.
+- **Tomorrow sync tasks:** Entry checklist; pick first Amber feedback item.
+
+---
+
 ## [2026-03-22f] Session: Lore Bible T2 locked
 **Status:** Completed — docs only.
 

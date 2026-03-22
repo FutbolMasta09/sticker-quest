@@ -87,8 +87,8 @@ Automatic trigger rule:
    6. Decide optional Saturday flex mode after planning: catch-up, work-ahead, or rest
    7. Confirm family-time priority before doing any optional Saturday work
 
-4d.1 **Saturday — Lore Bible sprint surface**
-   If today is Saturday: Surface the **Inkborne Lore Bible** sprint as the top off-peak design task. Target: run this week when possible. Say: "Lore Bible sprint is ready — ~30–45 min on Claude Code Desktop with Opus. See `docs/LORE_BIBLE_SPRINT_READY.md`. Want to run it today or slot it for later this week?" Include in the 3-line briefing or next-options.
+4d.1 **Saturday — Off-peak design sprint surface**
+   If today is Saturday and an off-peak design sprint (e.g. Lore Bible, content sprint) is in the PENDING_SPRINTS queue and not yet in COMPLETED: Surface it as the top off-peak design task. Say: "[Sprint name] is ready — see [relevant doc]. Want to run it today or slot it for later this week?" Include in the 3-line briefing or next-options.
 
 4e. **Cursor model doc refresh (when billing reset)**
    Open `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` and check the **Billing cycle reset date**.
@@ -168,6 +168,10 @@ If today is the last Saturday of the month:
 - Run the monthly deep audit block in tracker
 - Record verdict and recovery actions in `docs/ACCOUNTABILITY_AUDIT_LOG.md`
 - State timeline impact on full-time target (on track/slight risk/off track)
+
+**Early completion logging** (when a task/sprint was completed before its scheduled day in the weekly plan):
+- Add a row to `docs/ESTIMATION_RETROSPECTIVE.md` Sprint Completion Log (task name, scheduled day, actual date, delta, brief note)
+- If it was a Claude Pro sprint: add "(X days early — was scheduled [day])" to the COMPLETED entry in `PENDING_SPRINTS.md`
 
 **Always tell Ryan to start a NEW chat next session — never continue this one.**
 Say this explicitly at the end of every exit:

@@ -9,6 +9,12 @@ alwaysApply: true
 - Improve timeline guesses over time using evidence, not intuition.
 - Track both safe-plan dates and actual outcomes.
 
+## Early Completion Trigger (tasks/sprints, not phase milestones)
+- When a task or sprint completes **before** its scheduled day in the weekly plan:
+  - Add a row to `docs/ESTIMATION_RETROSPECTIVE.md` Sprint Completion Log
+  - If a Claude Pro sprint: add "completed early" note to its COMPLETED entry in `PENDING_SPRINTS.md`
+- This captures work-ahead capacity for future forecasting calibration.
+
 ## Milestone Trigger
 - When a phase milestone is completed, update:
   - `docs/ROADMAP_TIMELINE.md`
