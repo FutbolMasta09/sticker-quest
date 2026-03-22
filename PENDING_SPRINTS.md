@@ -1,7 +1,9 @@
 # PENDING CLAUDE PRO SPRINTS
 
-Prompts that have been prepared but not yet run on claude.ai.
+Prompts that have been prepared but not yet run on Claude (off-peak 2x).
 Checked automatically at the start of every off-peak session.
+
+**Preferred tool:** **Claude Code Desktop** at all times. Open this project folder in Claude Code — it can read project files and write output directly. Same 2x off-peak promo. Use claude.ai only if: Claude Code is unavailable, you're on another device, or you explicitly want a clean slate with no project context (rare).
 
 **How this works:**
 - When a Claude Pro prompt is ready but Ryan wants to run it later, it gets added here.
@@ -12,21 +14,12 @@ Checked automatically at the start of every off-peak session.
 
 ## QUEUE (Run These Next — In Priority Order)
 
-**Next off-peak (Ryan’s pick after March 20 session):** Parent Onboarding Copy or Inkborne Lore Bible (see docs/LORE_BIBLE_SPRINT_READY.md).
+**Next off-peak (Ryan’s pick after March 20 session):** Parent Onboarding Copy.
 
-
-### 4. Inkborne Lore Bible (LORE_BIBLE_V2.md)
-**Priority:** MEDIUM — design track, unblocks future Inkborne work
-**Target:** Off-peak this week when possible. Saturday session: surface first.
-**Estimated time:** ~30–45 minutes on claude.ai (Opus, off-peak 2x)
-**Prompt:** See `docs/LORE_BIBLE_SPRINT_READY.md` — extract from CLAUDE.md, fill five gaps, add tone guide
-**Output format:** Markdown document, save to `docs/LORE_BIBLE_V2.md`
-**Source:** `inkborne-import-full/Inkborne App/CLAUDE.md` (World Lore section)
-**Added:** 2026-03-21
 
 ### 5. Parent Onboarding Copy
 **Priority:** LOW — needed for Phase 4 public launch, not urgent
-**Estimated time:** ~15 minutes on claude.ai
+**Estimated time:** ~15 minutes on Claude Code Desktop or claude.ai
 **Prompt:** Not yet written
 **Output format:** JSON object with screen keys mapped to copy strings
 **Added:** 2026-03-16
@@ -34,6 +27,10 @@ Checked automatically at the start of every off-peak session.
 ---
 
 ## COMPLETED SPRINTS
+
+### Inkborne Lore Bible (LORE_BIBLE_V2.md)
+**Completed:** 2026-03-22
+**Result:** Committed to `docs/LORE_BIBLE_V2.md` — 27 registry entries. Locked T1 (Palimpsest, Authors, Calendar, Story Outcome). Filled five gaps: 5 factions, 5 places, Accord (3 contradicting fragments), Previous Cycle (5 fragments), 4 mythic characters. Tone guide. Registry appendix. All T2 marked pending for human editorial pass. LORE_REGISTRY.md updated.
 
 ### Lore Copy (60 messages)
 **Completed:** 2026-03-17

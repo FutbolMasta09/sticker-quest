@@ -97,14 +97,14 @@ Use one section per week. Keep entries short and consistent.
   - Flex decision after planning: catch-up
   - Family priority honored: (confirm)
 - Sunday:
-  - Planned hours:
-  - Actual hours:
+  - Planned hours: 0-1 (optional)
+  - Actual hours: (report if known)
   - Variance hours:
   - Variance percent:
-  - Tasks planned:
-  - Tasks done:
+  - Tasks planned: optional / rest
+  - Tasks done: Lore Bible sprint (Claude Code Desktop); governance + registry + editorial + lock
   - Drift reason:
-  - Carry-forward:
+  - Carry-forward: none
 
 ### Weekly Totals
 - Planned hours (all days):

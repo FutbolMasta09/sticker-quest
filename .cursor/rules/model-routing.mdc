@@ -50,6 +50,6 @@ End EVERY response with:
 | "Where is X?" / "How do these files connect?" | **Gemini Flash (Cursor)** | Fastest for codebase search with @Codebase |
 | Complex architecture decisions, database design | **Claude Opus 4.6 (Cursor)** | Strongest reasoning, worth the wait |
 | Hard bug that Sonnet cannot fix | **Claude Opus 4.6 (Cursor)** | Most capable debugger |
-| Generating large JSON, audio scripts, batch content | **Claude Pro (claude.ai, off-peak ET)** | 2x usage fuel, handles long outputs |
+| Generating large JSON, audio scripts, batch content | **Claude Pro (Claude Code Desktop at all times; claude.ai only if unavailable/other device/clean-slate; off-peak ET)** | 2x usage fuel; Claude Code reads project files and writes output directly |
 | Sticker image / asset creation | **Gemini (image generation, future phase)** | Visual asset generation |
 

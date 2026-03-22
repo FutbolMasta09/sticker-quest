@@ -1,3 +1,88 @@
+## [2026-03-22f] Session: Lore Bible T2 locked
+**Status:** Completed — docs only.
+
+**One-line summary:** All T2 sections (factions, places, Accord, Previous Cycle, mythic roster, tone guide) marked locked in Lore Bible and LORE_REGISTRY.
+
+### WHAT CHANGED
+1. **`docs/LORE_BIBLE_V2.md`** — All T2 sections `[pending]` → `[locked]`; Registry Appendix table updated; header simplified.
+2. **`docs/LORE_REGISTRY.md`** — All T2 entries status `pending` → `locked`.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Floor vs carpet fix (Amber feedback) — k_grade_content.json, k_phonics_audio_scripts.json.
+- **Carry-forward from today:** None.
+- **Work-ahead status:** On-plan. Lore Bible complete; Sticker Quest build next.
+- **Tomorrow sync tasks:** Entry checklist; pick first Amber feedback item.
+
+---
+
+## [2026-03-22e] Session: Lore Bible V2 editorial pass (optional tweaks)
+**Status:** Completed — docs only.
+
+**One-line summary:** Trimmed Accord Fragment I (one sentence); clarified Margin/Oakhaven graffiti line; removed duplicate horizontal rules; Tone Guide point 1 uses "Narration" for system-prompt alignment.
+
+### WHAT CHANGED
+1. **`docs/LORE_BIBLE_V2.md`** — Editorial: removed "The Pale Chorus witnessed." from Chronicler Accord fragment; Scribes graffiti now ties Margin + Oakhaven Quarter; single `---` between major sections; Tone Guide #1 reworded (narration vs product name).
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan.
+- **Carry-forward from today:** Lock T2 sections + registry when ready.
+- **Work-ahead status:** On-plan.
+
+---
+
+## [2026-03-22d] Session: Lore Bible V2 completed + registry updated
+**Status:** Completed — sprint output saved, docs updated.
+
+**One-line summary:** Lore Bible V2 written by Claude Code Desktop; LORE_REGISTRY.md populated with 27 entries; sprint marked completed in PENDING_SPRINTS.
+
+### WHAT CHANGED
+1. **`docs/LORE_BIBLE_V2.md`** — Verified complete (Claude Code wrote it). Locked T1: Palimpsest, Authors (all 7), Calendar, Story Outcome. Filled five gaps: 5 factions (Scribes, Riven Court, Ashwalkers, Pale Chorus, Inkweavers), 5 places (Threshold, Oakhaven, Margin, Inkwell, Burnt Stacks), Accord (3 contradicting fragments), Previous Cycle (5 fragments), 4 mythic characters (Caelen, Maren, Tern, Vesper). Tone guide. Registry appendix.
+2. **`docs/LORE_REGISTRY.md`** — Universe Index populated with all 27 entries; summaries added; last_reviewed set to 2026-03-22.
+3. **`PENDING_SPRINTS.md`** — Inkborne Lore Bible moved to COMPLETED; removed from queue.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan.
+- **Carry-forward from today:** Human editorial pass on T2 sections when ready; change [pending] to [locked] and update registry.
+- **Work-ahead status:** On-plan.
+
+---
+
+## [2026-03-22c] Session: Claude Code Desktop preferred for content sprints
+**Status:** Completed — docs + rules only.
+
+**One-line summary:** Prefer Claude Code Desktop over claude.ai for off-peak content sprints; same 2x promo, direct project file access and file writes. Added prompt verification guidance.
+
+### WHAT CHANGED
+1. **`PENDING_SPRINTS.md`** — Added note: Claude Code Desktop preferred; open project folder for direct file read/write; claude.ai fallback only.
+2. **`.cursor/rules/claude-pro-sprint.mdc`** — Prefer Claude Code Desktop; split sprint steps (Claude Code vs claude.ai fallback); added PROMPT VERIFICATION section (same model + prompt = same output).
+3. **`.cursor/rules/model-routing.mdc`** — Routing table: Claude Code Desktop preferred, claude.ai fallback for content generation.
+4. **`docs/CURSOR_MODEL_AND_MODE_REFERENCE.md`** — External table: Claude Code Desktop preferred for huge JSON/lore batches.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan.
+- **Carry-forward from today:** Lore Bible sprint (Claude Code Desktop or claude.ai, Opus) when off-peak.
+- **Work-ahead status:** On-plan.
+
+---
+
+## [2026-03-22b] Session: Lore Bible governance and usage plan
+**Status:** Completed — docs only.
+
+**One-line summary:** Created LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN.md, LORE_REGISTRY.md template, and linked them to bootstrap runbook and UNIVERSE_GOVERNANCE_SPEC.
+
+### WHAT CHANGED
+1. **`docs/LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN.md`** — New. Consolidated plan: what exists, how Lore Bible fits canon tiers, add-lore checklist, conflict prevention, future-project usage (inherit, declare deps, T3→T2 promotion).
+2. **`docs/LORE_REGISTRY.md`** — New template. Universe Index (T1/T2) with placeholder rows for Palimpsest, Authors, Calendar, Story Outcome, plus T2 gaps (factions, places, Accord, Previous Cycle, mythic roster). T3 section for project-specific lore.
+3. **`docs/NEW_REPO_BOOTSTRAP_RUNBOOK.md`** — Added "For Inkborne-universe projects" step: copy Lore Bible + governance spec, declare T2 deps, keep new lore T3.
+4. **`docs/UNIVERSE_GOVERNANCE_SPEC.md`** — Relationship to other docs: added LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN and LORE_REGISTRY.
+
+### TOMORROW SCHEDULE + CARRY-FORWARD
+- **Tomorrow scheduled task:** Per Daily Plan.
+- **Carry-forward from today:** Lore Bible sprint (claude.ai, Opus) when off-peak; populate LORE_REGISTRY after sprint output is saved.
+- **Work-ahead status:** On-plan.
+
+---
+
 ## [2026-03-22] Session: Zero-runtime games research digest + Anchor's Desk checklist + rules pack carry-over
 **Status:** Completed — docs + scripts + bootstrap.
 

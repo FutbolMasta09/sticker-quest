@@ -50,6 +50,8 @@ Confirm these files exist:
 
 **For Anchor's Desk specifically:** See `PROJECT_CONTEXT.md` one-time kickoff checklist — also copy `GAME_DESIGN.md` to the new repo root.
 
+**For Inkborne-universe projects** (inkborne-native, Field Guide, Anchor's Desk, etc.): See `docs/LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN.md`. Copy `LORE_BIBLE_V2.md` and `UNIVERSE_GOVERNANCE_SPEC.md` into the new repo; declare which T2 entries the project uses; keep new lore as T3 unless promoting via ADR.
+
 ## Fast start checklist
 1. Set this week's planned hours in `docs/WEEKLY_EXECUTION_TRACKER.md`
 2. Define one must-ship item for the week

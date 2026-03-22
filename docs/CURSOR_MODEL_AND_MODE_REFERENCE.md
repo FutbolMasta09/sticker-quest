@@ -75,7 +75,7 @@ These are **project defaults** from `.cursor/rules/model-routing.mdc`. **API cap
 
 | Task | Tool | Model |
 |------|------|--------|
-| Huge JSON, lore batches, long scripts | **claude.ai (Claude Pro)** | **Opus** for consistency; respect off-peak / plan limits |
+| Huge JSON, lore batches, long scripts | **Claude Code Desktop** at all times; **claude.ai** only if unavailable, other device, or clean-slate (Claude Pro) | **Opus** for consistency; Claude Code reads project files and writes directly; respect off-peak 2x |
 
 ---
 

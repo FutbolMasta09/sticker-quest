@@ -88,7 +88,7 @@ Automatic trigger rule:
    7. Confirm family-time priority before doing any optional Saturday work
 
 4d.1 **Saturday — Lore Bible sprint surface**
-   If today is Saturday: Surface the **Inkborne Lore Bible** sprint as the top off-peak design task. Target: run this week when possible. Say: "Lore Bible sprint is ready — ~30–45 min on claude.ai with Opus. See `docs/LORE_BIBLE_SPRINT_READY.md`. Want to run it today or slot it for later this week?" Include in the 3-line briefing or next-options.
+   If today is Saturday: Surface the **Inkborne Lore Bible** sprint as the top off-peak design task. Target: run this week when possible. Say: "Lore Bible sprint is ready — ~30–45 min on Claude Code Desktop with Opus. See `docs/LORE_BIBLE_SPRINT_READY.md`. Want to run it today or slot it for later this week?" Include in the 3-line briefing or next-options.
 
 4e. **Cursor model doc refresh (when billing reset)**
    Open `docs/CURSOR_MODEL_AND_MODE_REFERENCE.md` and check the **Billing cycle reset date**.

@@ -6,7 +6,11 @@ alwaysApply: false
 
 # CLAUDE PRO SPRINT PROTOCOL
 
-Use this any time Ryan is about to run a content generation session on claude.ai.
+Use this any time Ryan is about to run a content generation session on Claude (off-peak 2x). **Use Claude Code Desktop at all times.** claude.ai only if unavailable, on another device, or you want a clean slate (rare).
+
+**When to use which:**
+- **Claude Code Desktop** — Use at all times. Same model, same 2x promo. Can read project files and write output directly. Open the project folder first.
+- **claude.ai** — Only when: (1) Claude Code is unavailable, (2) you're on a device without Claude Code, or (3) you explicitly want a clean slate with no project context (rare). Paste output back into Cursor when done.
 
 ---
 
@@ -24,7 +28,7 @@ If Ryan decides NOT to run a Claude Pro prompt right now:
 
 ---
 
-## PRE-SPRINT CHECKLIST (Do this in Cursor BEFORE going to claude.ai)
+## PRE-SPRINT CHECKLIST (Do this in Cursor BEFORE going to Claude Code Desktop or claude.ai)
 
 1. **Check the time**
    Run the clock command. State whether Ryan is in peak or off-peak.
@@ -37,7 +41,7 @@ If Ryan decides NOT to run a Claude Pro prompt right now:
 
 3. **Confirm the prompt is ready**
    The full prompt should be written here in Cursor and copied to clipboard before
-   opening claude.ai. Never draft the prompt inside claude.ai — formatting gets lost.
+   opening Claude. Never draft the prompt inside the tool — formatting gets lost.
 
 4. **Tell Ryan the expected output format**
    e.g., "Claude will return a JSON array starting with [ and ending with ].
@@ -45,15 +49,33 @@ If Ryan decides NOT to run a Claude Pro prompt right now:
 
 ---
 
-## SPRINT STEPS (What Ryan does on claude.ai)
+## SPRINT STEPS (What Ryan does)
 
-1. Go to claude.ai in browser
+**Preferred: Claude Code Desktop**
+1. Open Claude Code Desktop and open this project folder (c:\App Development\sticker-quest)
 2. Start a NEW conversation (fresh context)
-3. Paste the full prompt — nothing else
+3. Paste the full prompt — Claude Code can also read project files directly via @ mentions
 4. Wait for the complete response
 5. If the output cuts off mid-way: type "continue from [last item]" in the same thread
-6. Copy the ENTIRE output once complete
-7. Come back to Cursor and paste it in chat
+6. Claude Code can write directly to files — or copy output and paste in Cursor chat
+
+**Fallback: claude.ai (browser)**
+1. Go to claude.ai in browser
+2. Start a NEW conversation (fresh context)
+3. Paste the full prompt — nothing else (no project file access)
+4. Wait for the complete response
+5. If the output cuts off mid-way: type "continue from [last item]" in the same thread
+6. Copy the ENTIRE output and paste it in Cursor chat
+
+---
+
+## PROMPT VERIFICATION (claude.ai vs Claude Code Desktop)
+
+**Same model (Opus) + same prompt = same quality output.** Both use your Anthropic subscription and the same 2x off-peak promo.
+
+- **Self-contained prompts** (all context pasted in): Output will be equivalent. No difference.
+- **Prompts that reference files**: In claude.ai you must paste the file contents. In Claude Code you can @-mention or let it read the project. Result is the same if the model sees the same information.
+- **To verify a specific prompt:** Paste it in Cursor chat and ask: "Would this get the same result in Claude Code Desktop?" The assistant can confirm equivalence or suggest Claude Code–specific simplifications (e.g., "reference docs/X.md" instead of pasting 50 lines).
 
 ---
 

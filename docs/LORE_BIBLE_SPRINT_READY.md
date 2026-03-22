@@ -1,6 +1,6 @@
 # Lore Bible Sprint — Ready Reference
 
-**Purpose:** Unblock the Inkborne Lore Bible creation. Use this when running the Claude Pro (Opus) sprint on claude.ai.
+**Purpose:** Unblock the Inkborne Lore Bible creation. Use Claude Code Desktop (or claude.ai fallback). See `claude-pro-sprint.mdc` for tool choice.
 
 **Source of truth:** `inkborne-import-full/Inkborne App/CLAUDE.md`
 
@@ -42,7 +42,7 @@ Produce `LORE_BIBLE_V2.md` with:
 ## Sprint Protocol
 
 1. **In Cursor:** Extract World Lore from CLAUDE.md, write full prompt, copy to clipboard
-2. **On claude.ai:** New chat, paste prompt, use Opus, off-peak for 2x
+2. **On Claude Code Desktop (or claude.ai):** New chat, paste prompt, use Opus, off-peak for 2x
 3. **Back in Cursor:** Paste output, save to `docs/LORE_BIBLE_V2.md`, human editorial pass, lock sections
 
 ---

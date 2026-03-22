@@ -501,6 +501,7 @@ Platform decisions are per-project, not universe-wide. "Mobile-first" is a hypot
 **Governance docs (first-pass drafts in this repo):**
 1. **`docs/UNIVERSE_PROTECTION_FRAMEWORK.md`** — cross-project legal/ethical baseline (IP safety, AI disclosure, data policy, business protection gates)
 2. **`docs/UNIVERSE_GOVERNANCE_SPEC.md`** — canon tiers, lore registry format, contradiction policy, project inheritance model
+3. **`docs/LORE_BIBLE_V2.md`** — Inkborne canon (T1+T2 locked). See `docs/LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN.md` for usage and add-lore process.
 
 **Post–K flagship sequence (locked intent):** See **`docs/POST_STICKER_QUEST_PROJECT_LOCK.md`** — Anchor's Desk next; then pool decision per **`docs/FUTURE_PROJECTS_POOL_MASTERLIST.md`**.
 

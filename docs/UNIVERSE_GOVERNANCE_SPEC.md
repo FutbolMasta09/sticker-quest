@@ -106,6 +106,8 @@ Before milestone beta:
 |----------|------|
 | `UNIVERSE_PROTECTION_FRAMEWORK.md` | Legal, ethical, data, AI disclosure, IP |
 | `UNIVERSE_GOVERNANCE_SPEC.md` (this file) | Canon + lore process |
+| `LORE_BIBLE_GOVERNANCE_AND_USAGE_PLAN.md` | Usage, add-lore checklist, future-project plan for Lore Bible |
+| `LORE_REGISTRY.md` | Index of lore entries for conflict scanning; populated from Lore Bible |
 | `PROJECT_CONTEXT.md` (Sticker Quest) | Product brain for K–G3 app; links here for cross-universe rules |
 | `docs/INKBORNE_AUDIT_2026_03_18.md` | Technical + lore audit of inkborne-native |
 | `GAME_DESIGN.md` | Anchor's Desk design; T3-heavy |
